@@ -96,7 +96,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#1a1a2e',
+  themeColor: '#F9F7F4',
 };
 
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
@@ -182,7 +182,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         )}
       </head>
-      <body className="min-h-full flex flex-col font-body bg-obsidian text-charcoal">
+      <body className="min-h-full flex flex-col font-body bg-bg-primary text-text-secondary">
         {gtmId && (
           <noscript>
             <iframe

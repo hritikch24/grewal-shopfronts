@@ -1,269 +1,181 @@
-import type { Metadata } from 'next';
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import Breadcrumbs from '@/components/Breadcrumbs';
+import { useState } from 'react';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
-export const metadata: Metadata = {
-  title: 'Project Gallery — Shopfront & Shutter Installations',
-  description:
-    'Browse Grewal Shopfront & Shutters\' portfolio of completed projects — aluminium shopfronts, roller shutters, security doors, automatic doors, and more across the United Kingdom.',
-  alternates: {
-    canonical: 'https://www.grewalshopfrontandshutters.co.uk/gallery',
-  },
-  openGraph: {
-    title: 'Project Gallery — Grewal Shopfront & Shutters',
-    description: 'Browse our portfolio of completed shopfront, roller shutter, and security door installations across the UK.',
-    url: 'https://www.grewalshopfrontandshutters.co.uk/gallery',
-  },
-};
+const galleryItems = [
+  { img: 'portfolio-1.webp', cat: 'roller-shutters', title: 'Security Shutter, Birmingham' },
+  { img: 'portfolio-2.webp', cat: 'shopfronts', title: 'Aluminium Shopfront, London' },
+  { img: 'portfolio-3.webp', cat: 'doors', title: 'Sliding Doors, Manchester' },
+  { img: 'portfolio-4.webp', cat: 'roller-shutters', title: 'Industrial Shutter, Leeds' },
+  { img: 'portfolio-5.webp', cat: 'shopfronts', title: 'Glass Shopfront, Sheffield' },
+  { img: 'portfolio-6.webp', cat: 'doors', title: 'Fire Door, Liverpool' },
+  { img: 'service-steel-door.jpeg', cat: 'doors', title: 'Steel Security Door, Bristol' },
+  { img: 'service-scissor-gate.webp', cat: 'other', title: 'Scissor Gate, Coventry' },
+  { img: 'preview-electric.webp', cat: 'roller-shutters', title: 'Electric Shutter, Leicester' },
+  { img: 'warehouse-doors.webp', cat: 'doors', title: 'Sectional Doors, Wolverhampton' },
+  { img: 'service-aluminium-shopfront.webp', cat: 'shopfronts', title: 'Aluminium Shopfront, Coventry' },
+  { img: 'service-industrial-shutter.webp', cat: 'roller-shutters', title: 'Industrial Roller Shutter' },
+  { img: 'service-glass-shopfront.webp', cat: 'shopfronts', title: 'Glass Shopfront Installation' },
+  { img: 'service-auto-sliding-doors.webp', cat: 'doors', title: 'Automatic Sliding Doors' },
+  { img: 'service-bifold-door.webp', cat: 'doors', title: 'Bi-Fold Door System' },
+  { img: 'roler.webp', cat: 'roller-shutters', title: 'Roller Shutter Detail' },
+  { img: 'workers-installing.webp', cat: 'shopfronts', title: 'Installation in Progress' },
+  { img: 'service-security-shutter.webp', cat: 'roller-shutters', title: 'Security Roller Shutter' },
+];
 
-const images = [
-  {
-    src: '/assets/portfolio-1.webp',
-    alt: 'Completed shopfront installation by Grewal Shopfront & Shutters',
-  },
-  {
-    src: '/assets/portfolio-2.webp',
-    alt: 'Commercial roller shutter and shopfront project',
-  },
-  {
-    src: '/assets/portfolio-3.webp',
-    alt: 'Modern aluminium shopfront installation by Grewal Shopfront & Shutters',
-  },
-  {
-    src: '/assets/portfolio-4.webp',
-    alt: 'Steel security door installation project',
-  },
-  {
-    src: '/assets/portfolio-5.webp',
-    alt: 'Wide-span aluminium shopfront with full-height glazing',
-  },
-  {
-    src: '/assets/portfolio-6.webp',
-    alt: 'Retail shopfront completed by Grewal Shopfront & Shutters',
-  },
-  {
-    src: '/assets/service-security-shutter.webp',
-    alt: 'Security roller shutter installation',
-  },
-  {
-    src: '/assets/service-aluminium-shopfront.webp',
-    alt: 'Aluminium shopfront with glass panels',
-  },
-  {
-    src: '/assets/service-industrial-shutter.webp',
-    alt: 'Industrial roller shutter on commercial premises',
-  },
-  {
-    src: '/assets/service-glass-shopfront.webp',
-    alt: 'Toughened glass shopfront installation',
-  },
-  {
-    src: '/assets/service-steel-door.jpeg',
-    alt: 'Heavy-duty steel security door fitted to commercial premises',
-  },
-  {
-    src: '/assets/service-auto-sliding-doors.webp',
-    alt: 'Automatic sliding door installation at commercial entrance',
-  },
-  {
-    src: '/assets/service-bifold-door.webp',
-    alt: 'Bi-fold door system opening to outdoor seating area',
-  },
-  {
-    src: '/assets/service-scissor-gate.webp',
-    alt: 'Scissor gate security installation',
-  },
-  {
-    src: '/assets/preview-electric.webp',
-    alt: 'Electric roller shutter installation',
-  },
-  {
-    src: '/assets/preview-fire.webp',
-    alt: 'Fire door installation meeting current UK regulations',
-  },
-  {
-    src: '/assets/warehouse-doors.webp',
-    alt: 'Warehouse door installation for industrial premises',
-  },
-  {
-    src: '/assets/workers-installing.webp',
-    alt: 'Grewal engineers installing shopfront on site',
-  },
-  {
-    src: '/assets/service-curtain-walling.webp',
-    alt: 'Curtain walling system installation',
-  },
-  {
-    src: '/assets/service-bollard.webp',
-    alt: 'Security bollard installation',
-  },
-  {
-    src: '/assets/service-wicket-door.webp',
-    alt: 'Wicket door installation within roller shutter',
-  },
-  {
-    src: '/assets/service-highspeed-shutter.webp',
-    alt: 'High-speed roller shutter for commercial premises',
-  },
-  {
-    src: '/assets/service-repair.webp',
-    alt: 'Shutter repair and maintenance service',
-  },
-  {
-    src: '/assets/roler.webp',
-    alt: 'Roller shutter close-up detail',
-  },
-  {
-    src: '/assets/shopfront-4.jpeg',
-    alt: 'Shopfront installation for independent high-street retailer',
-  },
-  {
-    src: '/assets/shopfront-5.jpeg',
-    alt: 'Refurbished shopfront with new aluminium frames and sealed units',
-  },
-  {
-    src: '/assets/shopfront-6.jpeg',
-    alt: 'Large-format glazed shopfront for restaurant premises',
-  },
-  {
-    src: '/assets/shopfront-7.jpeg',
-    alt: 'Night-time view of illuminated shopfront with polished aluminium',
-  },
-  {
-    src: '/assets/bifolding-door-1.jpeg',
-    alt: 'Portfolio showcase — completed shopfront project by Grewal Shopfront & Shutters',
-  },
+const filters = [
+  { label: 'All', value: 'all' },
+  { label: 'Roller Shutters', value: 'roller-shutters' },
+  { label: 'Shopfronts', value: 'shopfronts' },
+  { label: 'Doors', value: 'doors' },
+  { label: 'Other', value: 'other' },
 ];
 
 export default function GalleryPage() {
+  const [activeFilter, setActiveFilter] = useState('all');
+
+  const filtered = activeFilter === 'all'
+    ? galleryItems
+    : galleryItems.filter((item) => item.cat === activeFilter);
+
   return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.grewalshopfrontandshutters.co.uk"},{"@type":"ListItem","position":2,"name":"Gallery","item":"https://www.grewalshopfrontandshutters.co.uk/gallery"}]}) }} />
+    <div className="bg-[#F9F7F4] text-[#1A1A1A]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.grewalshopfrontandshutters.co.uk"},{"@type":"ListItem","position":2,"name":"Portfolio","item":"https://www.grewalshopfrontandshutters.co.uk/gallery"}]}) }} />
       <SchemaMarkup type="LocalBusiness" />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            { src: '/assets/project-video-1.mp4', name: 'Shopfront Installation in Progress', desc: 'Watch our team installing an aluminium shopfront for a commercial premises in the UK.' },
-            { src: '/assets/project-video-2.mp4', name: 'On-Site Survey and Assessment', desc: 'Grewal Shopfront & Shutters engineer conducting a free site survey and taking measurements for a shopfront project.' },
-            { src: '/assets/project-video-3.mp4', name: 'Completed Project Walkthrough', desc: 'A walkthrough of a recently completed shopfront installation by Grewal Shopfront & Shutters.' },
-          ].map((v) => ({
-            '@context': 'https://schema.org',
-            '@type': 'VideoObject',
-            name: v.name,
-            description: v.desc,
-            contentUrl: `https://www.grewalshopfrontandshutters.co.uk${v.src}`,
-            thumbnailUrl: 'https://www.grewalshopfrontandshutters.co.uk/assets/shopfront-2.jpeg',
-            uploadDate: '2025-01-15',
-            publisher: { '@type': 'Organization', name: 'Grewal Shopfront & Shutters', url: 'https://www.grewalshopfrontandshutters.co.uk' },
-          }))),
-        }}
-      />
 
-      {/* Hero */}
-      <section className="bg-gradient-dark section-padding">
-        <div className="container-max">
-          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Gallery' }]} />
-          <h1 className="mt-6 text-4xl md:text-5xl font-heading font-bold text-white leading-tight">
-            Our Recent <span className="text-gradient-gold">Projects</span>
+      {/* Page Banner */}
+      <section className="relative text-center text-white" style={{ padding: '220px 0 90px' }}>
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.75)] to-[rgba(10,10,10,0.85)]" />
+        <Image
+          src="/assets/portfolio-1.webp"
+          alt="Our Portfolio"
+          fill
+          className="object-cover -z-10"
+          priority
+        />
+        <div className="relative z-10 max-w-[1380px] mx-auto px-6">
+          <h1 className="text-[clamp(32px,5vw,54px)] font-heading font-bold text-white mb-4">
+            Our Portfolio
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-grey-300 leading-relaxed">
-            Every project we complete is a testament to the skill and dedication of our team. Browse
-            our portfolio below to see the breadth of work we handle — from single shopfront replacements
-            to complex multi-unit installations across the UK.
-          </p>
+          <div className="flex justify-center gap-2 text-sm text-white/70">
+            <Link href="/" className="text-[#F0D080] hover:underline">Home</Link>
+            <span>/</span>
+            <span>Portfolio</span>
+          </div>
         </div>
       </section>
 
-      {/* Intro */}
-      <section className="section-padding pb-0">
-        <div className="container-max">
-          <p className="text-grey-600 max-w-3xl leading-relaxed">
-            Our portfolio spans aluminium shopfronts, roller shutters, security grilles, automatic sliding
-            doors, bi-fold systems, fire doors, and bespoke glazing solutions. Whether you are seeking
-            inspiration for a new installation or want to see the standard of finish we consistently
-            achieve, you will find examples of our craftsmanship below. All projects shown were completed
-            by our own in-house installation teams.
-          </p>
-        </div>
-      </section>
-
-      {/* Masonry Gallery */}
-      <section className="section-padding">
-        <div className="container-max">
-          <div
-            className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4"
-            style={{ columnGap: '1rem' }}
-          >
-            {images.map((image) => (
-              <div
-                key={image.src}
-                className="break-inside-avoid rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-grey-100"
+      {/* Gallery */}
+      <section className="bg-white" style={{ padding: '100px 0' }}>
+        <div className="max-w-[1380px] mx-auto px-6">
+          {/* Filter Bar */}
+          <div className="flex justify-center gap-3 mb-11 flex-wrap">
+            {filters.map((f) => (
+              <button
+                key={f.value}
+                onClick={() => setActiveFilter(f.value)}
+                className={`px-6 py-2.5 rounded-full border font-semibold text-sm transition-all ${
+                  activeFilter === f.value
+                    ? 'bg-[#C9A84C] border-[#C9A84C] text-white'
+                    : 'bg-white border-[#E5DDD0] text-[#1A1A1A] hover:bg-[#C9A84C] hover:border-[#C9A84C] hover:text-white'
+                }`}
               >
-                <div className="relative w-full">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={800}
-                    height={600}
-                    className="w-full h-auto object-cover block"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
+                {f.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Masonry Grid */}
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6" style={{ columnGap: '24px' }}>
+            {filtered.map((item) => (
+              <div
+                key={item.img}
+                className="break-inside-avoid mb-6 relative rounded-xl overflow-hidden group"
+              >
+                <Image
+                  src={`/assets/${item.img}`}
+                  alt={item.title}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto transition-transform duration-500 group-hover:scale-110"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                {/* Gold overlay on hover */}
+                <div className="absolute inset-0 bg-[rgba(201,168,76,0.85)] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white" aria-hidden="true">
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                 </div>
-                <p className="px-3 py-2 text-xs text-grey-500 bg-grey-100 leading-snug">{image.alt}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Banner */}
+      <section className="relative text-center text-white" style={{ padding: '110px 0' }}>
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.82)] to-[rgba(10,10,10,0.9)]" />
+        <Image
+          src="/assets/cta-banner-bg.webp"
+          alt=""
+          fill
+          className="object-cover -z-10"
+        />
+        <div className="relative z-10 max-w-[1380px] mx-auto px-6">
+          <h2 className="text-[clamp(28px,4vw,44px)] font-heading font-bold text-white mb-[18px]">
+            Like What You See?
+          </h2>
+          <p className="text-white/75 max-w-[600px] mx-auto mb-9 text-[17px]">
+            Get a free quote for your own shopfront or shutter project.
+          </p>
+          <div className="flex justify-center gap-5 flex-wrap">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-8 py-[15px] rounded-md font-semibold text-[15px] bg-[#C9A84C] text-white hover:bg-[#A8832A] hover:shadow-[0_20px_60px_rgba(201,168,76,0.25)] hover:scale-[1.03] transition-all animate-[pulse_2.4s_ease-in-out_infinite]"
+              style={{
+                animationName: 'ctaPulse',
+              }}
+            >
+              Get a Free Quote
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Project Videos */}
-      <section className="section-padding bg-grey-50">
-        <div className="container-max">
-          <h2 className="text-3xl font-heading font-bold text-white text-center mb-3">Project Videos</h2>
-          <p className="text-grey-600 text-center max-w-xl mx-auto mb-10">See our team in action — from site surveys to completed installations.</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <section className="bg-[#F2EDE4]" style={{ padding: '100px 0' }}>
+        <div className="max-w-[1380px] mx-auto px-6">
+          <div className="text-center max-w-[720px] mx-auto mb-[60px]">
+            <span className="inline-block bg-[rgba(201,168,76,0.12)] text-[#A8832A] text-[13px] font-semibold tracking-wide px-[18px] py-[7px] rounded-full mb-[18px] uppercase">
+              See Our Work
+            </span>
+            <h2 className="text-[clamp(28px,4vw,42px)] font-heading font-bold text-[#1A1A1A] mb-[18px]">
+              Project Videos
+            </h2>
+            <div className="w-[70px] h-[3px] bg-[#C9A84C] mx-auto mb-[22px]" />
+            <p className="text-[#4A4A4A] text-[17px]">See our team in action — from site surveys to completed installations.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px]">
             {[
-              { src: '/assets/project-video-1.mp4', title: 'Shopfront installation in progress', slug: 'shopfront-installation' },
-              { src: '/assets/project-video-2.mp4', title: 'On-site survey and assessment', slug: 'site-survey' },
-              { src: '/assets/project-video-3.mp4', title: 'Completed project walkthrough', slug: 'completed-project' },
+              { src: '/assets/project-video-1.mp4', title: 'Shopfront installation in progress' },
+              { src: '/assets/project-video-2.mp4', title: 'On-site survey and assessment' },
+              { src: '/assets/project-video-3.mp4', title: 'Completed project walkthrough' },
             ].map((v) => (
-              <div key={v.src} className="rounded-xl overflow-hidden shadow-md bg-obsidian-light">
+              <div key={v.src} className="rounded-xl overflow-hidden bg-white border border-[#E5DDD0] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition-all duration-300">
                 <video controls preload="metadata" className="w-full aspect-video object-cover" playsInline>
                   <source src={v.src} type="video/mp4" />
                 </video>
-                <div className="px-3 py-2 flex items-center justify-between">
-                  <p className="text-xs text-grey-500">{v.title}</p>
-                  <a href={`/gallery/${v.slug}`} className="text-xs text-blue-600 hover:underline">Watch full video →</a>
+                <div className="px-5 py-3">
+                  <p className="text-[#4A4A4A] text-sm font-medium">{v.title}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="section-padding bg-gradient-dark">
-        <div className="container-max text-center">
-          <h2 className="text-3xl font-heading font-bold text-white mb-4">
-            Like What You See?
-          </h2>
-          <p className="text-grey-300 mb-8 max-w-xl mx-auto">
-            We would love to add your project to our portfolio. Contact us today for a free, no-obligation
-            site survey and a detailed quotation tailored to your premises.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/contact" className="btn-gold">
-              Request a Free Quote
-            </Link>
-            <Link href="/services" className="btn-outline">
-              View Our Services
-            </Link>
-          </div>
-        </div>
-      </section>
-    </>
+    </div>
   );
 }
