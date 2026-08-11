@@ -12,14 +12,14 @@ export const metadata: Metadata = {
 };
 
 const services = [
-  { title: 'Security Roller Shutters', image: '/assets/roller-shutter-1.jpeg', href: '/services/security-roller-shutters', desc: 'Robust protection for retail and commercial units.' },
-  { title: 'Aluminium Shopfronts', image: '/assets/aluminium-shopfront-1.jpeg', href: '/services/aluminium-shopfronts', desc: 'Sleek, modern storefronts built to impress.' },
-  { title: 'Steel Security Doors', image: '/assets/security-grill-1.jpeg', href: '/services/steel-security-doors', desc: 'Maximum resistance against forced entry.' },
-  { title: 'Industrial Shutters', image: '/assets/shopfront-7.jpeg', href: '/services/industrial-roller-shutters', desc: 'Heavy-duty doors for warehouses and factories.' },
-  { title: 'Automatic Sliding Doors', image: '/assets/automatic-door-1.jpeg', href: '/services/automatic-sliding-doors', desc: 'Smooth automated access for busy premises.' },
-  { title: 'Toughened Glass Shopfronts', image: '/assets/shopfront-3.jpeg', href: '/services/toughened-glass-shopfronts', desc: 'Frameless glass that lets your brand shine.' },
-  { title: 'Electric Roller Shutters', image: '/assets/roller-shutter-evening-1.jpeg', href: '/services/electric-roller-shutters', desc: 'Convenient motorised operation for daily use.' },
-  { title: 'Repair & Maintenance', image: '/assets/roller-shutter-2.jpeg', href: '/services/repair-maintenance', desc: 'Fast response repairs and ongoing service.' },
+  { title: 'Security Roller Shutters', image: '/assets/service-security-shutter.webp', href: '/services/security-roller-shutters', desc: 'Robust protection for retail and commercial units.' },
+  { title: 'Aluminium Shopfronts', image: '/assets/service-aluminium-shopfront.webp', href: '/services/aluminium-shopfronts', desc: 'Sleek, modern storefronts built to impress.' },
+  { title: 'Steel Security Doors', image: '/assets/service-steel-door.jpeg', href: '/services/steel-security-doors', desc: 'Maximum resistance against forced entry.' },
+  { title: 'Industrial Shutters', image: '/assets/service-industrial-shutter.webp', href: '/services/industrial-roller-shutters', desc: 'Heavy-duty doors for warehouses and factories.' },
+  { title: 'Automatic Sliding Doors', image: '/assets/service-auto-sliding-doors.webp', href: '/services/automatic-sliding-doors', desc: 'Smooth automated access for busy premises.' },
+  { title: 'Toughened Glass Shopfronts', image: '/assets/service-glass-shopfront.webp', href: '/services/toughened-glass-shopfronts', desc: 'Frameless glass that lets your brand shine.' },
+  { title: 'Electric Roller Shutters', image: '/assets/preview-electric.webp', href: '/services/electric-roller-shutters', desc: 'Convenient motorised operation for daily use.' },
+  { title: 'Repair & Maintenance', image: '/assets/service-repair.webp', href: '/services/repair-maintenance', desc: 'Fast response repairs and ongoing service.' },
 ];
 
 const stats = [
@@ -78,7 +78,7 @@ export default function HomePage() {
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-amber/[0.03] blur-[100px] pointer-events-none" aria-hidden="true" />
 
         <div className="absolute inset-0 lg:hidden" aria-hidden="true">
-          <Image src="/assets/shopfront-2.jpeg" alt="" fill priority className="object-cover opacity-25" sizes="100vw" />
+          <Image src="/assets/hero-shutter-new.webp" alt="" fill priority className="object-cover opacity-25" sizes="100vw" />
           <div className="absolute inset-0 bg-obsidian/90" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -117,7 +117,7 @@ export default function HomePage() {
             </div>
             <div className="relative hidden lg:block">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/[0.06]">
-                <Image src="/assets/shopfront-2.jpeg" alt="Modern aluminium shopfront by Grewal Shopfront & Shutters" width={700} height={800} className="object-cover w-full h-[75vh]" priority sizes="50vw" />
+                <Image src="/assets/hero-shutter-new.webp" alt="Modern aluminium shopfront by Grewal Shopfront & Shutters" width={700} height={800} className="object-cover w-full h-[75vh]" priority sizes="50vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian/30 to-transparent" />
               </div>
               <div className="absolute -bottom-6 -left-6 card-surface px-5 py-4 flex items-center gap-4 border border-gold/15 shadow-[0_0_20px_rgba(240,180,41,0.06)]">
@@ -207,26 +207,26 @@ export default function HomePage() {
         <div className="flex gap-3 animate-[scroll_30s_linear_infinite] w-max">
           {[...Array(2)].flatMap((_, set) =>
             [
-              { file: 'shopfront-premium-1', alt: 'Premium aluminium shopfront on UK high street' },
-              { file: 'shopfront-8', alt: 'Bronze aluminium shopfront with full-height glazing' },
-              { file: 'shopfront-2', alt: 'Modern aluminium shopfront installation' },
-              { file: 'shopfront-interior-1', alt: 'Interior view through modern aluminium shopfront' },
-              { file: 'shopfront-4', alt: 'Wide-span glazed shopfront for retail unit' },
-              { file: 'shopfront-5', alt: 'Commercial shopfront with toughened glass' },
-              { file: 'roller-shutter-evening-1', alt: 'Commercial roller shutter at dusk' },
-              { file: 'shopfront-6', alt: 'Floor-to-ceiling glass shopfront' },
-              { file: 'shopfront-7', alt: 'Powder-coated aluminium shopfront at night' },
-              { file: 'aluminium-shopfront-1', alt: 'Aluminium shopfront with tinted glass panels' },
-              { file: 'roller-shutter-1', alt: 'Commercial roller shutter installation' },
-              { file: 'roller-shutter-2', alt: 'Steel roller shutter on commercial unit' },
-              { file: 'security-door-steel-1', alt: 'Heavy-duty steel security door with multipoint lock' },
-              { file: 'bifolding-door-1', alt: 'Bi-fold door system for restaurant frontage' },
-              { file: 'venue-signage-1', alt: 'Venue signage and shopfront fitout' },
-              { file: 'site-survey-1', alt: 'Engineer arriving for free site survey' },
-              { file: 'bay-window-install-1', alt: 'Bay window aluminium frame installation' },
+              { file: 'portfolio-1.webp', alt: 'Premium aluminium shopfront on UK high street' },
+              { file: 'portfolio-2.webp', alt: 'Commercial roller shutter installation' },
+              { file: 'portfolio-3.webp', alt: 'Modern aluminium shopfront installation' },
+              { file: 'portfolio-4.webp', alt: 'Steel security door installation' },
+              { file: 'portfolio-5.webp', alt: 'Wide-span glazed shopfront for retail unit' },
+              { file: 'portfolio-6.webp', alt: 'Commercial shopfront with toughened glass' },
+              { file: 'service-security-shutter.webp', alt: 'Security roller shutter' },
+              { file: 'service-aluminium-shopfront.webp', alt: 'Aluminium shopfront with glass panels' },
+              { file: 'service-industrial-shutter.webp', alt: 'Industrial roller shutter' },
+              { file: 'service-auto-sliding-doors.webp', alt: 'Automatic sliding door system' },
+              { file: 'service-glass-shopfront.webp', alt: 'Toughened glass shopfront' },
+              { file: 'service-steel-door.jpeg', alt: 'Heavy-duty steel security door' },
+              { file: 'service-bifold-door.webp', alt: 'Bi-fold door system for restaurant frontage' },
+              { file: 'service-scissor-gate.webp', alt: 'Scissor gate security installation' },
+              { file: 'warehouse-doors.webp', alt: 'Warehouse door installation' },
+              { file: 'preview-electric.webp', alt: 'Electric roller shutter' },
+              { file: 'workers-installing.webp', alt: 'Engineers installing shopfront' },
             ].map((img, i) => (
               <div key={`${set}-${i}`} className="relative w-56 h-40 rounded-xl overflow-hidden flex-shrink-0 border border-white/[0.04]">
-                <Image src={`/assets/${img.file}.jpeg`} alt={img.alt} fill className="object-cover" sizes="224px" />
+                <Image src={`/assets/${img.file}`} alt={img.alt} fill className="object-cover" sizes="224px" />
               </div>
             ))
           )}

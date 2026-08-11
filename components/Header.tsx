@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const services = [
   { label: 'Security Roller Shutters', href: '/services/security-roller-shutters' },
@@ -122,8 +123,9 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            <Link href="/" className="flex-shrink-0 group">
-              <span className="font-heading font-bold text-lg lg:text-xl tracking-[0.2em] text-gradient-aurora drop-shadow-[0_0_12px_rgba(240,180,41,0.25)]">
+            <Link href="/" className="flex-shrink-0 group flex items-center gap-3">
+              <Image src="/assets/grewal-logo.png" alt="Grewal Shopfront & Shutters" width={44} height={44} className="rounded-md" priority />
+              <span className="font-heading font-bold text-sm lg:text-lg tracking-[0.15em] text-gradient-aurora drop-shadow-[0_0_12px_rgba(240,180,41,0.25)] hidden sm:inline">
                 GREWAL SHOPFRONT & SHUTTERS
               </span>
             </Link>

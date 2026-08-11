@@ -20,104 +20,100 @@ export const metadata: Metadata = {
 
 const images = [
   {
-    src: '/assets/shopfront-transform-1.jpeg',
-    alt: 'Before and after shopfront transformation by Grewal Shopfront & Shutters',
+    src: '/assets/portfolio-1.webp',
+    alt: 'Completed shopfront installation by Grewal Shopfront & Shutters',
   },
   {
-    src: '/assets/shopfront-8.jpeg',
-    alt: 'Bronze aluminium shopfront with full-height glazing panels',
+    src: '/assets/portfolio-2.webp',
+    alt: 'Commercial roller shutter and shopfront project',
   },
   {
-    src: '/assets/shopfront-night-1.jpeg',
-    alt: 'Aluminium shopfront with warm interior lighting at night',
-  },
-  {
-    src: '/assets/shopfront-2.jpeg',
+    src: '/assets/portfolio-3.webp',
     alt: 'Modern aluminium shopfront installation by Grewal Shopfront & Shutters',
   },
   {
-    src: '/assets/shopfront-4.jpeg',
+    src: '/assets/portfolio-4.webp',
+    alt: 'Steel security door installation project',
+  },
+  {
+    src: '/assets/portfolio-5.webp',
     alt: 'Wide-span aluminium shopfront with full-height glazing',
   },
   {
-    src: '/assets/shopfront-5.jpeg',
-    alt: 'Retail mall shopfront unit completed by Grewal Shopfront & Shutters',
+    src: '/assets/portfolio-6.webp',
+    alt: 'Retail shopfront completed by Grewal Shopfront & Shutters',
   },
   {
-    src: '/assets/shopfront-6.jpeg',
-    alt: 'Floor-to-ceiling glass shopfront for commercial retail unit',
+    src: '/assets/service-security-shutter.webp',
+    alt: 'Security roller shutter installation',
   },
   {
-    src: '/assets/roller-shutter-1.jpeg',
-    alt: 'Integrated roller shutter shopfront installation',
+    src: '/assets/service-aluminium-shopfront.webp',
+    alt: 'Aluminium shopfront with glass panels',
   },
   {
-    src: '/assets/roller-shutter-2.jpeg',
-    alt: 'Steel roller shutter installation on commercial premises',
+    src: '/assets/service-industrial-shutter.webp',
+    alt: 'Industrial roller shutter on commercial premises',
   },
   {
-    src: '/assets/shopfront-7.jpeg',
-    alt: 'Bespoke retail shopfront with powder-coated aluminium frame',
+    src: '/assets/service-glass-shopfront.webp',
+    alt: 'Toughened glass shopfront installation',
   },
   {
-    src: '/assets/security-grill-1.jpeg',
-    alt: 'Heavy-duty security door fitted to commercial premises',
+    src: '/assets/service-steel-door.jpeg',
+    alt: 'Heavy-duty steel security door fitted to commercial premises',
   },
   {
-    src: '/assets/shopfront-3.jpeg',
-    alt: 'Contemporary shopfront variant with slim-line aluminium profile',
-  },
-  {
-    src: '/assets/aluminium-shopfront-1.jpeg',
-    alt: 'Modern shopfront design with tinted safety glass panels',
-  },
-  {
-    src: '/assets/aluminium-shopfront-1.jpeg',
-    alt: 'Aluminium shopfront installation — full elevation view',
-  },
-  {
-    src: '/assets/roller-shutter-1.jpeg',
-    alt: 'Perforated roller shutter installed above shopfront entrance',
-  },
-  {
-    src: '/assets/security-grill-1.jpeg',
-    alt: 'Steel security grille protecting retail shopfront overnight',
-  },
-  {
-    src: '/assets/bifolding-door-1.jpeg',
-    alt: 'Aluminium bi-fold door system opening to outdoor seating area',
-  },
-  {
-    src: '/assets/automatic-door-1.jpeg',
+    src: '/assets/service-auto-sliding-doors.webp',
     alt: 'Automatic sliding door installation at commercial entrance',
   },
   {
-    src: '/assets/fire-door.jpeg',
-    alt: 'Fire-rated door installation meeting current UK regulations',
+    src: '/assets/service-bifold-door.webp',
+    alt: 'Bi-fold door system opening to outdoor seating area',
   },
   {
-    src: '/assets/fire-exit-door-1.jpeg',
-    alt: 'Fire exit door with push-bar hardware fitted to rear of premises',
+    src: '/assets/service-scissor-gate.webp',
+    alt: 'Scissor gate security installation',
   },
   {
-    src: '/assets/venue-signage-1.jpeg',
-    alt: 'Commercial venue signage and shopfront installation',
+    src: '/assets/preview-electric.webp',
+    alt: 'Electric roller shutter installation',
   },
   {
-    src: '/assets/site-survey-1.jpeg',
-    alt: 'Grewal Shopfront & Shutters engineer arriving for site survey',
+    src: '/assets/preview-fire.webp',
+    alt: 'Fire door installation meeting current UK regulations',
   },
   {
-    src: '/assets/bay-window-install-1.jpeg',
-    alt: 'Bay window aluminium frame installation by Grewal Shopfront & Shutters',
+    src: '/assets/warehouse-doors.webp',
+    alt: 'Warehouse door installation for industrial premises',
   },
   {
-    src: '/assets/shopfront-2.jpeg',
-    alt: 'Traditional aluminium shopfront with central entrance door',
+    src: '/assets/workers-installing.webp',
+    alt: 'Grewal engineers installing shopfront on site',
   },
   {
-    src: '/assets/shopfront-3.jpeg',
-    alt: 'Corner shopfront unit with frameless glass panels',
+    src: '/assets/service-curtain-walling.webp',
+    alt: 'Curtain walling system installation',
+  },
+  {
+    src: '/assets/service-bollard.webp',
+    alt: 'Security bollard installation',
+  },
+  {
+    src: '/assets/service-wicket-door.webp',
+    alt: 'Wicket door installation within roller shutter',
+  },
+  {
+    src: '/assets/service-highspeed-shutter.webp',
+    alt: 'High-speed roller shutter for commercial premises',
+  },
+  {
+    src: '/assets/service-repair.webp',
+    alt: 'Shutter repair and maintenance service',
+  },
+  {
+    src: '/assets/roler.webp',
+    alt: 'Roller shutter close-up detail',
   },
   {
     src: '/assets/shopfront-4.jpeg',

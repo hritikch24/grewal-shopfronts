@@ -57,7 +57,7 @@ export default function BestShopfrontCompanyPage() {
             '@context': 'https://schema.org', '@type': 'BlogPosting', headline: pageTitle, description: pageDesc,
             url: `https://www.grewalshopfrontandshutters.co.uk/blog/${slug}`, datePublished: '2025-04-25', dateModified: '2026-06-13',
             author: { '@type': 'Organization', name: 'Grewal Shopfront & Shutters', url: 'https://www.grewalshopfrontandshutters.co.uk' },
-            publisher: { '@type': 'Organization', name: 'Grewal Shopfront & Shutters', url: 'https://www.grewalshopfrontandshutters.co.uk', logo: { '@type': 'ImageObject', url: 'https://www.grewalshopfrontandshutters.co.uk/assets/shopfront-2.jpeg' } },
+            publisher: { '@type': 'Organization', name: 'Grewal Shopfront & Shutters', url: 'https://www.grewalshopfrontandshutters.co.uk', logo: { '@type': 'ImageObject', url: 'https://www.grewalshopfrontandshutters.co.uk/assets/grewal-logo.png' } },
             mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.grewalshopfrontandshutters.co.uk/blog/${slug}` },
           }),
         }}

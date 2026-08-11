@@ -62,7 +62,7 @@ export default function RollerShutterMaintenancePage() {
             datePublished: '2025-03-10',
             dateModified: '2026-06-13',
             author: { '@type': 'Organization', name: 'Grewal Shopfront & Shutters', url: 'https://www.grewalshopfrontandshutters.co.uk' },
-            publisher: { '@type': 'Organization', name: 'Grewal Shopfront & Shutters', url: 'https://www.grewalshopfrontandshutters.co.uk', logo: { '@type': 'ImageObject', url: 'https://www.grewalshopfrontandshutters.co.uk/assets/shopfront-2.jpeg' } },
+            publisher: { '@type': 'Organization', name: 'Grewal Shopfront & Shutters', url: 'https://www.grewalshopfrontandshutters.co.uk', logo: { '@type': 'ImageObject', url: 'https://www.grewalshopfrontandshutters.co.uk/assets/grewal-logo.png' } },
             mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.grewalshopfrontandshutters.co.uk/blog/${slug}` },
           }),
         }}

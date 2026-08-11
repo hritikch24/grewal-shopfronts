@@ -49,7 +49,7 @@ export const services: Service[] = [
     name: 'Aluminium Shopfronts',
     shortDescription:
       'Bespoke aluminium shopfront systems engineered for durability and kerb appeal. Thermally broken frames, toughened glazing, and powder-coat finishes to your specification.',
-    heroImage: 'aluminium-shopfront-1.jpeg',
+    heroImage: 'service-aluminium-shopfront.webp',
     primaryKeyword: 'aluminium shopfronts',
     metaTitle: 'Aluminium Shopfronts UK | Supply & Install',
     metaDescription:
@@ -203,7 +203,7 @@ Every installation begins with a measured survey of the existing opening or stru
     name: 'Roller Shutters',
     shortDescription:
       'Commercial roller shutters for retail, industrial, and warehouse premises. Manual, electric, and fire-rated options with LPS 1175 security-rated curtains available.',
-    heroImage: 'roller-shutter-1.jpeg',
+    heroImage: 'service-security-shutter.webp',
     primaryKeyword: 'roller shutters',
     metaTitle: 'Roller Shutters UK | Commercial Installation',
     metaDescription:
@@ -359,7 +359,7 @@ All shutters are installed with a weather seal along both side guides and at the
     name: 'Security Doors',
     shortDescription:
       'Steel and composite security doors for commercial premises, rated to STS 202 and LPS 1175 standards. Single and double leaf configurations with multi-point locking.',
-    heroImage: 'security-grill-1.jpeg',
+    heroImage: 'service-steel-door.jpeg',
     primaryKeyword: 'commercial security doors',
     metaTitle: 'Security Doors UK | Steel & Composite',
     metaDescription:
@@ -513,7 +513,7 @@ Security doors can be supplied with integrated access control provisions — ele
     name: 'Automatic Doors',
     shortDescription:
       'Sliding and swing automatic door systems for retail and commercial premises. BS EN 16005 compliant, with full sensor packages and service plans available.',
-    heroImage: 'automatic-door-1.jpeg',
+    heroImage: 'service-auto-sliding-doors.webp',
     primaryKeyword: 'automatic doors commercial',
     metaTitle: 'Automatic Doors UK | Commercial Installation',
     metaDescription:
@@ -667,7 +667,7 @@ Automatic doors can be integrated with access control readers for out-of-hours s
     name: 'Bi-Fold Doors',
     shortDescription:
       'Commercial aluminium bi-fold door systems for retail, hospitality, and leisure premises. Open up your frontage completely with thermally broken, weather-rated folding configurations.',
-    heroImage: 'bifolding-door-1.jpeg',
+    heroImage: 'service-bifold-door.webp',
     primaryKeyword: 'commercial bi-fold doors',
     metaTitle: 'Bi-Fold Doors UK | Commercial Aluminium',
     metaDescription:
@@ -821,7 +821,7 @@ For overnight security in high-footfall or high-risk locations, bi-fold systems 
     name: 'Fire Doors',
     shortDescription:
       'Certified fire door supply and installation for commercial premises. FD30, FD60, and FD90 rated assemblies with intumescent seals, tested hardware, and third-party certification.',
-    heroImage: 'fire-door.jpeg',
+    heroImage: 'preview-fire.webp',
     primaryKeyword: 'commercial fire doors',
     metaTitle: 'Fire Doors UK | FD30 FD60 FD90 Certified',
     metaDescription:
@@ -981,7 +981,7 @@ The Fire Safety (England) Regulations 2022 — introduced following the Grenfell
     name: 'Shopfront Repairs',
     shortDescription:
       'Fast, professional repairs to damaged shopfronts, roller shutters, and entrance doors. Boarding, glazing replacement, frame straightening, and hardware repair across the UK.',
-    heroImage: 'shopfront-2.jpeg',
+    heroImage: 'service-glass-shopfront.webp',
     primaryKeyword: 'shopfront repairs',
     metaTitle: 'Shopfront Repairs UK | Same-Day Service',
     metaDescription:
@@ -1133,7 +1133,7 @@ We work directly with insurance loss adjusters and brokers, and our documentatio
     name: 'Emergency Callout',
     shortDescription:
       '24/7 emergency response for broken shopfronts, failed shutters, and compromised entrances. We secure your premises, day or night, across the UK.',
-    heroImage: 'shopfront-4.jpeg',
+    heroImage: 'service-curtain-walling.webp',
     primaryKeyword: 'emergency shopfront repair',
     metaTitle: 'Emergency Shopfront Callout UK | 24/7',
     metaDescription:
@@ -1289,7 +1289,7 @@ These upgrades can often be included within the permanent repair scope, and wher
     name: 'Shutter Repair',
     shortDescription:
       'Fast, professional roller shutter repairs across the UK. Jammed shutters, broken springs, motor failure, damaged laths, and bent guide rails — diagnosed and repaired by experienced engineers.',
-    heroImage: 'roller-shutter-evening-1.jpeg',
+    heroImage: 'preview-electric.webp',
     primaryKeyword: 'roller shutter repair',
     metaTitle: 'Roller Shutter Repair | Fast UK-Wide Service',
     metaDescription:
@@ -1459,7 +1459,7 @@ Many shutter failures are preventable with regular maintenance. The DHF recommen
     name: 'Glass Replacement',
     shortDescription:
       'Commercial glass replacement for shopfronts and commercial premises. Toughened safety glass, laminated glass, double-glazed units, and security-rated glazing with fast turnaround.',
-    heroImage: 'aluminium-shopfront-1.jpeg',
+    heroImage: 'service-glass-shopfront.webp',
     primaryKeyword: 'commercial glass replacement',
     metaTitle: 'Glass Replacement UK | Shopfront Glazing',
     metaDescription:
@@ -1635,7 +1635,7 @@ Where glass replacement requires the removal and refitting of glazing beads, cap
     name: 'Aluminium Doors',
     shortDescription:
       'Commercial aluminium entrance doors for retail, office, and industrial premises. Thermally broken profiles, PAS 24 security options, DDA-compliant thresholds, and a full RAL colour range.',
-    heroImage: 'aluminium-shopfront-1.jpeg',
+    heroImage: 'service-aluminium-shopfront.webp',
     primaryKeyword: 'aluminium doors commercial',
     metaTitle: 'Aluminium Doors UK | Commercial Supply & Install',
     metaDescription:
@@ -1785,7 +1785,7 @@ All aluminium door sections are powder-coated to BS EN 12206-1 in any RAL Classi
     name: 'Aluminium Windows',
     shortDescription:
       'Commercial aluminium window systems for retail, office, and industrial premises. Fixed, top-hung, and side-hung configurations with thermally broken frames and toughened safety glazing.',
-    heroImage: 'aluminium-shopfront-1.jpeg',
+    heroImage: 'service-aluminium-shopfront.webp',
     primaryKeyword: 'aluminium windows commercial',
     metaTitle: 'Aluminium Windows UK | Commercial Installation',
     metaDescription:
@@ -1941,7 +1941,7 @@ All aluminium window sections are powder-coated to BS EN 12206-1 in any RAL Clas
     name: 'Curtain Walling',
     shortDescription:
       'Aluminium curtain wall systems for commercial facades. Stick-built and unitised solutions with structural glazing, thermally broken mullions, and full weather testing to BS EN 13830.',
-    heroImage: 'sigma-front-wide.jpeg',
+    heroImage: 'service-curtain-walling.webp',
     primaryKeyword: 'curtain walling UK',
     metaTitle: 'Curtain Walling UK | Aluminium Facade Systems',
     metaDescription:
@@ -2101,7 +2101,7 @@ Where a curtain wall passes across a fire compartment boundary — typically at 
     name: 'Glass Shopfronts',
     shortDescription:
       'Frameless and structural glass shopfront systems for maximum transparency and visual impact. Toughened safety glass, patch fittings, and minimal frame details for a contemporary retail entrance.',
-    heroImage: 'aluminium-shopfront-1.jpeg',
+    heroImage: 'service-glass-shopfront.webp',
     primaryKeyword: 'glass shopfronts',
     metaTitle: 'Glass Shopfronts UK | Frameless & Structural',
     metaDescription:

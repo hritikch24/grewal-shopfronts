@@ -120,8 +120,8 @@ export default function AboutPage() {
             </div>
             <div className="relative rounded-xl overflow-hidden shadow-xl aspect-[4/3]">
               <Image
-                src="/assets/shopfront-4.jpeg"
-                alt="Grewal Shopfront & Shutters — wide aluminium shopfront installation"
+                src="/assets/about-team.webp"
+                alt="The Grewal Shopfront & Shutters team"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
