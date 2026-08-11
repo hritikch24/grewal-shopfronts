@@ -1,0 +1,74 @@
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  // Allow images from common external sources used in the project
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "**.googleusercontent.com",
+      },
+    ],
+    // Serve modern formats where supported
+    formats: ["image/avif", "image/webp"],
+  },
+
+  // Strict mode catches common bugs during development
+  reactStrictMode: true,
+
+  // Compress responses
+  compress: true,
+
+  // Improve build output logging
+  logging: {
+    fetches: {
+      fullUrl: process.env.NODE_ENV === "development",
+    },
+  },
+
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'grewalshopfrontandshutters.co.uk' }],
+        destination: 'https://www.grewalshopfrontandshutters.co.uk/:path*',
+        permanent: true,
+      },
+    ];
+  },
+
+  // Security headers applied to every route
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "X-XSS-Protection", value: "1; mode=block" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=()",
+          },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
+        ],
+      },
+      {
+        source: '/assets/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+    ];
+  },
+};
+
+export default nextConfig;

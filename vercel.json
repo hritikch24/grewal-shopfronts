@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path(.*)",
+      "has": [{ "type": "host", "value": "grewalshopfrontandshutters.co.uk" }],
+      "destination": "https://www.grewalshopfrontandshutters.co.uk/:path",
+      "permanent": true
+    }
+  ]
+}
