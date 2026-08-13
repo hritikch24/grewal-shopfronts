@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title: 'Shopfront Guides & Articles — Grewal Shopfront & Shutters',
     description: 'Expert guides on shopfront maintenance, planning permission, fire doors, security ratings, and emergency boarding.',
     url: 'https://www.grewalshopfrontandshutters.co.uk/blog',
+    siteName: 'Grewal Shopfront & Shutters',
+    locale: 'en_GB',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Shopfront Guides & Articles — Grewal Shopfront & Shutters',
+    description: 'Expert guides on shopfront maintenance, planning permission, fire doors, security ratings, and emergency boarding.',
   },
 };
 
@@ -145,6 +153,7 @@ export default function BlogIndex() {
                     fill
                     className="object-cover"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading="lazy"
                   />
                   <span className="absolute top-3.5 left-3.5 bg-[#C9A84C] text-white text-xs font-semibold px-3.5 py-[5px] rounded-full">
                     {post.category}

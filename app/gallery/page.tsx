@@ -102,6 +102,7 @@ export default function GalleryPage() {
                   height={600}
                   className="w-full h-auto transition-transform duration-500 group-hover:scale-110"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  loading="lazy"
                 />
                 {/* Gold overlay on hover */}
                 <div className="absolute inset-0 bg-[rgba(201,168,76,0.85)] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">

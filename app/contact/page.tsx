@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     title: 'Contact Grewal Shopfront & Shutters — Free Survey & Quote',
     description: 'Get a free site survey and detailed quotation for your shopfront project. Call, WhatsApp, or fill in our form.',
     url: 'https://www.grewalshopfrontandshutters.co.uk/contact',
+    siteName: 'Grewal Shopfront & Shutters',
+    locale: 'en_GB',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Grewal Shopfront & Shutters — Free Survey & Quote',
+    description: 'Get a free site survey and quotation. Call, WhatsApp, or fill in our form.',
   },
 };
 

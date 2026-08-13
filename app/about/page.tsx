@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'About Grewal Shopfront & Shutters — Coventry Shopfront & Shutter Specialists',
     description: 'Companies House registered shopfront and shutter company with 20+ years of trade experience since 2004. Quality craftsmanship, nationwide coverage.',
     url: 'https://www.grewalshopfrontandshutters.co.uk/about',
+    siteName: 'Grewal Shopfront & Shutters',
+    locale: 'en_GB',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Grewal Shopfront & Shutters — 20+ Years Experience',
+    description: 'Coventry-based shopfront and shutter specialists with 20+ years of trade experience since 2004.',
   },
 };
 
@@ -58,6 +66,7 @@ export default function AboutPage() {
               width={480}
               height={360}
               className="rounded-[14px] w-full max-w-[480px]"
+              loading="lazy"
             />
           </div>
           <div>
@@ -181,6 +190,7 @@ export default function AboutPage() {
             width={600}
             height={450}
             className="rounded-[14px] border-[8px] border-white shadow-[0_30px_70px_rgba(0,0,0,0.12)] outline outline-2 outline-[#C9A84C] outline-offset-[6px] w-full"
+            loading="lazy"
           />
         </div>
       </section>
@@ -193,6 +203,7 @@ export default function AboutPage() {
           alt=""
           fill
           className="object-cover -z-10"
+          loading="lazy"
         />
         <div className="relative z-10 max-w-[1380px] mx-auto px-6">
           <h2 className="text-[clamp(28px,4vw,44px)] font-heading font-bold text-white mb-[18px]">

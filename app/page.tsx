@@ -9,6 +9,21 @@ export const metadata: Metadata = {
   description:
     'UK shopfront & shutter specialists. Aluminium shopfronts, security roller shutters, steel security doors, automatic sliding doors & 24/7 emergency callout. Free site surveys.',
   alternates: { canonical: 'https://www.grewalshopfrontandshutters.co.uk' },
+  openGraph: {
+    title: "UK's Premier Shopfront & Shutter Specialists | Grewal Shopfront & Shutters",
+    description: 'Aluminium shopfronts, security roller shutters, steel doors & 24/7 emergency callout. 20+ years experience. Free site surveys across the UK.',
+    url: 'https://www.grewalshopfrontandshutters.co.uk',
+    siteName: 'Grewal Shopfront & Shutters',
+    images: [{ url: 'https://www.grewalshopfrontandshutters.co.uk/assets/grewal-logo.png', width: 1170, height: 1166, alt: 'Grewal Shopfront & Shutters' }],
+    locale: 'en_GB',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "UK's Premier Shopfront & Shutter Specialists | Grewal Shopfront & Shutters",
+    description: 'Aluminium shopfronts, security roller shutters, steel doors & 24/7 emergency callout. Free site surveys.',
+    images: ['https://www.grewalshopfrontandshutters.co.uk/assets/grewal-logo.png'],
+  },
 };
 
 /* ── Data ─────────────────────────────────────────────────────────────── */
@@ -209,6 +224,7 @@ export default function HomePage() {
                 width={400}
                 height={400}
                 className="max-w-full h-auto"
+                loading="lazy"
               />
             </div>
             {/* Right: Text + icon boxes */}
@@ -279,7 +295,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s) => (
               <Link key={s.href} href={s.href} className="service-card group">
-                <div className="service-card__bg" style={{ backgroundImage: `url('${s.image}')` }} />
+                <Image src={s.image} alt={s.title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" loading="lazy" />
                 <div className="service-card__overlay" />
                 <div className="service-card__content">
                   <h3 className="font-heading font-bold text-white text-xl mb-1">{s.title}</h3>
@@ -357,6 +373,7 @@ export default function HomePage() {
                   height={420}
                   className="object-cover rounded-xl"
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -400,7 +417,7 @@ export default function HomePage() {
             {featuredProducts.map((p) => (
               <div key={p.title} className="flex-shrink-0 w-72 snap-start bg-white rounded-lg border border-[#E5DDD0] overflow-hidden hover:shadow-lg hover:border-[#C9A84C] transition-all duration-300">
                 <div className="relative h-48">
-                  <Image src={p.image} alt={p.title} fill className="object-cover" sizes="288px" />
+                  <Image src={p.image} alt={p.title} fill className="object-cover" sizes="288px" loading="lazy" />
                 </div>
                 <div className="p-5">
                   <h4 className="font-heading font-bold text-[#1A1A1A] text-base mb-1">{p.title}</h4>
@@ -483,6 +500,7 @@ export default function HomePage() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                   sizes="(max-width: 768px) 50vw, 33vw"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-[#C9A84C]/0 group-hover:bg-[#C9A84C]/40 transition-colors duration-300 flex items-center justify-center">
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
@@ -501,7 +519,7 @@ export default function HomePage() {
       ══════════════════════════════════════════════════════════════════ */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/assets/cta-banner-bg.webp" alt="" fill className="object-cover" sizes="100vw" />
+          <Image src="/assets/cta-banner-bg.webp" alt="" fill className="object-cover" sizes="100vw" loading="lazy" />
           <div className="absolute inset-0 bg-black/70" />
         </div>
         <div className="relative z-10 max-w-3xl mx-auto text-center">
@@ -574,6 +592,7 @@ export default function HomePage() {
                   height={420}
                   className="object-cover w-full rounded-xl"
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
                 />
                 {/* Pin markers */}
                 <span className="absolute top-[20%] left-[40%] text-[#C9A84C] drop-shadow-lg">
@@ -648,7 +667,7 @@ export default function HomePage() {
             {blogPosts.map((post, i) => (
               <div key={i} className="bg-white rounded-lg overflow-hidden border border-[#E5DDD0] hover:border-[#C9A84C] hover:shadow-lg transition-all duration-300">
                 <div className="relative h-48">
-                  <Image src={`/assets/${post.img}`} alt={post.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+                  <Image src={`/assets/${post.img}`} alt={post.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" loading="lazy" />
                   <span className="absolute top-3 left-3 bg-[#C9A84C] text-white text-xs font-bold px-3 py-1 rounded">{post.tag}</span>
                 </div>
                 <div className="p-5">

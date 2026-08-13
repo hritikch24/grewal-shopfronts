@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Commercial Shopfront & Security Services — Grewal Shopfront & Shutters',
     description: 'Aluminium shopfronts, roller shutters, security doors, automatic doors, bi-fold doors, fire doors, repairs and 24/7 emergency callout.',
     url: 'https://www.grewalshopfrontandshutters.co.uk/services',
+    siteName: 'Grewal Shopfront & Shutters',
+    locale: 'en_GB',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Commercial Shopfront & Security Services — Grewal Shopfront & Shutters',
+    description: 'Aluminium shopfronts, roller shutters, security doors, automatic doors, fire doors, repairs and 24/7 emergency callout.',
   },
 };
 
@@ -75,7 +83,7 @@ export default function ServicesPage() {
             {services.map((service) => (
               <Link key={service.slug} href={`/services/${service.slug}`} className="group card-surface overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="relative h-48 overflow-hidden">
-                  <Image src={`/assets/${service.image}`} alt={service.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />
+                  <Image src={`/assets/${service.image}`} alt={service.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" loading="lazy" />
                 </div>
                 <div className="p-5">
                   <h2 className="font-heading font-bold text-white text-lg group-hover:text-gold transition-colors mb-2">{service.name}</h2>
