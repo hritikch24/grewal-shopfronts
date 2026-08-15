@@ -5,13 +5,13 @@ import ContactForm from '@/components/ContactForm';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: "UK's Premier Shopfront & Shutter Specialists | Grewal Shopfront & Shutters",
+  title: "Affordable Shopfront Installation & Shutters UK | Grewal Shopfront & Shutters",
   description:
-    'UK shopfront & shutter specialists. Aluminium shopfronts, security roller shutters, steel security doors, automatic sliding doors & 24/7 emergency callout. Free site surveys.',
+    'Affordable shopfront installation across the UK. Aluminium shopfronts, roller shutters, security doors, automatic doors & 24/7 emergency repairs. Competitive prices, free site surveys & no-obligation quotes. Call today.',
   alternates: { canonical: 'https://www.grewalshopfrontandshutters.co.uk' },
   openGraph: {
-    title: "UK's Premier Shopfront & Shutter Specialists | Grewal Shopfront & Shutters",
-    description: 'Aluminium shopfronts, security roller shutters, steel doors & 24/7 emergency callout. 20+ years experience. Free site surveys across the UK.',
+    title: "Affordable Shopfront Installation & Shutters UK | Grewal Shopfront & Shutters",
+    description: 'Affordable aluminium shopfronts, roller shutters, security doors & 24/7 emergency callout. Competitive prices, free site surveys across the UK.',
     url: 'https://www.grewalshopfrontandshutters.co.uk',
     siteName: 'Grewal Shopfront & Shutters',
     images: [{ url: 'https://www.grewalshopfrontandshutters.co.uk/assets/grewal-logo.png', width: 1170, height: 1166, alt: 'Grewal Shopfront & Shutters' }],
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "UK's Premier Shopfront & Shutter Specialists | Grewal Shopfront & Shutters",
-    description: 'Aluminium shopfronts, security roller shutters, steel doors & 24/7 emergency callout. Free site surveys.',
+    title: "Affordable Shopfront Installation & Shutters UK | Grewal Shopfront & Shutters",
+    description: 'Affordable aluminium shopfronts, roller shutters, security doors & 24/7 emergency callout. Competitive prices, free site surveys across the UK.',
     images: ['https://www.grewalshopfrontandshutters.co.uk/assets/grewal-logo.png'],
   },
 };
