@@ -11,6 +11,7 @@ import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import Analytics from '@/components/Analytics';
 import CallTracker from '@/components/CallTracker';
 import SiteChrome from '@/components/SiteChrome';
+import ExitIntentPopup from '@/components/ExitIntentPopup';
 import { Suspense } from 'react';
 
 const outfit = Outfit({
@@ -221,6 +222,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <MobileStickyBar />
           <StickyDesktopCTA />
           <FloatingWhatsApp />
+          <ExitIntentPopup />
         </SiteChrome>
         <Suspense fallback={null}>
           <Analytics />
