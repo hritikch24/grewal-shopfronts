@@ -10,39 +10,35 @@ const serviceCategories = [
   {
     title: 'Roller Shutters',
     items: [
-      { label: 'Security Roller Shutters', href: '/services/security-roller-shutters' },
-      { label: 'Aluminium Roller Shutters', href: '/services/aluminium-roller-shutters' },
-      { label: 'Steel Roller Shutters', href: '/services/steel-roller-shutters' },
-      { label: 'Industrial Roller Shutters', href: '/services/industrial-roller-shutters' },
-      { label: 'Electric Roller Shutters', href: '/services/electric-roller-shutters' },
+      { label: 'Roller Shutters', href: '/services/roller-shutters' },
+      { label: 'Shutter Repair', href: '/services/shutter-repair' },
+      { label: 'Emergency Callout', href: '/services/emergency-callout' },
     ],
   },
   {
     title: 'Shopfronts',
     items: [
       { label: 'Aluminium Shopfronts', href: '/services/aluminium-shopfronts' },
-      { label: 'Automatic Shopfronts', href: '/services/automatic-shopfronts' },
-      { label: 'Toughened Glass Shopfronts', href: '/services/toughened-glass-shopfronts' },
+      { label: 'Glass Shopfronts', href: '/services/glass-shopfronts' },
+      { label: 'Shopfront Repairs', href: '/services/shopfront-repairs' },
     ],
   },
   {
     title: 'Doors',
     items: [
-      { label: 'Automatic Sliding Doors', href: '/services/automatic-sliding-doors' },
-      { label: 'Bi-Folding Doors', href: '/services/bi-folding-doors' },
+      { label: 'Automatic Doors', href: '/services/automatic-doors' },
+      { label: 'Security Doors', href: '/services/security-doors' },
+      { label: 'Bi-Fold Doors', href: '/services/bi-fold-doors' },
       { label: 'Fire Doors', href: '/services/fire-doors' },
-      { label: 'Steel Security Doors', href: '/services/steel-security-doors' },
-      { label: 'Roller Shutter Doors', href: '/services/roller-shutter-doors' },
-      { label: 'Glass Doors', href: '/services/glass-doors' },
+      { label: 'Aluminium Doors', href: '/services/aluminium-doors' },
     ],
   },
   {
-    title: 'Other Products',
+    title: 'Glazing & Windows',
     items: [
-      { label: 'Scissor Gates', href: '/services/scissor-gates' },
-      { label: 'PVC Strip Curtains', href: '/services/pvc-strip-curtains' },
-      { label: 'Wicket Doors', href: '/services/wicket-doors' },
-      { label: 'PA Doors', href: '/services/pa-doors' },
+      { label: 'Aluminium Windows', href: '/services/aluminium-windows' },
+      { label: 'Curtain Walling', href: '/services/curtain-walling' },
+      { label: 'Glass Replacement', href: '/services/glass-replacement' },
     ],
   },
 ];
@@ -404,7 +400,7 @@ export default function Header() {
 
               <li>
                 <Link
-                  href="/services/repair-maintenance"
+                  href="/services/shopfront-repairs"
                   className="flex items-center gap-[5px] px-[13px] py-4 font-semibold text-[13.5px] tracking-[0.2px] text-text-primary rounded-lg transition-colors hover:bg-[rgba(201,168,76,0.08)] hover:text-[#7A5E1C] whitespace-nowrap relative group"
                 >
                   Repair
@@ -558,7 +554,7 @@ export default function Header() {
 
           <li>
             <Link
-              href="/services/repair-maintenance"
+              href="/services/shopfront-repairs"
               className="block py-[14px] font-semibold border-b border-border"
               onClick={closeMobile}
             >

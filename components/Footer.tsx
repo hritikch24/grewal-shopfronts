@@ -12,18 +12,18 @@ const quickLinks = [
   { label: 'Blog', href: '/blog' },
   { label: 'Get a Quote', href: '/contact' },
   { label: 'Contact Us', href: '/contact' },
-  { label: 'Repair & Maintenance', href: '/services/repair-maintenance' },
+  { label: 'Repair & Maintenance', href: '/services/shopfront-repairs' },
 ];
 
 const footerServices = [
-  { label: 'Security Roller Shutters', href: '/services/security-roller-shutters' },
+  { label: 'Roller Shutters', href: '/services/roller-shutters' },
   { label: 'Aluminium Shopfronts', href: '/services/aluminium-shopfronts' },
-  { label: 'Toughened Glass Shopfronts', href: '/services/toughened-glass-shopfronts' },
-  { label: 'Industrial Roller Shutters', href: '/services/industrial-roller-shutters' },
-  { label: 'Electric Roller Shutters', href: '/services/electric-roller-shutters' },
-  { label: 'Automatic Sliding Doors', href: '/services/automatic-sliding-doors' },
-  { label: 'Scissor Gates', href: '/services/scissor-gates' },
-  { label: 'PVC Strip Curtains', href: '/services/pvc-strip-curtains' },
+  { label: 'Glass Shopfronts', href: '/services/glass-shopfronts' },
+  { label: 'Security Doors', href: '/services/security-doors' },
+  { label: 'Automatic Doors', href: '/services/automatic-doors' },
+  { label: 'Shutter Repair', href: '/services/shutter-repair' },
+  { label: 'Emergency Callout', href: '/services/emergency-callout' },
+  { label: 'Curtain Walling', href: '/services/curtain-walling' },
 ];
 
 /* ── Icons ────────────────────────────────────────────────────────────── */

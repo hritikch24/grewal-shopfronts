@@ -29,21 +29,21 @@ export const metadata: Metadata = {
 /* ── Data ─────────────────────────────────────────────────────────────── */
 
 const services = [
-  { title: 'Security Roller Shutters', image: '/assets/service-security-shutter.webp', href: '/services/security-roller-shutters', desc: 'Robust protection for retail and commercial units.' },
+  { title: 'Roller Shutters', image: '/assets/service-security-shutter.webp', href: '/services/roller-shutters', desc: 'Robust protection for retail and commercial units.' },
   { title: 'Aluminium Shopfronts', image: '/assets/service-aluminium-shopfront.webp', href: '/services/aluminium-shopfronts', desc: 'Sleek, modern storefronts built to impress.' },
-  { title: 'Steel Security Doors', image: '/assets/service-steel-door.jpeg', href: '/services/steel-security-doors', desc: 'Maximum resistance against forced entry.' },
-  { title: 'Industrial Shutters', image: '/assets/service-industrial-shutter.webp', href: '/services/industrial-roller-shutters', desc: 'Heavy-duty doors for warehouses and factories.' },
-  { title: 'Automatic Sliding Doors', image: '/assets/service-auto-sliding-doors.webp', href: '/services/automatic-sliding-doors', desc: 'Smooth automated access for busy premises.' },
-  { title: 'Toughened Glass Shopfronts', image: '/assets/service-glass-shopfront.webp', href: '/services/toughened-glass-shopfronts', desc: 'Frameless glass that lets your brand shine.' },
+  { title: 'Security Doors', image: '/assets/service-steel-door.jpeg', href: '/services/security-doors', desc: 'Maximum resistance against forced entry.' },
+  { title: 'Shutter Repair', image: '/assets/service-industrial-shutter.webp', href: '/services/shutter-repair', desc: 'Fast repairs for jammed, damaged or failed shutters.' },
+  { title: 'Automatic Doors', image: '/assets/service-auto-sliding-doors.webp', href: '/services/automatic-doors', desc: 'Smooth automated access for busy premises.' },
+  { title: 'Glass Shopfronts', image: '/assets/service-glass-shopfront.webp', href: '/services/glass-shopfronts', desc: 'Frameless glass that lets your brand shine.' },
 ];
 
 const featuredProducts = [
-  { title: 'Security Roller Shutters', image: '/assets/service-security-shutter.webp', href: '/services/security-roller-shutters', desc: 'Heavy-duty roller shutters for maximum security.' },
+  { title: 'Roller Shutters', image: '/assets/service-security-shutter.webp', href: '/services/roller-shutters', desc: 'Heavy-duty roller shutters for maximum security.' },
   { title: 'Aluminium Shopfronts', image: '/assets/service-aluminium-shopfront.webp', href: '/services/aluminium-shopfronts', desc: 'Modern aluminium storefronts built to last.' },
-  { title: 'Electric Roller Shutters', image: '/assets/preview-electric.webp', href: '/services/electric-roller-shutters', desc: 'Convenient motorised operation for daily use.' },
-  { title: 'Automatic Sliding Doors', image: '/assets/service-auto-sliding-doors.webp', href: '/services/automatic-sliding-doors', desc: 'Smooth automated access for busy premises.' },
-  { title: 'Industrial Roller Shutters', image: '/assets/service-industrial-shutter.webp', href: '/services/industrial-roller-shutters', desc: 'Heavy-duty doors for warehouses and factories.' },
-  { title: 'Toughened Glass Shopfronts', image: '/assets/service-glass-shopfront.webp', href: '/services/toughened-glass-shopfronts', desc: 'Frameless glass that lets your brand shine.' },
+  { title: 'Emergency Callout', image: '/assets/preview-electric.webp', href: '/services/emergency-callout', desc: '24-hour response for break-ins and shutter failures.' },
+  { title: 'Automatic Doors', image: '/assets/service-auto-sliding-doors.webp', href: '/services/automatic-doors', desc: 'Smooth automated access for busy premises.' },
+  { title: 'Shopfront Repairs', image: '/assets/service-industrial-shutter.webp', href: '/services/shopfront-repairs', desc: 'Glass, frame and door repairs for commercial units.' },
+  { title: 'Glass Shopfronts', image: '/assets/service-glass-shopfront.webp', href: '/services/glass-shopfronts', desc: 'Frameless glass that lets your brand shine.' },
 ];
 
 const testimonials = [

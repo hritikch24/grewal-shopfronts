@@ -102,9 +102,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: siteUrl,
-    languages: {
-      'en-GB': siteUrl,
-    },
   },
   metadataBase: new URL(siteUrl),
 };
@@ -132,7 +129,6 @@ export default function RootLayout({
         <meta name="geo.placename" content="Exhall, Coventry, West Midlands, United Kingdom" />
         <meta name="geo.position" content="52.4651;-1.4823" />
         <meta name="ICBM" content="52.4651, -1.4823" />
-        <link rel="alternate" hrefLang="en-gb" href="https://www.grewalshopfrontandshutters.co.uk" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/icon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/icon.png" />

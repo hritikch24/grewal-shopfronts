@@ -67,6 +67,31 @@ const nextConfig: NextConfig = {
       { source: '/service-detail.php', has: [{ type: 'query', key: 'slug', value: 'aluminium-shopfront' }], destination: '/services/aluminium-shopfronts', permanent: true },
       // Fallback for any other service-detail.php
       { source: '/service-detail.php', destination: '/services', permanent: true },
+
+      // Legacy service slugs that were still linked from the header/footer.
+      // Each also covers its /:city variant so crawled combo URLs resolve too.
+      ...([
+        ['security-roller-shutters', 'roller-shutters'],
+        ['aluminium-roller-shutters', 'roller-shutters'],
+        ['steel-roller-shutters', 'roller-shutters'],
+        ['industrial-roller-shutters', 'roller-shutters'],
+        ['electric-roller-shutters', 'roller-shutters'],
+        ['roller-shutter-doors', 'roller-shutters'],
+        ['automatic-shopfronts', 'automatic-doors'],
+        ['automatic-sliding-doors', 'automatic-doors'],
+        ['toughened-glass-shopfronts', 'glass-shopfronts'],
+        ['glass-doors', 'glass-shopfronts'],
+        ['bi-folding-doors', 'bi-fold-doors'],
+        ['steel-security-doors', 'security-doors'],
+        ['scissor-gates', 'security-doors'],
+        ['wicket-doors', 'security-doors'],
+        ['pa-doors', 'security-doors'],
+        ['pvc-strip-curtains', 'curtain-walling'],
+        ['repair-maintenance', 'shopfront-repairs'],
+      ] as const).flatMap(([from, to]) => [
+        { source: `/services/${from}`, destination: `/services/${to}`, permanent: true },
+        { source: `/services/${from}/:city`, destination: `/services/${to}/:city`, permanent: true },
+      ]),
     ];
   },
 
