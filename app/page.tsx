@@ -52,10 +52,12 @@ const testimonials = [
   { name: 'Mohammed Iqbal', location: 'Leeds', text: 'From quote to install, everything was transparent and on schedule. Highly recommend Grewal for any commercial security work.' },
 ];
 
+// Each entry is slugified into /areas/<slug>, so every name here must match a
+// city in data/cities.ts — region names like "Yorkshire" have no page and 404.
 const areas = [
   'London', 'Birmingham', 'Manchester', 'Leeds', 'Sheffield', 'Liverpool',
   'Glasgow', 'Bristol', 'Nottingham', 'Leicester', 'Coventry', 'Wolverhampton',
-  'Devonshire', 'Cornwall', 'Yorkshire', 'North Wales', 'South Wales', 'Mid Wales',
+  'Plymouth', 'Exeter', 'Bradford', 'York', 'Cardiff', 'Swansea',
 ];
 
 const portfolio = [
