@@ -400,6 +400,16 @@ export default function Header() {
 
               <li>
                 <Link
+                  href="/instant-quote"
+                  className="flex items-center gap-[5px] px-[13px] py-4 font-semibold text-[13.5px] tracking-[0.2px] text-text-primary rounded-lg transition-colors hover:bg-[rgba(201,168,76,0.08)] hover:text-[#7A5E1C] whitespace-nowrap relative group"
+                >
+                  Instant Price
+                  <span className="absolute left-5 right-5 bottom-[9px] h-[2px] rounded-[2px] bg-gradient-to-r from-gold-light to-gold-dark scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
+                </Link>
+              </li>
+
+              <li>
+                <Link
                   href="/services/shopfront-repairs"
                   className="flex items-center gap-[5px] px-[13px] py-4 font-semibold text-[13.5px] tracking-[0.2px] text-text-primary rounded-lg transition-colors hover:bg-[rgba(201,168,76,0.08)] hover:text-[#7A5E1C] whitespace-nowrap relative group"
                 >
@@ -551,6 +561,16 @@ export default function Header() {
               </Link>
             </li>
           ))}
+
+          <li>
+            <Link
+              href="/instant-quote"
+              className="block py-[14px] font-semibold border-b border-border"
+              onClick={closeMobile}
+            >
+              Instant Price
+            </Link>
+          </li>
 
           <li>
             <Link

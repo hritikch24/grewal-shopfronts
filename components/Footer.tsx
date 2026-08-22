@@ -10,6 +10,7 @@ const quickLinks = [
   { label: 'About Us', href: '/about' },
   { label: 'Portfolio', href: '/gallery' },
   { label: 'Blog', href: '/blog' },
+  { label: 'Instant Estimate', href: '/instant-quote' },
   { label: 'Get a Quote', href: '/contact' },
   { label: 'Contact Us', href: '/contact' },
   { label: 'Repair & Maintenance', href: '/services/shopfront-repairs' },
