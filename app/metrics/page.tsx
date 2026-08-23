@@ -247,10 +247,10 @@ function Funnel({ funnel }: { funnel: NonNullable<NonNullable<MetricsData['dropO
             {prev !== null && (
               <div className="flex items-center gap-2 py-1 pl-1">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  strokeWidth="2.5" className={severe ? 'text-red-400' : 'text-grey-500'} aria-hidden="true">
+                  strokeWidth="2.5" className={severe ? 'text-red-400' : 'text-zinc-500'} aria-hidden="true">
                   <path d="M12 5v14M19 12l-7 7-7-7" />
                 </svg>
-                <span className={`text-xs font-semibold ${severe ? 'text-red-400' : 'text-grey-500'}`}>
+                <span className={`text-xs font-semibold ${severe ? 'text-red-400' : 'text-zinc-500'}`}>
                   {lost.toLocaleString()} lost here ({dropPct.toFixed(0)}%)
                 </span>
               </div>
@@ -264,13 +264,13 @@ function Funnel({ funnel }: { funnel: NonNullable<NonNullable<MetricsData['dropO
               <div className="relative flex items-center justify-between gap-3 px-4 py-3">
                 <div className="min-w-0">
                   <p className="truncate text-sm font-semibold text-white">{s.label}</p>
-                  <p className="truncate text-xs text-grey-500">{s.note}</p>
+                  <p className="truncate text-xs text-zinc-500">{s.note}</p>
                 </div>
                 <div className="flex-shrink-0 text-right">
                   <p className="font-heading text-lg font-bold text-white tabular-nums">
                     {s.value.toLocaleString()}
                   </p>
-                  <p className="text-[11px] text-grey-500 tabular-nums">{ofTotal.toFixed(1)}% of all</p>
+                  <p className="text-[11px] text-zinc-500 tabular-nums">{ofTotal.toFixed(1)}% of all</p>
                 </div>
               </div>
             </div>
@@ -289,24 +289,24 @@ function Heatmap({ cells, accent = 'gold' }: { cells: HeatCell[]; accent?: 'gold
     grid.set(`${c.dow}-${c.hour}`, c.count);
     if (c.count > max) max = c.count;
   }
-  if (max === 0) return <p className="text-grey-500 text-sm">No data for this period yet</p>;
+  if (max === 0) return <p className="text-zinc-500 text-sm">No data for this period yet</p>;
 
   const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  const rgb = accent === 'emerald' ? '52, 211, 153' : '201, 168, 76';
+  const base = accent === 'emerald' ? '#34d399' : 'var(--color-gold)';
 
   return (
     <div className="overflow-x-auto">
       <div className="min-w-[560px]">
         <div className="mb-1 flex gap-[2px] pl-9">
           {Array.from({ length: 24 }, (_, h) => (
-            <div key={h} className="flex-1 text-center text-[9px] text-grey-500 tabular-nums">
+            <div key={h} className="flex-1 text-center text-[9px] text-zinc-500 tabular-nums">
               {h % 3 === 0 ? h : ''}
             </div>
           ))}
         </div>
         {days.map((day, d) => (
           <div key={day} className="mb-[2px] flex items-center gap-[2px]">
-            <div className="w-9 flex-shrink-0 text-[10px] text-grey-500">{day}</div>
+            <div className="w-9 flex-shrink-0 text-[10px] text-zinc-500">{day}</div>
             {Array.from({ length: 24 }, (_, h) => {
               const v = grid.get(`${d}-${h}`) ?? 0;
               const intensity = v === 0 ? 0 : 0.12 + (v / max) * 0.88;
@@ -314,17 +314,17 @@ function Heatmap({ cells, accent = 'gold' }: { cells: HeatCell[]; accent?: 'gold
                 <div
                   key={h}
                   className="h-6 flex-1 rounded-[2px] border border-white/[0.04]"
-                  style={{ background: v === 0 ? 'rgba(255,255,255,0.02)' : `rgba(${rgb}, ${intensity})` }}
+                  style={{ background: v === 0 ? 'rgba(255,255,255,0.02)' : `color-mix(in srgb, ${base} ${(intensity * 100).toFixed(0)}%, transparent)` }}
                   title={`${day} ${String(h).padStart(2, '0')}:00 — ${v}`}
                 />
               );
             })}
           </div>
         ))}
-        <div className="mt-2 flex items-center justify-end gap-2 text-[10px] text-grey-500">
+        <div className="mt-2 flex items-center justify-end gap-2 text-[10px] text-zinc-500">
           <span>0</span>
           {[0.15, 0.35, 0.6, 0.85, 1].map((f) => (
-            <div key={f} className="h-3 w-5 rounded-[2px]" style={{ background: `rgba(${rgb}, ${f})` }} />
+            <div key={f} className="h-3 w-5 rounded-[2px]" style={{ background: `color-mix(in srgb, ${base} ${f * 100}%, transparent)` }} />
           ))}
           <span className="tabular-nums">{max}</span>
         </div>
@@ -335,16 +335,16 @@ function Heatmap({ cells, accent = 'gold' }: { cells: HeatCell[]; accent?: 'gold
 
 /** Pages ranked by how many sessions ended there. */
 function LeakTable({ rows }: { rows: { path: string; views: number; exits: number }[] }) {
-  if (!rows.length) return <p className="text-grey-500 text-sm">Not enough data yet</p>;
+  if (!rows.length) return <p className="text-zinc-500 text-sm">Not enough data yet</p>;
   return (
     <div className="overflow-x-auto">
       <table className="w-full text-left">
         <thead>
           <tr className="border-b border-white/[0.07]">
-            <th className="pb-2 text-[11px] font-semibold uppercase tracking-wider text-grey-500">Page</th>
-            <th className="pb-2 text-right text-[11px] font-semibold uppercase tracking-wider text-grey-500">Views</th>
-            <th className="pb-2 text-right text-[11px] font-semibold uppercase tracking-wider text-grey-500">Left here</th>
-            <th className="pb-2 text-right text-[11px] font-semibold uppercase tracking-wider text-grey-500">Exit rate</th>
+            <th className="pb-2 text-[11px] font-semibold uppercase tracking-wider text-zinc-500">Page</th>
+            <th className="pb-2 text-right text-[11px] font-semibold uppercase tracking-wider text-zinc-500">Views</th>
+            <th className="pb-2 text-right text-[11px] font-semibold uppercase tracking-wider text-zinc-500">Left here</th>
+            <th className="pb-2 text-right text-[11px] font-semibold uppercase tracking-wider text-zinc-500">Exit rate</th>
           </tr>
         </thead>
         <tbody>
@@ -353,12 +353,12 @@ function LeakTable({ rows }: { rows: { path: string; views: number; exits: numbe
             const bad = rate >= 70 && r.views >= 10;
             return (
               <tr key={r.path} className="border-b border-white/[0.04]">
-                <td className="py-2 pr-3 text-sm text-grey-300">
+                <td className="py-2 pr-3 text-sm text-zinc-300">
                   <span className="block max-w-[280px] truncate" title={r.path}>{r.path}</span>
                 </td>
-                <td className="py-2 text-right text-sm text-grey-400 tabular-nums">{r.views.toLocaleString()}</td>
+                <td className="py-2 text-right text-sm text-zinc-400 tabular-nums">{r.views.toLocaleString()}</td>
                 <td className="py-2 text-right text-sm text-white tabular-nums">{r.exits.toLocaleString()}</td>
-                <td className={`py-2 text-right text-sm font-semibold tabular-nums ${bad ? 'text-red-400' : 'text-grey-400'}`}>
+                <td className={`py-2 text-right text-sm font-semibold tabular-nums ${bad ? 'text-red-400' : 'text-zinc-400'}`}>
                   {rate.toFixed(0)}%
                 </td>
               </tr>
@@ -630,7 +630,7 @@ function LeadRow({ lead, onStatusChange, expanded, onToggle, apiKey }: {
                   </div>
                   <a
                     href={`mailto:${lead.email}?subject=${encodeURIComponent(aiReply.subject)}&body=${encodeURIComponent(aiReply.body)}`}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gold text-white text-xs font-semibold hover:bg-gold-light transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gold text-navy text-xs font-semibold hover:bg-gold-light transition-colors"
                     onClick={(e) => e.stopPropagation()}
                   >
                     {icons.mail} Open in Email
@@ -768,7 +768,7 @@ export default function MetricsPage() {
           <button
             type="submit"
             disabled={!apiKey.trim() || loading}
-            className="w-full bg-gold hover:bg-gold-light text-white font-bold py-3.5 rounded-xl transition-all disabled:opacity-40 text-sm"
+            className="w-full bg-gold hover:bg-gold-light text-navy font-bold py-3.5 rounded-xl transition-all disabled:opacity-40 text-sm"
           >
             {loading ? (
               <span className="flex items-center justify-center gap-2">
@@ -827,7 +827,7 @@ export default function MetricsPage() {
                   onClick={() => setActiveTab(tab)}
                   className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                     activeTab === tab
-                      ? 'bg-gold text-white shadow-lg shadow-gold/20'
+                      ? 'bg-gold text-navy shadow-lg shadow-gold/20'
                       : 'text-zinc-500 hover:text-white'
                   }`}
                 >

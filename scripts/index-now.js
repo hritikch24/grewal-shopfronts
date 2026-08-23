@@ -5,7 +5,7 @@
  */
 
 const KEY = 'a1b2c3d4e5f6a7b8';
-const HOST = 'www.urbanshopfronts.co.uk';
+const HOST = 'www.grewalshopfrontandshutters.co.uk';
 
 const urls = [
   '/',
