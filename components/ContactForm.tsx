@@ -9,11 +9,14 @@ const cities = [
   'Glasgow', 'Wolverhampton', 'Other',
 ];
 
+// Mirrors data/services.ts — a visitor must not be able to enquire
+// about something we do not offer.
 const serviceOptions = [
-  'Security Roller Shutters', 'Aluminium Shopfronts', 'Steel Security Doors',
-  'Industrial Roller Shutters', 'Automatic Sliding Doors', 'Toughened Glass Shopfronts',
-  'Electric Roller Shutters', 'Aluminium Roller Shutters', 'Fire Doors',
-  'Scissor Gates', 'PVC Strip Curtains', 'Repair & Maintenance', 'Other',
+  'Aluminium Shopfronts', 'Roller Shutters', 'Security Doors',
+  'Automatic Doors', 'Bi-Fold Doors', 'Fire Doors',
+  'Shopfront Repairs', 'Emergency Callout', 'Shutter Repair',
+  'Glass Replacement', 'Aluminium Doors', 'Aluminium Windows',
+  'Curtain Walling', 'Glass Shopfronts', 'Other',
 ];
 
 const hearAboutOptions = [
