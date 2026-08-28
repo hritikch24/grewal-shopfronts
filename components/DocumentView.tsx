@@ -180,7 +180,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
 
             {/* Line items — rounded table */}
             <div style={{ borderRadius: 10, overflow: 'hidden', border: `1px solid ${C.border}`, marginBottom: 8 }}>
-              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+              <table className="doc-table" style={{ width: '100%', borderCollapse: 'collapse' }}>
                 <thead>
                   <tr style={{ background: C.brand }}>
                     <th style={{ color: '#fff', padding: '11px 16px', textAlign: 'left', fontSize: 11, fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', width: 44 }}>#</th>
@@ -217,7 +217,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
             <div style={{ marginTop: 24, marginBottom: 32 }}>
               <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <div style={{ width: 300 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: `1px solid ${C.borderAlt}` }}>
+                  <div className="doc-keep" style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: `1px solid ${C.borderAlt}` }}>
                     <span style={{ fontSize: 13, color: C.textMuted }}>Subtotal</span>
                     <span style={{ fontSize: 13, fontWeight: 600 }}>{gbp(doc.subtotal)}</span>
                   </div>
@@ -248,7 +248,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
             </div>
 
             {/* Bank details */}
-            <div style={{ padding: '14px 20px', background: '#f0fdf4', border: `1px solid #bbf7d0`, borderRadius: 8, marginBottom: 24 }}>
+            <div className="doc-keep" style={{ padding: '14px 20px', background: '#f0fdf4', border: `1px solid #bbf7d0`, borderRadius: 8, marginBottom: 24 }}>
               <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '2px', color: C.brand, marginBottom: 8, textTransform: 'uppercase' }}>Payment Details</p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px 24px', fontSize: 13 }}>
                 <p><span style={{ fontWeight: 600, color: C.brand }}>Account:</span> {BANK.accountName}</p>
@@ -260,7 +260,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
 
             {/* Terms */}
             <div style={{ marginBottom: 28 }}>
-              <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '2px', color: C.brand, marginBottom: 8, textTransform: 'uppercase' }}>Terms &amp; Conditions</p>
+              <p className="doc-heading" style={{ fontSize: 11, fontWeight: 700, letterSpacing: '2px', color: C.brand, marginBottom: 8, textTransform: 'uppercase' }}>Terms &amp; Conditions</p>
               <div style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.9 }}>
                 {terms.map((t, i) => <p key={i} style={{ margin: '2px 0', paddingLeft: 16, position: 'relative' }}><span style={{ position: 'absolute', left: 0, color: C.accent, fontWeight: 700 }}>{i + 1}.</span>{t}</p>)}
               </div>
