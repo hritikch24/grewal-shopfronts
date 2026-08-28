@@ -74,8 +74,13 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
   const optionLetter = (i: number) => String.fromCharCode(65 + i);
   const optionTotal = (li: LineItem) => {
     const net = doc.subtotal + li.qty * li.unitPrice;
-    return { net, gross: net * (1 + doc.vatRate / 100) };
+    const tax = net * (doc.vatRate / 100);
+    return { net, tax, gross: net + tax };
   };
+  // With options there is no single VAT figure — each option carries its own,
+  // so the aggregate Subtotal/VAT rows are suppressed and VAT is shown against
+  // each option instead. The shared-items row only appears if there are any.
+  const hasSharedItems = baseItems.length > 0;
   const displayDate = doc.issueDate || doc.createdAt;
   const validityDays = doc.validUntil
     ? Math.max(1, Math.round((new Date(doc.validUntil).getTime() - new Date(displayDate).getTime()) / 86400000))
@@ -244,7 +249,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
                             )}
                           </td>
                           <td style={{ padding: '12px 14px', textAlign: 'right', whiteSpace: 'nowrap' }}>
-                            <p style={{ fontSize: 12, color: C.textMuted, margin: 0 }}>{gbp(t.net)}{vat ? ' + VAT' : ''}</p>
+                            <p style={{ fontSize: 12, color: C.textMuted, margin: 0 }}>{gbp(t.net)}{vat ? ` + ${gbp(t.tax)} VAT` : ''}</p>
                             <p style={{ fontSize: 17, fontWeight: 800, color: C.brand, margin: '2px 0 0' }}>{gbp(t.gross)}</p>
                           </td>
                         </tr>
@@ -266,11 +271,13 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
             <div style={{ marginTop: 24, marginBottom: 32 }}>
               <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <div style={{ width: 300 }}>
+                  {(!hasOptions || hasSharedItems) && (
                   <div className="doc-keep" style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: `1px solid ${C.borderAlt}` }}>
-                    <span style={{ fontSize: 13, color: C.textMuted }}>{hasOptions ? 'Shared items' : 'Subtotal'}</span>
+                    <span style={{ fontSize: 13, color: C.textMuted }}>{hasOptions ? 'Included in every option' : 'Subtotal'}</span>
                     <span style={{ fontSize: 13, fontWeight: 600 }}>{gbp(doc.subtotal)}</span>
                   </div>
-                  {vat && (
+                  )}
+                  {vat && !hasOptions && (
                     <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: `1px solid ${C.borderAlt}` }}>
                       <span style={{ fontSize: 13, color: C.textMuted }}>VAT ({doc.vatRate}%)</span>
                       <span style={{ fontSize: 13, fontWeight: 600 }}>{gbp(doc.vatAmount)}</span>
