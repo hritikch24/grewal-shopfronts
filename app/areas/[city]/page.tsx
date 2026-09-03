@@ -81,7 +81,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const siteUrl = 'https://www.grewalshopfrontandshutters.co.uk';
   const geo = cityGeo[citySlug] || { addressLocality: city.name, addressRegion: city.region, postalCode: '', latitude: 51.5074, longitude: -0.1278 };
 
-  const enhancedTitle = `Shopfront Installation ${city.name} | Affordable Prices | Grewal Shopfront & Shutters`;
+  // Two titles, not one. The page title omits the brand because the layout's
+  // title.template appends it; sharing a single string with openGraph below was
+  // what produced "… | Grewal Shopfront & Shutters | Grewal Shopfront &
+  // Shutters". The social title has to carry the brand itself, since the
+  // template never applies to it.
+  const enhancedTitle = `Shopfront Installation ${city.name} | Affordable Prices`;
+  const socialTitle = `${enhancedTitle} | Grewal Shopfront & Shutters`;
   const enhancedDescription = `Affordable shopfront installation & repairs in ${city.name}. Aluminium shopfronts, roller shutters, security doors & more. Free site surveys, competitive prices. Call 07597 630000.`;
 
   return {
@@ -89,7 +95,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: enhancedDescription,
     alternates: { canonical: `${siteUrl}/areas/${citySlug}` },
     openGraph: {
-      title: enhancedTitle,
+      title: socialTitle,
       description: enhancedDescription,
       url: `${siteUrl}/areas/${citySlug}`,
       type: 'website',
