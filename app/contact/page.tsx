@@ -107,7 +107,7 @@ export default function ContactPage() {
           {/* Contact Main: Dark Panel + Form */}
           <div className="grid lg:grid-cols-[1fr_1.1fr] gap-[50px] items-stretch">
             {/* Dark "Get in Touch" Panel */}
-            <div className="bg-[#111111] rounded-[18px] p-[44px_40px] text-white flex flex-col gap-7 relative overflow-hidden">
+            <div className="bg-[#111111] rounded-[18px] p-[44px_40px] text-charcoal flex flex-col gap-7 relative overflow-hidden">
               {/* Decorative glow */}
               <div className="absolute -top-[60px] -right-[60px] w-[220px] h-[220px] rounded-full bg-[radial-gradient(circle,rgba(201,168,76,0.14),transparent_70%)] pointer-events-none" />
 
@@ -115,7 +115,7 @@ export default function ContactPage() {
                 <span className="inline-block bg-[rgba(201,168,76,0.15)] text-[#F0D080] text-[13px] font-semibold tracking-wide px-[18px] py-[7px] rounded-full mb-[18px] uppercase">
                   Get In Touch
                 </span>
-                <h3 className="text-white font-heading font-bold text-[25px] mb-2.5">We&apos;re Here to Help</h3>
+                <h3 className="text-navy font-heading font-bold text-[25px] mb-2.5">We&apos;re Here to Help</h3>
                 <p className="text-white/60 text-[14.5px] leading-[1.7]">
                   Have a question or ready to start your project? Reach out directly or send us a message — our team typically responds within one working day.
                 </p>
@@ -135,7 +135,7 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <div>
-                      <strong className="block text-white text-[15px] font-bold">{item.label}</strong>
+                      <strong className="block text-navy text-[15px] font-bold">{item.label}</strong>
                       <span className="block text-white/50 text-[13px] mt-0.5">{item.sub}</span>
                     </div>
                   </li>

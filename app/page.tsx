@@ -138,7 +138,7 @@ export default function HomePage() {
               <span className="inline-block bg-white/10 backdrop-blur-sm text-white text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full border border-white/20 mb-6">
                 UK&apos;s Trusted Shopfront Specialists
               </span>
-              <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
+              <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy leading-[1.1] tracking-tight mb-6">
                 Aluminium Shopfronts, Roller Shutters &amp; Security Doors Across the UK
               </h1>
               <p className="hero-description text-gray-300 text-lg lg:text-xl leading-relaxed max-w-lg mb-8">
@@ -304,7 +304,7 @@ export default function HomePage() {
                 <Image src={s.image} alt={s.title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" loading="lazy" />
                 <div className="service-card__overlay" />
                 <div className="service-card__content">
-                  <h3 className="font-heading font-bold text-white text-xl mb-1">{s.title}</h3>
+                  <h3 className="font-heading font-bold text-navy text-xl mb-1">{s.title}</h3>
                   <p className="text-gray-300 text-sm mb-3">{s.desc}</p>
                   <span className="text-[#F0D080] text-sm font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                     View Service
@@ -325,7 +325,7 @@ export default function HomePage() {
           <span className="inline-block bg-white/10 backdrop-blur-sm text-white text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full border border-white/20 mb-6">
             No waiting
           </span>
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">
             Know roughly what it costs — before you call
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto mb-8">
@@ -553,7 +553,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-black/70" />
         </div>
         <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mb-4">
             Ready To Secure Your Premises?
           </h2>
           <p className="text-gray-300 text-lg mb-8">
@@ -698,7 +698,7 @@ export default function HomePage() {
               <div key={i} className="bg-white rounded-lg overflow-hidden border border-[#E5DDD0] hover:border-[#C9A84C] hover:shadow-lg transition-all duration-300">
                 <div className="relative h-48">
                   <Image src={`/assets/${post.img}`} alt={post.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" loading="lazy" />
-                  <span className="absolute top-3 left-3 bg-[#C9A84C] text-white text-xs font-bold px-3 py-1 rounded">{post.tag}</span>
+                  <span className="absolute top-3 left-3 bg-[#C9A84C] text-charcoal text-xs font-bold px-3 py-1 rounded">{post.tag}</span>
                 </div>
                 <div className="p-5">
                   <span className="text-[#888] text-xs">{post.date}</span>

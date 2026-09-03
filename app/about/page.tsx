@@ -196,7 +196,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Banner */}
-      <section className="relative text-center text-white" style={{ padding: '110px 0' }}>
+      <section className="relative text-center text-charcoal" style={{ padding: '110px 0' }}>
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.82)] to-[rgba(10,10,10,0.9)]" />
         <Image
           src="/assets/cta-banner-bg.webp"
@@ -224,7 +224,7 @@ export default function AboutPage() {
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-[15px] rounded-md font-semibold text-[15px] bg-[#C9A84C] text-white hover:bg-[#A8832A] hover:shadow-[0_20px_60px_rgba(201,168,76,0.25)] hover:scale-[1.03] transition-all"
+              className="inline-flex items-center gap-2 px-8 py-[15px] rounded-md font-semibold text-[15px] bg-[#C9A84C] text-charcoal hover:bg-[#A8832A] hover:shadow-[0_20px_60px_rgba(201,168,76,0.25)] hover:scale-[1.03] transition-all"
             >
               Get a Free Quote
             </Link>

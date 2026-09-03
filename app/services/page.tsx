@@ -86,7 +86,7 @@ export default function ServicesPage() {
                   <Image src={`/assets/${service.image}`} alt={service.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" loading="lazy" />
                 </div>
                 <div className="p-5">
-                  <h2 className="font-heading font-bold text-white text-lg group-hover:text-gold transition-colors mb-2">{service.name}</h2>
+                  <h2 className="font-heading font-bold text-navy text-lg group-hover:text-gold transition-colors mb-2">{service.name}</h2>
                   <p className="text-grey-600 text-sm leading-relaxed mb-3">{service.desc}</p>
                   <span className="text-gold text-sm font-semibold inline-flex items-center gap-1">
                     Learn more
@@ -101,7 +101,7 @@ export default function ServicesPage() {
 
       <section className="section-padding bg-gradient-dark">
         <div className="container-max text-center">
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">Need a Free Quote?</h2>
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">Need a Free Quote?</h2>
           <p className="text-grey-300 text-lg max-w-xl mx-auto mb-8">Tell us about your project for a detailed, no-obligation quotation.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn-gold">Request a Quote</Link>

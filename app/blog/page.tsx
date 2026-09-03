@@ -155,7 +155,7 @@ export default function BlogIndex() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     loading="lazy"
                   />
-                  <span className="absolute top-3.5 left-3.5 bg-[#C9A84C] text-white text-xs font-semibold px-3.5 py-[5px] rounded-full">
+                  <span className="absolute top-3.5 left-3.5 bg-[#C9A84C] text-charcoal text-xs font-semibold px-3.5 py-[5px] rounded-full">
                     {post.category}
                   </span>
                 </div>
@@ -199,7 +199,7 @@ export default function BlogIndex() {
             {/* CTA */}
             <Link
               href="/contact"
-              className="block w-full text-center bg-[#C9A84C] text-white font-semibold text-[15px] px-8 py-[15px] rounded-md hover:bg-[#A8832A] transition-colors"
+              className="block w-full text-center bg-[#C9A84C] text-charcoal font-semibold text-[15px] px-8 py-[15px] rounded-md hover:bg-[#A8832A] transition-colors"
             >
               Get a Free Quote
             </Link>

@@ -449,7 +449,7 @@ export default function AdminPage() {
                 <div className="flex gap-2">
                   {msgCustomer.phone && (
                     <button onClick={() => { openWhatsApp(msgCustomer, 'feedback'); setMsgCustomer(null); }}
-                      className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-[#25D366] text-white text-sm font-semibold rounded-lg hover:bg-[#20ba5a] transition-colors">
+                      className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-[#25D366] text-charcoal text-sm font-semibold rounded-lg hover:bg-[#20ba5a] transition-colors">
                       WhatsApp
                     </button>
                   )}

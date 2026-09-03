@@ -68,7 +68,7 @@ export default function WhyChooseUsPage() {
       <section className="section-padding bg-gradient-dark">
         <div className="container-max">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Why Choose Us' }]} />
-          <h1 className="font-heading text-white" style={{ fontSize: 'clamp(2rem, 5vw, 3.25rem)', lineHeight: 1.15, marginTop: '1.5rem' }}>
+          <h1 className="font-heading text-navy" style={{ fontSize: 'clamp(2rem, 5vw, 3.25rem)', lineHeight: 1.15, marginTop: '1.5rem' }}>
             Why Businesses Choose <span className="text-gradient-gold">Grewal Shopfront & Shutters</span>
           </h1>
           <p className="text-grey-300" style={{ maxWidth: '42rem', marginTop: '1rem', fontSize: '1.125rem' }}>
@@ -80,7 +80,7 @@ export default function WhyChooseUsPage() {
       {/* Experience */}
       <section className="section-padding bg-grey-50">
         <div className="container-max" style={{ maxWidth: '48rem' }}>
-          <h2 className="font-heading text-white" style={{ fontSize: '1.75rem', marginBottom: '1rem' }}>10+ Years of Trade Experience</h2>
+          <h2 className="font-heading text-navy" style={{ fontSize: '1.75rem', marginBottom: '1rem' }}>10+ Years of Trade Experience</h2>
           <p className="text-grey-600" style={{ fontSize: '1.05rem', lineHeight: 1.7 }}>
             Our installation teams collectively bring over a decade of hands-on shopfront experience. From aluminium curtain walling and bi-fold shop doors to roller shutters and fire-rated glazing, we have seen — and solved — it all. Grewal Shopfront & Shutters is registered at Companies House (verifiable on the public register), carries comprehensive public liability insurance, and operates with full CSCS-carded site personnel. We do not subcontract to unknown labour; every installer on your project is part of our vetted, experienced team.
           </p>
@@ -90,7 +90,7 @@ export default function WhyChooseUsPage() {
       {/* Differentiators */}
       <section className="section-padding">
         <div className="container-max">
-          <h2 className="font-heading text-white" style={{ fontSize: '1.75rem', marginBottom: '2rem', textAlign: 'center' }}>What Sets Us Apart</h2>
+          <h2 className="font-heading text-navy" style={{ fontSize: '1.75rem', marginBottom: '2rem', textAlign: 'center' }}>What Sets Us Apart</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem' }}>
             {differentiators.map((d) => (
               <div key={d.title} className="card-surface" style={{ padding: '1.5rem' }}>
@@ -120,7 +120,7 @@ export default function WhyChooseUsPage() {
       {/* Comparison */}
       <section className="section-padding bg-grey-50">
         <div className="container-max" style={{ maxWidth: '52rem' }}>
-          <h2 className="font-heading text-white" style={{ fontSize: '1.75rem', textAlign: 'center', marginBottom: '2rem' }}>How We Compare</h2>
+          <h2 className="font-heading text-navy" style={{ fontSize: '1.75rem', textAlign: 'center', marginBottom: '2rem' }}>How We Compare</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0', borderRadius: '0.75rem', overflow: 'hidden' }}>
             <div className="bg-navy" style={{ padding: '0.75rem 1rem' }}><strong className="text-gold">Grewal Shopfront & Shutters</strong></div>
             <div style={{ padding: '0.75rem 1rem', background: '#e5e7eb' }}><strong className="text-charcoal">Typical Shopfront Companies</strong></div>
@@ -143,7 +143,7 @@ export default function WhyChooseUsPage() {
               <blockquote key={t.name} className="card-surface" style={{ padding: '1.5rem', margin: 0 }}>
                 <p className="text-charcoal" style={{ fontSize: '0.95rem', lineHeight: 1.65, fontStyle: 'italic', marginBottom: '1rem' }}>&ldquo;{t.quote}&rdquo;</p>
                 <footer>
-                  <strong className="text-white" style={{ display: 'block' }}>{t.name}</strong>
+                  <strong className="text-navy" style={{ display: 'block' }}>{t.name}</strong>
                   <span className="text-grey-600" style={{ fontSize: '0.875rem' }}>{t.business}, {t.location}</span>
                 </footer>
               </blockquote>
@@ -155,7 +155,7 @@ export default function WhyChooseUsPage() {
       {/* Accreditations */}
       <section className="section-padding bg-grey-50">
         <div className="container-max" style={{ maxWidth: '48rem' }}>
-          <h2 className="font-heading text-white" style={{ fontSize: '1.75rem', textAlign: 'center', marginBottom: '1.5rem' }}>Accreditations &amp; Compliance</h2>
+          <h2 className="font-heading text-navy" style={{ fontSize: '1.75rem', textAlign: 'center', marginBottom: '1.5rem' }}>Accreditations &amp; Compliance</h2>
           <p className="text-grey-600" style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Every installation meets or exceeds the following British and European standards:</p>
           <ul style={{ columns: 2, gap: '1.5rem', listStyle: 'none', padding: 0 }}>
             {standards.map((s) => (
@@ -168,7 +168,7 @@ export default function WhyChooseUsPage() {
       {/* CTA */}
       <section className="section-padding bg-gradient-dark" style={{ textAlign: 'center' }}>
         <div className="container-max" style={{ maxWidth: '36rem' }}>
-          <h2 className="font-heading text-white" style={{ fontSize: '2rem', marginBottom: '1rem' }}>Ready to Work With the Best?</h2>
+          <h2 className="font-heading text-navy" style={{ fontSize: '2rem', marginBottom: '1rem' }}>Ready to Work With the Best?</h2>
           <p className="text-grey-300" style={{ marginBottom: '1.5rem' }}>Get a free, no-obligation site survey and quote. Call us on <a href="tel:07597630000" className="text-gold" style={{ textDecoration: 'underline' }}>07597 630000</a> or request a callback online.</p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" className="btn-gold">Get a Free Quote</Link>

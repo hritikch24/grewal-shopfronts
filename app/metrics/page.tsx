@@ -211,7 +211,7 @@ function SectionCard({ title, children, className = '' }: {
   return (
     <GlassCard className={`overflow-hidden ${className}`} hover={false}>
       <div className="px-5 py-4 border-b border-white/[0.07]">
-        <h2 className="font-heading font-semibold text-white text-sm tracking-wide">{title}</h2>
+        <h2 className="font-heading font-semibold text-navy text-sm tracking-wide">{title}</h2>
       </div>
       <div className="p-5">{children}</div>
     </GlassCard>
@@ -263,11 +263,11 @@ function Funnel({ funnel }: { funnel: NonNullable<NonNullable<MetricsData['dropO
               />
               <div className="relative flex items-center justify-between gap-3 px-4 py-3">
                 <div className="min-w-0">
-                  <p className="truncate text-sm font-semibold text-white">{s.label}</p>
+                  <p className="truncate text-sm font-semibold text-charcoal">{s.label}</p>
                   <p className="truncate text-xs text-zinc-500">{s.note}</p>
                 </div>
                 <div className="flex-shrink-0 text-right">
-                  <p className="font-heading text-lg font-bold text-white tabular-nums">
+                  <p className="font-heading text-lg font-bold text-charcoal tabular-nums">
                     {s.value.toLocaleString()}
                   </p>
                   <p className="text-[11px] text-zinc-500 tabular-nums">{ofTotal.toFixed(1)}% of all</p>
@@ -357,7 +357,7 @@ function LeakTable({ rows }: { rows: { path: string; views: number; exits: numbe
                   <span className="block max-w-[280px] truncate" title={r.path}>{r.path}</span>
                 </td>
                 <td className="py-2 text-right text-sm text-zinc-400 tabular-nums">{r.views.toLocaleString()}</td>
-                <td className="py-2 text-right text-sm text-white tabular-nums">{r.exits.toLocaleString()}</td>
+                <td className="py-2 text-right text-sm text-charcoal tabular-nums">{r.exits.toLocaleString()}</td>
                 <td className={`py-2 text-right text-sm font-semibold tabular-nums ${bad ? 'text-red-400' : 'text-zinc-400'}`}>
                   {rate.toFixed(0)}%
                 </td>
@@ -400,7 +400,7 @@ function BarChart({ data, labelKey, valueKey, maxBars = 8, color = 'gold' }: {
               <span className="text-sm text-zinc-400 truncate max-w-[180px] group-hover:text-white transition-colors" title={String(row[labelKey])}>
                 {String(row[labelKey]) || '(direct)'}
               </span>
-              <span className="text-sm font-semibold text-white tabular-nums ml-3">{val.toLocaleString()}</span>
+              <span className="text-sm font-semibold text-charcoal tabular-nums ml-3">{val.toLocaleString()}</span>
             </div>
             <div className="h-1.5 bg-white/[0.08] rounded-full overflow-hidden">
               <div
@@ -549,7 +549,7 @@ function LeadRow({ lead, onStatusChange, expanded, onToggle, apiKey }: {
               <span className="text-sm font-bold text-gold">{lead.name.charAt(0).toUpperCase()}</span>
             </div>
             <div>
-              <p className="font-semibold text-white text-sm">{lead.name}</p>
+              <p className="font-semibold text-charcoal text-sm">{lead.name}</p>
               <p className="text-xs text-zinc-500">{lead.email}</p>
             </div>
           </div>
@@ -617,7 +617,7 @@ function LeadRow({ lead, onStatusChange, expanded, onToggle, apiKey }: {
                         {copied === 'subject' ? 'Copied' : 'Copy'}
                       </button>
                     </div>
-                    <p className="text-sm font-medium text-white">{aiReply.subject}</p>
+                    <p className="text-sm font-medium text-charcoal">{aiReply.subject}</p>
                   </div>
                   <div>
                     <div className="flex items-center justify-between mb-1">
@@ -751,7 +751,7 @@ export default function MetricsPage() {
           <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 mx-auto overflow-hidden">
             <img src="/assets/grewal-icon-512.png" alt="Grewal" className="w-full h-full object-contain" />
           </div>
-          <h1 className="font-heading font-bold text-2xl text-white text-center mb-1">Grewal Metrics</h1>
+          <h1 className="font-heading font-bold text-2xl text-navy text-center mb-1">Grewal Metrics</h1>
           <p className="text-zinc-500 text-sm text-center mb-8">Enter your admin API key</p>
           <input
             type="password"
@@ -957,7 +957,7 @@ export default function MetricsPage() {
                               <span className="block max-w-[420px] truncate" title={r.path}>{r.path}</span>
                             </td>
                             <td className="py-2 text-right text-sm text-grey-400 tabular-nums">{r.sessions.toLocaleString()}</td>
-                            <td className="py-2 text-right text-sm text-white tabular-nums">{r.bounced.toLocaleString()}</td>
+                            <td className="py-2 text-right text-sm text-charcoal tabular-nums">{r.bounced.toLocaleString()}</td>
                             <td className={`py-2 text-right text-sm font-semibold tabular-nums ${bad ? 'text-red-400' : 'text-grey-400'}`}>
                               {rate.toFixed(0)}%
                             </td>
@@ -1049,7 +1049,7 @@ export default function MetricsPage() {
                   <tbody>
                     {data.sources.landings.map((row, i) => (
                       <tr key={i} className="border-b border-white/[0.06] hover:bg-white/[0.04] transition-colors">
-                        <td className="py-3 px-4 text-sm text-white font-medium max-w-[300px] truncate">{row.path}</td>
+                        <td className="py-3 px-4 text-sm text-charcoal font-medium max-w-[300px] truncate">{row.path}</td>
                         <td className="py-3 px-4">
                           <span className={`inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold ${
                             row.source === 'Google Organic' ? 'bg-emerald-500/15 text-emerald-400' :
@@ -1061,7 +1061,7 @@ export default function MetricsPage() {
                             {row.source}
                           </span>
                         </td>
-                        <td className="py-3 px-4 text-sm font-bold text-white tabular-nums">{row.sessions}</td>
+                        <td className="py-3 px-4 text-sm font-bold text-charcoal tabular-nums">{row.sessions}</td>
                       </tr>
                     ))}
                     {data.sources.landings.length === 0 && (
@@ -1082,7 +1082,7 @@ export default function MetricsPage() {
               <p className="text-sm text-zinc-400">
                 <span className="font-semibold text-blue-400">Search queries not available from referrer.</span>{' '}
                 Google encrypts search queries since 2011 — the referrer only shows the domain (google.com), not what the user searched.
-                To see actual search queries, use <span className="text-white font-medium">Google Search Console</span> (Performance &gt; Queries).
+                To see actual search queries, use <span className="text-charcoal font-medium">Google Search Console</span> (Performance &gt; Queries).
                 The landing pages above show which pages attract organic traffic, which indirectly tells you which queries are working.
               </p>
             </div>
@@ -1110,7 +1110,7 @@ export default function MetricsPage() {
                         <span className={`w-2 h-2 rounded-full ${STATUS_DOT[row.status] || 'bg-zinc-500'}`} />
                         <span className="text-sm text-zinc-400">{row.status.charAt(0).toUpperCase() + row.status.slice(1)}</span>
                       </div>
-                      <span className="font-bold text-white text-sm tabular-nums">{row.count}</span>
+                      <span className="font-bold text-charcoal text-sm tabular-nums">{row.count}</span>
                     </div>
                   ))}
                   {data.leads.byStatus.length === 0 && <p className="text-zinc-500 text-sm text-center py-4">No leads yet</p>}
@@ -1125,7 +1125,7 @@ export default function MetricsPage() {
             <GlassCard className="overflow-hidden" hover={false}>
               <div className="px-5 py-4 border-b border-white/[0.07] flex items-center justify-between">
                 <div>
-                  <h2 className="font-heading font-semibold text-white">Recent Leads</h2>
+                  <h2 className="font-heading font-semibold text-navy">Recent Leads</h2>
                   <p className="text-xs text-zinc-500 mt-0.5">{data.leads.recent.length} shown &middot; Click to expand</p>
                 </div>
               </div>
@@ -1191,7 +1191,7 @@ export default function MetricsPage() {
             {/* Recent Contact Events */}
             <GlassCard className="overflow-hidden" hover={false}>
               <div className="px-5 py-4 border-b border-white/[0.07]">
-                <h2 className="font-heading font-semibold text-white">Recent Contact Events</h2>
+                <h2 className="font-heading font-semibold text-navy">Recent Contact Events</h2>
                 <p className="text-xs text-zinc-500 mt-0.5">{data.callClicks.recent.length} shown</p>
               </div>
               <div className="overflow-x-auto">
@@ -1218,7 +1218,7 @@ export default function MetricsPage() {
                               {click.action === 'whatsapp_click' ? 'WhatsApp' : click.action === 'email_click' ? 'Email' : click.action === 'phone_copy' ? 'Copied' : 'Called'}
                             </span>
                           </td>
-                          <td className="py-3 px-4 text-sm font-medium text-white">{click.phone}</td>
+                          <td className="py-3 px-4 text-sm font-medium text-charcoal">{click.phone}</td>
                           <td className="py-3 px-4 text-sm text-zinc-400 max-w-[200px] truncate">{click.page}</td>
                           <td className="py-3 px-4">
                             <span className="inline-flex items-center px-2 py-0.5 rounded bg-white/[0.05] text-xs font-medium text-zinc-500">{click.device || '--'}</span>

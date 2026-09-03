@@ -119,7 +119,7 @@ export default function ReviewsPage() {
                 <StarRating rating={r.rating} />
                 <p className="text-grey-700 mt-4 flex-1 leading-relaxed">&ldquo;{r.text}&rdquo;</p>
                 <div className="mt-5 pt-4 border-t border-grey-100">
-                  <p className="font-semibold text-white">{r.name}</p>
+                  <p className="font-semibold text-charcoal">{r.name}</p>
                   <p className="text-sm text-grey-500">{r.service} — {r.location}</p>
                   <p className="text-xs text-grey-400 mt-1">{new Date(r.date).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}</p>
                 </div>

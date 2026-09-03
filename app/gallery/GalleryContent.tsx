@@ -106,7 +106,7 @@ export default function GalleryContent() {
                 />
                 {/* Gold overlay on hover */}
                 <div className="absolute inset-0 bg-[rgba(201,168,76,0.85)] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-charcoal" aria-hidden="true">
                     <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
@@ -117,7 +117,7 @@ export default function GalleryContent() {
       </section>
 
       {/* CTA Banner */}
-      <section className="relative text-center text-white" style={{ padding: '110px 0' }}>
+      <section className="relative text-center text-charcoal" style={{ padding: '110px 0' }}>
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.82)] to-[rgba(10,10,10,0.9)]" />
         <Image
           src="/assets/cta-banner-bg.webp"

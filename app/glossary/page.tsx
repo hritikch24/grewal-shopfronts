@@ -241,7 +241,7 @@ export default function GlossaryPage() {
       <section className="bg-gradient-dark section-padding">
         <div className="container-max">
           <Breadcrumbs items={[{ label: 'Glossary' }]} />
-          <h1 className="mt-6 text-4xl md:text-5xl font-heading font-bold text-white leading-tight">
+          <h1 className="mt-6 text-4xl md:text-5xl font-heading font-bold text-navy leading-tight">
             Shopfront <span className="text-gradient-gold">Glossary</span>
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-grey-300 leading-relaxed">

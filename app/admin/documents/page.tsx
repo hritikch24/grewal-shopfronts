@@ -545,7 +545,7 @@ export default function DocumentsAdminPage() {
                 <div className="flex gap-2">
                   <button onClick={() => copyLink(createdDoc)} className="flex-1 py-2.5 border border-slate-200 text-slate-800 text-sm font-semibold rounded-lg hover:bg-slate-50">Copy Link</button>
                   {createdDoc.customerPhone && (
-                    <button onClick={() => sendWhatsApp(createdDoc)} className="flex-1 py-2.5 bg-[#25D366] text-white text-sm font-semibold rounded-lg hover:bg-[#20ba5a]">Send WhatsApp</button>
+                    <button onClick={() => sendWhatsApp(createdDoc)} className="flex-1 py-2.5 bg-[#25D366] text-charcoal text-sm font-semibold rounded-lg hover:bg-[#20ba5a]">Send WhatsApp</button>
                   )}
                 </div>
                 <button onClick={() => setShowForm(false)} className="w-full py-2.5 bg-slate-800 text-white text-sm font-semibold rounded-lg hover:bg-slate-800/90">Done</button>
