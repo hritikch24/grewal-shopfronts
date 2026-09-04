@@ -427,7 +427,7 @@ export default async function CityPage({ params }: PageProps) {
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-3xl font-heading font-bold text-navy mb-4">
+              <h2 className="text-3xl font-heading font-bold text-white mb-4">
                 Get Your Free Quote in {city.name}
               </h2>
               <p className="text-grey-300 text-lg mb-6">

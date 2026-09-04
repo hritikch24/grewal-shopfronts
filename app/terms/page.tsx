@@ -15,7 +15,7 @@ export default function TermsPage() {
     <main className="section-padding">
       <div className="container-max">
         <div className="max-w-3xl mx-auto">
-          <Breadcrumbs
+          <Breadcrumbs onLight
             items={[{ label: 'Terms & Conditions' }]}
           />
 

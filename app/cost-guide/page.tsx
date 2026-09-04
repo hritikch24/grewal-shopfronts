@@ -66,7 +66,7 @@ export default function CostGuidePage() {
       <section className="bg-gradient-dark section-padding">
         <div className="container-max">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Cost Guide' }]} />
-          <h1 className="mt-6 text-4xl md:text-5xl font-heading font-bold text-navy leading-tight">
+          <h1 className="mt-6 text-4xl md:text-5xl font-heading font-bold text-white leading-tight">
             How Much Does a Shopfront Cost in <span className="text-gradient-gold">2026</span>?
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-grey-300 leading-relaxed">
@@ -209,7 +209,7 @@ export default function CostGuidePage() {
       {/* CTA */}
       <section className="section-padding bg-gradient-dark">
         <div className="container-max text-center">
-          <h2 className="text-3xl font-heading font-bold text-navy mb-4">Get Your Free Quote</h2>
+          <h2 className="text-3xl font-heading font-bold text-white mb-4">Get Your Free Quote</h2>
           <p className="text-grey-300 mb-8 max-w-xl mx-auto">
             Every project is unique. Contact us today for a free, no-obligation site survey and a detailed written quotation tailored to your premises.
           </p>

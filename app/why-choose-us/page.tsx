@@ -68,7 +68,7 @@ export default function WhyChooseUsPage() {
       <section className="section-padding bg-gradient-dark">
         <div className="container-max">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Why Choose Us' }]} />
-          <h1 className="font-heading text-navy" style={{ fontSize: 'clamp(2rem, 5vw, 3.25rem)', lineHeight: 1.15, marginTop: '1.5rem' }}>
+          <h1 className="font-heading text-white" style={{ fontSize: 'clamp(2rem, 5vw, 3.25rem)', lineHeight: 1.15, marginTop: '1.5rem' }}>
             Why Businesses Choose <span className="text-gradient-gold">Grewal Shopfront & Shutters</span>
           </h1>
           <p className="text-grey-300" style={{ maxWidth: '42rem', marginTop: '1rem', fontSize: '1.125rem' }}>
@@ -168,7 +168,7 @@ export default function WhyChooseUsPage() {
       {/* CTA */}
       <section className="section-padding bg-gradient-dark" style={{ textAlign: 'center' }}>
         <div className="container-max" style={{ maxWidth: '36rem' }}>
-          <h2 className="font-heading text-navy" style={{ fontSize: '2rem', marginBottom: '1rem' }}>Ready to Work With the Best?</h2>
+          <h2 className="font-heading text-white" style={{ fontSize: '2rem', marginBottom: '1rem' }}>Ready to Work With the Best?</h2>
           <p className="text-grey-300" style={{ marginBottom: '1.5rem' }}>Get a free, no-obligation site survey and quote. Call us on <a href="tel:07597630000" className="text-gold" style={{ textDecoration: 'underline' }}>07597 630000</a> or request a callback online.</p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" className="btn-gold">Get a Free Quote</Link>

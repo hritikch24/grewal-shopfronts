@@ -286,7 +286,7 @@ export default async function ServicePage({ params }: PageProps) {
             <h2 className="text-3xl font-heading font-bold text-white text-center mb-3">
               How It Works
             </h2>
-            <p className="text-grey-600 text-center mb-10 max-w-2xl mx-auto">
+            <p className="text-grey-300 text-center mb-10 max-w-2xl mx-auto">
               From initial enquiry to completed installation — here is what to expect when you choose Grewal Shopfront & Shutters for your {service.name.toLowerCase()} project.
             </p>
             <div className="relative">
@@ -299,7 +299,7 @@ export default async function ServicePage({ params }: PageProps) {
                     </div>
                     <div className="pt-2">
                       <h3 className="font-heading font-bold text-white text-lg">{step.title}</h3>
-                      <p className="text-grey-600 mt-1">{step.description}</p>
+                      <p className="text-grey-300 mt-1">{step.description}</p>
                     </div>
                   </div>
                 ))}
@@ -411,7 +411,7 @@ export default async function ServicePage({ params }: PageProps) {
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-3xl font-heading font-bold text-navy mb-4">
+              <h2 className="text-3xl font-heading font-bold text-white mb-4">
                 Ready to Get Started?
               </h2>
               <p className="text-grey-300 text-lg mb-6">

@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
     <main className="section-padding">
       <div className="container-max">
         <div className="max-w-3xl mx-auto">
-          <Breadcrumbs
+          <Breadcrumbs onLight
             items={[{ label: 'Privacy Policy' }]}
           />
 

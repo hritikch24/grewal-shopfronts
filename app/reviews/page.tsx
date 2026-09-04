@@ -104,8 +104,8 @@ export default function ReviewsPage() {
             <StarRating rating={Math.round(Number(avgRating))} />
           </div>
           <div className="text-center sm:text-left">
-            <p className="text-grey-600 text-sm">Based on <span className="font-semibold text-white">{reviews.length} verified reviews</span></p>
-            <p className="text-grey-500 text-sm mt-1">All reviews are from real customers who used our services.</p>
+            <p className="text-grey-300 text-sm">Based on <span className="font-semibold text-white">{reviews.length} verified reviews</span></p>
+            <p className="text-grey-300 text-sm mt-1">All reviews are from real customers who used our services.</p>
           </div>
         </div>
       </section>

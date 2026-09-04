@@ -367,6 +367,25 @@
     background-size: 20px 20px;
   }
 
+  /* ── Dark gradient sections ─────────────────────────────────────────────
+     Thirteen sections across the site ask for this class, including the
+     closing call to action on all 574 service-city pages and all 41 area
+     pages. It was never defined here, only on the two sibling sites, so
+     those sections fell back to the page's cream background while their
+     contents kept the light text written for a dark one — text-grey-300 on
+     cream is 1.49:1, so the supporting copy and the tick list under every
+     "Get Your Free Quote" heading were invisible.
+
+     Same construction as the siblings, using this site's own dark tokens. */
+  .bg-gradient-dark {
+    background: linear-gradient(
+      160deg,
+      var(--color-obsidian) 0%,
+      var(--color-obsidian-mid) 50%,
+      var(--color-obsidian) 100%
+    );
+  }
+
   /* ── Card surfaces ──────────────────────────────────────────────────── */
   .card-surface {
     background: var(--color-bg-secondary);

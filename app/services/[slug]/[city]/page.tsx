@@ -519,7 +519,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
             <h2 className="text-3xl font-heading font-bold text-white text-center mb-3">
               Why Choose Our {service.name} in {city.name}
             </h2>
-            <p className="text-grey-600 text-center max-w-2xl mx-auto mb-10">
+            <p className="text-grey-300 text-center max-w-2xl mx-auto mb-10">
               {benefitsSubtitle}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -545,7 +545,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
           <h2 className="text-3xl font-heading font-bold text-white text-center mb-3">
             Areas We Cover in {city.name}
           </h2>
-          <p className="text-grey-600 text-center max-w-2xl mx-auto mb-10">
+          <p className="text-grey-300 text-center max-w-2xl mx-auto mb-10">
             {areasSubtitle}
           </p>
           <div className="max-w-3xl mx-auto">
@@ -560,7 +560,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
               ))}
             </div>
             {city.postcodeAreas.length > 0 && (
-              <p className="text-grey-500 text-sm text-center">
+              <p className="text-grey-300 text-sm text-center">
                 Postcode areas covered: {city.postcodeAreas.join(', ')}
               </p>
             )}
@@ -605,7 +605,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
             <h2 className="text-3xl font-heading font-bold text-white text-center mb-3">
               {service.pricingGuide.heading}
             </h2>
-            <p className="text-grey-600 text-center mb-10 max-w-2xl mx-auto">
+            <p className="text-grey-300 text-center mb-10 max-w-2xl mx-auto">
               {service.pricingGuide.content}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -616,7 +616,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
                 </div>
               ))}
             </div>
-            <p className="text-grey-500 text-sm text-center mt-6">{service.pricingGuide.note}</p>
+            <p className="text-grey-300 text-sm text-center mt-6">{service.pricingGuide.note}</p>
             <div className="text-center mt-6">
               <Link href="/contact" className="btn-gold">
                 Get Your Free Quote
@@ -644,7 +644,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
           <h2 className="text-3xl font-heading font-bold text-white text-center mb-3">
             Other Services in {city.name}
           </h2>
-          <p className="text-grey-600 text-center max-w-2xl mx-auto mb-10">
+          <p className="text-grey-300 text-center max-w-2xl mx-auto mb-10">
             We provide the full range of commercial shopfront and security solutions across {city.name}.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -663,7 +663,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
                   <p className="font-heading font-bold text-charcoal text-sm group-hover:text-gold transition-colors">
                     {s.name}
                   </p>
-                  <p className="text-grey-500 text-xs mt-0.5">{s.name} in {city.name}</p>
+                  <p className="text-grey-600 text-xs mt-0.5">{s.name} in {city.name}</p>
                 </div>
               </Link>
             ))}
@@ -712,7 +712,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-3xl font-heading font-bold text-navy mb-4">
+              <h2 className="text-3xl font-heading font-bold text-white mb-4">
                 Get Your Free {service.name} Quote in {city.name}
               </h2>
               <p className="text-grey-300 text-lg mb-6">

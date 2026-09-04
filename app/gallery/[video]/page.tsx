@@ -95,7 +95,7 @@ export default async function VideoPage({ params }: PageProps) {
 
       <section className="bg-gradient-to-b from-gray-900 to-gray-800 text-white py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <Breadcrumbs items={[
+          <Breadcrumbs onLight items={[
             { label: 'Home', href: '/' },
             { label: 'Gallery', href: '/gallery' },
             { label: video.title },
