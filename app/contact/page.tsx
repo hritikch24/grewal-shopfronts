@@ -157,21 +157,9 @@ export default function ContactPage() {
                 />
               </div>
 
-              {/* Social links */}
-              <div className="flex gap-2.5 mt-auto relative z-[1]">
-                {['Facebook', 'Instagram', 'Twitter', 'LinkedIn'].map((social) => (
-                  <a
-                    key={social}
-                    href="#"
-                    aria-label={social}
-                    className="w-10 h-10 rounded-full bg-white/[0.08] border border-white/[0.15] flex items-center justify-center text-white hover:bg-[#C9A84C] hover:border-[#C9A84C] hover:text-[#111] hover:-translate-y-[3px] transition-all"
-                  >
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" stroke="currentColor" strokeWidth="2" />
-                    </svg>
-                  </a>
-                ))}
-              </div>
+              {/* A four-icon social row sat here, every icon on href="#" and all four
+                    drawn with the same placeholder circle. The business has no
+                    social accounts, so it linked nowhere and looked unfinished. */}
             </div>
 
             {/* Contact Form Card */}
