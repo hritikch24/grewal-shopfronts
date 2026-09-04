@@ -7,20 +7,15 @@ import SchemaMarkup from '@/components/SchemaMarkup';
 const videos = [
   {
     slug: 'shopfront-installation',
+      duration: 'PT55S',
     src: '/assets/project-video-1.mp4',
     title: 'Shopfront Installation in Progress',
     description: 'Watch our team installing an aluminium shopfront for a commercial premises in the UK. This video shows the full process from frame fitting to glass installation and finishing.',
     uploadDate: '2025-01-15',
   },
   {
-    slug: 'site-survey',
-    src: '/assets/project-video-2.mp4',
-    title: 'On-Site Survey and Assessment',
-    description: 'Grewal Shopfront & Shutters engineer conducting a free site survey and taking measurements for a shopfront project. See how we assess your premises before providing a detailed quote.',
-    uploadDate: '2025-01-15',
-  },
-  {
     slug: 'completed-project',
+      duration: 'PT36S',
     src: '/assets/project-video-3.mp4',
     title: 'Completed Project Walkthrough',
     description: 'A walkthrough of a recently completed shopfront installation by Grewal Shopfront & Shutters. See the quality of finish and attention to detail in our aluminium shopfront work.',
@@ -70,7 +65,10 @@ export default async function VideoPage({ params }: PageProps) {
     contentUrl: `${siteUrl}${video.src}`,
     thumbnailUrl: `${siteUrl}/assets/shopfront-2.jpeg`,
     uploadDate: video.uploadDate,
-    duration: 'PT1M30S',
+    // Real length of the file this page serves, read from its mvhd atom.
+      // A single hardcoded value used to be applied to every video and
+      // matched none of them.
+      duration: video.duration,
     publisher: {
       '@type': 'Organization',
       name: 'Grewal Shopfront & Shutters',

@@ -162,7 +162,6 @@ export default function GalleryContent() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px]">
             {[
               { src: '/assets/project-video-1.mp4', title: 'Shopfront installation in progress' },
-              { src: '/assets/project-video-2.mp4', title: 'On-site survey and assessment' },
               { src: '/assets/project-video-3.mp4', title: 'Completed project walkthrough' },
             ].map((v) => (
               <div key={v.src} className="rounded-xl overflow-hidden bg-white border border-[#E5DDD0] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition-all duration-300">
