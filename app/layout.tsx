@@ -141,6 +141,47 @@ export default function RootLayout({
             __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-16801337867');`,
           }}
         />
+        {/* The WebSite below names this as its publisher, the homepage names it
+            in `about`, every city page names it as parentOrganization, and the
+            blog schema references it twice — but nothing defined it, so all of
+            those pointed at an entity that does not exist. Defined once here so
+            the graph resolves, and carrying the logo Google reads for a
+            knowledge panel. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              '@id': 'https://www.grewalshopfrontandshutters.co.uk/#organization',
+              name: 'Grewal Shopfront & Shutters',
+              legalName: 'Grewal Shopfront & Shutters Limited',
+              url: 'https://www.grewalshopfrontandshutters.co.uk',
+              telephone: '+447597630000',
+              email: 'info@grewalshopfrontandshutters.co.uk',
+              foundingDate: '2004',
+              logo: {
+                '@type': 'ImageObject',
+                '@id': 'https://www.grewalshopfrontandshutters.co.uk/#logo',
+                url: 'https://www.grewalshopfrontandshutters.co.uk/assets/grewal-logo.png',
+                caption: 'Grewal Shopfront & Shutters',
+              },
+              image: { '@id': 'https://www.grewalshopfrontandshutters.co.uk/#logo' },
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: '31 Trelawney Road',
+                addressLocality: 'Exhall, Coventry',
+                addressRegion: 'West Midlands',
+                postalCode: 'CV7 9FB',
+                addressCountry: 'GB',
+              },
+              areaServed: { '@type': 'Country', name: 'United Kingdom' },
+              subOrganization: {
+                '@id': 'https://www.grewalshopfrontandshutters.co.uk/#localbusiness',
+              },
+            }),
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

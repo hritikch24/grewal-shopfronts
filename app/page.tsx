@@ -118,85 +118,75 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════════════════════
           SECTION 1: HERO
       ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative min-h-screen overflow-hidden">
-        {/* Background image */}
+      <section className="relative overflow-hidden bg-[#0E0D0B]">
+        {/* Background plate. The overlay is warmer and lighter than the flat
+            black it replaced — the headline underneath was set in text-navy
+            (#111111) over black/80, which made the main line on the homepage
+            almost unreadable. Warm charcoal keeps the photograph legible and
+            gives the cream type something to sit against. */}
         <div className="absolute inset-0">
           <Image src="/assets/hero-bg.webp" alt="" fill priority className="object-cover" sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(105deg, rgba(18,16,13,0.94) 0%, rgba(24,21,17,0.86) 46%, rgba(32,27,20,0.62) 100%)' }} />
         </div>
-        {/* Diagonal gold lines overlay */}
-        <div className="absolute inset-0 pointer-events-none opacity-10" aria-hidden="true"
-          style={{
-            backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(201,168,76,0.3) 60px, rgba(201,168,76,0.3) 61px)',
-          }}
-        />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen pt-24 pb-16">
-            {/* Left: Text */}
-            <div>
-              <span className="inline-block bg-white/10 backdrop-blur-sm text-white text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full border border-white/20 mb-6">
-                UK&apos;s Trusted Shopfront Specialists
+        <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8">
+          <div className="min-h-screen flex flex-col justify-center pt-28 pb-20 text-center">
+
+            {/* Crest — a small centred mark, the boutique equivalent of a
+                letterhead, rather than a pill badge */}
+            <div className="flex flex-col items-center mb-9">
+              <span className="w-px h-12 bg-gradient-to-b from-transparent to-[#C9A84C]/70" aria-hidden="true" />
+              <span className="mt-5 text-[#C9A84C] text-[11px] font-semibold tracking-[0.34em] uppercase">
+                Established 2004 &nbsp;·&nbsp; West Midlands
               </span>
-              <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy leading-[1.1] tracking-tight mb-6">
-                Aluminium Shopfronts, Roller Shutters &amp; Security Doors Across the UK
-              </h1>
-              <p className="hero-description text-gray-300 text-lg lg:text-xl leading-relaxed max-w-lg mb-8">
-                From aluminium shopfronts to industrial security shutters — we design, manufacture and install with precision, backed by two decades of trusted craftsmanship.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 mb-10">
-                <Link href="/instant-quote" className="btn-gold text-base px-7 py-3.5">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                  Get an Instant Price
-                </Link>
-                <a href="https://wa.me/447597630000" target="_blank" rel="noopener noreferrer" className="btn-outline text-base px-7 py-3.5">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                  07597 630000
-                </a>
-                <a href="mailto:info@grewalshopfrontandshutters.co.uk" className="btn-outline text-base px-7 py-3.5">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                  Email Us
-                </a>
-              </div>
-              {/* Hero counters */}
-              <div className="flex items-center gap-8 sm:gap-12">
-                <div className="text-center">
-                  <span className="block text-3xl sm:text-4xl font-extrabold text-[#C9A84C]">500+</span>
-                  <span className="text-gray-400 text-sm">Projects</span>
-                </div>
-                <div className="text-center">
-                  <span className="block text-3xl sm:text-4xl font-extrabold text-[#C9A84C]">20+</span>
-                  <span className="text-gray-400 text-sm">Years</span>
-                </div>
-                <div className="text-center">
-                  <span className="block text-3xl sm:text-4xl font-extrabold text-[#C9A84C]">100%</span>
-                  <span className="text-gray-400 text-sm">Satisfaction</span>
-                </div>
-              </div>
             </div>
 
-            {/* Right: Video/Image card with LED glow border */}
-            <div className="relative hidden lg:flex items-center justify-center">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl"
-                style={{
-                  padding: '3px',
-                  background: 'linear-gradient(135deg, #C9A84C, #F0D080, #A8832A, #C9A84C)',
-                  backgroundSize: '300% 300%',
-                  animation: 'led-border 4s ease infinite',
-                }}
-              >
-                <div className="rounded-2xl overflow-hidden">
-                  <Image
-                    src="/assets/hero-shutter-new.webp"
-                    alt="Modern aluminium shopfront by Grewal Shopfront & Shutters"
-                    width={600}
-                    height={700}
-                    className="object-cover w-full"
-                    priority
-                    sizes="50vw"
-                  />
+            <h1 className="font-heading text-[2.5rem] sm:text-[3.5rem] lg:text-[4.25rem] font-extrabold text-[#F7F3EC] leading-[1.06] tracking-[-0.02em] mb-7 max-w-4xl mx-auto">
+              Shopfronts built to be
+              <span className="block italic font-semibold text-[#D8B65E]" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
+                looked after, not replaced
+              </span>
+            </h1>
+
+            <p className="text-[#CFC6B6] text-lg lg:text-[1.28rem] leading-[1.72] max-w-[54ch] mx-auto mb-11">
+              Two decades of aluminium shopfronts, roller shutters and security doors
+              across the West Midlands — measured, made and fitted by the same team,
+              then maintained for as long as you own the premises.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3.5 justify-center mb-16">
+              <Link href="/instant-quote" className="btn-gold text-base px-8 py-4 whitespace-nowrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                Get an Instant Price
+              </Link>
+              <a href="tel:07597630000" className="btn-outline text-base px-8 py-4 whitespace-nowrap">
+                Call 07597 630000
+              </a>
+            </div>
+
+            {/* Confidence matrix — staggered so the row has a hand-set rhythm
+                rather than four identical boxes on one baseline */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 max-w-4xl mx-auto w-full">
+              {[
+                { k: '20+', v: 'Years trading', note: 'Since 2004' },
+                { k: '500+', v: 'Projects fitted', note: 'Across the Midlands' },
+                { k: 'CHR', v: 'Companies House', note: 'Registered & insured' },
+                { k: '24/7', v: 'Emergency cover', note: 'Boarding & make-safe' },
+              ].map((c, i) => (
+                <div
+                  key={c.k}
+                  className={`rounded-[14px] px-5 py-6 text-left transition-transform duration-500 hover:-translate-y-1.5 ${i % 2 === 1 ? 'lg:translate-y-7' : ''}`}
+                  style={{
+                    background: 'rgba(247,243,236,0.045)',
+                    border: '1px solid rgba(201,168,76,0.16)',
+                    boxShadow: '0 1px 0 rgba(255,255,255,0.05) inset, 0 18px 40px -28px rgba(0,0,0,0.9)',
+                  }}
+                >
+                  <p className="font-heading text-2xl lg:text-[1.75rem] font-extrabold text-[#D8B65E] leading-none">{c.k}</p>
+                  <p className="text-[#F0EADE] text-sm font-semibold mt-2.5">{c.v}</p>
+                  <p className="text-[#9E948270] text-[0.72rem] mt-1" style={{ color: 'rgba(158,148,130,0.9)' }}>{c.note}</p>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
