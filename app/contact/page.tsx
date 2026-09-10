@@ -7,7 +7,7 @@ import SchemaMarkup from '@/components/SchemaMarkup';
 export const metadata: Metadata = {
   title: 'Contact Us — Free Shopfront Survey & Quote',
   description:
-    'Contact Grewal Shopfront & Shutters for a free site survey and quotation. Call 07597 630000, WhatsApp +44 7597 630000, or email info@grewalshopfrontandshutters.co.uk. West Midlands, UK.',
+    'Talk to us about a shopfront, shutter or security door in the West Midlands. Free site survey and a written quote. Call 07597 630000.',
   alternates: {
     canonical: 'https://www.grewalshopfrontandshutters.co.uk/contact',
   },

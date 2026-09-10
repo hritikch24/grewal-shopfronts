@@ -32,7 +32,11 @@ const siteUrl = 'https://www.grewalshopfrontandshutters.co.uk';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Grewal Shopfront & Shutters',
+    // Shortened from 'Grewal Shopfront & Shutters'. At 29 characters the old
+    // suffix consumed half of the ~60 Google shows, pushing the descriptive
+    // part of every title off the end. The full registered name is still used
+    // in schema, the footer and on documents.
+    template: '%s | Grewal Shopfronts',
     default: 'Grewal Shopfront & Shutters | UK\'s Premier Shopfront & Shutter Specialists',
   },
   description:

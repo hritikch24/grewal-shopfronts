@@ -317,7 +317,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     // the click was cut off. The openGraph title below still carries the brand,
     // because the template never applies to social tags.
     title: `${service.name} in ${city.name} | Affordable Prices`,
-    description: `Affordable ${service.name.toLowerCase()} in ${city.name} — competitive prices, free site survey & no-obligation quotes. Covering ${topAreas} and surrounding areas. Same-day response available. Call 07597 630000.`,
+    // 219 characters against a ~155 cut, so the phone number and half the
+    // sentence never appeared in results. Area list dropped: it pushed the
+    // length out and is already on the page itself.
+    description: `${service.name} in ${city.name}. Supplied, fitted and maintained by our own team. Free site survey, written quote. Call 07597 630000.`,
     alternates: { canonical: `${siteUrl}/services/${slug}/${citySlug}` },
     openGraph: {
       title: `${service.name} in ${city.name} | Affordable Prices | Grewal Shopfront & Shutters`,

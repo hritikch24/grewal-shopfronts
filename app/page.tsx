@@ -5,12 +5,12 @@ import ContactForm from '@/components/ContactForm';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: "Affordable Shopfront Installation & Shutters UK | Grewal Shopfront & Shutters",
+  title: "Shopfront & Shutter Fitters | Grewal Shopfront & Shutters",
   description:
-    'Affordable shopfront installation across the UK. Aluminium shopfronts, roller shutters, security doors, automatic doors & 24/7 emergency repairs. Competitive prices, free site surveys & no-obligation quotes. Call today.',
+    'Two decades fitting aluminium shopfronts, roller shutters and security doors across the West Midlands. Measured, made, fitted and maintained.',
   alternates: { canonical: 'https://www.grewalshopfrontandshutters.co.uk' },
   openGraph: {
-    title: "Affordable Shopfront Installation & Shutters UK | Grewal Shopfront & Shutters",
+    title: "Shopfront & Shutter Fitters | Grewal Shopfront & Shutters",
     description: 'Affordable aluminium shopfronts, roller shutters, security doors & 24/7 emergency callout. Competitive prices, free site surveys across the UK.',
     url: 'https://www.grewalshopfrontandshutters.co.uk',
     siteName: 'Grewal Shopfront & Shutters',

@@ -94,9 +94,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   // what produced "… | Grewal Shopfront & Shutters | Grewal Shopfront &
   // Shutters". The social title has to carry the brand itself, since the
   // template never applies to it.
-  const enhancedTitle = `Shopfront Installation ${city.name} | Affordable Prices`;
+  const enhancedTitle = `Shopfront Installation in ${city.name}`;
   const socialTitle = `${enhancedTitle} | Grewal Shopfront & Shutters`;
-  const enhancedDescription = `Affordable shopfront installation & repairs in ${city.name}. Aluminium shopfronts, roller shutters, security doors & more. Free site surveys, competitive prices. Call 07597 630000.`;
+  // Trimmed to fit the ~155 characters Google shows. The previous version
+  // ran to 174 and opened on "Affordable", which is a price signal rather
+  // than an answer to what was searched.
+  const enhancedDescription = `Shopfronts, roller shutters and security doors fitted in ${city.name}. Free site survey and a written quote. Call 07597 630000.`;
 
   return {
     title: enhancedTitle,
