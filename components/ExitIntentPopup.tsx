@@ -106,6 +106,12 @@ export default function ExitIntentPopup() {
               Call 07597 630000
             </a>
           </div>
+          {/* reassure: names what happens after the click. At the moment of
+              leaving, the objection is usually the phone call rather than the
+              price — and the instant estimate genuinely needs no call. */}
+          <p className="mt-3.5 text-center text-[0.72rem] leading-snug text-[#6B6B6B]">
+            A price on screen in about a minute. No one rings you unless you ask them to.
+          </p>
           <button
             onClick={onClose}
             className="mt-3 w-full text-center text-xs text-[#888888] underline-offset-2 hover:underline"
