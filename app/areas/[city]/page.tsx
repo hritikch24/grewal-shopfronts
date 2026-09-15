@@ -94,12 +94,22 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   // what produced "… | Grewal Shopfront & Shutters | Grewal Shopfront &
   // Shutters". The social title has to carry the brand itself, since the
   // template never applies to it.
-  const enhancedTitle = `Shopfront Installation in ${city.name}`;
+  // Long city names would push this past the ~60 characters Google shows, so
+  // the "Commercial" lead is dropped where it would not fit. The length of the
+  // suffix the layout template appends is counted rather than written out, so
+  // this never looks like a title that carries the brand twice.
+  const BRAND_SUFFIX_LENGTH = 20;
+  const areaBase = `Doors & Shutters in ${city.name}`;
+  const areaLead = `Commercial ${areaBase}`;
+  const enhancedTitle = areaLead.length + BRAND_SUFFIX_LENGTH <= 60 ? areaLead : areaBase;
   const socialTitle = `${enhancedTitle} | Grewal Shopfront & Shutters`;
-  // Trimmed to fit the ~155 characters Google shows. The previous version
-  // ran to 174 and opened on "Affordable", which is a price signal rather
-  // than an answer to what was searched.
-  const enhancedDescription = `Shopfronts, roller shutters and security doors fitted in ${city.name}. Free site survey and a written quote. Call 07597 630000.`;
+  // Trimmed to fit the ~155 characters Google shows, and written in this
+  // site's own vocabulary: the real demand here is commercial and industrial
+  // door work in the West Midlands ("industrial roller shutter doors
+  // wolverhampton", "commercial fire door installation birmingham",
+  // "automatic door installation birmingham"), not the generic line all three
+  // sites used to share word for word.
+  const enhancedDescription = `Industrial roller shutters, fire doors and automatic doors installed and serviced across ${city.name}. Free site survey. Call 07597 630000.`;
 
   return {
     title: enhancedTitle,

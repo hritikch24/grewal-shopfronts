@@ -300,6 +300,24 @@ export async function generateStaticParams() {
   return params;
 }
 
+/**
+ * Google shows roughly 60 characters of a title. "Aluminium Shopfronts in
+ * Stoke-on-Trent" already spends 38 of them before the brand suffix, so a
+ * fixed qualifier pushes the longest combinations past the cut and the words
+ * that earn the click are what get dropped.
+ *
+ * So the qualifier is appended only when the finished title still fits. The
+ * wording here is deliberately this site's own: the same URL was publishing a
+ * byte-identical title on more than one domain, which is what Google
+ * deduplicates -- and one of those domains lost its rankings over it.
+ */
+const TITLE_QUALIFIER = ' | Commercial';
+const BRAND_SUFFIX = ' | Grewal Shopfronts';
+
+function cityTitle(base: string) {
+  return (base + TITLE_QUALIFIER + BRAND_SUFFIX).length <= 60 ? base + TITLE_QUALIFIER : base;
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug, city: citySlug } = await params;
   const service = services.find((s) => s.slug === slug);
@@ -316,15 +334,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     // and pushed the title past 100 characters, so the part that actually wins
     // the click was cut off. The openGraph title below still carries the brand,
     // because the template never applies to social tags.
-    title: `${service.name} in ${city.name} | Affordable Prices`,
+    title: cityTitle(`${service.name} in ${city.name}`),
     // 219 characters against a ~155 cut, so the phone number and half the
     // sentence never appeared in results. Area list dropped: it pushed the
     // length out and is already on the page itself.
-    description: `${service.name} in ${city.name}. Supplied, fitted and maintained by our own team. Free site survey, written quote. Call 07597 630000.`,
+    description: `Commercial and industrial ${service.name.toLowerCase()} for ${city.name} premises. Installation, servicing and compliance work. Call 07597 630000.`,
     alternates: { canonical: `${siteUrl}/services/${slug}/${citySlug}` },
     openGraph: {
-      title: `${service.name} in ${city.name} | Affordable Prices | Grewal Shopfront & Shutters`,
-      description: `Affordable ${service.name.toLowerCase()} in ${city.name} — competitive prices, free site survey & no-obligation quotes. Covering ${topAreas} and surrounding areas.`,
+      title: `${service.name} in ${city.name} | Commercial | Grewal Shopfronts`,
+      description: `Commercial and industrial ${service.name.toLowerCase()} for ${city.name} premises — installation, servicing and compliance work. Covering ${topAreas} and nearby.`,
       url: `${siteUrl}/services/${slug}/${citySlug}`,
       type: 'website',
       images: [{ url: `/assets/${service.heroImage}`, width: 1200, height: 630 }],
