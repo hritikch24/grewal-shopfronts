@@ -1,5 +1,7 @@
 'use client';
 
+import { reportAdsConversion } from '@/lib/ads-conversions';
+
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { SERVICES, BUDGET_BANDS, formatGBP } from '@/lib/estimator';
@@ -123,14 +125,7 @@ export default function InstantQuoteForm() {
       // Report to Google Ads. This is the primary conversion path on the site,
       // so it must fire the same actions the contact form does — without this
       // the estimate is invisible to bidding.
-      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-        window.gtag('event', 'conversion', {
-          send_to: 'AW-16801337867/TcCuCK3Jk7IcEIukwMs-',
-        });
-        window.gtag('event', 'conversion', {
-          send_to: 'AW-16801337867/u-x7CNe428gcEIukwMs-',
-        });
-      }
+      reportAdsConversion('lead');
       setResult({ ...data.estimate, emailed: Boolean(data.emailed) });
     } catch {
       setError('Could not reach the server. Please call us instead.');

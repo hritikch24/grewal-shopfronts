@@ -1,5 +1,7 @@
 'use client';
 
+import { reportAdsConversion } from '@/lib/ads-conversions';
+
 import { useState, FormEvent } from 'react';
 import { getSessionId } from '@/lib/session';
 
@@ -116,14 +118,7 @@ export default function ContactForm({ defaultCity }: ContactFormProps) {
         }),
       });
       if (!res.ok) throw new Error('Server error');
-      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-        window.gtag('event', 'conversion', {
-          send_to: 'AW-16801337867/TcCuCK3Jk7IcEIukwMs-',
-        });
-        window.gtag('event', 'conversion', {
-          send_to: 'AW-16801337867/u-x7CNe428gcEIukwMs-',
-        });
-      }
+      reportAdsConversion('lead');
       setStatus('success');
     } catch {
       setStatus('error');

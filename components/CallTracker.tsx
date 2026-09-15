@@ -1,5 +1,7 @@
 'use client';
 
+import { reportAdsConversion } from '@/lib/ads-conversions';
+
 import { useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 
@@ -60,14 +62,7 @@ function sendTrackEvent(action: string, phone: string, page: string, searchParam
   // phone_copy is excluded: copying a number is too weak a signal to feed
   // Google Ads bidding — it stays in our own metrics only.
   if (action === 'phone_copy') return;
-  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-    window.gtag('event', 'conversion', {
-      send_to: 'AW-16801337867/TcCuCK3Jk7IcEIukwMs-',
-    });
-    window.gtag('event', 'conversion', {
-      send_to: 'AW-16801337867/u-x7CNe428gcEIukwMs-',
-    });
-  }
+  reportAdsConversion('contact');
 }
 
 export default function CallTracker() {
