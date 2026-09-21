@@ -152,6 +152,7 @@ const defaultLocalBusiness = {
   },
   sameAs: [
     'https://wa.me/447597630000',
+    'https://www.instagram.com/grewalshopfrontsuk/',
   ],
   knowsAbout: [
     'Security roller shutter installation',
@@ -210,6 +211,7 @@ const defaultOrganization = {
   },
   sameAs: [
     'https://wa.me/447597630000',
+    'https://www.instagram.com/grewalshopfrontsuk/',
   ],
   knowsAbout: [
     'Security roller shutter installation',

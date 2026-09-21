@@ -192,6 +192,11 @@ export default function RootLayout({
                 addressCountry: 'GB',
               },
               areaServed: { '@type': 'Country', name: 'United Kingdom' },
+              // sameAs is an entity signal, not a backlink — these links are
+              // nofollowed and pass no equity. It tells Google the site, the
+              // company and the profile are one entity. Only this brand's own
+              // profiles belong here.
+              sameAs: ['https://www.instagram.com/grewalshopfrontsuk/'],
               subOrganization: {
                 '@id': 'https://www.grewalshopfrontandshutters.co.uk/#localbusiness',
               },

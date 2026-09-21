@@ -173,7 +173,7 @@ export default async function CityPage({ params }: PageProps) {
     },
     sameAs: [
       'https://wa.me/447597630000',
-      'https://share.google/IvMAmHyNVnS6hMCdh',
+      'https://www.instagram.com/grewalshopfrontsuk/',
       'https://www.yell.com/biz/grewal-shopfront-and-shutters-london/',
     ],
     hasMap: `https://www.google.com/maps/search/shopfront+installation+${encodeURIComponent(city.name)}`,
