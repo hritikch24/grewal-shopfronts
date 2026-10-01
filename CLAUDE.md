@@ -153,3 +153,92 @@ dependencies. It reads each site's `/api/metrics` with the site's
   duplication, and the one thing that would let all three rank independently
 - Backlink building — the binding constraint, and nothing else moves it
 - ~20 byte-identical photographs are shared across all three domains
+
+---
+
+# Update — 1 October 2026
+
+Everything below was established after this file was first written and is not
+reflected above. Supporting detail lives in `~/Projects/seo-plan/`.
+
+## The August delisting has a confirmed cause
+
+**Google's August 2026 spam update completed on 21 August 2026** — the exact
+day Sigma's cross-product was delisted. It targeted **scaled content abuse**:
+programmatic pages, AI-generated pages at scale, pages built mainly to rank.
+A SpamBrain enforcement pass on existing policy, global, all languages.
+
+574 templated city x service pages with 84% shared phrasing across three
+domains is a textbook match. The diagnosis is no longer inference from a
+traffic shape; the date and the target both line up.
+
+## A spam update is rolling right now
+
+**September 2026 spam update: started 24 September, roughly two weeks**, so it
+lands around 8 October. Google has not said what it targets.
+
+**Hold every deploy until the Search Status Dashboard marks it complete** —
+not a fixed date, the dashboard. Shipping mid-rollout means any movement is
+unattributable. Draft on a branch; do not push.
+
+## Search Console review found no cross-site duplication
+
+Read-only review of all three properties, 27-28 September
+(`seo-plan/gsc-review.md`):
+
+| | Pages in any duplicate bucket |
+|---|---|
+| Urban | 0 |
+| Sigma | 0 |
+| Grewal | 0 city pages (its 41 are legacy `.php`) |
+
+Top-10 query lists across the three share exactly one term ("shopfronts").
+The sites are **not** cannibalising each other. The problem is position
+(26 / 32 / 52), not suppression — and a 301 carries the ranking assessment
+with it, so **moving URLs does not reset anything**. A URL restructure was
+proposed and dropped on this evidence.
+
+Competitor check: `/services/{service}` is the industry-standard pattern —
+shopfrontsbirmingham.co.uk uses the same shape. The URL structure is normal.
+What no competitor does is a 574-page city x service cross-product.
+
+## The portfolio is now five sites, not three
+
+`~/Projects/seo-plan/portfolio-registry.json` is the authority, and
+`PORTFOLIO-RULES.md` governs additions. Added since this file was written:
+`safe-and-secure-shopfront-shutters` and `highstreet-shopfronts`. Check any
+new site against every registry entry before launch.
+
+## Grewal-specific — Google Ads and the legacy URLs
+
+**Ads account 495-972-2943 (RajKumar), er.hritik.24@gmail.com.** Campaign
+"Grewal Shopfronts - Search Leads". Full review in
+`seo-plan/grewal-ads-review.md`.
+
+The account's core defect: **one responsive search ad whose Final URL is the
+bare domain — the homepage — serving all 42 keywords**, including
+"emergency shutter repair near me". Repair-intent traffic lands on a general
+company page and bounces. The competitor ranking for those terms runs a
+dedicated emergency repair page.
+
+Changes made 1 Oct: max CPC bid limit ₹80 -> ₹100 (the bid strategy report
+read "100% of spend is limited by your max. bid limit", and the campaign was
+spending ₹104/day against a ₹500 budget). Keep the strategy on **Maximise
+clicks** — Google recommends Maximise conversions, which does not support a
+CPC cap at all and would remove the ceiling.
+
+Impressions went from ~17/day to 86 the same day. The throttle release worked.
+
+**The 41 "Duplicate without user-selected canonical" pages are legacy `.php`
+URLs from the old site**, not city pages — `/service-detail.php?slug=...`,
+`/contact.php`, `/terms.php`, counted per host variant. All already 308 to the
+correct pages. Validation submitted in GSC on 28 September.
+
+**Grewal's GSC property only holds data from 13 August 2026** (verification
+date; GSC does not backfill). The August drop cannot be assessed here and that
+history is unrecoverable. 56 clicks in six weeks is what the property holds —
+if the owner reports better, it is likely Google Business Profile calls, not
+the website.
+
+**Do not retire Grewal's 574 city x service pages without being asked.** The
+owner's instruction stands.
