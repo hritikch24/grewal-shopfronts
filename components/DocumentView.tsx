@@ -16,18 +16,23 @@ const BANK: { accountName: string; bank?: string; accountNumber: string; sortCod
   sortCode: '04-06-05',
 };
 
+// Charcoal and gold, matching the logo and the site's cream-and-gold theme.
+// `gold` is for use on dark backgrounds; `accent` is a deeper gold that stays
+// readable as small text on white.
 const C = {
-  brand:     '#064e3b',
-  brandDark: '#022c22',
-  accent:    '#d97706',
-  accentBg:  '#fef3c7',
+  brand:     '#1c1917',
+  brandDark: '#0c0a09',
+  gold:      '#c9a84c',
+  accent:    '#8a6d24',
+  accentBg:  '#faf6ec',
+  cream:     '#f9f7f4',
   text:      '#1c1917',
   textMuted: '#78716c',
   border:    '#d6d3d1',
   borderAlt: '#e7e5e4',
   paper:     '#ffffff',
   rowAlt:    '#fafaf9',
-  headerBg:  '#064e3b',
+  headerBg:  '#1c1917',
 };
 
 interface LineItem { description: string; qty: number; unitPrice: number; isOption?: boolean }
@@ -107,10 +112,10 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
       ];
 
   return (
-    <div className="min-h-screen py-10 px-4 print:bg-white print:py-0 print:px-0" style={{ background: 'linear-gradient(160deg, #0a1f18 0%, #0d2818 40%, #071210 100%)', WebkitPrintColorAdjust: 'exact', printColorAdjust: 'exact' }}>
+    <div className="min-h-screen py-10 px-4 print:bg-white print:py-0 print:px-0" style={{ background: 'linear-gradient(160deg, #292524 0%, #1c1917 45%, #0c0a09 100%)', WebkitPrintColorAdjust: 'exact', printColorAdjust: 'exact' }}>
       <div style={{ maxWidth: '210mm', margin: '0 auto' }}>
         <div className="no-print flex items-center justify-between mb-5">
-          <p style={{ color: '#6ee7b7', fontSize: 13, fontFamily: 'var(--font-heading)', opacity: 0.7 }}>
+          <p style={{ color: C.gold, fontSize: 13, fontFamily: 'var(--font-heading)', opacity: 0.7 }}>
             {isInvoice ? 'Invoice' : 'Quotation'} &middot; {doc.number}
           </p>
           <PrintButton />
@@ -118,9 +123,9 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
 
         <div style={{ background: C.paper, fontFamily: '"Inter", "Segoe UI", Arial, sans-serif', fontSize: '14px', lineHeight: 1.6, color: C.text, boxShadow: '0 30px 80px rgba(0,0,0,0.6)', borderRadius: 6, overflow: 'hidden' }} className="print:shadow-none print:rounded-none">
 
-          {/* Full-width dark green header */}
+          {/* Full-width charcoal header */}
           <div style={{ background: C.headerBg, padding: '36px 44px 32px', position: 'relative' }}>
-            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: `linear-gradient(90deg, ${C.accent}, ${C.accent}88, transparent)` }} />
+            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: `linear-gradient(90deg, ${C.gold}, ${C.gold}88, transparent)` }} />
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 20 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -136,7 +141,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
                 </div>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <p style={{ fontSize: 11, color: C.accent, fontWeight: 700, letterSpacing: '3px', textTransform: 'uppercase', margin: 0 }}>{title}</p>
+                <p style={{ fontSize: 11, color: C.gold, fontWeight: 700, letterSpacing: '3px', textTransform: 'uppercase', margin: 0 }}>{title}</p>
                 <p style={{ fontSize: 32, fontWeight: 900, color: '#ffffff', margin: '4px 0 0', letterSpacing: '-0.5px' }}>{doc.number}</p>
               </div>
             </div>
@@ -158,7 +163,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
               <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px', color: C.accent, marginBottom: 10 }}>
                 {isInvoice ? 'Billed To' : 'Prepared For'}
               </p>
-              <div style={{ padding: '16px 20px', border: `2px solid ${C.brand}`, borderRadius: 10, background: '#f0fdf4' }}>
+              <div style={{ padding: '16px 20px', border: `1px solid ${C.border}`, borderLeft: `4px solid ${C.gold}`, borderRadius: 10, background: C.cream }}>
                 <p style={{ fontWeight: 800, color: C.brand, fontSize: 17, marginBottom: 4 }}>{doc.customerName}</p>
                 {doc.customerAddress && <p style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.5 }}>{doc.customerAddress}</p>}
                 <div style={{ display: 'flex', gap: 20, marginTop: 4, fontSize: 13, color: C.textMuted }}>
@@ -319,11 +324,11 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
             </div>
 
             {/* Bank details */}
-            <div className="doc-keep" style={{ padding: '14px 20px', background: '#f0fdf4', border: `1px solid #bbf7d0`, borderRadius: 8, marginBottom: 24 }}>
+            <div className="doc-keep" style={{ padding: '14px 20px', background: C.cream, border: `1px solid ${C.borderAlt}`, borderRadius: 8, marginBottom: 24 }}>
               <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '2px', color: C.brand, marginBottom: 8, textTransform: 'uppercase' }}>Payment Details</p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px 24px', fontSize: 13 }}>
-                <p><span style={{ fontWeight: 600, color: C.brand }}>Account:</span> {BANK.accountName}</p>
-                {BANK.bank && <p><span style={{ fontWeight: 600, color: C.brand }}>Bank:</span> {BANK.bank}</p>}
+                <p style={{ gridColumn: '1 / -1' }}><span style={{ fontWeight: 600, color: C.brand }}>Account Name:</span> {BANK.accountName}</p>
+                {BANK.bank && <p style={{ gridColumn: '1 / -1' }}><span style={{ fontWeight: 600, color: C.brand }}>Bank:</span> {BANK.bank}</p>}
                 <p><span style={{ fontWeight: 600, color: C.brand }}>Sort Code:</span> {BANK.sortCode}</p>
                 <p><span style={{ fontWeight: 600, color: C.brand }}>Account No:</span> {BANK.accountNumber}</p>
               </div>
@@ -353,7 +358,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
           </div>
 
           {/* Footer — thin accent line + centered text */}
-          <div style={{ borderTop: `3px solid ${C.accent}`, padding: '12px 44px', textAlign: 'center', background: '#fafaf9' }}>
+          <div style={{ borderTop: `3px solid ${C.gold}`, padding: '12px 44px', textAlign: 'center', background: '#fafaf9' }}>
             <p style={{ fontSize: 11, color: C.textMuted, margin: 0 }}>
               {COMPANY_NAME} &nbsp;&middot;&nbsp; Reg. {REG_NUMBER} &nbsp;&middot;&nbsp; {COMPANY_ADDRESS}
             </p>
