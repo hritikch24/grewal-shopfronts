@@ -8,11 +8,12 @@ const COMPANY_SITE = 'www.grewalshopfrontandshutters.co.uk';
 const LOGO_SRC = '/assets/grewal-icon-512.png';
 const VAT_NUMBER = '506 3260 22';
 const REG_NUMBER = '16710475';
-const BANK = {
-  accountName: 'GREWAL SHOPFRONT & SHUTTERS LTD',
-  bank: 'Revolut Ltd',
-  accountNumber: '64863139',
-  sortCode: '23-01-20',
+// Payment account given by the owner on 15 Oct 2026. Every quote and invoice
+// renders from this, including ones issued before that date.
+const BANK: { accountName: string; bank?: string; accountNumber: string; sortCode: string } = {
+  accountName: 'Grewal Shopfront Shutter Windows And Doors Limited',
+  accountNumber: '34117844',
+  sortCode: '04-06-05',
 };
 
 const C = {
@@ -322,7 +323,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
               <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '2px', color: C.brand, marginBottom: 8, textTransform: 'uppercase' }}>Payment Details</p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px 24px', fontSize: 13 }}>
                 <p><span style={{ fontWeight: 600, color: C.brand }}>Account:</span> {BANK.accountName}</p>
-                <p><span style={{ fontWeight: 600, color: C.brand }}>Bank:</span> {BANK.bank}</p>
+                {BANK.bank && <p><span style={{ fontWeight: 600, color: C.brand }}>Bank:</span> {BANK.bank}</p>}
                 <p><span style={{ fontWeight: 600, color: C.brand }}>Sort Code:</span> {BANK.sortCode}</p>
                 <p><span style={{ fontWeight: 600, color: C.brand }}>Account No:</span> {BANK.accountNumber}</p>
               </div>

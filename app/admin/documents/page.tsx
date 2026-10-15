@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import QuickBuild from './QuickBuild';
+import type { Draft } from '@/lib/document-parse';
 
 interface LineItem {
   description: string;
@@ -213,6 +215,42 @@ export default function DocumentsAdminPage() {
     setShowForm(true);
   }
 
+  /** Quick create saved a document: show the usual "created" screen on its tab. */
+  function quickCreated(doc: unknown, type: 'quote' | 'invoice') {
+    setEditingDocId(null);
+    setCreatedDoc(doc as Doc);
+    setShowForm(true);
+    if (type === tab) fetchDocuments();
+    else setTab(type);
+  }
+
+  /** Quick create → the full form, filled with what was understood, every field editable. */
+  function quickEditAll(d: Draft) {
+    const inDays = (n?: number) => (n ? new Date(Date.now() + n * 86400000).toISOString().split('T')[0] : '');
+    setTab(d.type);
+    setForm({
+      ...emptyForm(),
+      customerName: d.customerName || '',
+      customerEmail: d.customerEmail || '',
+      customerPhone: d.customerPhone || '',
+      customerAddress: d.customerAddress || '',
+      lineItems: d.lineItems.length ? d.lineItems.map((li) => ({ ...li })) : [{ description: '', qty: 1, unitPrice: 0 }],
+      vatEnabled: d.vatRate > 0,
+      vatRate: d.vatRate || 20,
+      notes: d.notes || '',
+      depositPercent: d.depositPercent ? String(d.depositPercent) : '',
+      validUntil: d.type === 'quote' ? inDays(d.validForDays) : '',
+      dueDate: d.type === 'invoice' ? inDays(d.dueInDays) : '',
+      projectReference: d.projectReference || '',
+      scope: d.scope || '',
+      leadTime: d.leadTime || '',
+    });
+    setEditingDocId(null);
+    setCreatedDoc(null);
+    setError('');
+    setShowForm(true);
+  }
+
   function pickCustomer(id: string) {
     const c = customers.find((x) => x.id === id);
     if (!c) { setForm({ ...form, customerId: '' }); return; }
@@ -395,6 +433,8 @@ export default function DocumentsAdminPage() {
           </button>
           )}
         </div>
+
+        {!isAuto && <QuickBuild tab={tab} headers={makeHeaders} onCreated={quickCreated} onEditAll={quickEditAll} />}
 
         <div className="bg-white rounded-2xl border border-slate-200/60 overflow-hidden">
           {loading ? (
