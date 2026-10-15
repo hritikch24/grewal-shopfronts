@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import type { Draft, DocType } from '@/lib/document-parse';
+import { useDictation } from './useDictation';
 
 /**
- * "Type it, check it, create it." One sentence becomes a draft; the card
+ * "Say it or type it, check it, create it." What was said becomes a draft; the card
  * shows only the details that were given. Create saves it through the normal
  * documents API. "Edit all fields" hands the draft to the full form, where
  * every option is available.
@@ -18,7 +19,11 @@ interface Props {
 }
 
 const EXAMPLE =
-  'Invoice for Hritik, email hritik@example.com, phone 07123 456789, job: replace shutter motor, price £450 plus VAT';
+  'Invoice for Hritik, email hritik@example.com, phone 07123 456789, job: replace shutter motor, price £450 plus VAT. ' +
+  'Or: proforma for Royal Way, Loughborough LE11 5XR, supply and fit a double door, letter box and cladding, £6,630 plus VAT, 40% deposit';
+
+const TYPE_LABEL: Record<DocType, string> = { quote: 'Quote', invoice: 'Invoice', proforma: 'Proforma' };
+const billing = (t: DocType) => t === 'invoice' || t === 'proforma';
 
 const gbp = (n: number) => '£' + n.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const isoInDays = (days: number) => new Date(Date.now() + days * 86400000).toISOString().split('T')[0];
@@ -41,10 +46,10 @@ export function payloadFromDraft(d: Draft) {
     lineItems: d.lineItems.map((li) => ({ ...li, description: li.description.trim() || DEFAULT_DESCRIPTION })),
     vatRate: d.vatRate,
     notes: d.notes || null,
-    depositPercent: d.type === 'invoice' && d.depositPercent ? d.depositPercent : null,
+    depositPercent: billing(d.type) && d.depositPercent ? d.depositPercent : null,
     issueDate: null,
     validUntil: d.type === 'quote' && d.validForDays ? isoInDays(d.validForDays) : null,
-    dueDate: d.type === 'invoice' && d.dueInDays ? isoInDays(d.dueInDays) : null,
+    dueDate: billing(d.type) && d.dueInDays ? isoInDays(d.dueInDays) : null,
     meta: Object.values(meta).some(Boolean) ? meta : null,
   };
 }
@@ -56,6 +61,9 @@ export default function QuickBuild({ tab, headers, onCreated, onEditAll }: Props
   const [missing, setMissing] = useState<string[]>([]);
   const [error, setError] = useState('');
   const [engine, setEngine] = useState('');
+  const addHeard = useCallback((heard: string) => setText((t) => (t.trim() ? t.trimEnd() + ' ' : '') + heard.trim()), []);
+  const dictation = useDictation(headers, addHeard);
+  const mmss = (n: number) => `${Math.floor(n / 60)}:${String(n % 60).padStart(2, '0')}`;
 
   async function read() {
     if (text.trim().length < 3 || busy) return;
@@ -99,7 +107,7 @@ export default function QuickBuild({ tab, headers, onCreated, onEditAll }: Props
 
   const subtotal = draft ? draft.lineItems.reduce((s, li) => s + li.qty * li.unitPrice, 0) : 0;
   const vat = draft ? subtotal * (draft.vatRate / 100) : 0;
-  const label = draft?.type === 'invoice' ? 'Invoice' : 'Quote';
+  const label = draft ? TYPE_LABEL[draft.type] : 'Quote';
 
   // Only what was given. Name and price are always shown (they are required).
   const given: [string, string][] = draft
@@ -108,8 +116,8 @@ export default function QuickBuild({ tab, headers, onCreated, onEditAll }: Props
         ['Phone', draft.customerPhone],
         ['Address', draft.customerAddress],
         ['Reference', draft.projectReference],
-        ['Deposit', draft.type === 'invoice' && draft.depositPercent ? `${draft.depositPercent}%` : undefined],
-        ['Payment due', draft.type === 'invoice' && draft.dueInDays ? `in ${draft.dueInDays} days` : undefined],
+        ['Deposit', billing(draft.type) && draft.depositPercent ? `${draft.depositPercent}%` : undefined],
+        ['Payment due', billing(draft.type) && draft.dueInDays ? `in ${draft.dueInDays} days` : undefined],
         ['Valid for', draft.type === 'quote' && draft.validForDays ? `${draft.validForDays} days` : undefined],
         ['Scope', draft.type === 'quote' ? draft.scope : undefined],
         ['Lead time', draft.type === 'quote' ? draft.leadTime : undefined],
@@ -122,7 +130,8 @@ export default function QuickBuild({ tab, headers, onCreated, onEditAll }: Props
       <div>
         <h2 id="quick-build-title" className="text-base font-heading font-bold text-slate-800">Quick create</h2>
         <p className="text-xs text-slate-400">
-          Type it as you would say it. Customer name and price are needed; anything else you mention is added, and nothing is guessed.
+          Type it, or press Speak and say it as you would to a colleague: who it is for, the address, the work, the price, VAT and any deposit.
+          Customer name and price are needed; anything else you mention is added, and nothing is guessed.
         </p>
       </div>
 
@@ -134,9 +143,9 @@ export default function QuickBuild({ tab, headers, onCreated, onEditAll }: Props
             onKeyDown={(e) => {
               if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) read();
             }}
-            rows={3}
+            rows={4}
             placeholder={EXAMPLE}
-            aria-label="Describe the quote or invoice"
+            aria-label="Describe the quote, invoice or proforma"
             className="w-full px-4 py-3 border border-slate-200 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 outline-none"
           />
           <div className="flex items-center gap-3">
@@ -148,8 +157,29 @@ export default function QuickBuild({ tab, headers, onCreated, onEditAll }: Props
             >
               {busy === 'reading' ? 'Reading…' : 'Build'}
             </button>
-            <span className="text-xs text-slate-400">Ctrl/⌘ + Enter</span>
+            {dictation.available && (
+              <button
+                type="button"
+                onClick={dictation.state === 'recording' ? dictation.stop : dictation.start}
+                disabled={dictation.state === 'transcribing' || busy !== null}
+                aria-pressed={dictation.state === 'recording'}
+                className={
+                  'px-4 py-2.5 text-sm font-semibold rounded-lg border disabled:opacity-50 ' +
+                  (dictation.state === 'recording' ? 'bg-red-600 border-red-600 text-white' : 'border-slate-200 text-slate-800 hover:bg-slate-50')
+                }
+              >
+                {dictation.state === 'recording'
+                  ? `■ Stop ${mmss(dictation.seconds)}`
+                  : dictation.state === 'transcribing'
+                    ? 'Writing it down…'
+                    : '🎤 Speak'}
+              </button>
+            )}
+            <span className="text-xs text-slate-400">
+              {dictation.state === 'recording' ? `Up to ${mmss(dictation.maxSeconds)}. Press Stop when you have finished.` : 'Ctrl/⌘ + Enter'}
+            </span>
           </div>
+          {dictation.error && <p className="text-sm text-red-600" role="alert">{dictation.error}</p>}
         </>
       )}
 
@@ -157,14 +187,14 @@ export default function QuickBuild({ tab, headers, onCreated, onEditAll }: Props
         <div className="space-y-4">
           <div className="flex flex-wrap items-center gap-2">
             <span className="text-xs text-slate-400">Make this a</span>
-            {(['quote', 'invoice'] as DocType[]).map((t) => (
+            {(['quote', 'proforma', 'invoice'] as DocType[]).map((t) => (
               <button
                 key={t}
                 type="button"
                 onClick={() => setDraft({ ...draft, type: t })}
                 className={'px-3 py-1 text-xs font-semibold rounded-full ' + (draft.type === t ? 'bg-slate-800 text-white' : 'bg-slate-100 text-slate-500 hover:text-slate-800')}
               >
-                {t === 'quote' ? 'Quote' : 'Invoice'}
+                {TYPE_LABEL[t]}
               </button>
             ))}
           </div>
@@ -189,15 +219,16 @@ export default function QuickBuild({ tab, headers, onCreated, onEditAll }: Props
           <div className="border border-slate-200 rounded-lg divide-y divide-slate-100">
             {draft.lineItems.length === 0 && <p className="px-4 py-3 text-sm text-amber-700">No price found</p>}
             {draft.lineItems.map((li, i) => (
-              <div key={i} className="flex items-center gap-3 px-4 py-2.5">
-                <input
+              <div key={i} className="flex items-start gap-3 px-4 py-2.5">
+                <textarea
+                  rows={Math.max(1, Math.min(6, li.description.split('\n').length))}
                   value={li.description}
                   onChange={(e) =>
                     setDraft({ ...draft, lineItems: draft.lineItems.map((x, j) => (j === i ? { ...x, description: e.target.value } : x)) })
                   }
                   placeholder={DEFAULT_DESCRIPTION}
                   aria-label={`Line ${i + 1} description`}
-                  className="flex-1 min-w-0 px-2 py-1 border border-transparent hover:border-slate-200 focus:border-blue-500 rounded text-sm text-slate-800 outline-none"
+                  className="flex-1 min-w-0 px-2 py-1 border border-transparent hover:border-slate-200 focus:border-blue-500 rounded text-sm text-slate-800 outline-none resize-y"
                 />
                 <span className="text-xs text-slate-400 whitespace-nowrap">
                   {li.qty} × {gbp(li.unitPrice)}

@@ -6,7 +6,6 @@ const COMPANY_PHONE = '07597 630000';
 const COMPANY_EMAIL = 'info@grewalshopfrontandshutters.co.uk';
 const COMPANY_SITE = 'www.grewalshopfrontandshutters.co.uk';
 const LOGO_SRC = '/assets/grewal-icon-512.png';
-const REG_NUMBER = '16710475';
 // Payment account given by the owner on 15 Oct 2026. Every quote and invoice
 // renders from this, including ones issued before that date.
 const BANK: { accountName: string; bank?: string; accountNumber: string; sortCode: string } = {
@@ -64,12 +63,15 @@ function SpecLines({ text }: { text: string }) {
 
 export default function DocumentView({ doc }: { doc: DocumentData }) {
   const isInvoice = doc.type === 'invoice';
+  const isProforma = doc.type === 'proforma';
+  /** Invoices and proformas both ask for payment. */
+  const isBill = isInvoice || isProforma;
   const meta = doc.meta || {};
-  const title = isInvoice ? 'INVOICE' : 'QUOTATION';
+  const title = isProforma ? 'PROFORMA INVOICE' : isInvoice ? 'INVOICE' : 'QUOTATION';
   // Invoices show no terms block, and no document shows the VAT registration
   // number (owner's instruction, 15 Oct 2026). VAT itself is still optional.
   const vat = doc.vatRate > 0;
-  const deposit = isInvoice && doc.depositPercent && doc.depositPercent > 0 ? (doc.total * doc.depositPercent) / 100 : null;
+  const deposit = isBill && doc.depositPercent && doc.depositPercent > 0 ? (doc.total * doc.depositPercent) / 100 : null;
   const balance = deposit !== null ? doc.total - deposit : null;
 
   // Option lines are alternatives to each other, not additions. They stay out
@@ -93,11 +95,13 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
     ? Math.max(1, Math.round((new Date(doc.validUntil).getTime() - new Date(displayDate).getTime()) / 86400000))
     : null;
 
-  const intro = isInvoice
+  const intro = isProforma
+    ? 'Please find our proforma invoice below. Payment of the amount shown, or the deposit where one is listed, confirms your order. This is not a VAT invoice; your invoice follows once payment is received.'
+    : isInvoice
     ? 'Thank you for choosing Grewal Shopfront & Shutters. Please find your invoice for the completed works below.'
     : 'We appreciate your enquiry and are delighted to present our quotation for the supply and installation works as discussed.';
 
-  const terms: string[] = isInvoice
+  const terms: string[] = isBill
     ? []
     : [
         vat ? 'Prices include 20% VAT.' : 'Prices shown are final.',
@@ -112,7 +116,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
       <div style={{ maxWidth: '210mm', margin: '0 auto' }}>
         <div className="no-print flex items-center justify-between mb-5">
           <p style={{ color: C.gold, fontSize: 13, fontFamily: 'var(--font-heading)', opacity: 0.7 }}>
-            {isInvoice ? 'Invoice' : 'Quotation'} &middot; {doc.number}
+            {isProforma ? 'Proforma invoice' : isInvoice ? 'Invoice' : 'Quotation'} &middot; {doc.number}
           </p>
           <PrintButton />
         </div>
@@ -147,16 +151,15 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
             {/* Date bar */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 32px', padding: '12px 18px', background: C.accentBg, borderRadius: 8, marginBottom: 28, fontSize: 13 }}>
               <span><strong style={{ color: C.brand }}>Date:</strong> {fmt(displayDate)}</span>
-              {!isInvoice && doc.validUntil && <span><strong style={{ color: C.brand }}>Valid Until:</strong> {fmt(doc.validUntil)}</span>}
-              {isInvoice && doc.dueDate && <span><strong style={{ color: C.brand }}>Payment Due:</strong> {fmt(doc.dueDate)}</span>}
+              {!isBill && doc.validUntil && <span><strong style={{ color: C.brand }}>Valid Until:</strong> {fmt(doc.validUntil)}</span>}
+              {isBill && doc.dueDate && <span><strong style={{ color: C.brand }}>Payment Due:</strong> {fmt(doc.dueDate)}</span>}
               {meta.projectReference && <span><strong style={{ color: C.brand }}>Ref:</strong> {meta.projectReference}</span>}
-              <span><strong style={{ color: C.brand }}>Reg:</strong> {REG_NUMBER}</span>
             </div>
 
             {/* Customer card */}
             <div style={{ marginBottom: 28 }}>
               <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px', color: C.accent, marginBottom: 10 }}>
-                {isInvoice ? 'Billed To' : 'Prepared For'}
+                {isProforma ? 'Invoice To' : isInvoice ? 'Billed To' : 'Prepared For'}
               </p>
               <div style={{ padding: '16px 20px', border: `1px solid ${C.border}`, borderLeft: `4px solid ${C.gold}`, borderRadius: 10, background: C.cream }}>
                 <p style={{ fontWeight: 800, color: C.brand, fontSize: 17, marginBottom: 4 }}>{doc.customerName}</p>
@@ -171,7 +174,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
             <p style={{ fontSize: 13, color: C.textMuted, marginBottom: 28, lineHeight: 1.8, borderLeft: `3px solid ${C.accent}`, paddingLeft: 16 }}>{intro}</p>
 
             {/* Scope */}
-            {!isInvoice && meta.scope && (
+            {!isBill && meta.scope && (
               <div style={{ marginBottom: 24 }}>
                 <p style={{ fontWeight: 700, color: C.brand, fontSize: 13, marginBottom: 8, letterSpacing: '0.5px' }}>SCOPE OF WORK</p>
                 <ul style={{ paddingLeft: 20, margin: 0, lineHeight: 1.9 }}>
@@ -181,14 +184,14 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
             )}
 
             {/* Specifications */}
-            {!isInvoice && meta.specifications && (
+            {!isBill && meta.specifications && (
               <div style={{ marginBottom: 28 }}>
                 <p style={{ fontWeight: 700, color: C.brand, fontSize: 13, marginBottom: 8, letterSpacing: '0.5px' }}>SPECIFICATIONS</p>
                 <SpecLines text={meta.specifications} />
               </div>
             )}
 
-            {!isInvoice && meta.photoDrawing && (
+            {!isBill && meta.photoDrawing && (
               <div style={{ marginBottom: 28 }}>
                 <p style={{ fontWeight: 700, color: C.brand, fontSize: 13, marginBottom: 8, letterSpacing: '0.5px' }}>PHOTO / DRAWING</p>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -213,7 +216,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
                     <tr key={idx} style={{ background: idx % 2 === 0 ? C.paper : C.rowAlt, borderBottom: `1px solid ${C.borderAlt}` }}>
                       <td style={{ padding: '14px 16px', fontWeight: 600, color: C.accent, fontSize: 13 }}>{String(idx + 1).padStart(2, '0')}</td>
                       <td style={{ padding: '14px 16px' }}>
-                        <p style={{ fontWeight: 600, color: C.text, fontSize: 14, margin: 0 }}>{li.description}</p>
+                        <p style={{ fontWeight: 600, color: C.text, fontSize: 14, margin: 0, whiteSpace: 'pre-line' }}>{li.description}</p>
                       </td>
                       <td style={{ padding: '14px 16px', textAlign: 'center', color: C.textMuted, fontSize: 13 }}>{li.qty}</td>
                       <td style={{ padding: '14px 16px', textAlign: 'right', color: C.textMuted, fontSize: 13 }}>{gbp(li.unitPrice)}</td>
@@ -244,7 +247,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
                             </span>
                           </td>
                           <td style={{ padding: '12px 14px' }}>
-                            <p style={{ fontWeight: 600, color: C.brand, fontSize: 14, margin: 0 }}>{li.description}</p>
+                            <p style={{ fontWeight: 600, color: C.brand, fontSize: 14, margin: 0, whiteSpace: 'pre-line' }}>{li.description}</p>
                             {li.qty > 1 && (
                               <p style={{ fontSize: 12, color: C.textMuted, margin: '2px 0 0' }}>{li.qty} × {gbp(li.unitPrice)}</p>
                             )}
@@ -262,7 +265,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
             )}
 
             {/* Lead time */}
-            {!isInvoice && meta.leadTime && (
+            {!isBill && meta.leadTime && (
               <p style={{ margin: '16px 0 24px', fontWeight: 600, color: C.brand, fontSize: 13 }}>
                 Estimated Lead Time: <span style={{ fontWeight: 400, color: C.text }}>{meta.leadTime}</span>
               </p>
@@ -327,6 +330,11 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
                 <p><span style={{ fontWeight: 600, color: C.brand }}>Sort Code:</span> {BANK.sortCode}</p>
                 <p><span style={{ fontWeight: 600, color: C.brand }}>Account No:</span> {BANK.accountNumber}</p>
               </div>
+              {isBill && (
+                <p style={{ fontSize: 12, fontWeight: 600, color: C.brand, marginTop: 10, marginBottom: 0 }}>
+                  Please use {doc.number} as your payment reference.
+                </p>
+              )}
             </div>
 
             {/* Terms (quotes only) and notes */}
@@ -350,7 +358,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
             {/* Closing */}
             <div style={{ textAlign: 'center', padding: '20px 0 8px', borderTop: `1px solid ${C.borderAlt}` }}>
               <p style={{ fontSize: 15, fontWeight: 700, color: C.brand, marginBottom: 2 }}>
-                {isInvoice ? 'Thank you for your business.' : 'Thank you for considering Grewal Shopfront & Shutters.'}
+                {isBill ? 'Thank you for your business.' : 'Thank you for considering Grewal Shopfront & Shutters.'}
               </p>
               <p style={{ fontSize: 12, color: C.textMuted }}>We look forward to working with you.</p>
             </div>
@@ -359,7 +367,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
           {/* Footer — thin accent line + centered text */}
           <div style={{ borderTop: `3px solid ${C.gold}`, padding: '12px 44px', textAlign: 'center', background: '#fafaf9' }}>
             <p style={{ fontSize: 11, color: C.textMuted, margin: 0 }}>
-              {COMPANY_NAME} &nbsp;&middot;&nbsp; Reg. {REG_NUMBER} &nbsp;&middot;&nbsp; {COMPANY_ADDRESS}
+              {COMPANY_NAME} &nbsp;&middot;&nbsp; {COMPANY_ADDRESS}
             </p>
             <p style={{ fontSize: 11, color: C.textMuted, marginTop: 2 }}>
               {COMPANY_PHONE} &nbsp;&middot;&nbsp; {COMPANY_EMAIL} &nbsp;&middot;&nbsp; {COMPANY_SITE}

@@ -13,7 +13,7 @@ import { readWithClaude } from '@/lib/ai/claude-reader';
 /**
  * POST /api/admin/documents/parse  { text, type? }
  *
- * Reads one plain-English sentence into a quote/invoice draft. Creates
+ * Reads a typed or transcribed message into a quote, invoice or proforma draft. Creates
  * nothing: the admin page shows the draft, and the existing
  * POST /api/admin/documents saves it.
  *
@@ -53,9 +53,9 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   } catch {
     return NextResponse.json({ error: 'Invalid request body.' }, { status: 400 });
   }
-  const text = typeof body.text === 'string' ? body.text.trim().slice(0, 2000) : '';
-  if (text.length < 3) return NextResponse.json({ error: 'Type what the quote or invoice is for.' }, { status: 400 });
-  const fallbackType: DocType = body.type === 'invoice' ? 'invoice' : 'quote';
+  const text = typeof body.text === 'string' ? body.text.trim().slice(0, 4000) : '';
+  if (text.length < 3) return NextResponse.json({ error: 'Type or say what the document is for.' }, { status: 400 });
+  const fallbackType: DocType = body.type === 'invoice' || body.type === 'proforma' ? body.type : 'quote';
 
   const rules = ruleParse(text, fallbackType);
   const ai = await aiReading(text);

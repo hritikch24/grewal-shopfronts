@@ -28,7 +28,7 @@ export async function readWithCompat(p: CompatProvider, system: string, text: st
     const res = await client.chat.completions.create({
       model: p.model,
       temperature: 0,
-      max_tokens: 700,
+      max_tokens: 1200,
       ...(p.jsonMode ? { response_format: { type: 'json_object' as const } } : {}),
       messages: [
         { role: 'system', content: system },

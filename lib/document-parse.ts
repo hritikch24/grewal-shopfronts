@@ -1,5 +1,5 @@
 /**
- * Turns one typed sentence into a quote or invoice draft.
+ * Turns one typed or spoken message into a quote, invoice or proforma draft.
  *
  *   "invoice for Hritik, email hritik@example.com, number 07123 456789,
  *    job: replace shutter motor, price £450 plus VAT"
@@ -23,7 +23,7 @@
  * load it directly.
  */
 
-export type DocType = 'quote' | 'invoice';
+export type DocType = 'quote' | 'invoice' | 'proforma';
 
 export interface DraftItem {
   description: string;
@@ -41,7 +41,7 @@ export interface Draft {
   /** 20 when the sentence says VAT is added or included; 0 otherwise. */
   vatRate: number;
   depositPercent?: number;
-  /** Invoice: payment due this many days from today. */
+  /** Invoice or proforma: payment due this many days from today. */
   dueInDays?: number;
   /** Quote: valid this many days from today. */
   validForDays?: number;
@@ -94,6 +94,8 @@ function field(text: string, labels: string): string | undefined {
 
 export function detectType(text: string, fallback: DocType): DocType {
   const t = norm(text);
+  // "proforma invoice" names a proforma, not an invoice.
+  if (/\bpro[\s-]?forma\b/.test(t)) return 'proforma';
   const inv = t.search(/\binvoices?\b|\bbill\b/);
   const quo = t.search(/\bquot(?:e|es|ation|ations)\b|\bestimate\b/);
   if (inv === -1 && quo === -1) return fallback;
@@ -135,7 +137,7 @@ function nameFromRules(text: string): string | undefined {
     field(text, "(?:customer|client|user)'?s?\\s+name|name") ??
     field(text, '(?:for|to)\\s+(?:the\\s+)?(?:customer|client|user|mr|mrs|ms|miss|dr)\\.?') ??
     field(text, '(?:customer|client|user)') ??
-    field(text, '(?:invoice|invoices|quote|quotation|estimate|bill)\\s+(?:for|to)');
+    field(text, '(?:pro[\\s-]?forma(?:\\s+invoice)?|invoice|invoices|quote|quotation|estimate|bill)\\s+(?:for|to)');
   if (!name) return undefined;
   // "invoice for the shutter repair" names a job, not a person.
   if (NOT_A_NAME.test(name)) return undefined;
@@ -154,7 +156,8 @@ export function ruleParse(text: string, fallbackType: DocType): Draft {
     field(text, 'job\\s+description|description|desc|job|work(?:\\s+done)?|for\\s+the\\s+job\\s+of|for\\s+(?=(?:supply|install|fit|repair|replace|fix|new)\\b)') ?? undefined;
   const qtyMatch = text.match(/\b(?:qty|quantity)\s*(?:is|:|=|of)?\s*(\d{1,4})\b/i) ?? text.match(/\b(\d{1,3})\s*[x×]\s/i);
   const qty = qtyMatch ? Number(qtyMatch[1]) : 1;
-  const deposit = text.match(/\b(\d{1,2}(?:\.\d)?)\s?%\s*deposit\b|\bdeposit\s*(?:of|:)?\s*(\d{1,2}(?:\.\d)?)\s?%/i);
+  // Speech often comes back as "40 percent" rather than "40%".
+  const deposit = text.match(/\b(\d{1,2}(?:\.\d)?)\s?(?:%|percent|per\s+cent)\s*deposit\b|\bdeposit\s*(?:of|:)?\s*(\d{1,2}(?:\.\d)?)\s?(?:%|percent|per\s+cent)/i);
   const due = text.match(/\bdue\s*(?:in|within)\s*(\d{1,3})\s*days?\b|\b(\d{1,3})\s*days?\s*(?:to\s+pay|payment\s+terms)\b/i);
   const valid = text.match(/\bvalid\s*(?:for)?\s*(\d{1,3})\s*days?\b/i);
   const vat = vatMode(text);
@@ -280,7 +283,8 @@ export function missingRequired(d: Draft): string[] {
 }
 
 /** The instruction given to the model. JSON only; nothing is ever guessed. */
-export const PARSE_PROMPT = `You extract quote and invoice details for a UK shopfront and shutter company from one message.
+export const PARSE_PROMPT = `You extract quote, invoice and proforma invoice details for a UK shopfront and shutter company from one message.
+The message may be typed or transcribed from speech, so it can be long and conversational.
 Return JSON only, with these keys (omit a key, or use null, when the message does not state it):
 {"customerName": string, "customerEmail": string, "customerPhone": string, "customerAddress": string,
  "lineItems": [{"description": string, "qty": number, "unitPrice": number}],
@@ -291,4 +295,6 @@ Rules:
 - unitPrice is the number the message gives for that item, as typed (no VAT maths). qty defaults to 1.
 - If the message lists several jobs with their own prices, make one line item each.
 - description is the job or work described, in the message's own words, as a short line-item title.
+- If one price covers several components (for example "supply and fit: a double door, a letter box and cladding for 6630"),
+  make ONE line item. Its description is the heading, then each component on its own line starting with "• ", in the message's words.
 - Do not add anything that is not in the message.`;

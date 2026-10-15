@@ -69,5 +69,20 @@ const gm = groundDraft({ customerName: 'Patel', lineItems: [{ description: 'Shut
 eq('several typed items kept', gm.lineItems.map((li) => [li.qty, li.unitPrice]), [[2, 300], [1, 150]]);
 eq('AI garbage gives an empty draft', missingRequired(groundDraft('nonsense', s1, 'quote')), ['customer name', 'price']);
 
+// Proformas, and the way speech comes back from transcription.
+const spoken = 'Proforma invoice for Royal Way Belton Park Loughborough. Supply and fit: one aluminium double door with fixed glass panels, a letter box and cladding, six thousand, £6,630 plus VAT, 40 percent deposit.';
+const rp = ruleParse(spoken, 'invoice');
+eq('proforma named in the sentence', rp.type, 'proforma');
+eq('"proforma invoice" is not an invoice', ruleParse('proforma invoice for Sam, price 100', 'quote').type, 'proforma');
+eq('name after "proforma for"', ruleParse('Proforma for Royal Way, price £100', 'quote').customerName, 'Royal Way');
+eq('spoken percent deposit', rp.depositPercent, 40);
+eq('price and VAT from speech', [rp.lineItems[0]?.unitPrice, rp.vatRate], [6630, 20]);
+const gp = groundDraft(
+  { customerName: 'Royal Way', lineItems: [{ description: 'Supply and fit\n• one aluminium double door with fixed glass panels\n• a letter box\n• cladding', qty: 1, unitPrice: 6630 }] },
+  spoken,
+  'invoice',
+);
+eq('bulleted components kept as one priced line', [gp.lineItems.length, gp.lineItems[0]?.description.split('\n').length], [1, 4]);
+
 console.log(failed ? `\n${failed} failed` : '\nAll passed');
 process.exit(failed ? 1 : 0);
