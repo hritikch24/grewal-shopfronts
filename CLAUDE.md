@@ -247,3 +247,32 @@ the website.
 
 **Do not retire Grewal's 574 city x service pages without being asked.** The
 owner's instruction stands.
+
+---
+
+## Garage doors — drafted 15 Oct 2026, NOT published
+
+`/garage-door-repairs` and `/garage-door-installation` are **hub pages only**
+(`app/garage-door-*`, copy in `data/garage-doors.ts`, layout in
+`components/GarageDoors.tsx`), written for homeowners, landlords and managing
+agents of garage blocks, and businesses. They are never entries in
+`data/services.ts` (that would add 41 city pages each, and the owner wants
+Grewal's existing pages left alone). Held behind `garage.published`: until it
+is true both routes 404, stay out of the sitemap and footer, and the contact
+form does not list garage services. `garage.questionsForOwner` lists what must
+be confirmed. `GREWAL_GARAGE_DRAFT=on` shows drafts on a preview deployment
+only. Servicing is a section ("Planned maintenance"), not a page.
+
+Equivalent pages already exist and were not duplicated: `/services/shopfront-repairs`,
+`/services/shutter-repair`, `/services/roller-shutters`, `/services/glass-replacement`,
+`/services/emergency-callout`. No signs, window graphics or respraying pages.
+
+Contact form: optional property postcode (UK format checked), timescale, and
+garage door type for garage services; the page path is stored in the new
+nullable `leads.page_path` column, the extras are appended to the message.
+`reportAdsConversion('lead')` is unchanged. A `dataLayer` event
+`contact_form_sent` carries service and page only.
+
+Before publishing: the site-wide "24/7 Emergency Service" header badge and the
+form's "Typical response time: under 2 hours" line would sit on the garage
+pages too. Confirm both apply to garage doors, or the pages need to say they do not.

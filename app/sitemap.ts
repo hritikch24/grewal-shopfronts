@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { garage } from '@/data/garage-doors';
 
 const siteUrl = 'https://www.grewalshopfrontandshutters.co.uk';
 
@@ -104,5 +105,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...servicePages, ...cityPages, ...serviceCityPages, ...blogPages, ...videoPages];
+  // Hub pages, listed only once the owner confirms garage door work.
+  const garagePages: MetadataRoute.Sitemap = garage.published
+    ? [`${siteUrl}/garage-door-repairs`, `${siteUrl}/garage-door-installation`].map((url) => ({
+        url,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.8,
+      }))
+    : [];
+
+  return [...staticPages, ...garagePages, ...servicePages, ...cityPages, ...serviceCityPages, ...blogPages, ...videoPages];
 }

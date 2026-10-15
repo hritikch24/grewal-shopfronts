@@ -48,6 +48,10 @@ function cleanupExpiredEntries(): void {
 // ---------------------------------------------------------------------------
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+const POSTCODE = /^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i;
+const GARAGE_KINDS = new Set(["Roller", "Sectional", "Up-and-over", "Side-hinged", "Don’t know"]);
+const TIMESCALES = new Set(["Urgent", "In the next few weeks", "No fixed date yet"]);
+
 function getClientIp(request: NextRequest): string {
   const forwarded = request.headers.get("x-forwarded-for");
   if (forwarded) {
@@ -86,7 +90,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     );
   }
 
-  const { name, email, phone, location, service, message, source, sessionId } = body as {
+  const { name, email, phone, location, service, message, source, sessionId, postcode, timescale, garageKind, page } = body as {
     name?: string;
     email?: string;
     phone?: string;
@@ -95,7 +99,19 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     message?: string;
     source?: string;
     sessionId?: string;
+    postcode?: string;
+    timescale?: string;
+    garageKind?: string;
+    page?: string;
   };
+
+  // Optional extras from the form. Anything unexpected is ignored rather than
+  // rejected, so a form cached before this change still submits.
+  const extras: string[] = [];
+  if (typeof postcode === "string" && POSTCODE.test(postcode.trim())) extras.push(`Postcode: ${postcode.trim().toUpperCase()}`);
+  if (typeof garageKind === "string" && GARAGE_KINDS.has(garageKind)) extras.push(`Garage door: ${garageKind}`);
+  if (typeof timescale === "string" && TIMESCALES.has(timescale)) extras.push(`Timescale: ${timescale}`);
+  const pagePath = typeof page === "string" && /^\/[a-z0-9\-/]{0,150}$/.test(page) ? page : undefined;
 
   // Required field validation
   const missingFields: string[] = [];
@@ -133,8 +149,9 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
         phone: phone!.trim(),
         location: location!.trim(),
         service: service!.trim(),
-        message: message?.trim() || undefined,
+        message: [message?.trim(), extras.join("\n")].filter(Boolean).join("\n\n") || undefined,
         source: source?.trim() || undefined,
+        pagePath,
         sessionId: sessionId?.trim().slice(0, 100) || undefined,
       },
     });
