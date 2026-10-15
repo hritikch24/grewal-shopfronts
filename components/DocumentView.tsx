@@ -6,7 +6,6 @@ const COMPANY_PHONE = '07597 630000';
 const COMPANY_EMAIL = 'info@grewalshopfrontandshutters.co.uk';
 const COMPANY_SITE = 'www.grewalshopfrontandshutters.co.uk';
 const LOGO_SRC = '/assets/grewal-icon-512.png';
-const VAT_NUMBER = '506 3260 22';
 const REG_NUMBER = '16710475';
 // Payment account given by the owner on 15 Oct 2026. Every quote and invoice
 // renders from this, including ones issued before that date.
@@ -67,8 +66,8 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
   const isInvoice = doc.type === 'invoice';
   const meta = doc.meta || {};
   const title = isInvoice ? 'INVOICE' : 'QUOTATION';
-  // Invoices show no terms block and no VAT registration number (owner's
-  // instruction, 15 Oct 2026). VAT itself is still optional per document.
+  // Invoices show no terms block, and no document shows the VAT registration
+  // number (owner's instruction, 15 Oct 2026). VAT itself is still optional.
   const vat = doc.vatRate > 0;
   const deposit = isInvoice && doc.depositPercent && doc.depositPercent > 0 ? (doc.total * doc.depositPercent) / 100 : null;
   const balance = deposit !== null ? doc.total - deposit : null;
@@ -151,7 +150,6 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
               {!isInvoice && doc.validUntil && <span><strong style={{ color: C.brand }}>Valid Until:</strong> {fmt(doc.validUntil)}</span>}
               {isInvoice && doc.dueDate && <span><strong style={{ color: C.brand }}>Payment Due:</strong> {fmt(doc.dueDate)}</span>}
               {meta.projectReference && <span><strong style={{ color: C.brand }}>Ref:</strong> {meta.projectReference}</span>}
-              {!isInvoice && <span><strong style={{ color: C.brand }}>VAT:</strong> {VAT_NUMBER}</span>}
               <span><strong style={{ color: C.brand }}>Reg:</strong> {REG_NUMBER}</span>
             </div>
 
