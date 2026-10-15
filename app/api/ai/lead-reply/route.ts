@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 
+import { GROQ_MODEL, groqExtras } from '@/lib/ai/groq-model';
 /* ── Auth ─────────────────────────────────────────────────────────────── */
 
 function isAuthorized(request: NextRequest): boolean {
@@ -93,8 +94,9 @@ Respond in JSON only:
 }`;
 
     const response = await client.chat.completions.create({
-      model: "llama-3.3-70b-versatile",
-      max_tokens: 600,
+      model: GROQ_MODEL,
+      ...groqExtras,
+      max_tokens: 1300,
       temperature: 0.7,
       messages: [
         {
