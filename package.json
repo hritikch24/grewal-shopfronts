@@ -16,6 +16,7 @@
     "test": "npm run test:contamination && npm run test:sanity && npm run test:parse"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.134.0",
     "@prisma/client": "^6.19.3",
     "next": "16.2.4",
     "openai": "^6.35.0",

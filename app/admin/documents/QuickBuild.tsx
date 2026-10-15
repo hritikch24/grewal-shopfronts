@@ -23,6 +23,7 @@ const EXAMPLE =
 const gbp = (n: number) => '£' + n.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const isoInDays = (days: number) => new Date(Date.now() + days * 86400000).toISOString().split('T')[0];
 const DEFAULT_DESCRIPTION = 'Works as agreed';
+const ENGINE_LABEL: Record<string, string> = { groq: 'Groq', grok: 'Grok', openai: 'ChatGPT', claude: 'Claude', rules: 'built-in rules' };
 
 /** The body the existing POST /api/admin/documents expects. */
 export function payloadFromDraft(d: Draft) {
@@ -54,6 +55,7 @@ export default function QuickBuild({ tab, headers, onCreated, onEditAll }: Props
   const [draft, setDraft] = useState<Draft | null>(null);
   const [missing, setMissing] = useState<string[]>([]);
   const [error, setError] = useState('');
+  const [engine, setEngine] = useState('');
 
   async function read() {
     if (text.trim().length < 3 || busy) return;
@@ -65,6 +67,7 @@ export default function QuickBuild({ tab, headers, onCreated, onEditAll }: Props
       if (!res.ok) throw new Error(data.error || 'Could not read that.');
       setDraft(data.draft);
       setMissing(data.missing);
+      setEngine(data.engine);
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Could not read that.');
     }
@@ -232,6 +235,7 @@ export default function QuickBuild({ tab, headers, onCreated, onEditAll }: Props
               Start again
             </button>
           </div>
+          <p className="text-[11px] text-slate-400">Read by {ENGINE_LABEL[engine] ?? engine}, checked against what you typed.</p>
         </div>
       )}
 
