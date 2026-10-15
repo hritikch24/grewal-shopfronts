@@ -21,6 +21,12 @@ const serviceOptions = [
   'Curtain Walling', 'Glass Shopfronts', 'Other',
 ];
 
+// Shown only when the page passes `garage` (the garage door pages, once live).
+const garageServices = ['Garage Door Repair', 'New Garage Door'];
+const garageKinds = ['Roller', 'Sectional', 'Up-and-over', 'Side-hinged', 'Don’t know'];
+const timescales = ['Urgent', 'In the next few weeks', 'No fixed date yet'];
+const POSTCODE = /^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i;
+
 const hearAboutOptions = [
   'Google Search', 'Google Maps', 'Recommended by someone', 'Social Media',
   'Returning customer', 'Other',
@@ -35,6 +41,9 @@ interface FormData {
   service: string;
   message: string;
   hearAbout: string;
+  postcode: string;
+  timescale: string;
+  garageKind: string;
 }
 
 interface FormErrors {
@@ -44,23 +53,33 @@ interface FormErrors {
   location?: string;
   locationOther?: string;
   service?: string;
+  postcode?: string;
 }
 
 interface ContactFormProps {
   defaultCity?: string;
+  /** Chooses the service up front. */
+  presetService?: string;
+  /** Lists the garage door services. */
+  garage?: boolean;
 }
 
-export default function ContactForm({ defaultCity }: ContactFormProps) {
+export default function ContactForm({ defaultCity, presetService, garage = false }: ContactFormProps) {
   const [form, setForm] = useState<FormData>({
     fullName: '',
     email: '',
     phone: '',
     location: defaultCity || '',
     locationOther: '',
-    service: '',
+    service: presetService || '',
     message: '',
     hearAbout: '',
+    postcode: '',
+    timescale: '',
+    garageKind: '',
   });
+  const services = garage ? [...serviceOptions.filter((o) => o !== 'Other'), ...garageServices, 'Other'] : serviceOptions;
+  const garageJob = garageServices.includes(form.service);
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
@@ -83,6 +102,7 @@ export default function ContactForm({ defaultCity }: ContactFormProps) {
       e.locationOther = 'Please specify your location.';
     }
     if (!form.service) e.service = 'Please select a service.';
+    if (form.postcode.trim() && !POSTCODE.test(form.postcode.trim())) e.postcode = 'That doesn’t look like a UK postcode — check it or leave it empty.';
     return e;
   }
 
@@ -115,9 +135,16 @@ export default function ContactForm({ defaultCity }: ContactFormProps) {
           message: form.message || undefined,
           source: form.hearAbout || undefined,
           sessionId: getSessionId(),
+          postcode: form.postcode.trim() || undefined,
+          timescale: form.timescale || undefined,
+          garageKind: garageJob ? form.garageKind || undefined : undefined,
+          // Path only; a query string could carry something personal.
+          page: window.location.pathname,
         }),
       });
       if (!res.ok) throw new Error('Server error');
+      // GTM hook: service and page only, nothing the visitor typed.
+      (window as unknown as { dataLayer?: object[] }).dataLayer?.push({ event: 'contact_form_sent', service: form.service, page: window.location.pathname });
       reportAdsConversion('lead');
       setStatus('success');
     } catch {
@@ -145,6 +172,9 @@ export default function ContactForm({ defaultCity }: ContactFormProps) {
       </div>
     );
   }
+
+  const optionalSelect =
+    'w-full px-4 py-3 rounded-lg border border-grey-200 hover:border-grey-300 text-sm font-body bg-white text-charcoal focus:outline-none focus:ring-2 focus:ring-gold transition-colors cursor-pointer';
 
   const inputClass = (field: keyof FormErrors) =>
     `w-full px-4 py-3 rounded-lg border text-sm font-body bg-white text-charcoal placeholder-grey-400 focus:outline-none focus:ring-2 focus:ring-gold transition-colors ${
@@ -286,7 +316,7 @@ export default function ContactForm({ defaultCity }: ContactFormProps) {
             aria-describedby={errors.service ? 'service-error' : undefined}
           >
             <option value="">Select service...</option>
-            {serviceOptions.map((s) => (
+            {services.map((s) => (
               <option key={s} value={s}>{s}</option>
             ))}
           </select>
@@ -299,6 +329,53 @@ export default function ContactForm({ defaultCity }: ContactFormProps) {
         {errors.service && (
           <p id="service-error" className="mt-1 text-xs text-red-500">{errors.service}</p>
         )}
+      </div>
+
+      {garageJob && (
+        <div>
+          <label htmlFor="garageKind" className="block text-sm font-semibold text-navy mb-1.5">
+            Type of Garage Door <span className="text-grey-400 font-normal">(optional)</span>
+          </label>
+          <select id="garageKind" name="garageKind" value={form.garageKind} onChange={handleChange} className={optionalSelect}>
+            <option value="">Select...</option>
+            {garageKinds.map((k) => (
+              <option key={k} value={k}>{k}</option>
+            ))}
+          </select>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label htmlFor="postcode" className="block text-sm font-semibold text-navy mb-1.5">
+            Postcode of the Property <span className="text-grey-400 font-normal">(optional)</span>
+          </label>
+          <input
+            id="postcode"
+            name="postcode"
+            type="text"
+            autoComplete="postal-code"
+            placeholder="CV7 9FB"
+            value={form.postcode}
+            onChange={handleChange}
+            className={inputClass('postcode')}
+            aria-describedby={errors.postcode ? 'postcode-error' : undefined}
+          />
+          {errors.postcode && (
+            <p id="postcode-error" className="mt-1 text-xs text-red-500">{errors.postcode}</p>
+          )}
+        </div>
+        <div>
+          <label htmlFor="timescale" className="block text-sm font-semibold text-navy mb-1.5">
+            Timescale <span className="text-grey-400 font-normal">(optional)</span>
+          </label>
+          <select id="timescale" name="timescale" value={form.timescale} onChange={handleChange} className={optionalSelect}>
+            <option value="">Select...</option>
+            {timescales.map((t) => (
+              <option key={t} value={t}>{t}</option>
+            ))}
+          </select>
+        </div>
       </div>
 
       <div>

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { garage } from '@/data/garage-doors';
 
 /* ── Data ─────────────────────────────────────────────────────────────── */
 
@@ -25,6 +26,8 @@ const footerServices = [
   { label: 'Shutter Repair', href: '/services/shutter-repair' },
   { label: 'Emergency Callout', href: '/services/emergency-callout' },
   { label: 'Curtain Walling', href: '/services/curtain-walling' },
+  // Only once the owner confirms garage door work (data/garage-doors.ts).
+  ...(garage.published ? [{ label: 'Garage Door Repairs', href: '/garage-door-repairs' }] : []),
 ];
 
 /* ── Icons ────────────────────────────────────────────────────────────── */
