@@ -30,7 +30,7 @@ eq('£ with comma, VAT added', [r2.lineItems[0]?.unitPrice, r2.vatRate], [1250, 
 eq('address', r2.customerAddress, '12 High Street Coventry CV1 2AB');
 
 const r3 = ruleParse('invoice for Sam, price 120 inc vat, 30% deposit, due in 14 days', 'quote');
-eq('invoice: typed price charged as is, no VAT', [r3.lineItems[0]?.unitPrice, r3.vatRate], [120, 0]);
+eq('VAT-inclusive price stored net', [r3.lineItems[0]?.unitPrice, r3.vatRate], [100, 20]);
 eq('deposit and due days', [r3.depositPercent, r3.dueInDays], [30, 14]);
 
 eq('price missing is reported', missingRequired(ruleParse('invoice for name hritik email a@b.co', 'invoice')), ['price']);

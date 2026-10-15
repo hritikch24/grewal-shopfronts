@@ -110,8 +110,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       isOption: Boolean(li.isOption),
     }));
 
-    // Invoices are issued without VAT; only quotes may carry it.
-    const rate = type === 'invoice' ? 0 : Number(vatRate) || 0;
+    const rate = Number(vatRate) || 0;
     const { subtotal, vatAmount, total } = computeTotals(cleanItems, rate);
     const number = await nextNumber(type);
 

@@ -157,8 +157,7 @@ export function ruleParse(text: string, fallbackType: DocType): Draft {
   const deposit = text.match(/\b(\d{1,2}(?:\.\d)?)\s?%\s*deposit\b|\bdeposit\s*(?:of|:)?\s*(\d{1,2}(?:\.\d)?)\s?%/i);
   const due = text.match(/\bdue\s*(?:in|within)\s*(\d{1,3})\s*days?\b|\b(\d{1,3})\s*days?\s*(?:to\s+pay|payment\s+terms)\b/i);
   const valid = text.match(/\bvalid\s*(?:for)?\s*(\d{1,3})\s*days?\b/i);
-  // Invoices are issued without VAT: a typed price is the amount charged.
-  const vat = type === 'invoice' ? null : vatMode(text);
+  const vat = vatMode(text);
 
   const draft: Draft = {
     type,
@@ -210,9 +209,7 @@ export function groundDraft(candidate: unknown, text: string, fallbackType: DocT
   const typed = new Set(numbersIn(text).map((n) => round2(n)));
   const textNorm = norm(text);
   const textDigits = digits(text);
-  const docType = detectType(text, fallbackType);
-  // Invoices are issued without VAT: a typed price is the amount charged.
-  const vat = docType === 'invoice' ? null : vatMode(text);
+  const vat = vatMode(text);
 
   const name = str(c.customerName);
   const nameOk = name && words(name).length > 0 && words(name).every((w) => textNorm.includes(w));
@@ -246,7 +243,7 @@ export function groundDraft(candidate: unknown, text: string, fallbackType: DocT
   };
 
   return {
-    type: docType,
+    type: detectType(text, fallbackType),
     customerName: nameOk ? titleCase(name!) : undefined,
     customerEmail: email && textNorm.includes(norm(email)) ? email : undefined,
     customerPhone: phoneOk ? phone : undefined,

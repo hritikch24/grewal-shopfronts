@@ -67,9 +67,8 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
   const isInvoice = doc.type === 'invoice';
   const meta = doc.meta || {};
   const title = isInvoice ? 'INVOICE' : 'QUOTATION';
-  // Invoices carry no VAT and no terms block (owner's instruction, 15 Oct
-  // 2026). An invoice saved earlier with VAT still shows its VAT line, because
-  // its stored total includes it and hiding the line would not add up.
+  // Invoices show no terms block and no VAT registration number (owner's
+  // instruction, 15 Oct 2026). VAT itself is still optional per document.
   const vat = doc.vatRate > 0;
   const deposit = isInvoice && doc.depositPercent && doc.depositPercent > 0 ? (doc.total * doc.depositPercent) / 100 : null;
   const balance = deposit !== null ? doc.total - deposit : null;

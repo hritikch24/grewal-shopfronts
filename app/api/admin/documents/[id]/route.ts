@@ -54,9 +54,7 @@ export async function PATCH(
         isOption: Boolean(li.isOption),
       }));
 
-      // Invoices are issued without VAT; only quotes may carry it.
-      const current = await prisma.document.findUnique({ where: { id }, select: { type: true } });
-      const rate = current?.type === 'invoice' ? 0 : Number(vatRate) || 0;
+      const rate = Number(vatRate) || 0;
       const subtotal = cleanItems
         .filter((li) => !li.isOption)
         .reduce((sum, li) => sum + li.qty * li.unitPrice, 0);

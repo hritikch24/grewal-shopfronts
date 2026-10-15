@@ -39,7 +39,7 @@ export function payloadFromDraft(d: Draft) {
     customerPhone: d.customerPhone || null,
     customerAddress: d.customerAddress || null,
     lineItems: d.lineItems.map((li) => ({ ...li, description: li.description.trim() || DEFAULT_DESCRIPTION })),
-    vatRate: d.type === 'invoice' ? 0 : d.vatRate,
+    vatRate: d.vatRate,
     notes: d.notes || null,
     depositPercent: d.type === 'invoice' && d.depositPercent ? d.depositPercent : null,
     issueDate: null,

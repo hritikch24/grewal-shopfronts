@@ -272,8 +272,7 @@ export default function DocumentsAdminPage() {
   }
 
   const subtotal = form.lineItems.reduce((sum, li) => sum + (Number(li.qty) || 0) * (Number(li.unitPrice) || 0), 0);
-  const vatOn = form.vatEnabled && tab !== 'invoice';
-  const vatAmount = vatOn ? subtotal * (form.vatRate / 100) : 0;
+  const vatAmount = form.vatEnabled ? subtotal * (form.vatRate / 100) : 0;
   const total = subtotal + vatAmount;
 
   async function handleSubmit(e: React.FormEvent) {
@@ -295,7 +294,7 @@ export default function DocumentsAdminPage() {
       customerPhone: form.customerPhone || null,
       customerAddress: form.customerAddress || null,
       lineItems: validItems,
-      vatRate: vatOn ? form.vatRate : 0,
+      vatRate: form.vatEnabled ? form.vatRate : 0,
       notes: form.notes || null,
       depositPercent: tab === 'invoice' && form.depositPercent ? Number(form.depositPercent) : null,
       issueDate: form.issueDate || null,
@@ -733,19 +732,24 @@ export default function DocumentsAdminPage() {
                   </div>
                 )}
 
-                {/* Invoices are issued without VAT; only quotes offer it. */}
-                {tab === 'quote' && (
                 <div className="flex items-center justify-between bg-slate-50 rounded-lg p-3">
                   <label className="flex items-center gap-2 text-sm text-slate-700">
                     <input type="checkbox" checked={form.vatEnabled} onChange={(e) => setForm({ ...form, vatEnabled: e.target.checked })} />
-                    Include VAT (20%)
+                    {tab === 'quote' ? 'Include VAT (20%)' : 'Add VAT'}
                   </label>
+                  {form.vatEnabled && tab === 'invoice' && (
+                    <div className="flex items-center gap-1">
+                      <input type="number" min="0" max="100" step="0.5" value={form.vatRate} onChange={(e) => setForm({ ...form, vatRate: Number(e.target.value) })}
+                        className="w-16 px-2 py-1 border border-slate-200 rounded text-sm text-right" />
+                      <span className="text-sm text-slate-500">%</span>
+                    </div>
+                  )}
                 </div>
-                )}
 
                 {tab === 'invoice' && (
                   <div className="text-right space-y-1 text-sm">
                     <p className="text-slate-500">Subtotal: <span className="text-slate-700 font-medium">£{subtotal.toFixed(2)}</span></p>
+                    {form.vatEnabled && <p className="text-slate-500">VAT ({form.vatRate}%): <span className="text-slate-700 font-medium">£{vatAmount.toFixed(2)}</span></p>}
                     <p className="text-slate-800 font-heading font-bold text-lg">Total: £{total.toFixed(2)}</p>
                   </div>
                 )}
