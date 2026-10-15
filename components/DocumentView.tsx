@@ -67,6 +67,9 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
   const isInvoice = doc.type === 'invoice';
   const meta = doc.meta || {};
   const title = isInvoice ? 'INVOICE' : 'QUOTATION';
+  // Invoices carry no VAT and no terms block (owner's instruction, 15 Oct
+  // 2026). An invoice saved earlier with VAT still shows its VAT line, because
+  // its stored total includes it and hiding the line would not add up.
   const vat = doc.vatRate > 0;
   const deposit = isInvoice && doc.depositPercent && doc.depositPercent > 0 ? (doc.total * doc.depositPercent) / 100 : null;
   const balance = deposit !== null ? doc.total - deposit : null;
@@ -97,12 +100,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
     : 'We appreciate your enquiry and are delighted to present our quotation for the supply and installation works as discussed.';
 
   const terms: string[] = isInvoice
-    ? [
-        vat ? 'All prices include 20% VAT.' : 'No VAT applied.',
-        deposit !== null ? `${doc.depositPercent}% deposit required to confirm.` : 'Payment due on completion unless agreed otherwise.',
-        'Reference the invoice number for all payments.',
-        'Works carried out by certified professionals with premium materials.',
-      ]
+    ? []
     : [
         vat ? 'Prices include 20% VAT.' : 'Prices shown are final.',
         'Any additional works will be quoted separately.',
@@ -154,7 +152,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
               {!isInvoice && doc.validUntil && <span><strong style={{ color: C.brand }}>Valid Until:</strong> {fmt(doc.validUntil)}</span>}
               {isInvoice && doc.dueDate && <span><strong style={{ color: C.brand }}>Payment Due:</strong> {fmt(doc.dueDate)}</span>}
               {meta.projectReference && <span><strong style={{ color: C.brand }}>Ref:</strong> {meta.projectReference}</span>}
-              <span><strong style={{ color: C.brand }}>VAT:</strong> {VAT_NUMBER}</span>
+              {!isInvoice && <span><strong style={{ color: C.brand }}>VAT:</strong> {VAT_NUMBER}</span>}
               <span><strong style={{ color: C.brand }}>Reg:</strong> {REG_NUMBER}</span>
             </div>
 
@@ -334,12 +332,16 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
               </div>
             </div>
 
-            {/* Terms */}
+            {/* Terms (quotes only) and notes */}
             <div style={{ marginBottom: 28 }}>
-              <p className="doc-heading" style={{ fontSize: 11, fontWeight: 700, letterSpacing: '2px', color: C.brand, marginBottom: 8, textTransform: 'uppercase' }}>Terms &amp; Conditions</p>
-              <div style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.9 }}>
-                {terms.map((t, i) => <p key={i} style={{ margin: '2px 0', paddingLeft: 16, position: 'relative' }}><span style={{ position: 'absolute', left: 0, color: C.accent, fontWeight: 700 }}>{i + 1}.</span>{t}</p>)}
-              </div>
+              {terms.length > 0 && (
+                <>
+                  <p className="doc-heading" style={{ fontSize: 11, fontWeight: 700, letterSpacing: '2px', color: C.brand, marginBottom: 8, textTransform: 'uppercase' }}>Terms &amp; Conditions</p>
+                  <div style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.9 }}>
+                    {terms.map((t, i) => <p key={i} style={{ margin: '2px 0', paddingLeft: 16, position: 'relative' }}><span style={{ position: 'absolute', left: 0, color: C.accent, fontWeight: 700 }}>{i + 1}.</span>{t}</p>)}
+                  </div>
+                </>
+              )}
               {doc.notes && (
                 <div style={{ marginTop: 12, padding: '12px 16px', background: C.accentBg, borderRadius: 8, borderLeft: `3px solid ${C.accent}`, fontSize: 12 }}>
                   <p style={{ fontWeight: 700, color: C.brand, marginBottom: 4 }}>Notes</p>
