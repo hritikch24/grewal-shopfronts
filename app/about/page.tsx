@@ -4,9 +4,9 @@ import Link from 'next/link';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'About Us — 20+ Years Trade Experience Since 2004',
+  title: 'About Us: Trading Since 2004',
   description:
-    'Learn about Grewal Shopfront & Shutters — a Coventry-based shopfront and shutter specialist with over 20 years of experience since 2004, built on quality craftsmanship, reliability, and competitive pricing. Companies House registered.',
+    'Grewal Shopfront & Shutters: a Coventry shopfront and shutter firm trading since 2004, based in Exhall and registered at Companies House.',
   alternates: {
     canonical: 'https://www.grewalshopfrontandshutters.co.uk/about',
   },

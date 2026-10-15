@@ -85,8 +85,8 @@ export default async function ServicePage({ params }: PageProps) {
       },
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: 52.4897,
-        longitude: -1.9718,
+        latitude: 52.4686,
+        longitude: -1.4791,
       },
     },
     areaServed: [
@@ -115,8 +115,8 @@ export default async function ServicePage({ params }: PageProps) {
   const howToSchema = service.howItWorks && service.howItWorks.length > 0 ? {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
-    name: `How to Get ${service.name} Installed`,
-    description: `Step-by-step process for ${service.name.toLowerCase()} installation by Grewal Shopfront & Shutters.`,
+    name: `${service.name}: the steps from first call to finished job`,
+    description: `How a ${service.name.toLowerCase()} job runs with Grewal Shopfront & Shutters.`,
     step: service.howItWorks.map((s) => ({
       '@type': 'HowToStep',
       position: s.step,
@@ -166,7 +166,7 @@ export default async function ServicePage({ params }: PageProps) {
       <section className="relative min-h-[50vh] flex items-end bg-navy">
         <Image
           src={`/assets/${service.heroImage}`}
-          alt={`${service.name} installation by Grewal Shopfront & Shutters`}
+          alt={`${service.name} fitted by Grewal Shopfront & Shutters`}
           fill
           className="object-cover opacity-40"
           priority
@@ -177,7 +177,7 @@ export default async function ServicePage({ params }: PageProps) {
             <Breadcrumbs
               items={[
                 { label: 'Home', href: '/' },
-                { label: 'Services', href: '/services' },
+                { label: 'What we do', href: '/services' },
                 { label: service.name },
               ]}
             />
@@ -187,7 +187,7 @@ export default async function ServicePage({ params }: PageProps) {
             <p className="text-grey-300 text-lg mt-3 max-w-2xl">{service.shortDescription}</p>
             <div className="flex flex-wrap gap-3 mt-6">
               <Link href="/contact" className="btn-gold">
-                Get a Free Quote
+                Ask for a price
               </Link>
               <a href="tel:07597630000" className="btn-outline">
                 Call 07597 630000
@@ -230,7 +230,7 @@ export default async function ServicePage({ params }: PageProps) {
               <div className="sticky top-24 space-y-6">
                 <div className="card-surface p-6">
                   <h3 className="font-heading font-bold text-navy text-lg mb-4">
-                    Key Benefits
+                    Why it is worth it
                   </h3>
                   <ul className="space-y-4">
                     {service.benefits.map((benefit, i) => (
@@ -251,13 +251,13 @@ export default async function ServicePage({ params }: PageProps) {
 
                 <div className="card-surface p-6 bg-navy text-white">
                   <h3 className="font-heading font-bold text-gold text-lg mb-2">
-                    Need This Service?
+                    Want a price?
                   </h3>
-                  <p className="text-grey-300 text-sm mb-4">
-                    Get a free, no-obligation site survey and quote.
+                  <p className="text-grey-600 text-sm mb-4">
+                    Send a photo and rough size for a ballpark figure. Surveys are free.
                   </p>
                   <Link href="/contact" className="btn-gold w-full text-center block mb-3">
-                    Request a Quote
+                    Send your details
                   </Link>
                   <a
                     href="tel:07597630000"
@@ -270,7 +270,7 @@ export default async function ServicePage({ params }: PageProps) {
                 {related.length > 0 && (
                   <div className="card-surface p-6">
                     <h3 className="font-heading font-bold text-navy text-lg mb-3">
-                      Related Services
+                      Often needed alongside
                     </h3>
                     <ul className="space-y-2">
                       {related.map((r) => (
@@ -299,10 +299,10 @@ export default async function ServicePage({ params }: PageProps) {
         <section className="section-padding bg-obsidian-light">
           <div className="container-max max-w-4xl">
             <h2 className="text-3xl font-heading font-bold text-white text-center mb-3">
-              How It Works
+              From first call to finished job
             </h2>
             <p className="text-grey-300 text-center mb-10 max-w-2xl mx-auto">
-              From initial enquiry to completed installation — here is what to expect when you choose Grewal Shopfront & Shutters for your {service.name.toLowerCase()} project.
+              The steps for a {service.name.toLowerCase()} job, in the order they happen.
             </p>
             <div className="relative">
               <div className="hidden md:block absolute left-8 top-8 bottom-8 w-0.5 bg-gold/20" aria-hidden="true" />
@@ -344,7 +344,7 @@ export default async function ServicePage({ params }: PageProps) {
             <p className="text-grey-500 text-sm text-center mt-6">{service.pricingGuide.note}</p>
             <div className="text-center mt-6">
               <Link href="/contact" className="btn-gold">
-                Get Your Free Quote
+                Ask for a price
               </Link>
             </div>
           </div>
@@ -360,7 +360,7 @@ export default async function ServicePage({ params }: PageProps) {
           <div className="container-max max-w-3xl">
             <FAQSection
               faqs={service.faqs}
-              title={`${service.name} — Frequently Asked Questions`}
+              title={`Questions people ask about ${service.name.toLowerCase()}`}
             />
           </div>
         </section>
@@ -370,7 +370,7 @@ export default async function ServicePage({ params }: PageProps) {
         <section className="section-padding bg-grey-50">
           <div className="container-max max-w-3xl">
             <h2 className="text-2xl font-heading font-bold text-navy mb-6">
-              People Also Ask
+              More answers
             </h2>
             <div className="space-y-4">
               {service.peopleAlsoAsk.map((item, i) => (
@@ -401,20 +401,20 @@ export default async function ServicePage({ params }: PageProps) {
       <section className="section-padding">
         <div className="container-max">
           <h2 className="text-2xl font-heading font-bold mb-3">
-            {service.name} Across the UK
+            {service.name} by town and city
           </h2>
           <p className="text-grey-500 mb-8 max-w-2xl">
-            We install and service {service.name.toLowerCase()} nationwide. Choose your city for
-            local pricing, coverage areas and recent projects.
+            Each page explains what we offer in that place. Repairs and call-outs are limited to the area
+            around Coventry and Birmingham; elsewhere we take on planned installations.
           </p>
           <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-3">
-            {cities.map((city) => (
+            {[...cities].sort((a, b) => a.name.localeCompare(b.name)).map((city) => (
               <li key={city.slug}>
                 <Link
                   href={`/services/${service.slug}/${city.slug}`}
                   className="text-charcoal hover:text-gold transition-colors text-sm"
                 >
-                  {service.name} in {city.name}
+                  {city.name}
                 </Link>
               </li>
             ))}
@@ -427,14 +427,14 @@ export default async function ServicePage({ params }: PageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="text-3xl font-heading font-bold text-white mb-4">
-                Ready to Get Started?
+                Tell us about the job
               </h2>
               <p className="text-grey-300 text-lg mb-6">
-                Tell us about your {service.name.toLowerCase()} project and we will arrange a free
-                site survey at a time that suits you.
+                A few lines and a photo are enough to start. We reply with a ballpark price and, if it suits
+                you, a date for a free survey.
               </p>
               <ul className="space-y-3 mb-8">
-                {['Free no-obligation survey', 'Written quotation within 48 hours', 'Nationwide installation teams'].map((item) => (
+                {['Free survey, no obligation', 'Written price before any work', 'Installs across England from Coventry'].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-grey-200">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                       <path d="M20 6L9 17l-5-5" stroke="#d4a843" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -453,7 +453,7 @@ export default async function ServicePage({ params }: PageProps) {
                   rel="noopener noreferrer"
                   className="btn-outline"
                 >
-                  WhatsApp Us
+                  Message on WhatsApp
                 </a>
               </div>
             </div>

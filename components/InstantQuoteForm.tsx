@@ -138,7 +138,7 @@ export default function InstantQuoteForm() {
     return (
       <div className="card-surface p-6 sm:p-8">
         <p className="text-sm font-semibold text-charcoal uppercase tracking-wide mb-1">
-          Your indicative estimate
+          Your guide figure
         </p>
         <p className="text-4xl sm:text-5xl font-heading font-bold mb-3">
           {formatGBP(result.low)} <span className="text-grey-500 font-normal">–</span>{' '}
@@ -166,25 +166,21 @@ export default function InstantQuoteForm() {
 
         <div className="rounded-lg border border-gold bg-grey-100 px-4 py-3 mb-6">
           <p className="text-charcoal text-sm font-semibold mb-1">
-            This is a guide price, not a quote.
+            A guide, not a quote.
           </p>
           <p className="text-grey-600 text-sm">
-            It is generated automatically from typical UK job costs and deliberately sits at the
-            lower end of our range. Your actual price may be <strong>higher or lower</strong> once
-            we have seen the opening, the existing structure, and your exact specification. A free
-            site survey and written quotation confirm the real figure — with no obligation.
+            It comes from the ranges we quote most often and leans towards the lower end. Once we have seen the opening and agreed the details, your written price may come out <strong>higher or lower</strong>. The survey that settles it is free.
           </p>
         </div>
 
         <div className="rounded-lg border border-grey-200 px-4 py-3 mb-6">
           <p className="text-charcoal text-sm font-semibold mb-1">
             {result.emailed
-              ? 'We have emailed this to you — check your inbox.'
-              : 'Save your reference — we have your details.'}
+              ? 'A copy is on its way to your inbox.'
+              : 'Keep your reference handy; we have your details.'}
           </p>
           <p className="text-grey-600 text-sm">
-            One of our team will call you <strong>within one working day</strong> to talk it
-            through and book your free site survey.
+            We will ring you <strong>within one working day</strong> to go through it and, if you want, book a free survey.
             {result.reference ? (
               <> Your reference is <strong>{result.reference}</strong>.</>
             ) : null}
@@ -192,7 +188,7 @@ export default function InstantQuoteForm() {
         </div>
 
         <p className="text-grey-600 text-sm mb-4">
-          Do not want to wait? Call or message us now and we will pick it up straight away:
+          In a hurry? Ring or message now:
         </p>
         {/* Styled inline rather than with .btn-outline-dark: that class only
             exists on one of the two themes, so it rendered unstyled elsewhere. */}
@@ -235,12 +231,12 @@ export default function InstantQuoteForm() {
             />
           </div>
         ))}
-        <span className="text-grey-500 text-xs whitespace-nowrap ml-1">Step {step} of 3</span>
+        <span className="text-grey-500 text-xs whitespace-nowrap ml-1">{step} / 3</span>
       </div>
 
       <div>
         <label htmlFor="iq-service" className={labelClass}>
-          What do you need? <span className="text-red-500">*</span>
+          Pick the job <span className="text-red-500">*</span>
         </label>
         <select
           id="iq-service"
@@ -249,8 +245,8 @@ export default function InstantQuoteForm() {
           className={selectClass}
           required
         >
-          <option value="">Select a service…</option>
-          {SERVICES.map((s) => (
+          <option value="">Choose…</option>
+          {[...SERVICES].sort((a, b) => a.name.localeCompare(b.name)).map((s) => (
             <option key={s.slug} value={s.slug}>{s.name}</option>
           ))}
         </select>
@@ -260,7 +256,7 @@ export default function InstantQuoteForm() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div className="sm:col-span-2">
             <label htmlFor="iq-variant" className={labelClass}>
-              Which option fits best? <span className="text-red-500">*</span>
+              Closest match <span className="text-red-500">*</span>
             </label>
             <select
               id="iq-variant"
@@ -269,7 +265,7 @@ export default function InstantQuoteForm() {
               className={selectClass}
               required
             >
-              <option value="">Select an option…</option>
+              <option value="">Choose…</option>
               {service.variants.map((v) => (
                 <option key={v.id} value={v.id}>
                   {v.label} — from {formatGBP(v.low)}
@@ -294,14 +290,14 @@ export default function InstantQuoteForm() {
           </div>
 
           <div>
-            <label htmlFor="iq-city" className={labelClass}>Where is the site?</label>
+            <label htmlFor="iq-city" className={labelClass}>Town or city</label>
             <select
               id="iq-city"
               value={citySlug}
               onChange={(e) => setCitySlug(e.target.value)}
               className={selectClass}
             >
-              <option value="">Select a city…</option>
+              <option value="">Choose a town…</option>
               {cities.map((c) => (
                 <option key={c.slug} value={c.slug}>{c.name}</option>
               ))}
@@ -312,11 +308,11 @@ export default function InstantQuoteForm() {
 
       {service && (
         <fieldset className="space-y-2">
-          <legend className={labelClass}>Anything else that applies?</legend>
+          <legend className={labelClass}>Tick anything that applies</legend>
           {([
-            [difficultAccess, setDifficultAccess, 'Restricted access, upper floor, or scaffolding needed'],
-            [removalRequired, setRemovalRequired, 'An existing unit needs removing and disposing of'],
-            [outOfHours, setOutOfHours, 'Work must happen outside trading hours'],
+            [difficultAccess, setDifficultAccess, 'Hard to reach: upstairs, narrow access or scaffold needed'],
+            [removalRequired, setRemovalRequired, 'Old front, shutter or door to take away'],
+            [outOfHours, setOutOfHours, 'Fitting has to happen out of hours'],
           ] as const).map(([checked, setter, text]) => (
             <label key={text} className="flex items-start gap-3 cursor-pointer">
               <input
@@ -334,7 +330,7 @@ export default function InstantQuoteForm() {
       {service && (
         <div>
           <label htmlFor="iq-budget" className={labelClass}>
-            Do you have a budget in mind?{' '}
+            Rough budget?{' '}
             <span className="text-grey-500 font-normal">(optional)</span>
           </label>
           <select
@@ -349,8 +345,7 @@ export default function InstantQuoteForm() {
             ))}
           </select>
           <p className="text-grey-500 text-xs mt-1.5">
-            It will not change the estimate — it just helps us suggest the right specification
-            when we call.
+            It does not change the figure; it helps us suggest the right spec when we talk.
           </p>
         </div>
       )}
@@ -358,37 +353,36 @@ export default function InstantQuoteForm() {
       <div className="border-t border-grey-200 pt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div className="sm:col-span-2">
           <p className="text-grey-500 text-sm">
-            Where should we send the estimate? We will also text or email you the written quote
-            once we have confirmed the details.
+            Where should the figure go? The written price follows once we have checked the details with you.
           </p>
         </div>
         <div>
           <label htmlFor="iq-name" className={labelClass}>
-            Full Name <span className="text-red-500">*</span>
+            Your name <span className="text-red-500">*</span>
           </label>
           <input id="iq-name" type="text" value={name} onChange={(e) => setName(e.target.value)}
             placeholder="John Smith" className={inputClass} required />
         </div>
         <div>
           <label htmlFor="iq-email" className={labelClass}>
-            Email Address <span className="text-red-500">*</span>
+            Email <span className="text-red-500">*</span>
           </label>
           <input id="iq-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)}
             placeholder="john@company.com" className={inputClass} required />
         </div>
         <div className="sm:col-span-2">
           <label htmlFor="iq-phone" className={labelClass}>
-            Phone Number <span className="text-red-500">*</span>
+            Phone <span className="text-red-500">*</span>
           </label>
           <input id="iq-phone" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)}
             placeholder="07700 900000" className={inputClass} required />
         </div>
         <div className="sm:col-span-2">
           <label htmlFor="iq-notes" className={labelClass}>
-            Anything we should know? <span className="text-grey-500 font-normal">(optional)</span>
+            Anything else? <span className="text-grey-500 font-normal">(optional)</span>
           </label>
           <textarea id="iq-notes" rows={3} value={notes} onChange={(e) => setNotes(e.target.value)}
-            placeholder="Approximate dimensions, current condition, deadline…"
+            placeholder="Rough size, what is there now, when you need it…"
             className={inputClass + ' resize-none'} />
         </div>
       </div>
@@ -408,7 +402,7 @@ export default function InstantQuoteForm() {
       </button>
 
       <p className="text-center text-xs text-grey-500">
-        Indicative guide price only — your written quote may be higher or lower. No obligation.
+        A guide figure only. Your written price may differ. Nothing to sign.
       </p>
     </form>
   );

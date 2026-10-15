@@ -6,19 +6,17 @@ import { useState, FormEvent } from 'react';
 import { getSessionId } from '@/lib/session';
 
 const cities = [
-  'London', 'Birmingham', 'Manchester', 'Leeds', 'Liverpool',
-  'Sheffield', 'Bristol', 'Coventry', 'Leicester', 'Nottingham',
-  'Glasgow', 'Wolverhampton', 'Other',
+  'Coventry', 'Birmingham', 'Leicester', 'Wolverhampton', 'Northampton',
+  'Nottingham', 'Derby', 'Manchester', 'Sheffield', 'Bristol', 'London', 'Other',
 ];
 
 // Mirrors data/services.ts — a visitor must not be able to enquire
 // about something we do not offer.
 const serviceOptions = [
-  'Aluminium Shopfronts', 'Roller Shutters', 'Security Doors',
-  'Automatic Doors', 'Bi-Fold Doors', 'Fire Doors',
-  'Shopfront Repairs', 'Emergency Callout', 'Shutter Repair',
-  'Glass Replacement', 'Aluminium Doors', 'Aluminium Windows',
-  'Curtain Walling', 'Glass Shopfronts', 'Other',
+  'Emergency Callout', 'Shutter Repair', 'Shopfront Repairs', 'Glass Replacement',
+  'Aluminium Shopfronts', 'Glass Shopfronts', 'Roller Shutters', 'Security Doors',
+  'Fire Doors', 'Automatic Doors', 'Aluminium Doors', 'Bi-Fold Doors',
+  'Aluminium Windows', 'Curtain Walling', 'Other',
 ];
 
 // Shown only when the page passes `garage` (the garage door pages, once live).
@@ -28,8 +26,8 @@ const timescales = ['Urgent', 'In the next few weeks', 'No fixed date yet'];
 const POSTCODE = /^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i;
 
 const hearAboutOptions = [
-  'Google Search', 'Google Maps', 'Recommended by someone', 'Social Media',
-  'Returning customer', 'Other',
+  'Recommended by someone', 'Google Search', 'Returning customer', 'Google Maps',
+  'Social Media', 'Other',
 ];
 
 interface FormData {
@@ -162,7 +160,7 @@ export default function ContactForm({ defaultCity, presetService, garage = false
           </svg>
         </div>
         <h3 className="font-heading text-2xl font-bold text-navy mb-2">Request Sent!</h3>
-        <p className="text-grey-600 mb-1">Thank you! We&apos;ll be in touch within 2 hours.</p>
+        <p className="text-grey-600 mb-1">Thanks. We usually reply the same working day.</p>
         <p className="text-grey-500 text-sm">
           For urgent enquiries call{' '}
           <a href="tel:07597630000" className="text-gold font-semibold hover:underline">
@@ -191,7 +189,7 @@ export default function ContactForm({ defaultCity, presetService, garage = false
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="fullName" className="block text-sm font-semibold text-navy mb-1.5">
-            Full Name <span className="text-red-500">*</span>
+            Your name <span className="text-red-500">*</span>
           </label>
           <input
             id="fullName"
@@ -211,7 +209,7 @@ export default function ContactForm({ defaultCity, presetService, garage = false
 
         <div>
           <label htmlFor="email" className="block text-sm font-semibold text-navy mb-1.5">
-            Email Address <span className="text-red-500">*</span>
+            Email <span className="text-red-500">*</span>
           </label>
           <input
             id="email"
@@ -233,7 +231,7 @@ export default function ContactForm({ defaultCity, presetService, garage = false
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="phone" className="block text-sm font-semibold text-navy mb-1.5">
-            Phone Number <span className="text-red-500">*</span>
+            Phone <span className="text-red-500">*</span>
           </label>
           <input
             id="phone"
@@ -253,7 +251,7 @@ export default function ContactForm({ defaultCity, presetService, garage = false
 
         <div>
           <label htmlFor="location" className="block text-sm font-semibold text-navy mb-1.5">
-            Your Location <span className="text-red-500">*</span>
+            Town or city <span className="text-red-500">*</span>
           </label>
           <div className="relative">
             <select
@@ -264,7 +262,7 @@ export default function ContactForm({ defaultCity, presetService, garage = false
               className={selectClass('location')}
               aria-describedby={errors.location ? 'location-error' : undefined}
             >
-              <option value="">Select city...</option>
+              <option value="">Choose a town</option>
               {cities.map((c) => (
                 <option key={c} value={c}>{c}</option>
               ))}
@@ -304,7 +302,7 @@ export default function ContactForm({ defaultCity, presetService, garage = false
 
       <div>
         <label htmlFor="service" className="block text-sm font-semibold text-navy mb-1.5">
-          Service Required <span className="text-red-500">*</span>
+          What do you need? <span className="text-red-500">*</span>
         </label>
         <div className="relative">
           <select
@@ -315,7 +313,7 @@ export default function ContactForm({ defaultCity, presetService, garage = false
             className={selectClass('service')}
             aria-describedby={errors.service ? 'service-error' : undefined}
           >
-            <option value="">Select service...</option>
+            <option value="">Choose one</option>
             {services.map((s) => (
               <option key={s} value={s}>{s}</option>
             ))}
@@ -334,7 +332,7 @@ export default function ContactForm({ defaultCity, presetService, garage = false
       {garageJob && (
         <div>
           <label htmlFor="garageKind" className="block text-sm font-semibold text-navy mb-1.5">
-            Type of Garage Door <span className="text-grey-400 font-normal">(optional)</span>
+            Garage door type <span className="text-grey-400 font-normal">(optional)</span>
           </label>
           <select id="garageKind" name="garageKind" value={form.garageKind} onChange={handleChange} className={optionalSelect}>
             <option value="">Select...</option>
@@ -348,7 +346,7 @@ export default function ContactForm({ defaultCity, presetService, garage = false
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="postcode" className="block text-sm font-semibold text-navy mb-1.5">
-            Postcode of the Property <span className="text-grey-400 font-normal">(optional)</span>
+            Postcode <span className="text-grey-400 font-normal">(optional)</span>
           </label>
           <input
             id="postcode"
@@ -367,7 +365,7 @@ export default function ContactForm({ defaultCity, presetService, garage = false
         </div>
         <div>
           <label htmlFor="timescale" className="block text-sm font-semibold text-navy mb-1.5">
-            Timescale <span className="text-grey-400 font-normal">(optional)</span>
+            When do you need it? <span className="text-grey-400 font-normal">(optional)</span>
           </label>
           <select id="timescale" name="timescale" value={form.timescale} onChange={handleChange} className={optionalSelect}>
             <option value="">Select...</option>
@@ -380,13 +378,13 @@ export default function ContactForm({ defaultCity, presetService, garage = false
 
       <div>
         <label htmlFor="message" className="block text-sm font-semibold text-navy mb-1.5">
-          Message <span className="text-grey-400 font-normal">(optional)</span>
+          Anything else? <span className="text-grey-400 font-normal">(optional)</span>
         </label>
         <textarea
           id="message"
           name="message"
           rows={4}
-          placeholder="Tell us more about your project..."
+          placeholder="Size, what is wrong, when you need it…"
           value={form.message}
           onChange={handleChange}
           className="w-full px-4 py-3 rounded-lg border border-grey-200 hover:border-grey-300 text-sm font-body bg-white text-charcoal placeholder-grey-400 focus:outline-none focus:ring-2 focus:ring-gold transition-colors resize-none"
@@ -395,7 +393,7 @@ export default function ContactForm({ defaultCity, presetService, garage = false
 
       <div>
         <label htmlFor="hearAbout" className="block text-sm font-semibold text-navy mb-1.5">
-          How did you hear about us? <span className="text-grey-400 font-normal">(optional)</span>
+          Where did you find us? <span className="text-grey-400 font-normal">(optional)</span>
         </label>
         <div className="relative">
           <select
@@ -438,12 +436,12 @@ export default function ContactForm({ defaultCity, presetService, garage = false
             Sending...
           </>
         ) : (
-          'Send Request'
+          'Send'
         )}
       </button>
 
       <p className="text-sm text-green-600 font-medium text-center">
-        ⚡ Typical response time: under 2 hours
+        We usually reply the same working day
       </p>
 
       <p className="text-center text-xs text-grey-400">

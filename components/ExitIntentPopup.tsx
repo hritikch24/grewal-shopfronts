@@ -5,26 +5,15 @@ import { useCallback } from 'react';
 import { useExitIntent, useModalChrome } from '@/lib/exit-intent';
 
 /**
- * Grewal's re-engagement banner leads with proof rather than a discount:
- * this is a twenty-year-old installer whose strongest card is the work it has
- * already done, so the panel opens on a real customer, backs it with the
- * headline numbers, and only then mentions the survey offer.
- *
- * Sigma runs a deliberately different treatment — see that repo's copy of
- * this component. The trigger logic in lib/exit-intent.ts is shared verbatim.
+ * Re-engagement banner. It leads with plain facts about the firm rather than a
+ * quote: customer words are never written by us, and no review text has been
+ * supplied to show here. The trigger logic lives in lib/exit-intent.ts.
  */
 
-const REVIEW = {
-  text:
-    'After a break-in, Grewal fitted new security shutters and a reinforced entrance door within 48 hours. Their emergency response was outstanding.',
-  name: 'David Hughes',
-  location: 'Cardiff',
-};
-
-const STATS = [
-  { value: '500+', label: 'Projects completed' },
-  { value: '20+', label: 'Years installing' },
-  { value: '5.0', label: 'Average rating' },
+const FACTS = [
+  { value: '2004', label: 'Trading since' },
+  { value: 'Free', label: 'Surveys and written prices' },
+  { value: '24/7', label: 'Emergency line, local area' },
 ];
 
 export default function ExitIntentPopup() {
@@ -54,29 +43,17 @@ export default function ExitIntentPopup() {
           </svg>
         </button>
 
-        {/* Proof first — a real job, in the customer's words. */}
         <div className="px-7 pt-9 pb-6">
-          <div className="mb-3 flex gap-0.5" aria-label="5 out of 5 stars">
-            {[0, 1, 2, 3, 4].map((i) => (
-              <svg key={i} width="18" height="18" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-            ))}
-          </div>
-
-          <blockquote
-            id="exit-banner-title"
-            className="font-heading text-[1.35rem] font-bold leading-snug text-[#1A1A1A]"
-          >
-            &ldquo;{REVIEW.text}&rdquo;
-          </blockquote>
+          <h2 id="exit-banner-title" className="font-heading text-[1.35rem] font-bold leading-snug text-[#1A1A1A]">
+            Before you go: want a rough price for your job?
+          </h2>
           <p className="mt-3 text-sm text-[#4A4A4A]">
-            <span className="font-semibold text-[#1A1A1A]">{REVIEW.name}</span> · {REVIEW.location}
+            Shopfronts, shutters and commercial doors, made and fitted from our base in Exhall, Coventry.
           </p>
         </div>
 
         <div className="grid grid-cols-3 gap-px border-y border-[#E5DDD0] bg-[#E5DDD0]">
-          {STATS.map((s) => (
+          {FACTS.map((s) => (
             <div key={s.label} className="bg-[#F9F7F4] px-3 py-4 text-center">
               <p className="font-heading text-2xl font-extrabold text-[#C9A84C]">{s.value}</p>
               <p className="mt-0.5 text-[11px] uppercase tracking-wide text-[#4A4A4A]">{s.label}</p>
@@ -86,9 +63,8 @@ export default function ExitIntentPopup() {
 
         <div className="px-7 py-6">
           <p className="mb-4 text-sm leading-relaxed text-[#4A4A4A]">
-            Before you go — a site survey and written quotation are free, and there is no
-            obligation to book. Most visitors start with an indicative price, which takes about a
-            minute.
+            The estimator gives you a guide figure in about a minute. If it looks right, a survey and
+            written price cost nothing and commit you to nothing.
           </p>
           <div className="flex flex-col gap-2.5 sm:flex-row">
             <Link
@@ -96,7 +72,7 @@ export default function ExitIntentPopup() {
               onClick={onClose}
               className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-[#C9A84C] px-6 py-3.5 font-heading text-sm font-bold text-[#1A1A1A] no-underline transition-colors hover:bg-[#F0D080]"
             >
-              Get an instant price
+              Try the estimator
             </Link>
             <a
               href="tel:07597630000"
@@ -106,17 +82,14 @@ export default function ExitIntentPopup() {
               Call 07597 630000
             </a>
           </div>
-          {/* reassure: names what happens after the click. At the moment of
-              leaving, the objection is usually the phone call rather than the
-              price — and the instant estimate genuinely needs no call. */}
           <p className="mt-3.5 text-center text-[0.72rem] leading-snug text-[#6B6B6B]">
-            A price on screen in about a minute. No one rings you unless you ask them to.
+            Your figure appears on screen straight away, with a copy by email.
           </p>
           <button
             onClick={onClose}
             className="mt-3 w-full text-center text-xs text-[#888888] underline-offset-2 hover:underline"
           >
-            No thanks, I&apos;m just browsing
+            Not now, thanks
           </button>
         </div>
       </div>

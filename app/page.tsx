@@ -5,7 +5,7 @@ import ContactForm from '@/components/ContactForm';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: "Shopfront & Shutter Fitters | Grewal Shopfront & Shutters",
+  title: "Shopfront & Shutter Fitters, Coventry & Birmingham | Grewal",
   description:
     'Two decades fitting aluminium shopfronts, roller shutters and security doors across the West Midlands. Measured, made, fitted and maintained.',
   alternates: { canonical: 'https://www.grewalshopfrontandshutters.co.uk' },
@@ -70,11 +70,11 @@ const portfolio = [
 ];
 
 const faqs = [
-  { q: 'What services do you offer?', a: 'We install and maintain roller shutters, shopfronts, security doors, automatic doors, and more -- covering commercial and industrial properties across the UK.' },
-  { q: 'How long does installation take?', a: 'Most standard installations are completed in a single day. Larger or bespoke projects may take 2-3 days. We always aim to minimise disruption to your business.' },
-  { q: 'Do you cover my area?', a: 'Yes -- we operate nationwide across the whole of the UK with mobile engineering teams ready to respond anywhere.' },
-  { q: 'Are your shutters fire-rated?', a: 'Yes. We supply and install fire-rated shutters that comply with UK Building Regulations and BS EN 1634 standards, suitable for compartmentalisation in commercial premises.' },
-  { q: 'Do you offer a warranty on installations?', a: 'All our installations come with a comprehensive warranty. Parts and workmanship are covered, and our aftercare team is available for any follow-up service.' },
+  { q: 'What do you fit and repair?', a: 'Shopfronts, roller shutters, security, fire and automatic doors, bi-folds, windows and glass for shops, offices and industrial units. The services page lists all fourteen.' },
+  { q: 'How long is the fitting?', a: 'A shutter or door is usually a single day on site, and a shopfront one or two. We leave the premises locked every evening.' },
+  { q: 'Do you cover my area?', a: 'Around Coventry and Birmingham we do everything, including emergencies. Within about 100 miles of Birmingham we fit and book repairs. Further afield in England we take on planned installations.' },
+  { q: 'Can you fit fire-rated shutters?', a: 'Yes, where your fire strategy needs one, for example between a shop and a store room. They close on the alarm and need servicing so they actually drop.' },
+  { q: 'What guarantee do I get?', a: 'Our fitting work is guaranteed for 12 months, and the products carry their makers\' own guarantees. The details go on your quote.' },
 ];
 
 const blogPosts = [
@@ -313,19 +313,16 @@ export default function HomePage() {
       <section className="bg-[#111] py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
           <span className="inline-block bg-white/10 backdrop-blur-sm text-white text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full border border-white/20 mb-6">
-            No waiting
+            About a minute
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">
-            Know roughly what it costs — before you call
+            Rough price first, phone call later
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto mb-8">
-            Answer a few quick questions about your premises and we will show you an indicative
-            price straight away, adjusted for your location and site conditions. It is a guide
-            price, not a formal quote — but it gives you a realistic starting point in under a
-            minute. No obligation.
+            Tell the estimator what you need, where it is and anything awkward about the site. You get a guide figure on screen, which a free survey then turns into a written price.
           </p>
           <Link href="/instant-quote" className="btn-gold text-base px-8 py-4">
-            Get My Instant Estimate
+            Open the estimator
             <svg width="16" height="16" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </Link>
         </div>
@@ -712,11 +709,11 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
-              <span className="pill mb-4">Get Started</span>
-              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1A1A1A] mt-4 mb-4">Get a Free Shopfront Installation Quote</h2>
-              <p className="text-[#4A4A4A] text-lg mb-8">No obligations. No hidden costs. Just a straightforward quotation for your project.</p>
+              <span className="pill mb-4">Prices</span>
+              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1A1A1A] mt-4 mb-4">Ask for a price</h2>
+              <p className="text-[#4A4A4A] text-lg mb-8">A few lines and a photo are enough. We come back with a ballpark, then a free survey if you want one.</p>
               <div className="space-y-4 mb-8">
-                {['Free site survey within 48 hours', 'Detailed written quotation', 'Response within 2 business hours', '24/7 emergency line available'].map((item) => (
+                {['Free survey, usually within a couple of days', 'Written price listing what is included', 'Replies the same working day', 'Emergency line around Coventry and Birmingham'].map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#C9A84C]/20 to-[#C9A84C]/10 border border-[#C9A84C]/30 flex items-center justify-center flex-shrink-0">
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#C9A84C" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -728,7 +725,7 @@ export default function HomePage() {
               <div className="bg-[#F9F7F4] rounded-lg p-5 border border-[#E5DDD0]">
                 <p className="text-[#888] text-xs uppercase tracking-wider mb-2 font-semibold">Prefer to talk?</p>
                 <a href="tel:07597630000" className="text-[#C9A84C] text-xl font-bold hover:text-[#A8832A] transition-colors">07597 630000</a>
-                <p className="text-[#888] text-xs mt-1">Mon-Fri 8am-6pm &bull; Sat 9am-4pm &bull; Emergency 24/7</p>
+                <p className="text-[#888] text-xs mt-1">Weekdays 8 to 6, Saturdays 9 to 4, emergency line day and night</p>
               </div>
             </div>
             <ContactForm />

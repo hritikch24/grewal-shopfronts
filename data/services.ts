@@ -43,156 +43,157 @@ export interface Service {
   peopleAlsoAsk?: ServiceFaq[];
 }
 
+/*
+ * Every word below was written for this site alone. Before changing any of it,
+ * run `npm run gate` after a build: it fails if a page shares more than 3% of
+ * its eight-word phrases with any other site in the portfolio.
+ */
 export const services: Service[] = [
   {
     slug: 'aluminium-shopfronts',
     name: 'Aluminium Shopfronts',
     shortDescription:
-      'Bespoke aluminium shopfront systems engineered for durability and kerb appeal. Thermally broken frames, toughened glazing, and powder-coat finishes to your specification.',
+      'New aluminium fronts made to measure for shops, cafés, salons and showrooms, fitted by our own crews from our Coventry base and across England.',
     heroImage: 'service-aluminium-shopfront.webp',
     primaryKeyword: 'aluminium shopfronts',
-    metaTitle: 'Aluminium Shopfronts — Supply & Install',
+    metaTitle: 'Aluminium Shopfronts, Made and Fitted',
     metaDescription:
-      'Toughened glass shopfronts with thermally broken aluminium frames. DDA-compliant entrances, powder-coat finishes, BS EN 12150 safety glazing. Free site.',
-    description: `Aluminium has become the material of choice for commercial shopfront construction across the UK, and for good reason. When specified and installed correctly, an aluminium shopfront system offers an outstanding combination of structural rigidity, weather resistance, design flexibility, and long service life that no other material can match at a comparable price point.
+      'Made-to-measure aluminium shopfronts for shops and cafés. Slim or chunky frames, any RAL colour, toughened or laminated glass. Free survey: 07597 630000.',
+    description: `A shopfront does three jobs at once. It has to sell the shop to people walking past, keep the weather out, and lock up safely at night. Aluminium handles all three better than timber or PVC-U for most commercial units, which is why the bulk of the fronts we fit are aluminium.
 
-At Grewal Shopfront & Shutters, we design and install aluminium shopfronts to suit everything from a single independent retailer to a multi-unit retail parade or commercial development. Our systems are sourced from leading European fabricators and conform to the relevant British Standards, including BS 6375 for the performance of windows and doors, and BS EN 14351-1, which governs the CE marking requirements for aluminium entrance doors.
+We have been fitting commercial frontages since 2004, working out of Exhall on the edge of Coventry. Most of our installs are in the Midlands, but we take shopfront work anywhere in England.
 
-**Frame Systems and Thermal Performance**
+**What we actually fit**
 
-We work with both standard commercial-grade aluminium profiles and thermally broken systems. For most modern retail units and any installation subject to Building Regulations Part L (Conservation of Fuel and Power), thermally broken frames are required. These incorporate a polyamide thermal break within the aluminium section that dramatically reduces heat loss through the frame, helping occupiers meet energy performance obligations and reduce heating costs.
+A typical job is a glazed screen across the full width of the unit, a single or double entrance door, a stallriser (the solid panel under the glass) and a fascia box above for the sign. We can add a shutter box, a fanlight, a side door to flats above, or a recessed lobby. Frames come in slim "shopfront" sections for a light look or deeper sections where the glass is tall or the unit is exposed to wind.
 
-Centre-pane U-values for our double-glazed units typically fall between 1.0 and 1.4 W/m²K depending on the glass specification chosen, and our complete window and door assemblies are independently tested to demonstrate compliance with the current Building Regulations threshold.
+**Glass**
 
-**Glazing Specifications**
+Glass in doors and low panels near the floor must be safety glass by law. We fit toughened glass as the minimum and recommend laminated glass on the street side for shops that hold stock worth stealing: laminated glass cracks but stays in one piece, so a thief cannot simply step through. Double-glazed units cut heat loss and noise on busy roads.
 
-All glazing installed within our shopfront systems uses toughened safety glass as a minimum, in line with BS EN 12150-1. Where a unit faces a high-traffic pedestrian zone, or where the glazed area falls within the critical zone defined by BS 8213-4 (below 800 mm from floor level), we specify toughened or laminated glass rated to the appropriate safety category.
+**Heat loss and Building Regulations**
 
-For retailers with specific requirements — reduced solar gain, acoustic attenuation, enhanced security — we can specify solar-control glass, acoustic interlayers, or laminated security glass to PAS 24:2022, the standard used to assess enhanced security performance for doors and windows. Many landlords and insurers now require PAS 24 certification for new commercial glazing.
+A front that heats the shop all winter costs real money. Frames with a thermal break (a plastic strip that stops cold travelling through the metal) keep the inside face warmer and stop condensation running down the frame. Where Building Regulations apply to the work, we specify frames and glass that meet the current energy rules and tell you before you order.
 
-**Entrance Design and DDA Compliance**
+**Colour and finish**
 
-The Equality Act 2010 (which replaced the Disability Discrimination Act) requires that commercial premises make reasonable adjustments to avoid putting disabled people at a substantial disadvantage. For shopfronts, this most commonly relates to entrance door widths, threshold heights, and door opening forces.
+Frames are powder coated, which is a baked-on paint finish that does not peel like wet paint. You can choose any RAL colour, two colours (one inside, one outside), or a textured or metallic finish. Black, anthracite grey and bronze are the most popular for shops right now.
 
-We design our entrance systems with a minimum 775 mm clear opening width as standard, and can extend this to 900 mm or beyond for full accessibility. Threshold details are coordinated with the structural floor level to eliminate trip hazards, and where lever or D-pull hardware is specified, we select furniture that meets the ergonomic requirements referenced in BS 8300, the standard for the design of an accessible and inclusive built environment.
+**Planning**
 
-**Powder Coat Finishes**
+Changing the look of a shopfront usually needs planning permission, and the sign normally needs separate advertisement consent. Listed buildings and conservation areas are stricter. We will tell you at survey stage what is likely to apply and supply drawings your council can use.
 
-All aluminium sections are powder-coated to BS EN 12206-1, which specifies performance requirements for organic coatings on aluminium alloy extrusions. We offer the full RAL palette as standard, and can access BS 4800 and NCS colour references on request. Our standard powder-coat guarantee is 10 years for colour retention and adhesion under normal UK weather exposure conditions.
+**How the day goes**
 
-For listed buildings or conservation areas, we have worked alongside planning consultants to specify sympathetic colour matches and slimline profiles that satisfy planning officer requirements without compromising performance.
-
-**Installation Process**
-
-Every installation begins with a measured survey of the existing opening or structural aperture. We co-ordinate with the structural engineer's lintel design where a new opening is being formed, and we take the relevant Party Wall Act notifications into account for terraced or semi-detached commercial properties. Our installation teams are CSCS-carded and follow a site-specific method statement and risk assessment for every project.`,
+We strip out the old front and fit the new one in the same visit where we can, so the shop is never left open overnight. Most single units take one to two days on site. The old frame and glass go away with us.`,
     benefits: [
       {
-        title: 'Long Service Life with Low Maintenance',
+        title: 'Built to your exact opening',
         description:
-          'Aluminium does not rust, rot, or warp. A correctly specified and installed aluminium shopfront typically provides 25–30 years of reliable service with nothing more than periodic cleaning and occasional hardware lubrication.',
+          'Every front is fabricated from our survey measurements, so it fits the building you have rather than a standard size, with no gaps packed out with foam.',
       },
       {
-        title: 'Design Flexibility',
+        title: 'One team, start to finish',
         description:
-          'Aluminium extrusions can be fabricated to virtually any dimension. Slim sightlines, large glass areas, curved bays, and bespoke colour finishes are all achievable within a single system, giving architects and retailers precise control over the finished appearance.',
+          'You deal with the same team from the first survey to the handover, so nothing gets lost between measuring and fitting.',
       },
       {
-        title: 'Energy Performance Compliance',
+        title: 'Secure at close of day',
         description:
-          'Thermally broken aluminium systems meet and exceed the U-value thresholds set out in Building Regulations Part L, reducing heat loss and demonstrating compliance without sacrificing the structural openness that retail tenants require.',
+          'Multi-point locks, laminated glass and a shutter box can all be built into the same front, so security does not look bolted on afterwards.',
       },
       {
-        title: 'Enhanced Security Options',
+        title: 'Little upkeep for decades',
         description:
-          'Aluminium frames can accept multi-point locking hardware, security glazing to PAS 24:2022, and integrated roller shutter pockets, allowing a single coherent shopfront system to provide both daytime retail presence and overnight security without visual compromise.',
+          'Aluminium does not rot or rust. A wash with soapy water a few times a year and a drop of oil on the door hinges is the usual maintenance.',
       },
     ],
     faqs: [
       {
-        question: 'How long does a typical aluminium shopfront installation take?',
+        question: 'How long will my shop be closed while the front is replaced?',
         answer:
-          'A standard single-unit shopfront replacement — removing the existing frontage and installing a new aluminium system — is usually completed within one to two working days. More complex installations involving structural alterations, large glass panels requiring specialist lifting equipment, or multi-unit facades are typically programmed across three to five days. We provide a detailed programme at the survey stage.',
+          'Usually not at all, or for one day at most. We prepare everything off site and fit the new front in one or two days. If you trade late, we can start early and make the shop secure before we leave each evening.',
       },
       {
-        question: 'Do I need planning permission for a new shopfront?',
+        question: 'Is planning permission needed for a new shopfront?',
         answer:
-          'In most cases, replacing a shopfront in a like-for-like manner is considered permitted development for commercial premises. However, if the property is within a conservation area, is a listed building, or if the new design materially changes the character of the frontage, prior approval or full planning permission may be required. We can advise based on the property address and proposed design, and we have experience preparing design-and-access statements to support planning applications.',
+          'Often, yes. Most councils treat a change to the appearance of a shopfront as development that needs planning permission, and signs need advertisement consent. Repairs and true like-for-like replacements are sometimes exempt, but listed buildings and conservation areas almost never are. We check your address at survey and tell you what applies.',
       },
       {
-        question: 'What is the difference between a standard and a thermally broken frame?',
+        question: 'What is a thermal break and do I need one?',
         answer:
-          'A standard (non-broken) aluminium frame uses a continuous aluminium section from inside to outside. Because aluminium conducts heat very efficiently, this creates a thermal bridge — warmth escapes through the frame and condensation can form on the cold internal face. A thermally broken frame incorporates a polyamide plastic strip within the section that interrupts this path, significantly improving the overall U-value of the assembly and eliminating cold-bridging. For most commercial buildings constructed or refurbished after 2010, thermally broken frames are required under Building Regulations Part L.',
+          'It is a strip of insulating plastic built into the middle of the aluminium frame. It stops cold passing straight through the metal, so the inside face stays warmer and does not run with condensation. For a heated shop it is almost always worth having, and it is often needed to meet Building Regulations.',
       },
       {
-        question: 'Can you match the frame colour to our corporate brand palette?',
+        question: 'Can the frame match our brand colours?',
         answer:
-          'Yes. We powder-coat all aluminium sections in-house or through a BS EN 12206-1 certified finishing partner. The standard range covers the full RAL Classic and RAL Design colour spaces, and we can also match to NCS, BS 4800, or proprietary brand colour references provided as a physical swatch or Pantone reference. Lead time for non-standard colours is typically five to seven working days longer than standard stock colours.',
+          'Yes. Any RAL colour is available, and we can match a brand colour from a sample. Unusual colours add a few working days to the lead time because the coater runs them as a separate batch.',
       },
     ],
     howItWorks: [
       {
         step: 1,
-        title: 'Initial Enquiry',
+        title: 'Tell us about the unit',
         description:
-          'Get in touch by phone or through our website with details of your project. We will discuss your requirements, timescales, and budget to establish whether our aluminium shopfront systems are the right fit.',
+          'Call, WhatsApp or use the form. A couple of photos of the current front and a rough width help us give you a ballpark figure straight away.',
       },
       {
         step: 2,
-        title: 'Site Survey & Measurement',
+        title: 'Free measured survey',
         description:
-          'One of our surveyors visits the premises to take precise measurements, assess the structural opening, and note any access or planning constraints that could affect the design.',
+          'We visit, measure the opening, check the lintel and floor level, and talk through door position, glass type, colour and any planning issues.',
       },
       {
         step: 3,
-        title: 'Design & Quotation',
+        title: 'Drawing and fixed price',
         description:
-          'We prepare detailed drawings showing the proposed shopfront layout, frame profiles, glazing specification, and powder-coat finish. A fixed-price quotation is provided alongside the drawings for your approval.',
+          'You get a drawing of the new front and a written price. Nothing is ordered until you have approved both.',
       },
       {
         step: 4,
-        title: 'Fabrication & Delivery',
+        title: 'Fabrication',
         description:
-          'Once the design is signed off, our fabrication partners manufacture the aluminium sections and glazing units to the agreed specification. Typical lead time is three to four weeks.',
+          'Frames are cut, coated and glazed to the approved drawing. Expect around three to four weeks, longer for special colours.',
       },
       {
         step: 5,
-        title: 'Installation & Handover',
+        title: 'Fitting day',
         description:
-          'Our CSCS-carded installation team removes the existing frontage and installs the new system. On completion, we walk you through the finished shopfront, demonstrate all hardware, and provide your guarantee documentation.',
+          'We remove the old front, fit the new one, seal it, adjust the doors and show you how the locks work. The old materials leave with us.',
       },
     ],
     pricingGuide: {
-      heading: 'What Does an Aluminium Shopfront Cost?',
+      heading: 'Aluminium shopfront prices',
       content:
-        'The cost of an aluminium shopfront depends on the width and height of the opening, the frame profile chosen, glazing specification, and whether thermally broken sections are required. Below are typical price ranges for common configurations.',
+        'Width, height, door type and glass choice drive the price more than anything else. These are the ranges we see most often on standard jobs.',
       ranges: [
-        { item: 'Single unit shopfront', price: '£2,500 – £5,000' },
-        { item: 'Double unit shopfront', price: '£4,500 – £8,500' },
-        { item: 'Full parade (3+ units)', price: '£12,000 – £25,000' },
-        { item: 'Thermally broken upgrade (add-on)', price: '£800 – £1,500' },
+        { item: 'One shop unit', price: '£2,500 – £5,000' },
+        { item: 'Two units side by side', price: '£4,500 – £8,500' },
+        { item: 'Parade of three or more', price: '£12,000 – £25,000' },
+        { item: 'Thermal break frames, extra', price: '£800 – £1,500' },
       ],
-      note: 'All prices exclude VAT. Final cost confirmed after site survey.',
+      note: 'Prices are before VAT. We confirm the exact figure in writing after the survey.',
     },
     peopleAlsoAsk: [
       {
-        question: 'How long do aluminium shopfronts last?',
+        question: 'How many years does an aluminium shopfront last?',
         answer:
-          'A well-specified aluminium shopfront typically lasts 25 to 30 years with minimal maintenance. The powder-coat finish is guaranteed for 10 years against fading and peeling, and the aluminium itself does not rust or rot, making it one of the most durable commercial frontage materials available.',
+          'Twenty-five years or more is normal. The frame itself will outlast most leases; door closers and locks are the parts that wear and they can be swapped individually.',
       },
       {
-        question: 'Are aluminium shopfronts energy efficient?',
+        question: 'Is aluminium better than PVC-U for a shopfront?',
         answer:
-          'Yes, when thermally broken frames are used. Thermally broken aluminium systems incorporate a polyamide insulating strip that prevents heat transfer through the frame. Combined with double-glazed units, these systems achieve U-values between 1.0 and 1.4 W/m²K, comfortably meeting Building Regulations Part L requirements.',
+          'For commercial use, generally yes. Aluminium is stronger, so frames can be slimmer and carry bigger glass, and it copes far better with a heavy entrance door being opened hundreds of times a day.',
       },
       {
-        question: 'Can you install an aluminium shopfront in a conservation area?',
+        question: 'Can I have a shutter fitted with the new front?',
         answer:
-          'Yes, but additional planning approval is usually required. We have experience working with planning officers in conservation areas and can specify slimline profiles and heritage colour finishes that satisfy local authority requirements while still providing modern thermal and security performance.',
+          'Yes, and it is the neatest way to do it. We build the shutter box into the fascia so it sits behind the sign instead of hanging off the wall.',
       },
       {
-        question: 'What colours are available for aluminium shopfronts?',
+        question: 'What does a stallriser do?',
         answer:
-          'We offer the full RAL Classic and RAL Design colour ranges as standard, giving you over 2,500 colour options. We can also match to BS 4800, NCS, or bespoke brand colours from a physical swatch or Pantone reference. Non-standard colours typically add five to seven working days to the lead time.',
+          'It is the solid panel under the window. It protects the glass from kicks, trolleys and floor cleaning, and many councils expect one on traditional streets.',
       },
     ],
     relatedServices: ['automatic-doors', 'security-doors', 'bi-fold-doors', 'shopfront-repairs'],
@@ -202,153 +203,143 @@ Every installation begins with a measured survey of the existing opening or stru
     slug: 'roller-shutters',
     name: 'Roller Shutters',
     shortDescription:
-      'Commercial roller shutters for retail, industrial, and warehouse premises. Manual, electric, and fire-rated options with LPS 1175 security-rated curtains available.',
+      'Manual and motorised roller shutters for shops, garages, warehouses and loading bays, from slim punched-lath shop shutters to heavy industrial doors.',
     heroImage: 'service-security-shutter.webp',
     primaryKeyword: 'roller shutters',
-    metaTitle: 'Roller Shutters — Commercial Installation',
+    metaTitle: 'Roller Shutters for Shops and Units',
     metaDescription:
-      'Commercial roller shutter installation across the UK. Manual, electric & fire-rated options. LPS 1175 security-rated. Free site survey — call 07597 630000.',
-    description: `Roller shutters are one of the most practical and cost-effective security solutions available to commercial and industrial property owners. When correctly specified for the application, a roller shutter provides reliable overnight security, weather protection, and where required, fire containment — all within a compact, retractable assembly that does not impede the operation of the premises during trading hours.
+      'Shop and industrial roller shutters supplied and fitted. Solid, perforated or punched laths, manual or electric, insurance-rated options. Call 07597 630000.',
+    description: `A roller shutter is the last thing you close at night and the first thing you open in the morning, so it has to work every single time. We fit shutters on high-street shops, takeaways, petrol station kiosks, garages and industrial units, and we look after them afterwards.
 
-Grewal Shopfront & Shutters designs, supplies, and installs roller shutters across a wide range of commercial applications, from small retail units requiring a face-fit manual curtain to large industrial loading bays needing a high-speed, motor-driven door with full automation and safety edge protection.
+**Choosing the curtain**
 
-**Curtain Construction and Security Ratings**
+The curtain is the part that rolls up. Solid steel laths give the most privacy and resistance. Perforated laths have tiny holes, so a lit window display can still be seen at night. Punched laths have larger slots and are often fitted behind a glazed front. Insulated laths, filled with foam, suit loading bays and buildings that are heated.
 
-Roller shutter curtains are available in perforated, solid, and vision-strip configurations. Perforated laths allow some visibility and airflow when the shutter is closed and can reduce the visual impact of a shuttered frontage. Solid lath curtains provide maximum weather exclusion and privacy.
+If your insurer has asked for a specific security rating, tell us at the start. Rated shutters are tested as a complete set (curtain, guides, box and locking), and the certificate only counts if the whole set is fitted as tested.
 
-For security-critical applications, we specify curtains tested to LPS 1175 (Loss Prevention Standard 1175), the industry benchmark for physical attack resistance. LPS 1175 is graded from A (basic deterrence) through to H (resistance to prolonged attack with specialist tools), and the appropriate grade is selected in consultation with the client's insurer and in accordance with the risk profile of the premises. Many commercial insurers now require a minimum of LPS 1175 SR1 or SR2 for unattended retail premises.
+**Hand-operated or motorised**
 
-Curtain laths are roll-formed from galvanised mild steel or aluminium alloy. Aluminium is specified where weight, corrosion resistance, or annual maintenance burden is a primary concern; steel is typically preferred where higher security ratings or impact resistance is paramount.
+Small shop shutters can be pushed up by hand with spring assistance. Above about three metres wide, or where staff open up alone, a motor is the safer choice. Motors can be run from a key switch, a wall button or a remote fob, and can be set up with a safety edge that stops the curtain if it touches something on the way down.
 
-**Operating Systems**
+**Fire shutters**
 
-Manual shutters are operated via a spring-balanced mechanism — the spring stores energy as the shutter closes and releases it to assist opening. Manual operation is appropriate for smaller openings up to approximately 3.5 m in width and where operating frequency is modest.
+Some openings, such as those between a shop and a storage area or across a stairwell, need a fire-rated shutter that closes on its own when the alarm sounds. These are a separate product with their own testing and must be serviced so they actually drop when needed. We supply and fit them where the fire strategy calls for one.
 
-Electric shutters use a tubular or side-mounted motor connected to a gear reducer and drive shaft. They are operated by a key switch, push-button panel, or remote control, and can be integrated with a building management system or external timer for automated opening and closing. All our electric shutter installations include a manual override mechanism to allow operation during a power failure.
+**The building matters too**
 
-Safety edges, photocells, and pressure-sensitive bottom rails are fitted as standard on all motorised installations, in line with the Machinery Directive (now retained in UK law as the Supply of Machinery (Safety) Regulations 2008) and the guidance issued by the Door and Hardware Federation (DHF).
+A shutter is only as strong as what it is fixed to. On survey we check the brickwork or steel each side, the headroom for the box, and whether the guides can sit on the face of the wall or need to go inside the opening. Planning permission is often needed for an external shutter on a shopfront, especially a solid one, and some councils will only allow perforated or internal shutters. We will tell you before you order.
 
-**Fire-Rated Roller Shutters**
+**After installation**
 
-Fire-rated roller shutters provide compartmentalisation in commercial and industrial premises, containing the spread of fire between zones in accordance with the passive fire protection strategy for the building. Our fire shutters are designed and tested in accordance with BS EN 1634-1 (fire resistance and smoke control tests for door and shutter assemblies) and carry the appropriate fire performance classification — typically EI 60 or EI 90, denoting integrity and insulation for 60 or 90 minutes respectively.
-
-Fire shutters are controlled by a fusible link or, in more sophisticated installations, by a signal from the building's fire detection and alarm system. Gravity-fail-safe release is standard, ensuring the shutter closes automatically on detection of a fire even if power is lost.
-
-Installation of fire shutters must be completed and certified by a company with appropriate third-party accreditation. Grewal Shopfront & Shutters holds the relevant certification and provides a fire shutter completion certificate that forms part of the building's fire safety record.
-
-**Structural Considerations**
-
-Roller shutters impose both dead loads (the weight of the curtain and housing box) and dynamic loads (wind, impact, and operation forces) on the surrounding structure. Before installation, we assess the condition and load-bearing capacity of the lintel or structural member above the opening. Where the existing structure is inadequate, we work with a structural engineer to design a suitable bearing arrangement.
-
-All shutters are installed with a weather seal along both side guides and at the bottom rail, preventing draught and water ingress when closed. For installations in exposed coastal locations, we specify enhanced corrosion protection, including marine-grade aluminium sections and stainless-steel fixings.`,
+We test every shutter before we leave and show your staff how to use it and what to do if the power fails. A yearly service keeps springs, motors and safety devices in order and spots wear early.`,
     benefits: [
       {
-        title: 'Robust Security Deterrence',
+        title: 'Strong, visible deterrent',
         description:
-          'A solid steel roller shutter curtain rated to LPS 1175 presents a substantial physical barrier to opportunistic intruders. Combined with multi-point locking bars and hardened steel locks, a well-specified shutter significantly extends the time and effort required to breach the opening, deterring all but the most determined attackers.',
+          'A closed shutter tells a would-be thief that getting in will be slow and noisy. Most give up before they start.',
       },
       {
-        title: 'Compact, Space-Efficient Operation',
+        title: 'No floor space lost',
         description:
-          'Unlike hinged or folding security options, a roller shutter retracts entirely into its housing box above the opening when open. This preserves the full clear opening width and height for vehicles, shopfitters, or display purposes, and keeps the trading floor completely unobstructed.',
+          'The curtain coils into a box above the opening, so nothing swings into the shop or across the pavement.',
       },
       {
-        title: 'Fire Compartmentation',
+        title: 'Push-button opening',
         description:
-          'Fire-rated shutters certified to BS EN 1634-1 provide tested, reliable compartmentalisation that can be written into a fire strategy without relying solely on active suppression. They protect adjacent occupancies, allow safe evacuation, and demonstrate compliance with Approved Document B to the building\'s responsible person.',
+          'Motorised shutters open from a key switch or remote fob, which is quicker and safer for staff opening alone early in the morning.',
       },
       {
-        title: 'Automation and Remote Operation',
+        title: 'Options for every opening',
         description:
-          'Electric shutters can be programmed to open and close at set times, linked to alarm systems, or operated remotely via a smartphone app. This removes the daily operational burden on staff and ensures the premises is secured even if a member of staff forgets at closing time.',
+          'From a narrow kiosk hatch to a six-metre loading bay, the same supplier, survey and service visit cover all of your openings.',
       },
     ],
     faqs: [
       {
-        question: 'Do roller shutters require Building Regulations approval?',
+        question: 'Will I need permission to fit a shutter to my shop?',
         answer:
-          'Installation of a roller shutter as a replacement for an existing shutter typically falls under permitted development. However, fire-rated shutters installed as part of a passive fire strategy require a Building Regulations application, and a completion certificate issued by a building control body. New openings created in an external wall will also trigger a Building Regulations submission. We manage this process on behalf of clients where required.',
+          'Often you will. Many councils treat an external shutter on a shopfront as needing planning permission, and some refuse solid shutters on high streets. Internal shutters, fitted behind the glass, usually do not need it. We check your council\'s guidance during the survey.',
       },
       {
-        question: 'How often should a roller shutter be serviced?',
+        question: 'How often should a shutter be serviced?',
         answer:
-          'The DHF (Door and Hardware Federation) recommends that all power-operated doors, including roller shutters, are inspected and serviced at least annually by a competent person. For high-cycle applications — such as a loading bay operating 20 or more cycles per day — we recommend six-monthly servicing. Annual servicing should include inspection and lubrication of all moving parts, testing of safety edges and photocells, and verification that all emergency release mechanisms function correctly.',
+          'Once a year for most shop shutters. Shutters that go up and down many times a day, such as on loading bays, are better checked every six months.',
       },
       {
-        question: 'What happens if the motor fails on an electric shutter?',
+        question: 'What if the power goes off and the shutter is down?',
         answer:
-          'All Grewal Shopfront & Shutters electric shutter installations include a manual override facility — typically a removable hand chain or crank handle — that allows the shutter to be raised or lowered without electrical power. For fire shutters, a gravity-fail-safe mechanism ensures the shutter closes automatically under its own weight in the event of power failure or fire detection signal, regardless of whether the motor is operational.',
+          'Most motors have a manual override, either a hand chain or a crank handle. We show you where it is and how to use it on handover day. A battery backup can also be fitted.',
       },
       {
-        question: 'Can you install a roller shutter within an existing shopfront system?',
+        question: 'Can a shutter be added to the shopfront I already have?',
         answer:
-          'Yes. In many cases a roller shutter can be retrofitted into an existing aluminium or steel shopfront by installing a face-fit box housing above the aperture and side guides within the existing frame reveals. We assess feasibility at the survey stage, taking into account the available headroom, reveal depth, and structural condition of the existing frame. Where a face-fit installation is not practical, a built-in system with concealed housing box can be specified as part of a new shopfront installation.',
+          'Usually, yes. We fit the box on the face of the fascia or behind it, depending on the space. If there is no room, a slimmer box or an internal shutter may work instead.',
       },
     ],
     howItWorks: [
       {
         step: 1,
-        title: 'Requirement Discussion',
+        title: 'Talk it through',
         description:
-          'Contact us to discuss your security needs, operating frequency, and whether you require manual, electric, or fire-rated shutters. We will advise on the most suitable system for your premises.',
+          'We ask what you want the shutter to protect, how often it will run and whether your insurer has set any rules.',
       },
       {
         step: 2,
-        title: 'Site Survey',
+        title: 'Measure and check fixings',
         description:
-          'Our surveyor visits to measure the opening, check headroom and side-fix clearances, assess the structural condition of the lintel, and note any electrical supply requirements for motorised systems.',
+          'On site we measure the opening, check the walls and headroom, and look at where power can be run for a motor.',
       },
       {
         step: 3,
-        title: 'Specification & Quote',
+        title: 'Written specification',
         description:
-          'We specify the curtain type, lath profile, security rating, and operating mechanism, then provide a fixed-price quotation with full technical details for your review.',
+          'You receive a quote listing the lath type, colour, operation, locks and any safety devices, with one total price.',
       },
       {
         step: 4,
-        title: 'Manufacture & Installation',
+        title: 'Made and fitted',
         description:
-          'The shutter is manufactured to the surveyed dimensions and delivered to site. Installation typically takes one day for a standard single opening, including electrical connection for motorised systems.',
+          'Shutters are made to size, then fitted, wired and adjusted in a single visit for most shop openings.',
       },
       {
         step: 5,
-        title: 'Testing & Commissioning',
+        title: 'Test and handover',
         description:
-          'We test the shutter through a full cycle, set limit switches, commission safety devices, and demonstrate operation to your staff. All documentation, including warranty and maintenance guidance, is handed over.',
+          'We run the shutter through full cycles, check the safety devices and show staff how to open, close and override it.',
       },
     ],
     pricingGuide: {
-      heading: 'What Does a Roller Shutter Cost?',
+      heading: 'Roller shutter prices',
       content:
-        'Roller shutter pricing depends on the opening size, curtain material, security rating, and whether manual or electric operation is specified. Fire-rated and industrial shutters carry a premium due to additional testing and certification requirements.',
+        'Size, operation and curtain type decide most of the cost. Here are typical figures for the shutters we fit most often.',
       ranges: [
-        { item: 'Manual roller shutter (up to 3m)', price: '£800 – £1,500' },
-        { item: 'Electric roller shutter (up to 3m)', price: '£1,500 – £3,000' },
-        { item: 'Fire-rated roller shutter', price: '£3,000 – £6,000' },
-        { item: 'Industrial shutter (5m+)', price: '£4,000 – £8,000' },
+        { item: 'Hand-operated, up to 3 m wide', price: '£800 – £1,500' },
+        { item: 'Motorised, up to 3 m wide', price: '£1,500 – £3,000' },
+        { item: 'Fire-rated shutter', price: '£3,000 – £6,000' },
+        { item: 'Industrial door, 5 m or wider', price: '£4,000 – £8,000' },
       ],
-      note: 'All prices exclude VAT. Final cost confirmed after site survey.',
+      note: 'Prices are before VAT. We confirm the exact figure in writing after the survey.',
     },
     peopleAlsoAsk: [
       {
-        question: 'How long does it take to install a roller shutter?',
+        question: 'How long does fitting a shop shutter take?',
         answer:
-          'A standard single-opening roller shutter installation is typically completed within one working day, including fixing the housing box, side guides, curtain, and any electrical wiring. Larger industrial openings or fire-rated shutters may require two days to allow for additional structural work and commissioning.',
+          'Most shop shutters are fitted and running in a day. Large industrial doors or ones that need new steelwork can take two.',
       },
       {
-        question: 'Are electric roller shutters noisy?',
+        question: 'Are motorised shutters loud?',
         answer:
-          'Modern tubular motors are significantly quieter than older side-mounted drive systems. A typical electric roller shutter operates at around 55–65 dB, comparable to a normal conversation. If noise is a particular concern, we can specify low-noise motor options designed for residential or noise-sensitive commercial environments.',
+          'Modern tubular motors are fairly quiet. Most of the noise comes from the laths in the guides, which is kept down by regular cleaning and lubrication.',
       },
       {
-        question: 'Can roller shutters be insulated?',
+        question: 'Do insurers insist on shutters?',
         answer:
-          'Yes. Insulated roller shutter laths are available with a foam-filled core that improves thermal performance and reduces noise transmission. These are particularly popular for shop units where the shutter forms part of the building envelope and energy efficiency is a consideration.',
+          'Some do, particularly for shops holding cash, cigarettes, alcohol, phones or jewellery. Check your policy wording, because it may name a specific security rating.',
       },
       {
-        question: 'Do I need a roller shutter for insurance purposes?',
+        question: 'Can a shutter go inside the glass instead of outside?',
         answer:
-          'Many commercial insurers require physical security measures such as roller shutters for ground-floor retail and warehouse premises. The specific requirement varies by insurer and the value of stock held, but an LPS 1175-rated shutter will satisfy most policy conditions. We recommend checking with your insurer before specifying.',
+          'Yes. Internal shutters sit behind the glass, are often easier to get approved and keep the front looking open at night.',
       },
     ],
     relatedServices: ['aluminium-shopfronts', 'security-doors', 'fire-doors', 'emergency-callout'],
@@ -358,151 +349,143 @@ All shutters are installed with a weather seal along both side guides and at the
     slug: 'security-doors',
     name: 'Security Doors',
     shortDescription:
-      'Steel and composite security doors for commercial premises, rated to STS 202 and LPS 1175 standards. Single and double leaf configurations with multi-point locking.',
+      'Heavy steel doors for back entrances, stock rooms, plant rooms and fire exits, with locks and ratings chosen to satisfy your insurer.',
     heroImage: 'service-steel-door.jpeg',
     primaryKeyword: 'commercial security doors',
-    metaTitle: 'Security Doors UK | Steel & Composite',
+    metaTitle: 'Steel Security Doors for Businesses',
     metaDescription:
-      'Steel and composite security doors rated to LPS 1175 and STS 202. Multi-point locking, anti-drill cylinders, and panic hardware. UK-wide installation.',
-    description: `A commercial security door is one of the most important investments a business can make in protecting its assets, staff, and premises. Unlike a standard commercial entrance door, a properly specified security door is engineered from the ground up to resist physical attack, and its performance is independently verified through structured testing rather than manufacturer claims.
+      'Steel security doors for rear entrances, stock rooms and fire exits. Insurance-rated options, anti-snap locks, panic bars. Free survey: 07597 630000.',
+    description: `Burglars rarely come through the front. They try the back door, the fire exit and the side gate, where nobody is watching. A proper steel security door closes that gap.
 
-Grewal Shopfront & Shutters supplies and installs commercial security doors across a broad range of applications — back-of-house access points, warehouse and depot entrances, plant rooms, server rooms, cash-handling areas, and anywhere else where the consequence of an unauthorised breach is severe.
+We fit security doors on shops, pharmacies, off-licences, offices, warehouses and plant rooms, mostly across the Midlands and further afield when needed.
 
-**Standards and Security Ratings**
+**What makes a door "secure"**
 
-Two principal standards govern the tested performance of commercial security doors in the UK. LPS 1175 (Loss Prevention Standard 1175), published by the LPCB (Loss Prevention Certification Board), tests door sets against attack using progressively more capable tools over defined time periods, producing a rating from SR1 (basic resistance, hand tools only) through to SR8 (resistance to sustained attack with heavy plant). The LPCB maintains a publically searchable Red Book of certified products, allowing insurers and specifiers to verify the rating of any door set they are considering.
+It is the whole set, not just the leaf. A strong door in a weak frame, or a good frame fixed to crumbling brick, will still give way. We supply doors as complete sets: steel leaf, welded steel frame, hinges with dog bolts (steel pins that stop the door being lifted out if the hinges are cut), and locks that throw bolts into the frame at several points.
 
-STS 202 (Security Tested Standard 202), published by the LPCB's sister organisation, follows a similar attack-testing methodology and is sometimes preferred by specific insurers or procurement frameworks. Many commercial insurers specify a minimum LPS 1175 SR2 or STS 202 BR2 rating for back-of-house entrances in high-value retail or commercial premises.
+**Ratings and insurers**
 
-**Construction: Steel vs Composite**
+Security doors are tested by independent bodies and given a rating that shows how long they resist attack with given tools. The most common scheme in the UK is LPS 1175, where higher numbers mean more time and heavier tools. If your insurer or landlord has named a rating, send us the wording and we will quote a door that meets it, with the certificate to prove it.
 
-Steel security door leaves are fabricated from cold-rolled steel sheet, typically 1.5–3 mm in thickness, reinforced with internal steel box sections. The outer face may be smooth, embossed, or finished with a polyester powder coat. Steel doors are exceptionally strong and can be manufactured to accept very high-security locking systems, but they are heavy (a 1.0 × 2.1 m single-leaf door can exceed 80 kg), which imposes demands on the frame and hinges.
+**Fire exits that stay secure**
 
-Composite security doors use a laminated construction — steel skins bonded to a rigid foam or honeycomb core. This approach provides excellent stiffness-to-weight ratio, improved thermal insulation compared to solid steel, and resistance to the peel and lever attacks that exploit the bond line between face sheet and frame on lower-quality doors. Our composite range includes door sets tested to LPS 1175 SR2 and SR3.
+A fire exit must open instantly from inside without a key. That does not mean it has to be weak. Panic bars and push pads can be fitted to steel doors, with outside access only by key or code. We make sure escape routes keep working while the door stays shut to anyone outside.
 
-**Door Frames and Installation**
+**Locks, closers and access control**
 
-A security door is only as strong as its frame and its fixing into the surrounding structure. We install all security doors with purpose-designed steel sub-frames or knock-box frames that are fixed through to the structural wall using torque-controlled anchor bolts at centres determined by the load calculations for the specified security rating. Where the structural wall is constructed from materials with lower pull-out resistance (dense concrete blocks, for example), we use resin anchors to achieve the required fixing capacity.
+We fit anti-snap cylinders, deadlocks, hook bolts and overhead closers that pull the door shut every time. If you want keypad, fob or intercom entry, we prepare the door for it and can fit the hardware too.
 
-Frame depth is matched to the wall thickness, and all perimeter joints are filled with fire-rated intumescent material where the door set forms part of a fire-compartment boundary.
+**Fitting**
 
-**Locking Systems**
-
-Our standard commercial security doors are supplied with a multi-point locking mechanism engaging the frame at a minimum of five points — top, bottom, and three along the strike side. The lock body is a high-security euro profile cylinder resisting to TS 007 3-star or equivalent, offering anti-drill, anti-pick, and anti-bump protection. Master-keying and key-alike suites are available for multi-door installations.
-
-Where a door is used as a means of escape, we specify panic hardware conforming to BS EN 1125 (panic exit devices) or emergency exit devices conforming to BS EN 179. The distinction is important: BS EN 1125 covers single-action operation regardless of the user's ability or awareness, whereas BS EN 179 permits a lever or knob that requires a specific action. The fire strategy and means of escape design for the building determines which standard applies.
-
-**Access Control Integration**
-
-Security doors can be supplied with integrated access control provisions — electric strikes, magnetic locks, door controllers, and card or PIN reader mounting plates. We work alongside access control specialists and, where required, coordinate the door hardware specification with the access control installer to ensure compatibility between the mechanical and electronic elements of the system.`,
+The old door and frame come out, the opening is made good, and the new set is fixed into solid masonry with heavy anchors. Most single doors are done in a day, so you are never left without a lockable entrance overnight.`,
     benefits: [
       {
-        title: 'Independent, Verified Security Ratings',
+        title: 'Certificates your insurer accepts',
         description:
-          'LPS 1175 and STS 202 ratings are awarded only after independent destructive testing. Unlike products that simply claim to be "high security", rated door sets have demonstrated their resistance against specific tools for defined time periods, giving insurers and specifiers a reliable basis for risk assessment.',
+          'Rated doors come with the test certificate for the exact model fitted, which is what an underwriter will ask to see after a claim.',
       },
       {
-        title: 'Multi-Point Locking as Standard',
+        title: 'Locks into the frame at several points',
         description:
-          'A single-point deadbolt is the weakest link in any door assembly. Multi-point locking distributes the load across five or more engagement points, making it dramatically harder to force the door by levering at the lock zone. Our installations engage both the head and foot of the door frame, eliminating the flex that single-bolt doors allow.',
+          'Bolts engage top, middle and bottom, so the door cannot be levered at one corner.',
       },
       {
-        title: 'Suitable for Escape Routes',
+        title: 'Safe as an escape route',
         description:
-          'Our panic hardware options — certified to BS EN 1125 — allow a security door to function as a fire exit without compromising its security credentials when the building is occupied. The door provides full single-action exit at all times whilst the exterior remains secured against unauthorised entry.',
+          'Panic hardware lets staff get out in one push while the outside stays locked.',
       },
       {
-        title: 'Durability in Demanding Environments',
+        title: 'Built for hard use',
         description:
-          'Commercial back-of-house areas are subject to heavy use, trolley impacts, and exposure to cleaning chemicals. Our steel and composite door leaves are powder-coated to BS EN 13438 for indoor use or BS EN 12206-1 for external faces, and the hardware is specified in grade 316 stainless steel for areas with regular wet cleaning.',
+          'Steel leaves and frames shrug off the knocks of deliveries, bins and trolleys that wreck timber doors within a few years.',
       },
     ],
     faqs: [
       {
-        question: 'What security rating does my insurer require?',
+        question: 'Which security rating should I ask for?',
         answer:
-          'Requirements vary between insurers and policy types. Most commercial property policies for retail premises with significant stock holdings specify a minimum LPS 1175 SR2 or STS 202 BR2 rated door set for back-of-house and service entrances. Some high-value sectors — jewellery, pharmaceuticals, data centres — require SR3 or higher. We recommend contacting your insurer to confirm the requirement before ordering, and we can provide a product data sheet and LPCB certificate for any door set we propose.',
+          'Start with your insurance policy or landlord\'s requirements, since they often name one. Without a stated rating, a door built to a recognised standard with multi-point locking suits most shops. High-value stock such as phones, jewellery or medicines may justify a higher rating.',
       },
       {
-        question: 'Can a security door be used as a fire exit?',
+        question: 'Can my security door be a fire exit as well?',
         answer:
-          'Yes, provided it is fitted with appropriate escape hardware. A door designated as a fire exit must be fitted with a panic exit device to BS EN 1125 (if used by members of the public who may be unfamiliar with the building) or an emergency exit device to BS EN 179 (for staff-only escape routes). Both hardware types allow single-action exit from the inside, and our installations include the appropriate hardware as part of the door specification. The door leaf and frame can simultaneously achieve the required fire resistance rating where needed.',
+          'Yes. We fit panic bars or push pads so it opens from inside with one movement, while the outside needs a key or code.',
       },
       {
-        question: 'How is a security door fixed to a masonry wall?',
+        question: 'How is the frame fixed into the wall?',
         answer:
-          'The steel sub-frame is fixed through to the masonry or concrete structural opening using M12 or M16 torque-controlled anchor bolts at centres specified in the door manufacturer\'s installation instructions for the rated security performance. In older buildings with questionable masonry quality, we carry out a pull-out test on a sample fixing before proceeding with the full installation. All fixings are concealed behind the frame cover plate once the door leaf is hung, preventing tampering.',
+          'With heavy-duty anchors drilled deep into solid brick, block or concrete. Where the wall is weak or hollow, we reinforce it first or fix into a steel sub-frame.',
       },
       {
-        question: 'What maintenance is required after installation?',
+        question: 'What upkeep does a steel door need?',
         answer:
-          'Security doors require relatively modest maintenance: lubrication of the multi-point locking mechanism and hinge pins with a dry PTFE or light oil product at six-monthly intervals, and an annual function test of the locking system, hinges, and any access control or panic hardware. We offer a maintenance contract that includes an annual inspection and report, which some insurers accept as evidence of ongoing compliance with their security requirements.',
+          'Very little. Check the closer and panic bar monthly, keep the hinges and bolts lightly oiled, and have it looked at once a year.',
       },
     ],
     howItWorks: [
       {
         step: 1,
-        title: 'Security Assessment',
+        title: 'Risk chat',
         description:
-          'We discuss your security requirements, insurer stipulations, and the specific threats you need to mitigate. This helps us recommend the appropriate security rating and door construction.',
+          'We ask what is behind the door, what your insurer needs and whether it is a fire exit.',
       },
       {
         step: 2,
-        title: 'Site Survey',
+        title: 'Survey',
         description:
-          'Our surveyor measures the opening, assesses the wall construction and load-bearing capacity, and notes any requirements for panic hardware, access control integration, or fire rating.',
+          'We measure the opening, check the walls and floor and note which way the door must open.',
       },
       {
         step: 3,
-        title: 'Specification & Quotation',
+        title: 'Door and lock choice',
         description:
-          'We specify the door leaf construction, security rating, locking system, and any escape or access control hardware. A detailed quotation with product data sheets and certification references is provided.',
+          'You get a written price for the door set, locks and any panic or access hardware, with the rating stated.',
       },
       {
         step: 4,
-        title: 'Installation',
+        title: 'Swap-over',
         description:
-          'Our installation team fits the steel sub-frame with torque-controlled anchor bolts, hangs and adjusts the door leaf, and installs all locking and hardware components. Typical installation takes one day.',
+          'Old door out, new set in, fixed and finished in one visit for most single doors.',
       },
       {
         step: 5,
-        title: 'Handover & Certification',
+        title: 'Keys and paperwork',
         description:
-          'We test all locking points, demonstrate operation to your staff, and provide the LPCB certificate, warranty documentation, and maintenance instructions.',
+          'We hand over keys, show staff the escape hardware and give you the certificate for your insurer.',
       },
     ],
     pricingGuide: {
-      heading: 'What Does a Security Door Cost?',
+      heading: 'Security door prices',
       content:
-        'Security door pricing varies based on the door construction, security rating, locking specification, and whether additional features such as panic hardware or access control are required. Higher LPS 1175 ratings require heavier construction and more rigorous testing, which is reflected in the price.',
+        'The rating, size and number of leaves set most of the price. These figures cover the doors we fit most.',
       ranges: [
-        { item: 'Single leaf steel door', price: '£1,200 – £2,500' },
-        { item: 'Double leaf steel door', price: '£2,000 – £4,000' },
-        { item: 'LPS 1175 SR2 rated door', price: '£2,500 – £5,000' },
-        { item: 'Composite security door', price: '£1,800 – £3,500' },
+        { item: 'Steel door, one leaf', price: '£1,200 – £2,500' },
+        { item: 'Steel door, two leaves', price: '£2,000 – £4,000' },
+        { item: 'LPS 1175 rated (SR2) door', price: '£2,500 – £5,000' },
+        { item: 'Composite door with steel core', price: '£1,800 – £3,500' },
       ],
-      note: 'All prices exclude VAT. Final cost confirmed after site survey.',
+      note: 'Prices are before VAT. We confirm the exact figure in writing after the survey.',
     },
     peopleAlsoAsk: [
       {
-        question: 'What is the difference between LPS 1175 SR1 and SR2?',
+        question: 'What do LPS 1175 ratings mean?',
         answer:
-          'SR1 provides basic resistance to attack using bodily force and simple hand tools such as screwdrivers and pliers, typically for three minutes. SR2 resists a more sustained attack using additional tools including crowbars and claw hammers. Most commercial insurers require SR2 as a minimum for retail back-of-house and warehouse entrances.',
+          'They describe how long a door resists attack and with which tools. A low rating stops quick attacks with simple hand tools; higher ratings stand up to longer attacks with heavier tools.',
       },
       {
-        question: 'Can a security door also be a fire door?',
+        question: 'Are steel security doors heavy?',
         answer:
-          'Yes. Many of our security door sets are dual-rated for both security and fire resistance. A door can achieve LPS 1175 SR2 security certification alongside FD60 fire resistance, making it suitable for openings that sit on both the security boundary and a fire-compartment line.',
+          'Yes, a single leaf can weigh well over 60 kg. That is why we use heavy hinges and a good closer, so it still opens easily.',
       },
       {
-        question: 'How heavy is a commercial security door?',
+        question: 'Is a guarantee included?',
         answer:
-          'A single-leaf steel security door typically weighs between 60 and 100 kg depending on the steel thickness and reinforcement. Composite security doors are lighter, usually 40 to 70 kg, while offering comparable security ratings. Heavy-duty hinges rated for the door weight are always specified as part of the installation.',
+          'The door set carries the manufacturer\'s guarantee, and we stand behind our fitting. We put the details in writing on your quote.',
       },
       {
-        question: 'Do security doors come with a warranty?',
+        question: 'Can a steel door be painted to match the building?',
         answer:
-          'Yes. Our security doors carry a manufacturer warranty of up to 10 years on the door leaf and frame, and typically 5 years on the locking mechanism and hardware. Extended warranty options are available where required by the client or their insurer.',
+          'Yes. Steel door sets are powder coated in a chosen colour, so they do not have to look industrial.',
       },
     ],
     relatedServices: ['roller-shutters', 'fire-doors', 'aluminium-shopfronts', 'emergency-callout'],
@@ -512,151 +495,145 @@ Security doors can be supplied with integrated access control provisions — ele
     slug: 'automatic-doors',
     name: 'Automatic Doors',
     shortDescription:
-      'Sliding and swing automatic door systems for retail and commercial premises. BS EN 16005 compliant, with full sensor packages and service plans available.',
+      'Sliding and swing automatic entrances for shops, surgeries, offices and showrooms, including operators added to doors you already have.',
     heroImage: 'service-auto-sliding-doors.webp',
     primaryKeyword: 'automatic doors commercial',
-    metaTitle: 'Automatic Doors UK | Commercial Installation',
+    metaTitle: 'Automatic Doors for Shops and Offices',
     metaDescription:
-      'Automatic sliding and swing door installation for retail and commercial premises. BS EN 16005 compliant. DDA-friendly entrances. Nationwide UK coverage.',
-    description: `Automatic doors are no longer a luxury reserved for supermarkets and airports. For any commercial premises with significant footfall — a busy high-street retail unit, a medical centre, a hotel lobby, or a multi-occupancy office building — automatic door systems offer a compelling combination of accessibility compliance, operational efficiency, and customer experience that increasingly represents the expected standard rather than a premium option.
+      'Automatic sliding and swing doors for shops, surgeries and offices. New entrances or operators added to existing doors, plus servicing. Call 07597 630000.',
+    description: `An automatic door lets people in with full hands, with a pushchair or in a wheelchair, without anyone holding it open. For busy shops it also stops the door being left wide open all day, which keeps the heat in.
 
-Grewal Shopfront & Shutters designs, installs, and maintains automatic door systems for commercial clients across the UK. We work with sliding, swing, and folding automatic configurations, using drive units from established European manufacturers who certify their products to the relevant harmonised standards.
+**Sliding or swing?**
 
-**Automatic Sliding Doors**
+Sliding doors suit wide entrances with room for the panels to slide sideways, such as supermarkets, pharmacies and showrooms. They move a lot of people quickly. Swing doors suit narrower entrances and existing doors: an operator (a motor arm) is fitted to the top of the door and opens it on a sensor or push button.
 
-Sliding automatic door systems are the most common configuration for retail entrances and busy public-facing premises. They operate by translating the door leaf along a track above the aperture, driven by a low-voltage DC or brushless motor controlled by a drive unit that continuously monitors the safety sensor field. A bi-parting arrangement — two leaves meeting in the centre — provides the largest possible clear opening width from a given aperture, making it the preferred solution for wheelchair access and high-volume pedestrian flow.
+**Low-energy swing operators**
 
-Our sliding door systems are installed with activation sensors covering the approach zone and safety sensors covering the opening zone in accordance with BS EN 16005:2012, the harmonised European standard for power-operated pedestrian doorsets — safety in use. This standard defines minimum sensor fields, maximum closing forces (no greater than 150 N dynamic and 25 N static), maximum closing speeds (0.5 m/s standard, 0.3 m/s for low-energy applications), and the minimum break-out force for emergency egress. Compliance with BS EN 16005 is required for all power-operated doors in public buildings and is referenced in Approved Document M of the Building Regulations.
+Where traffic is light, such as a clinic, office or accessible toilet, a low-energy operator opens the door slowly and gently on a push pad. Because it moves slowly, it needs fewer safety sensors, which keeps the cost down. It is often the simplest way to make an existing entrance accessible.
 
-**Automatic Swing Doors**
+**Safety comes first**
 
-Swing automatic doors are preferred where an existing shopfront frame is retained and a sliding track overhead would be architecturally intrusive, or where the entrance is narrow and a bi-parting sliding arrangement is not feasible. The drive unit is concealed within the door frame or overhead closer case, and the door can be programmed to hold-open, swing-and-return, or operate in push-and-go mode where a gentle push from the user completes the automatic opening sequence.
+A powered door can trap fingers or knock someone over if it is set up badly. Every door we fit is set to the safety standard for powered pedestrian doors, with sensors that detect people in the opening and stop or reverse the door. We record the settings and test results at handover, so you have proof the door was safe when we left.
 
-Low-energy swing door operators — sometimes marketed as "push and go" systems — fall under a specific sub-clause of BS EN 16005 governing low-energy automated doors. They are particularly appropriate for healthcare premises, care homes, and residential buildings where a high-speed automatic entry would be hazardous or inappropriate.
+**Fire alarms and power cuts**
 
-**DDA and Accessibility Compliance**
+Automatic doors on escape routes must open, or be pushed open, when the fire alarm sounds or the power fails. We link the door to your alarm where needed and choose a door that fails safe for your building.
 
-Automatic doors make a direct contribution to compliance with the Equality Act 2010. The Act's reasonable adjustment duty requires that physical features which disadvantage disabled people are removed or altered. A power-operated entrance door eliminates the physical effort of pulling a heavy door, removes the need to hold a door open for a wheelchair user, and removes the cognitive and physical challenge of managing a door and a wheelchair simultaneously.
+**Locking at night**
 
-BS 8300:2018, the British Standard for the design of an accessible and inclusive built environment, recommends automatic doors at principal entrances to public buildings and specifies minimum clear opening widths of 800 mm for single doors and 1500 mm for bi-parting sliding sets. We design all our installations to exceed these minimum dimensions where the structural opening permits.
+Sliding doors can have electric locks that engage when switched to "night" mode, and swing doors keep their normal locks. If you also want a shutter, we plan the two together so the sensors do not get in the way.
 
-**Safety Systems and Certification**
+**Keeping it running**
 
-Every Grewal Shopfront & Shutters automatic door installation is completed with a full safety test record documenting sensor fields, closing forces, closing speeds, and emergency egress performance. The completed door is labelled with the installation date, drive unit serial number, and the name of the responsible installer, in accordance with the Automatic Door Suppliers Association (ADSA) Code of Practice.
-
-Following installation, we provide a handover document including the user manual, sensor field diagrams, emergency override procedures, and our recommended maintenance schedule. Annual safety inspection and maintenance by a competent person — as defined in BS EN 16005 — is a requirement for continued compliance, and we offer maintenance agreements structured around this obligation.
-
-**Integration with Access Control and Fire Alarm Systems**
-
-Automatic doors can be integrated with access control readers for out-of-hours security, with intercom systems for controlled access, and with the building's fire alarm panel. On receipt of a fire signal, the door can be configured to either open and hold (to facilitate evacuation) or to close and hold on the latch (where the door forms part of a smoke control lobby). The correct fail-safe position is determined by the fire strategy for the building, and we liaise with the fire engineer or building control body where this is not already specified.`,
+Sensors drift, belts stretch and floor guides fill with grit. A service visit once or twice a year keeps the door safe and avoids the classic call-out: a door stuck open at closing time.`,
     benefits: [
       {
-        title: 'Accessibility and Equality Act Compliance',
+        title: 'Easier for every customer',
         description:
-          'Automatic doors remove the physical barrier of a heavy entrance door for wheelchair users, people with pushchairs, and anyone with reduced mobility. This directly supports compliance with the Equality Act 2010 reasonable adjustment duty and is recommended by BS 8300 for principal entrances to public-facing premises.',
+          'People with wheelchairs, walking aids, buggies or heavy bags get in without help, which helps you meet your duties under the Equality Act.',
       },
       {
-        title: 'Improved Customer Flow',
+        title: 'Heat stays inside',
         description:
-          'A hands-free entrance removes the friction point of managing a door, making entry to your premises easier and more welcoming. For food retail, hospitality, and any business where customers carry items, this is a practical operational benefit as well as an accessibility one.',
+          'The door opens only when someone is there and closes straight after, instead of being propped open all day.',
       },
       {
-        title: 'Energy Efficiency in High-Traffic Environments',
+        title: 'Works with doors you already have',
         description:
-          'Counter-intuitively, an automatic sliding door can reduce heat loss compared to a manually operated door in a busy entrance. The controlled opening cycle — opening only when a person is approaching and closing promptly after passage — is far shorter than the average manual door cycle in a busy retail environment, reducing warm air loss significantly.',
+          'A swing operator can often be added to a sound existing door, so you do not need a whole new entrance.',
       },
       {
-        title: 'Ongoing Compliance Through Maintenance',
+        title: 'Tested and recorded',
         description:
-          'Our annual maintenance agreements include a full BS EN 16005 safety test, sensor calibration, closing force measurement, and a signed test record. This documentation supports the building\'s health and safety compliance record and provides evidence that the door remains within the parameters of the original certification.',
+          'We set safety sensors to the standard for powered doors and give you the test record at handover.',
       },
     ],
     faqs: [
       {
-        question: 'What is the minimum opening width for an automatic door?',
+        question: 'How wide does an automatic doorway need to be?',
         answer:
-          'BS 8300:2018 specifies a minimum 800 mm clear opening width for a single automatic door serving a principal entrance to a public building, and 1500 mm for a bi-parting sliding set. For busy retail premises, we generally recommend exceeding these minimums — a 900 mm single door or a 1800 mm bi-parting set — to allow comfortable simultaneous two-way pedestrian flow. The achievable clear opening is constrained by the structural opening width, and we assess this at the survey stage.',
+          'For wheelchair access, aim for a clear opening of at least 1000 mm on a busy public entrance. Smaller openings can still be automated, but we will tell you if the width will limit who can use it.',
       },
       {
-        question: 'How does an automatic door behave in a power failure?',
+        question: 'What happens in a power cut?',
         answer:
-          'The default fail-safe position depends on the configuration and the role of the door in the building\'s fire and evacuation strategy. Most retail sliding door systems are configured to fail-open, returning to a parked open position under the energy stored in a capacitor bank, or using a free-wheel release that allows the leaves to be pushed aside manually. Doors forming part of a fire or smoke compartment boundary may be configured to fail-closed. The fail-safe position is agreed with the building\'s responsible person and fire engineer before installation and is documented in the handover pack.',
+          'It depends on the door. Some open and stay open, some can be pushed open by hand, and some have battery backup. We choose the behaviour that suits your fire plan and security needs.',
       },
       {
-        question: 'How often does an automatic door need servicing?',
+        question: 'How often does an automatic door need a service?',
         answer:
-          'BS EN 16005 requires that power-operated pedestrian doors are inspected and maintained by a competent person at least annually. For high-cycle installations — entrances processing over 300 door cycles per day — we recommend six-monthly inspection. Each service visit includes a closing force test, sensor field test, speed measurement, and inspection of all structural fixings, drive components, and safety devices. A signed test record is provided after each visit.',
+          'At least once a year, and twice for busy public entrances. Regular checks keep the safety sensors working correctly.',
       },
       {
-        question: 'Can you retrofit an automatic operator to our existing door frame?',
+        question: 'Can you automate the door we already have?',
         answer:
-          'In many cases, yes. Swing door operators can often be fitted to an existing commercial door frame and leaf, provided the leaf weight and dimensions are within the operator\'s rated capacity and the frame head is structurally sound. Sliding door retrofit is more complex, as it requires a track overhead, side panels, and typically replacement of the door leaves with matching sliding leaves. We assess retrofit feasibility at the survey stage and provide a like-for-like comparison between retrofit and full replacement.',
+          'Often, yes. If the door, frame and hinges are in good order, we fit a swing operator and sensors to it. If the door is worn or too heavy, we will say so and quote a replacement.',
       },
     ],
     howItWorks: [
       {
         step: 1,
-        title: 'Consultation',
+        title: 'Who uses the door?',
         description:
-          'We discuss your entrance requirements including footfall volume, DDA compliance needs, and whether a sliding, swing, or low-energy system is most appropriate for your premises.',
+          'We ask how many people come through, who they are and whether the door is on a fire escape route.',
       },
       {
         step: 2,
-        title: 'Site Survey & Assessment',
+        title: 'Look at the entrance',
         description:
-          'Our engineer surveys the entrance, checks structural capacity for the operator and track, verifies electrical supply availability, and assesses the approach zones for sensor positioning.',
+          'We measure the opening, check the frame and floor, and find a power supply for the operator.',
       },
       {
         step: 3,
-        title: 'System Design & Quote',
+        title: 'Choose and price',
         description:
-          'We specify the operator model, sensor type, safety devices, and door leaf configuration. A detailed quotation including all electrical and building works is provided.',
+          'You get a written recommendation for sliding, swing or low-energy operation, with one fixed price.',
       },
       {
         step: 4,
-        title: 'Installation & Wiring',
+        title: 'Fit and wire',
         description:
-          'Our team installs the track, operator, door leaves, and all safety sensors. Electrical connection and integration with fire alarm or access control systems is completed on the same visit.',
+          'We fit the door or operator, wire it in and connect it to the fire alarm where needed.',
       },
       {
         step: 5,
-        title: 'Commissioning & Training',
+        title: 'Set up and record',
         description:
-          'The door is programmed for opening speed, hold-open time, and safety sensitivity. We train your staff on manual override procedures and provide all compliance documentation.',
+          'Speeds, sensors and hold-open times are set and tested, and you receive the test record.',
       },
     ],
     pricingGuide: {
-      heading: 'What Does an Automatic Door Cost?',
+      heading: 'Automatic door prices',
       content:
-        'Automatic door pricing depends on the operator type, door leaf size and material, sensor specification, and any access control or fire alarm integration. Ongoing maintenance contracts are recommended and can be included in the initial quotation.',
+        'The door type and whether we reuse your existing door make the biggest difference. Typical figures are below.',
       ranges: [
-        { item: 'Automatic sliding (bi-parting)', price: '£3,500 – £7,000' },
-        { item: 'Automatic swing operator', price: '£2,000 – £4,000' },
-        { item: 'Low-energy swing door', price: '£1,500 – £3,000' },
-        { item: 'Annual maintenance contract', price: '£250 – £500' },
+        { item: 'Sliding entrance, two leaves', price: '£3,500 – £7,000' },
+        { item: 'Operator on a swing door', price: '£2,000 – £4,000' },
+        { item: 'Low-energy swing operator', price: '£1,500 – £3,000' },
+        { item: 'Yearly service plan', price: '£250 – £500' },
       ],
-      note: 'All prices exclude VAT. Final cost confirmed after site survey.',
+      note: 'Prices are before VAT. We confirm the exact figure in writing after the survey.',
     },
     peopleAlsoAsk: [
       {
-        question: 'Are automatic doors a legal requirement for disabled access?',
+        question: 'Must a shop have an automatic door?',
         answer:
-          'The Equality Act 2010 requires that service providers make reasonable adjustments to avoid putting disabled people at a substantial disadvantage. While automatic doors are not explicitly mandated, they are widely regarded as a reasonable adjustment for high-footfall commercial entrances. Building Regulations Part M also references automatic or powered doors as a means of achieving accessible entrance design.',
+          'No law says every shop must, but businesses must make reasonable adjustments for disabled customers. For many entrances, an automatic door is the most practical way to do that.',
       },
       {
-        question: 'How often should automatic doors be serviced?',
+        question: 'Can automatic doors be locked overnight?',
         answer:
-          'The BS 7036 standard recommends that automatic doors are serviced at least every six months by a competent engineer. High-traffic entrances, such as supermarket or hospital doors, may require quarterly servicing. Regular maintenance ensures safety sensors function correctly and extends the life of the operator mechanism.',
+          'Yes. Sliding doors can lock electrically in night mode, and swing doors keep a normal lock.',
       },
       {
-        question: 'What happens to automatic doors during a fire alarm?',
+        question: 'Do automatic doors open when the fire alarm goes off?',
         answer:
-          'Automatic doors connected to the building fire alarm system are programmed to fail-safe open, swinging or sliding to the fully open position to allow unimpeded evacuation. This behaviour is configured during commissioning and tested as part of the regular fire alarm check routine.',
+          'They can be linked to the alarm so they open and stay open, which is usually what an escape route needs.',
       },
       {
-        question: 'Can automatic doors be locked at night?',
+        question: 'Do automatic doors use much electricity?',
         answer:
-          'Yes. Most automatic door systems include an integrated locking mode that can be activated via a key switch, access control panel, or timer. When locked, the doors function as a conventional secured entrance. Some systems offer a one-way mode, allowing exit only while preventing entry outside trading hours.',
+          'Very little. The operator only draws real power while the door moves, and keeping heat in usually saves more than it costs to run.',
       },
     ],
     relatedServices: ['aluminium-shopfronts', 'bi-fold-doors', 'shopfront-repairs', 'security-doors'],
@@ -666,151 +643,145 @@ Automatic doors can be integrated with access control readers for out-of-hours s
     slug: 'bi-fold-doors',
     name: 'Bi-Fold Doors',
     shortDescription:
-      'Commercial aluminium bi-fold door systems for retail, hospitality, and leisure premises. Open up your frontage completely with thermally broken, weather-rated folding configurations.',
+      'Folding glazed fronts for cafés, bars, restaurants and showrooms that open the whole frontage to the street in warm weather.',
     heroImage: 'service-bifold-door.webp',
     primaryKeyword: 'commercial bi-fold doors',
-    metaTitle: 'Bi-Fold Doors UK | Commercial Aluminium',
+    metaTitle: 'Commercial Bi-Fold Doors and Fronts',
     metaDescription:
-      'Commercial aluminium bi-fold doors for retail and hospitality. Thermally broken, weather-rated to BS 6375. Open your full frontage. Free UK survey.',
-    description: `Commercial bi-fold door systems — sometimes called bifold or folding-sliding doors — are increasingly specified for retail, hospitality, and leisure premises where the ability to open up an entire frontage or elevation creates a fundamentally different trading proposition. A café that can open its complete street-facing wall on a warm day, or a showroom that can create a seamless transition between indoor display and an external forecourt, gains a competitive advantage that a conventional hinged or sliding arrangement simply cannot replicate.
+      'Aluminium bi-fold fronts for cafés, bars and restaurants. Fold the frontage open in summer, lock it tight at night. Free survey: 07597 630000.',
+    description: `On a sunny afternoon, a café with its whole front folded open looks busy even when it is half empty, and people walk in more easily. That is the reason most of our bi-fold customers are cafés, bars, restaurants and dessert shops.
 
-Grewal Shopfront & Shutters designs and installs commercial aluminium bi-fold systems to suit openings from 2 m to over 12 m in width. Our systems are sourced from fabricators whose products are independently tested and certified to the performance standards that commercial applications demand.
+**How they work**
 
-**How Commercial Bi-Fold Systems Work**
+A bi-fold front is a row of glazed panels hinged together. They run on a track at the top and fold back like a concertina, stacking neatly at one or both ends. One panel is usually set up as a normal door, so you can use the front every day without folding everything.
 
-A bi-fold door system consists of a series of individual door panels — typically between two and eight per run — connected by hinges and suspended from a top-hung track or supported by a bottom-running track. When opening, the panels fold against each other accordion-fashion and stack compactly to one or both sides of the opening, creating the maximum possible clear aperture.
+**Built for commercial use**
 
-Top-hung systems are preferred for commercial use: because the track carries the panel weight, the floor threshold can be a low-profile weather seal rather than a structural bottom track, minimising the trip hazard and improving DDA compliance. Bottom-running systems are used where the header structure cannot carry the suspended load, but they require a more substantial threshold detail.
+Home bi-folds are opened a few times a week. A café front may be opened and closed every day for years, and pushed by customers in between. We use commercial systems with heavier rollers, stronger hinges and frames sized for the panel weight, not domestic products dressed up.
 
-The stacking configuration — whether panels fold to the left, to the right, or split to both sides — is determined by the operational requirements and the available stacking space. Traffic-door options (a separate hinged panel within the bi-fold run that operates independently) allow pedestrian access without opening the full system.
+**Weather and heat**
 
-**Weather Performance and Testing**
+Closed, a good bi-fold should keep wind and rain out like any other front. Frames with a thermal break and double glazing stop the front becoming a cold wall in winter. A low threshold makes the opening easier to step over but needs proper drainage outside, which we check at survey.
 
-Commercial bi-fold doors are exposed to the full range of UK weather conditions, including driving rain, wind loads, and thermal cycling. The relevant performance standard is BS 6375, which covers air permeability, watertightness, and wind resistance for opening building elements. For commercial premises facing exposed street elevations, we specify systems tested to the mid-range or upper categories of BS 6375 — typically Class 3 or 4 for watertightness and Category B or C for wind resistance — rather than the lower-category systems marketed primarily at the residential sector.
+**What the building has to carry**
 
-Thermal performance is addressed through thermally broken frame profiles. Unlike most residential bi-fold systems, which use a standard aluminium section, our commercial-grade systems incorporate a continuous polyamide thermal break throughout the frame and sill, delivering a complete door assembly U-value compliant with Building Regulations Part L for non-domestic buildings.
+Folding panels hang from the top track, so the beam or lintel above has to carry the weight without sagging. On older buildings we may need a new steel. We check this at survey, before you commit, so there are no surprises.
 
-**Structural Requirements**
+**Security at night**
 
-Opening up a large section of an existing building elevation for a bi-fold installation almost always involves structural work. The removal of masonry or the widening of an existing opening requires a structural engineer's design for the replacement lintel or beam — typically a steel universal beam or a reinforced concrete boot lintel — sized to carry the loads above, including wind uplift and the weight of the new door system.
+Panels lock to each other and into the frame top and bottom, and the glass can be laminated. Many owners add a shutter on the outside so the glass is covered when the shop is closed.
 
-We coordinate this structural work as part of our project management service, and where Building Regulations approval is required for the structural alteration, we manage the application through an Approved Inspector or local authority building control.
+**Planning**
 
-**Glazing and Security**
-
-Bi-fold door panels are typically glazed with double-glazed units incorporating toughened outer and inner panes. For enhanced security, laminated inner panes to BS EN ISO 12543 (laminated glass) can be specified; these resist the smash-and-grab attack that a toughened monolithic pane is vulnerable to after initial fracture.
-
-Locking is provided at multiple points along each panel. The outermost panel — the one that closes against the threshold and jamb when the system is shut — carries the primary locking hardware, typically a multi-point espagnolette or shoot-bolt system engaging the frame at the head, sill, and strike side. The folded stack of inner panels is secured against the outer panel by secondary locks.
-
-For overnight security in high-footfall or high-risk locations, bi-fold systems can be combined with a roller shutter in the same structural opening, with the shutter housing concealed within the header detail above the bi-fold frame.`,
+Replacing a shopfront with bi-folds changes how the building looks and usually needs planning permission. Councils sometimes ask for a stallriser or a door position that matches the street. We include drawings you can submit.`,
     benefits: [
       {
-        title: 'Maximum Aperture Opening',
+        title: 'The whole front opens',
         description:
-          'A bi-fold system opens the full structural width of the elevation. No door swing space is lost, no fixed frame elements obstruct the view, and the stacked panels occupy minimal space. For hospitality, retail, and showroom use, this transforms the relationship between interior and exterior.',
+          'Panels stack to the side, so most of the width becomes an open entrance on warm days.',
       },
       {
-        title: 'Thermally Broken for Commercial Compliance',
+        title: 'A normal door for every day',
         description:
-          'Our commercial bi-fold frames use continuous polyamide thermal breaks throughout the profile, achieving assembly U-values that meet Building Regulations Part L for non-domestic buildings. This distinguishes them from domestic-grade products that may not satisfy commercial energy performance obligations.',
+          'A built-in traffic door means you only fold the front when you want to.',
       },
       {
-        title: 'Low Threshold for Accessibility',
+        title: 'Warm in winter',
         description:
-          'Top-hung bi-fold systems use a low-profile sill seal rather than a raised bottom track, creating a near-level threshold suitable for wheelchair access and buggy movement. This supports compliance with the Equality Act 2010 and the BS 8300 guidance on accessible entrances.',
+          'Thermally broken frames and double glazing keep the front from becoming a cold spot when closed.',
       },
       {
-        title: 'Integrated Traffic Door for Everyday Use',
+        title: 'Easy to step through',
         description:
-          'A traffic door within the bi-fold run allows staff and customers to enter and exit without operating the full panel stack. This is critical for busy retail or hospitality environments where the bi-fold is only fully opened during peak periods or good weather.',
+          'Low thresholds suit wheelchairs and buggies, and are detailed so rain still drains away outside.',
       },
     ],
     faqs: [
       {
-        question: 'How many panels can a commercial bi-fold system accommodate?',
+        question: 'How many panels can one front have?',
         answer:
-          'Commercial top-hung bi-fold systems can accommodate anywhere from two to ten or more panels in a single run, depending on the track capacity and the available stacking space. Beyond eight panels in a single stack, it is usually preferable to use a split configuration — panels stacking to both ends — to keep stack depth manageable and reduce the operating force. We design the configuration at the survey stage based on the opening width, operational requirements, and available stacking space.',
+          'It depends on the width and the panel size. Most shopfronts use three to seven panels. Wider fronts can split into two sets that fold to each side.',
       },
       {
-        question: 'Is planning permission required to install bi-fold doors?',
+        question: 'Will I need planning permission for bi-folds?',
         answer:
-          'Replacing an existing shopfront with a bi-fold system may be permitted development in many cases, but widening the structural opening or significantly changing the appearance of the building facade requires planning permission, particularly in conservation areas or for listed buildings. Where Building Regulations apply — for a new structural opening or for compliance with Part L energy performance requirements — we manage the relevant submissions on the client\'s behalf.',
+          'Usually, yes, because the front will look different. Listed buildings and conservation areas also need extra consents. We help with drawings for the application.',
       },
       {
-        question: 'How secure is a bi-fold door system at night?',
+        question: 'Are bi-fold fronts secure when closed?',
         answer:
-          'A correctly specified commercial bi-fold with multi-point locking on the closing panel and secondary locks on the folded stack provides reasonable security against opportunistic attack. For higher-risk locations, we recommend combining the bi-fold with a roller shutter — either face-fit or within a concealed header box — that provides a solid steel barrier for overnight security. This combination is the standard specification for hospitality premises in busy urban centres.',
+          'Yes. Each panel locks into the next and into the frame top and bottom. Laminated glass and an external shutter add more protection.',
       },
       {
-        question: 'What maintenance does a commercial bi-fold system need?',
+        question: 'How do I look after them?',
         answer:
-          'Bi-fold systems require annual maintenance: lubrication of the top track rollers and hinge pivots, adjustment of panel alignment and seal compression, testing of all locking points, and inspection of the glazing seals. In coastal or high-pollution environments, we recommend six-monthly cleaning and inspection of the aluminium sections and hardware to prevent corrosion of exposed steel components within the locking mechanism.',
+          'Sweep and wipe the bottom track weekly so grit does not wear the rollers, and have the system adjusted once a year.',
       },
     ],
     howItWorks: [
       {
         step: 1,
-        title: 'Design Brief',
+        title: 'Your idea',
         description:
-          'We discuss how you intend to use the opening — fully open retail frontage, café terrace access, or showroom display — and establish the number of panels, opening direction, and traffic door requirements.',
+          'Tell us how wide the front is, how you trade and whether you want to fold one way or both.',
       },
       {
         step: 2,
-        title: 'Site Survey',
+        title: 'Check the structure',
         description:
-          'Our surveyor measures the structural opening, checks the floor level and threshold detail, and assesses the track fixing points and parking zone where the folded panels will stack.',
+          'We measure, check the beam above and the floor below, and look at drainage outside.',
       },
       {
         step: 3,
-        title: 'Configuration & Quote',
+        title: 'Panel layout and price',
         description:
-          'We finalise the panel count, glazing specification, frame colour, and locking arrangement. A full quotation with technical drawings is provided for approval.',
+          'You get a drawing showing the number of panels and fold direction, with a fixed price.',
       },
       {
         step: 4,
-        title: 'Installation',
+        title: 'Fit',
         description:
-          'The top track, threshold, and panels are installed and aligned. Our team adjusts all rollers, hinges, and seals to ensure smooth operation across the full opening span.',
+          'The old front is removed and the bi-fold system installed, glazed and adjusted.',
       },
       {
         step: 5,
-        title: 'Demonstration & Sign-Off',
+        title: 'Show and tell',
         description:
-          'We demonstrate the folding sequence, locking operation, and traffic door function to your team. Warranty documents, care instructions, and guarantee certificates are provided.',
+          'We show staff the right order to fold and lock the panels, which keeps the hinges from being strained.',
       },
     ],
     pricingGuide: {
-      heading: 'What Do Commercial Bi-Fold Doors Cost?',
+      heading: 'Bi-fold door prices',
       content:
-        'Bi-fold door pricing is determined by the number of panels, total opening width, glazing specification, and whether a traffic door is included. Thermally broken aluminium frames and enhanced security glazing are standard on all our commercial systems.',
+        'The number of panels and the width are the main factors. These are typical ranges for commercial fronts.',
       ranges: [
-        { item: '3-panel system (up to 3m)', price: '£3,000 – £5,500' },
-        { item: '5-panel system (up to 5m)', price: '£5,500 – £9,000' },
-        { item: '7+ panel system (7m+)', price: '£8,000 – £15,000' },
-        { item: 'Traffic door add-on', price: '£800 – £1,500' },
+        { item: 'Three panels, up to 3 m', price: '£3,000 – £5,500' },
+        { item: 'Five panels, up to 5 m', price: '£5,500 – £9,000' },
+        { item: 'Seven or more panels, 7 m and up', price: '£8,000 – £15,000' },
+        { item: 'Built-in traffic door, extra', price: '£800 – £1,500' },
       ],
-      note: 'All prices exclude VAT. Final cost confirmed after site survey.',
+      note: 'Prices are before VAT. We confirm the exact figure in writing after the survey.',
     },
     peopleAlsoAsk: [
       {
-        question: 'Are bi-fold doors secure enough for a commercial shopfront?',
+        question: 'Can a bi-fold be my main entrance?',
         answer:
-          'Yes. Our commercial bi-fold systems feature multi-point locking, toughened or laminated safety glass, and robust aluminium frames that meet PAS 24:2022 enhanced security requirements. When locked, the panels are mechanically held at multiple points along the top track, bottom rail, and between each panel.',
+          'Yes, if one panel is set up as a traffic door with a closer and lock. Customers then use it like a normal door.',
       },
       {
-        question: 'Can bi-fold doors be used as a main entrance?',
+        question: 'How wide can a bi-fold front be?',
         answer:
-          'Yes, by incorporating a traffic door. A traffic door is a single panel within the bi-fold set that operates independently as a conventional hinged or pivoting entrance door, allowing everyday access without folding back the entire system. This is standard practice for retail and hospitality premises.',
+          'Fronts of seven metres or more are possible, usually split into two folding sets.',
       },
       {
-        question: 'How wide can a commercial bi-fold opening be?',
+        question: 'Do bi-folds meet energy rules?',
         answer:
-          'There is no fixed maximum, as bi-fold systems are modular. We have installed openings exceeding 10 metres using seven or more panels. The practical limit is determined by the structural opening available, the panel parking zone, and the wind loading on the exposed elevation.',
+          'With thermally broken frames and double glazing, they can. We confirm what applies to your job before ordering.',
       },
       {
-        question: 'Do bi-fold doors meet Building Regulations for thermal performance?',
+        question: 'Can a bi-fold front have a shutter too?',
         answer:
-          'Yes. Our thermally broken aluminium bi-fold systems achieve overall U-values that comply with Building Regulations Part L. Combined with double-glazed sealed units, they provide effective thermal insulation while allowing maximum natural light and open-plan flexibility.',
+          'Yes. An external shutter can cover the whole opening at night, with the box hidden in the fascia above.',
       },
     ],
     relatedServices: ['aluminium-shopfronts', 'automatic-doors', 'roller-shutters', 'shopfront-repairs'],
@@ -820,157 +791,145 @@ For overnight security in high-footfall or high-risk locations, bi-fold systems 
     slug: 'fire-doors',
     name: 'Fire Doors',
     shortDescription:
-      'Certified fire door supply and installation for commercial premises. FD30, FD60, and FD90 rated assemblies with intumescent seals, tested hardware, and third-party certification.',
+      'Certified fire doorsets supplied and fitted for shops, offices, flats above shops and industrial premises, with the paperwork your fire risk assessor needs.',
     heroImage: 'preview-fire.webp',
     primaryKeyword: 'commercial fire doors',
-    metaTitle: 'Fire Doors UK | FD30 FD60 FD90 Certified',
+    metaTitle: 'Fire Doors Fitted for Businesses',
     metaDescription:
-      'Supply and installation of certified commercial fire doors. FD30, FD60, FD90 rated. Intumescent seals, tested hardware, third-party certification. UK-wide.',
-    description: `Fire doors are the most safety-critical doors installed in any commercial building, and their correct specification, installation, and ongoing maintenance are non-negotiable legal requirements for any responsible building owner or manager. The consequences of a fire door failing to perform as designed — either because it was incorrectly specified, poorly installed, or not maintained — are severe: lives can be lost, and the building owner or responsible person faces criminal liability under the Regulatory Reform (Fire Safety) Order 2005 and the Fire Safety Act 2021.
+      'Certified FD30 and FD60 fire doors fitted for shops, offices and flats above shops. Correct seals, closers and gaps, with records. Call 07597 630000.',
+    description: `A fire door only works if every part of it is right: the door, the frame, the seals, the hinges, the closer and the gaps around the edge. Get one detail wrong and a door rated for 30 minutes may fail in five. Fire risk assessments often pick this up, and that is usually when we are called.
 
-Grewal Shopfront & Shutters takes this responsibility seriously. We supply and install fire door assemblies that are third-party certified, install them strictly in accordance with the manufacturer's installation instructions, and document every installation with a completion record that can be presented to the responsible person, the building control body, or a fire inspector.
+**What the ratings mean**
 
-**Understanding Fire Door Ratings**
+FD30 means the doorset held back fire for 30 minutes in a test. FD60 means 60 minutes. Higher ratings exist for special cases. An "S" after the rating (for example FD30S) means the door also has smoke seals, which slow the spread of cold smoke, often the bigger danger. Your fire risk assessment or building plans will say which rating each door needs.
 
-Fire doors are classified by the duration for which the closed assembly resists the passage of fire and, where specified, smoke. In the UK, the common designations are:
+**Certified doorsets**
 
-- **FD30** — provides 30 minutes' integrity (E) protection. The most common classification for corridor and compartment doors in commercial buildings.
-- **FD60** — provides 60 minutes' integrity, required for high-risk areas such as plant rooms containing significant fuel load, basement-to-ground-floor stair doors in tall buildings, and certain retail and storage areas.
-- **FD90 and FD120** — 90- and 120-minute ratings for specialist applications including protected lobbies in hospitals, high-rise residential conversions, and buildings with complex fire strategies.
+We fit doors that come with third-party certification, which means an independent body has checked the product and how it is made. Each door carries a label or plug on its edge so an inspector can trace it. Fitting a certified door with uncertified hardware breaks the certification, so we use hinges, locks and closers that are approved for that door.
 
-The S suffix (e.g. FD30S) denotes that the assembly is also tested to provide smoke control in addition to integrity, using an intumescent seal and cold smoke seal combination.
+**Fitting is where most doors fail**
 
-These ratings are achieved through destructive testing to BS EN 1634-1, which simulates a fully developed fire on one face of the door. Only the complete tested assembly — leaf, frame, hardware, intumescent seals, and glazing (where present) — achieves the rated performance. Substituting any component with an untested alternative invalidates the certification.
+The gap around a fire door should be about 3 mm (within the limits set by the maker), and the gap under it must not be too large. Intumescent strips, which swell up in a fire to seal the gap, must be the right type and in the right place. The frame must be fixed solidly and the gap behind it filled with fire-rated material. We follow the maker's instructions to the letter.
 
-**Third-Party Certification**
+**Self-closing**
 
-Grewal Shopfront & Shutters installs fire door assemblies supplied by manufacturers holding third-party certification under the CERTIFIRE or BWF-CERTIFIRE scheme, which covers the door leaf, frame, and hardware as an integrated tested system. We also install door sets certificated under the LPCB (Loss Prevention Certification Board) scheme where this is specified by the client or their fire engineer.
+Most fire doors must close by themselves, every time, from any angle. We fit and adjust the closer so it does, and fit hold-open devices that release on the fire alarm where doors need to stay open in normal use.
 
-Third-party certification provides the responsible person with independent assurance that the product has been manufactured to a consistent standard and that the certified performance is reproducible — unlike a single test certificate, which demonstrates only that one sample passed at one point in time.
+**Records**
 
-**Installation Requirements**
+After fitting we give you a record for each door: its location, rating, certification number and photos. Your fire risk assessor will ask for exactly this.
 
-Fire door installation is not equivalent to general joinery or door hanging. Every dimension matters: the gap between the door leaf and the frame must fall within the tolerances specified in the test evidence, as excessive gaps compromise the integrity of the intumescent seal. Hinge specification (number, dimensions, and position), latch bolt size, and overhead closer specification all form part of the tested assembly and cannot be substituted without invalidating the fire performance.
+**Who is responsible?**
 
-Our installers are trained to and assessed against the requirements of the BWF-CERTIFIRE Fire Door Installation Scheme (or equivalent), and we retain records of all installation training and certification. Every completed fire door installation receives a physical label on the hinge edge of the door leaf recording the installation date, the installer's name, and the fire rating, in accordance with the guidance issued by the Building Research Establishment (BRE) and FDIS (Fire Door Inspection Scheme).
-
-**Gap Tolerances and Hardware**
-
-The maximum permissible gap between the door leaf and the frame rebate on the hinge side, latch side, and head is 3 mm when measured with the door closed, in accordance with the guidance in BS 8214:2016 (Code of practice for fire door assemblies). At the threshold, the gap must not exceed 8 mm unless a specific threshold seal has been tested as part of the assembly.
-
-Overhead door closers must be assessed and rated to BS EN 1154 (controlled door closing devices) and be of sufficient power to close and latch the door reliably from any position between 0° and 90°. For accessible routes, low-energy closers rated to BS EN 1154 can be combined with power-assisted openers to reduce the force required to open the door, while maintaining automatic closing function.
-
-**Regulatory Context**
-
-The Fire Safety (England) Regulations 2022 — introduced following the Grenfell Tower Inquiry — impose specific obligations on responsible persons in multi-occupied residential buildings with storeys over 11 m, including quarterly self-checks of all flat entrance fire doors and annual checks of all communal fire doors. Whilst these regulations apply specifically to residential buildings, the broader obligations under the Regulatory Reform (Fire Safety) Order 2005 apply to all non-domestic premises, requiring that all fire doors are maintained in an effective condition and that records are kept.`,
+Under the Fire Safety Order, the "responsible person" (usually the employer, owner or managing agent) must keep fire doors in working order. Flats above shops often share a stair with the shop below, and doors there need extra care.`,
     benefits: [
       {
-        title: 'Life Safety and Legal Compliance',
+        title: 'Correct to the maker\'s test',
         description:
-          'A correctly installed and maintained fire door is a primary life-safety element. It provides the time needed for occupants to evacuate safely and for firefighters to operate. Failure to install certified fire doors correctly constitutes a breach of the Regulatory Reform (Fire Safety) Order 2005, which carries unlimited fines and imprisonment for the responsible person.',
+          'Gaps, seals and hardware are fitted exactly as the doorset was tested, which is the only way the rating holds.',
       },
       {
-        title: 'Third-Party Certified Assemblies',
+        title: 'Traceable certification',
         description:
-          'Every fire door assembly we install is certificated under the BWF-CERTIFIRE or CERTIFIRE scheme, providing the responsible person with documented assurance that the product has been independently tested and regularly audited. This certification is increasingly required by building insurers and local fire and rescue services.',
+          'Every door carries a label your assessor can check against the certificate.',
       },
       {
-        title: 'Complete Installation Records',
+        title: 'Paperwork for each door',
         description:
-          'We provide a completion certificate and installation record for every fire door we install, including the product certification reference, installation date, and installer identification. This documentation supports the building\'s Golden Thread of information and satisfies the record-keeping requirements under the Building Safety Act 2022.',
+          'You receive a record with location, rating and photos to keep with your fire risk assessment.',
       },
       {
-        title: 'Experienced, Assessed Installers',
+        title: 'Remedial work too',
         description:
-          'Our fire door installers are assessed against a recognised third-party installation standard. This is not a one-off qualification but a regularly audited competence that gives building owners confidence that installation quality is consistent across all their sites.',
+          'We fix failing doors where the door itself is sound, and replace those that cannot be saved.',
       },
     ],
     faqs: [
       {
-        question: 'What is the difference between FD30 and FD30S?',
+        question: 'What does the S in FD30S mean?',
         answer:
-          'FD30 denotes a fire door that provides 30 minutes of integrity protection — it resists the passage of flames and hot gases for that period when tested to BS EN 1634-1. FD30S additionally provides smoke control: the S suffix indicates the door has been tested to restrict the passage of cold smoke, using a cold smoke seal (usually a brush or compression seal) in addition to the intumescent seal that swells under heat. In most modern commercial buildings, the fire strategy requires FD30S or FD60S doors to corridors forming part of an escape route, as smoke is frequently more dangerous than flame in the early stages of a fire.',
+          'It means the door also has smoke seals. FD30 resists fire for 30 minutes; FD30S does the same and also limits cold smoke passing around the edges.',
       },
       {
-        question: 'Can we fit our own door furniture to a certified fire door?',
+        question: 'Can I change the handle or lock on a fire door?',
         answer:
-          'Only hardware that forms part of the tested and certificated assembly can be used without invalidating the fire rating. This includes hinges, latches, locks, closers, and intumescent seals. If specific hardware is required — for example, a particular lever handle design or an access control strike — we check whether it has been assessed for compatibility with the door assembly\'s certification. In many cases, hardware manufacturers hold supplementary test evidence demonstrating compatibility with common fire door assemblies. We advise on this at the specification stage.',
+          'Only with parts approved for that door. Ordinary hardware can create a weak spot or remove intumescent material, which breaks the certification.',
       },
       {
-        question: 'How often should fire doors be inspected after installation?',
+        question: 'How often should fire doors be checked?',
         answer:
-          'The Regulatory Reform (Fire Safety) Order 2005 requires that all fire safety equipment — including fire doors — is maintained in an effective condition. The FDIS (Fire Door Inspection Scheme) and the guidance in BS 8214:2016 recommend a minimum annual inspection of all fire doors by a competent person, with a quarterly visual check by the building\'s responsible person or a nominated deputy. High-traffic fire doors — those in corridors or stairwells used multiple times daily — benefit from six-monthly inspection. We offer a fire door inspection and maintenance service structured around these requirements.',
+          'Doors in busy areas are often checked every few months, and all doors at least once a year. Your fire risk assessment should set the frequency.',
       },
       {
-        question: 'Do fire doors need to be self-closing?',
+        question: 'Must every fire door shut by itself?',
         answer:
-          'Yes. Every fire door must be fitted with a certified overhead closer (rated to BS EN 1154) that closes and latches the door from any open position. A fire door held open by a wedge, hook, or fire extinguisher is an illegal and dangerous arrangement that could result in enforcement action by the fire authority. Where it is operationally desirable to hold a fire door open, we install an electromagnetic hold-open device linked to the building\'s fire detection and alarm system, which releases the door automatically on a fire signal so that it closes under the action of the overhead closer.',
+          'Most must. Doors to cupboards that are kept locked are a common exception. Your fire risk assessment will say which doors need closers.',
       },
     ],
     howItWorks: [
       {
         step: 1,
-        title: 'Fire Strategy Review',
+        title: 'Read the assessment',
         description:
-          'We review your building\'s fire strategy and identify which openings require fire-rated door sets, the required fire rating (FD30, FD60, or FD90), and whether smoke seals or hold-open devices are needed.',
+          'Send us your fire risk assessment or list of doors. We work from what it says each door must achieve.',
       },
       {
         step: 2,
-        title: 'Site Survey',
+        title: 'Inspect each door',
         description:
-          'Our surveyor measures each opening, checks the wall construction and compartment line, and records the requirements for ironmongery, signage, and any intumescent or smoke seal specifications.',
+          'We measure openings, check frames and walls, and decide whether to repair or replace each door.',
       },
       {
         step: 3,
-        title: 'Specification & Quotation',
+        title: 'Door schedule and price',
         description:
-          'We specify the door leaf, frame, ironmongery, and seals as a complete certified door set. A quotation with product data sheets, test evidence, and certification references is provided.',
+          'You receive a schedule listing each door, its rating and the work needed, with a fixed price.',
       },
       {
         step: 4,
-        title: 'Installation',
+        title: 'Install',
         description:
-          'Our accredited installers fit each door set in accordance with the manufacturer\'s installation instructions and the relevant third-party certification scheme. Installation gaps and seal positioning are checked against the test evidence.',
+          'Doors are hung, sealed and fitted with approved hardware, then closers are adjusted.',
       },
       {
         step: 5,
-        title: 'Certification & Handover',
+        title: 'Hand over the records',
         description:
-          'A fire door installation certificate is issued for each door set, forming part of the building\'s fire safety record. We provide maintenance guidance and recommend an inspection schedule.',
+          'You get photos, labels and a written record for every door.',
       },
     ],
     pricingGuide: {
-      heading: 'What Does a Fire Door Cost?',
+      heading: 'Fire door prices',
       content:
-        'Fire door pricing depends on the fire resistance period, door leaf construction, and ironmongery specification. Certified fire door sets include the leaf, frame, seals, and all ironmongery tested and certified as a complete assembly.',
+        'The rating, size and hardware chosen set the price for each doorset. These are typical per-door figures.',
       ranges: [
-        { item: 'FD30 single leaf', price: '£450 – £900' },
-        { item: 'FD60 single leaf', price: '£600 – £1,200' },
-        { item: 'FD30S with smoke seal', price: '£550 – £1,000' },
-        { item: 'FD90 specialist', price: '£1,000 – £2,000' },
+        { item: 'FD30 doorset, one leaf', price: '£450 – £900' },
+        { item: 'FD60 doorset, one leaf', price: '£600 – £1,200' },
+        { item: 'FD30S with smoke seals', price: '£550 – £1,000' },
+        { item: 'FD90 specialist doorset', price: '£1,000 – £2,000' },
       ],
-      note: 'All prices exclude VAT. Final cost confirmed after site survey.',
+      note: 'Prices are before VAT and per door. We confirm the exact figure in writing after the survey.',
     },
     peopleAlsoAsk: [
       {
-        question: 'What is the difference between FD30 and FD60 fire doors?',
+        question: 'Is FD60 better than FD30?',
         answer:
-          'FD30 doors provide 30 minutes of fire resistance and FD60 doors provide 60 minutes, as tested to BS 476-22 or BS EN 1634-1. The required rating depends on the building\'s fire strategy and the compartment line the door sits on. Most internal corridors and stairwells in commercial buildings require FD30, while higher-risk boundaries such as plant rooms or storage areas may need FD60.',
+          'It resists fire for longer, but it is only "better" where the building needs it. Fitting the wrong rating does not help, and FD60 doors are heavier and cost more.',
       },
       {
-        question: 'How often should fire doors be inspected?',
+        question: 'Do fire doors need intumescent strips?',
         answer:
-          'The Regulatory Reform (Fire Safety) Order 2005 requires the responsible person to maintain fire doors in working order. Industry guidance recommends a visual check every six months and a detailed inspection by a competent person at least annually. Checks should cover the door leaf, frame, seals, hinges, closer, and signage.',
+          'Yes, in almost all cases. The strips swell in heat and close the gap around the door. Smoke seals are added where the door must also stop cold smoke.',
       },
       {
-        question: 'Can I replace fire door ironmongery myself?',
+        question: 'Can I paint a fire door?',
         answer:
-          'No. Fire door ironmongery must be replaced with hardware that has been tested and certified as part of the door set assembly. Fitting non-certified handles, hinges, or closers can invalidate the fire rating of the entire door set. All replacement ironmongery should be installed by a competent person using components listed in the door\'s test evidence.',
+          'Yes, with normal paint, but never paint over the intumescent strips or smoke seals.',
       },
       {
-        question: 'Do fire doors need intumescent strips and smoke seals?',
+        question: 'Can a fire door have a glass panel?',
         answer:
-          'Yes. Intumescent strips are essential as they expand when heated to seal the gap between the door leaf and frame, preventing fire spread. Smoke seals are additionally required where the fire strategy specifies smoke control, denoted by the "S" suffix in ratings such as FD30S. Both must be fitted in accordance with the manufacturer\'s tested configuration.',
+          'Yes, if it uses fire-rated glass and beading tested with that door. Ordinary glass cannot be added afterwards.',
       },
     ],
     relatedServices: ['security-doors', 'roller-shutters', 'shopfront-repairs', 'emergency-callout'],
@@ -980,149 +939,143 @@ The Fire Safety (England) Regulations 2022 — introduced following the Grenfell
     slug: 'shopfront-repairs',
     name: 'Shopfront Repairs',
     shortDescription:
-      'Fast, professional repairs to damaged shopfronts, roller shutters, and entrance doors. Boarding, glazing replacement, frame straightening, and hardware repair across the UK.',
+      'Repairs to doors, locks, glass, frames and closers on shopfronts of any make, so you can keep trading without paying for a whole new front.',
     heroImage: 'service-glass-shopfront.webp',
     primaryKeyword: 'shopfront repairs',
-    metaTitle: 'Shopfront Repairs — Same-Day Service',
+    metaTitle: 'Shopfront Repairs: Doors, Locks, Glass',
     metaDescription:
-      'Professional shopfront repair service across the UK. Broken glazing, damaged frames, bent shutters, faulty hardware. Fast response. Insurance work.',
-    description: `A damaged shopfront is both a security risk and a commercial liability. Broken glazing exposes the interior of your premises to the elements and to opportunistic theft. A bent shutter that will not close fully negates your overnight security. A failed door closer or broken lock hardware compromises the integrity of your access control. In every case, the damage needs to be addressed quickly, competently, and with materials that match the original installation.
+      'Shopfront repairs for any make: dropped doors, failed closers, broken locks, cracked glass and damaged frames. Insurance reports. Call 07597 630000.',
+    description: `Most shopfronts we are called to do not need replacing. They need a door re-hung, a closer swapped, a lock changed or a pane of glass replaced. Done properly, a repair can add years to a front for a fraction of the price of a new one.
 
-Grewal Shopfront & Shutters operates a dedicated shopfront repair service across the UK, handling everything from a single broken glass panel to extensive impact damage requiring frame replacement and structural repairs. We carry a stock of commonly needed materials — glazing, frame sections, shutter laths, locking hardware — to enable same-day or next-day response to most repair requirements.
+**Doors that drag, drop or will not lock**
 
-**Glazing Replacement**
+The most common call. Heavy shop doors wear out their hinges, pivots and floor springs (the closer hidden in the floor under many glass doors). The door sinks, scrapes the floor and stops lining up with the lock. We re-hang or replace the worn parts and set the door so it closes and locks cleanly again.
 
-Broken or damaged glazing is the most common repair requirement we attend to. Whether the cause is vandalism, vehicle impact, a burglary attempt, or accidental damage, the priority is to make the opening secure as quickly as possible and then to reinstate the correct glazing specification.
+**Closers and floor springs**
 
-Our initial attendance includes installation of a temporary security board — a heavy-duty plywood or polycarbonate sheet fixed securely within the existing frame — if the replacement glass cannot be installed immediately. We measure the opening, establish the existing glass specification (thickness, make-up, any safety or security rating), and order the replacement unit from our glazing supply network. In most cases, standard toughened single-pane or sealed double-glazed unit replacements are available within 24–48 hours; bespoke specifications, large panels, or specialist glass types may require three to five working days.
+A closer that slams, swings too fast or will not hold the door open needs adjusting or replacing. Floor springs leak oil when they fail; we lift the door, swap the spring and reset it.
 
-All replacement glazing is installed in accordance with BS 6262 (glazing for buildings), and we document the glass specification on a works completion record for insurance and warranty purposes.
+**Locks and cylinders**
 
-**Frame and Structural Repairs**
+Snapped keys, stiff locks, lost keys after a staff change: we replace cylinders and locks the same day in most cases, and can upgrade to anti-snap cylinders while we are there.
 
-Vehicle impacts to shopfronts frequently cause damage beyond the glazing: aluminium frame sections can be bent, sheared, or twisted; fixing cramps can be pulled from the masonry; and the subframe or sill can be displaced. We assess the full extent of damage and determine whether the damaged section can be straightened and reinforced in situ, or whether the affected frame members need to be cut out and replaced.
+**Glass**
 
-Where a frame section is replaced, we match the existing profile and powder-coat finish as closely as possible. An exact match is achievable for current-production profile systems; for older or obsolete profiles, we work with profile suppliers to identify the closest available equivalent, and re-powder-coat the replacement section to match the existing colour.
+Cracked or broken panes are replaced with glass that meets the safety rules for that position, which may mean a higher spec than what was there before. If the replacement glass has to be made to order, we board or temporarily glaze the gap first.
 
-**Roller Shutter Repairs**
+**Frames and panels**
 
-Roller shutter damage typically falls into three categories: curtain damage (bent or buckled laths), guide rail damage (bent or displaced side channels), and mechanism failure (broken spring, failed motor, seized drive shaft). We assess which category applies and carry out the appropriate repair.
+Bent frames after a vehicle strike, damaged stallriser panels, loose fascia boxes and leaking seals can all be repaired or sections replaced. We match the frame colour as closely as possible.
 
-Curtain repairs on steel shutters involve removal and replacement of the damaged lath section. For aluminium curtains, lath replacement is similarly straightforward. Where lath replacements are not possible due to the shutter design or curtain age, we can supply and install a complete replacement curtain within the existing housing box and guides where these remain undamaged.
+**Insurance**
 
-Spring failure is a common mechanical issue as shutters age: the coil spring that balances the curtain weight loses tension over years of use and eventually breaks. Spring replacement is a specialist task requiring safe decompression of the spring before removal, and must not be attempted by unqualified personnel. Our engineers carry the most common spring sizes to enable same-day replacement in most cases.
+For damage after a break-in, storm or vehicle impact, we provide photos and a written report of the damage and the repair, which you can pass to your insurer or landlord.
 
-**Door Hardware Repairs**
+**When repair is not worth it**
 
-Door closers, panic hardware, multi-point locking mechanisms, and hinges all have finite service lives, particularly on high-use commercial entrances. We repair and replace faulty hardware using components from established manufacturers — ASSA ABLOY, dormakaba, GEZE, and Dorma — and, for safety-critical components such as panic hardware and fire door closers, we use only tested replacements that comply with the relevant harmonised standard (BS EN 1125, BS EN 1154, etc.).
-
-**Insurance Work**
-
-The majority of shopfront damage we attend is the subject of an insurance claim. We are experienced in providing the documentation that insurers require: a photographic record of the damage taken before any temporary boarding, a detailed repair specification, a quantified estimate of repair costs, and — on completion — an invoice and works completion certificate.
-
-We work directly with insurance loss adjusters and brokers, and our documentation is structured to provide the adjusters with a clear, itemised breakdown that facilitates straightforward claims settlement. Where the damage is such that a complete shopfront replacement is more cost-effective than repair, we make this clear in our assessment and provide comparative quotations for both options.`,
+If a front is so worn that it will keep failing, we will tell you plainly and give you both prices, so you can decide.`,
     benefits: [
       {
-        title: 'Same-Day Emergency Boarding',
+        title: 'Any make or age',
         description:
-          'If your glazing is broken or your shutter is jammed open, we can attend on the same day to install temporary boarding and make the premises secure. This prevents further exposure to the elements and to opportunistic theft while the permanent repair is arranged.',
+          'We repair aluminium, steel and older timber fronts, whoever originally fitted them.',
       },
       {
-        title: 'Matched Materials and Finishes',
+        title: 'Same-visit fixes for common faults',
         description:
-          'We take care to match replacement frame sections, glazing, and hardware to the existing installation. This is not just an aesthetic concern — mismatched materials can affect the weather performance, security rating, or fire compliance of the repaired assembly.',
+          'Our van carries closers, cylinders, hinges and seals, so many jobs are finished on the first visit.',
       },
       {
-        title: 'Experienced Insurance Documentation',
+        title: 'Reports for insurers',
         description:
-          'Our repair teams are trained to document damage in the detail that loss adjusters require. We provide photographic evidence, detailed repair specifications, and itemised invoices that are formatted to support straightforward claims settlement and reduce the administrative burden on the policyholder.',
+          'Photos and a written report of damage and repairs make your claim simpler.',
       },
       {
-        title: 'Hardware Compliance After Repair',
+        title: 'Straight advice',
         description:
-          'When we replace safety-critical hardware — panic bars, fire door closers, multi-point locks — we use certified replacements that comply with the relevant BS EN standard. This ensures that after repair, the door assembly remains compliant with its original specification and any regulatory requirements that apply to it.',
+          'If a repair would be money wasted, we say so and price the alternative too.',
       },
     ],
     faqs: [
       {
-        question: 'How quickly can you attend for a repair?',
+        question: 'How soon can you come out?',
         answer:
-          'For emergency glazing and shutter repairs, we aim to attend within four hours of a call during normal working hours, and within two to three hours for a confirmed emergency callout. Out-of-hours emergency attendance is available through our emergency callout service. For non-urgent repairs, we typically schedule attendance within two to three working days.',
+          'Urgent faults that leave a shop insecure are treated as emergencies. For non-urgent repairs, we usually book a visit within a few working days.',
       },
       {
-        question: 'Can you match the glass specification in my existing shopfront?',
+        question: 'Can you match the glass I have now?',
         answer:
-          'In most cases, yes. We identify the existing glass specification from the existing unit markings (toughened glass is marked with the BS EN 12150 kite mark and the glass manufacturer\'s identification), the frame dimensions, and — for double-glazed units — the visible spacer bar colour and estimated cavity depth. Where the specification is non-standard (specialist solar control, acoustic, or security glass), we may request the original installation records from the shopfront installer. Lead times for specialist glass specifications are typically three to five working days longer than standard toughened glass.',
+          'We match thickness, type and tint where possible. If current safety rules need a higher spec than the old pane, we fit that instead and tell you why.',
       },
       {
-        question: 'Do you carry out repairs on shutters that you did not originally install?',
+        question: 'Will you repair a shopfront fitted by another company?',
         answer:
-          'Yes. We repair roller shutters regardless of who supplied and installed the original unit. Our engineers carry tools, spare parts, and common spring sizes to cover the majority of shutter makes and configurations encountered in the UK market. For less common or older systems, we may need to source specific components, which can add one to two days to the repair timeline.',
+          'Yes. Most parts on commercial fronts are standard, and we can source the rest.',
       },
       {
-        question: `Will my landlord\'s consent be needed for repairs?`,
+        question: 'Do I need my landlord\'s permission for repairs?',
         answer:
-          'For like-for-like repairs — replacing broken glass with the same specification, or repairing a damaged frame section in the same profile and colour — landlord consent is generally not required. If the repair involves a change in the appearance of the shopfront (a different glass type, a changed profile, or a modified colour) then your lease may require you to obtain landlord consent before proceeding. We can advise on the likely classification of any proposed repair and assist you in preparing a landlord consent request if needed.',
+          'Check your lease. Simple repairs usually do not need consent, but changes to the look of the front often do.',
       },
     ],
     howItWorks: [
       {
         step: 1,
-        title: 'Report the Problem',
+        title: 'Send us the problem',
         description:
-          'Call us on 07597 630000 or submit a repair request through our website. Describe the damage and, if possible, send photographs so we can prepare before visiting.',
+          'Call or WhatsApp a photo or short video of the fault. It often tells us which parts to bring.',
       },
       {
         step: 2,
-        title: 'Assessment Visit',
+        title: 'Visit and diagnose',
         description:
-          'We visit the premises to inspect the damage, identify the cause, and determine whether a repair or replacement is the most cost-effective solution.',
+          'An engineer checks the front, finds the cause and explains what is needed.',
       },
       {
         step: 3,
-        title: 'Quotation',
+        title: 'Clear price',
         description:
-          'A detailed repair quotation is provided, including materials, labour, and any temporary securing measures already carried out. For insurance claims, we provide the documentation your insurer needs.',
+          'You get a price before work starts. Small repairs are often done there and then.',
       },
       {
         step: 4,
-        title: 'Repair Work',
+        title: 'Fix and test',
         description:
-          'Our team carries out the repair using matching materials and profiles. For glass replacements, we source toughened or laminated glass to the correct specification and install it to current standards.',
+          'We repair the fault and test the doors and locks before we leave.',
       },
     ],
     pricingGuide: {
-      heading: 'What Do Shopfront Repairs Cost?',
+      heading: 'Shopfront repair prices',
       content:
-        'Repair costs depend on the type and extent of damage, the materials required, and whether emergency boarding is needed before the permanent repair. We provide transparent pricing with no hidden charges.',
+        'The part and the time needed set the price. These are common repair costs.',
       ranges: [
-        { item: 'Emergency boarding (per opening)', price: '£150 – £350' },
-        { item: 'Single glass panel replacement', price: '£300 – £800' },
-        { item: 'Frame section repair', price: '£400 – £1,200' },
-        { item: 'Door hardware replacement', price: '£150 – £500' },
+        { item: 'Boarding one opening after damage', price: '£150 – £350' },
+        { item: 'Replacing a single glass panel', price: '£300 – £800' },
+        { item: 'Repairing a section of frame', price: '£400 – £1,200' },
+        { item: 'New door hardware (closer, lock, hinges)', price: '£150 – £500' },
       ],
-      note: 'All prices exclude VAT. Final cost confirmed after site survey.',
+      note: 'Prices are before VAT. We confirm the exact figure before any work begins.',
     },
     peopleAlsoAsk: [
       {
-        question: 'Can you repair a shopfront without replacing the whole system?',
+        question: 'Is it cheaper to repair or replace my shopfront?',
         answer:
-          'In most cases, yes. Many shopfront problems can be resolved by repairing or replacing individual components — a single glass panel, a damaged frame section, or worn door hardware — without the need to replace the entire frontage. We always assess the most economical repair option first.',
+          'Repair is cheaper in most cases. Replacement makes sense when the frame is badly damaged or several parts are failing at once.',
       },
       {
-        question: 'How quickly can you repair a broken shop window?',
+        question: 'Why does my shop door scrape the floor?',
         answer:
-          'We can usually board up a broken window within a few hours of your call, with the permanent glass replacement completed within two to five working days depending on the glass specification required. Standard toughened glass is typically available within 48 hours.',
+          'Usually worn hinges, pivots or a failing floor spring have let the door drop. Re-hanging or replacing the worn part fixes it.',
       },
       {
-        question: 'Will my insurance cover shopfront repairs?',
+        question: 'Can you match my frame colour?',
         answer:
-          'Most commercial property insurance policies cover accidental damage and vandalism to shopfronts, subject to your policy excess. We provide detailed repair quotations and photographic evidence in a format that insurers accept, and we are happy to deal directly with your insurer or loss adjuster on your behalf.',
+          'We match the RAL colour where it is known, or get as close as possible from a sample.',
       },
       {
-        question: 'Can you match the existing frame colour when repairing a section?',
+        question: 'My shop door will not lock. Is that urgent?',
         answer:
-          'Yes. We match the powder-coat colour of the existing frame using RAL, BS 4800, or NCS colour references. Where the original colour reference is unknown, we take a physical sample and arrange a colour match through our finishing partner to ensure the repaired section blends seamlessly.',
+          'If the shop cannot be secured overnight, yes. Ring the emergency line if you are near Coventry or Birmingham.',
       },
     ],
     relatedServices: ['emergency-callout', 'aluminium-shopfronts', 'roller-shutters', 'automatic-doors'],
@@ -1132,153 +1085,146 @@ We work directly with insurance loss adjusters and brokers, and our documentatio
     slug: 'emergency-callout',
     name: 'Emergency Callout',
     shortDescription:
-      '24/7 emergency response for broken shopfronts, failed shutters, and compromised entrances. We secure your premises, day or night, across the UK.',
+      'Help when a shop is left open: smashed glass, a shutter stuck up or down, a forced door or a vehicle strike. We make it safe, then plan the proper repair.',
     heroImage: 'service-curtain-walling.webp',
     primaryKeyword: 'emergency shopfront repair',
-    metaTitle: 'Emergency Shopfront Callout UK | 24/7',
+    metaTitle: 'Emergency Shopfront and Shutter Help',
     metaDescription:
-      '24/7 emergency shopfront and shutter repair. Board-up, glazing, shutter and door emergency service. Fast response across the UK. Call now.',
-    description: `When a shopfront or security barrier fails outside of normal working hours — whether through vandalism, vehicle impact, attempted break-in, or mechanical failure — the consequences are immediate and serious. An open or unsecured premises is vulnerable to opportunistic theft, weather damage, and liability exposure. Every hour that passes without a secure boundary increases the risk and the potential loss.
+      'Shop left open after a break-in, smashed glass or a jammed shutter? Our 24/7 emergency line gets your premises boarded or secured. Call 07597 630000.',
+    description: `The worst calls come at the worst times: a phone ringing at 2am because the alarm has gone off, or staff arriving to find the glass in pieces and the stock on show. Our emergency line is open 24 hours a day, every day of the year, for exactly these moments.
 
-Grewal Shopfront & Shutters operates a 24/7 emergency callout service designed to get a qualified engineer to your premises as quickly as possible, make the site secure, and provide a clear assessment of the permanent repair or replacement required. We cover sites across the UK and maintain a network of regional engineers to minimise response times.
+**What counts as an emergency**
 
-**What Constitutes a Shopfront Emergency?**
+Anything that leaves your premises open, unsafe or unable to trade. The usual ones are:
 
-The most common emergency callout scenarios we attend are:
+- glass smashed in a break-in or by vandals
+- a roller shutter stuck open at closing time, or stuck shut in the morning
+- a door forced, with the lock or frame broken
+- a car or van driven into the front
+- storm damage to glass, signs or fascia
+- a door or closer that has failed so the shop cannot be locked
 
-- **Smashed glazing** — whether from vandalism, attempted burglary, or accidental impact. Broken glass leaves the premises open and creates a significant public liability risk for passers-by.
-- **Roller shutter stuck open or failed to close** — a shutter that will not close at the end of trading leaves stock, equipment, and the entire interior of the premises exposed overnight.
-- **Vehicle impact damage** — a vehicle collision with a shopfront can displace the entire frame system, shatter multiple glazing panels, and in some cases affect the structural opening above.
-- **Burglary damage** — after a forced-entry event, the entry point used by the perpetrators must be secured before the premises can be left unattended.
-- **Failed door hardware** — a multi-point lock that jams shut (preventing staff from entering the premises in the morning) or a panic bar that fails to latch (preventing the premises from being secured at closing) both require urgent attendance.
-- **Fire damage to a door or shutter** — after a fire, the affected compartment boundary must be reinstated as quickly as possible to restore the building's passive fire protection.
+**First, make it safe**
 
-**Our Emergency Response Process**
+Our first job is to stop further loss. That means boarding broken openings with timber, fitting temporary glazing where you need to keep trading, securing or manually closing a jammed shutter, or changing a lock so old keys no longer work. Broken glass is cleared from the pavement and the shop.
 
-When you call our emergency line, you will be connected immediately to an operative who will take the details of the incident, confirm the address, and dispatch the nearest available engineer. We will provide an estimated arrival time and keep you informed of the engineer's progress.
+**Then, the permanent fix**
 
-On arrival, the engineer's first priority is to make the premises secure. This typically involves boarding up any broken glazing with heavy-duty plywood or polycarbonate sheet, secured with screws into the existing frame or into rawl-plugged fixings in the masonry reveal. For roller shutter failures, we carry a range of common replacement springs, motor components, and manual override tools to address the most frequent causes of shutter failure on site.
+Most permanent repairs need parts made to measure, such as new glass or a shutter motor. Once the site is safe, we measure up and give you a price for the permanent repair, so you are not left with boards for longer than necessary.
 
-Once the premises is secure, the engineer provides a written assessment of the damage and what is required for permanent reinstatement, together with a clear indication of timescale and cost. We take a photographic record of all damage before boarding begins, which forms part of the insurance documentation.
+**Insurance**
 
-**Out-of-Hours Rates and Insurance**
+Take photos before anything is touched if you safely can. We also photograph the damage and our work and give you a written report, which insurers normally ask for. Emergency boarding is usually covered under a commercial policy, but check your own terms.
 
-Emergency callout attendance is priced on a transparent basis: a fixed callout charge covering the first hour of attendance plus travel time within our standard response zones, and an hourly rate thereafter for materials and labour. We provide a call-out attendance report that includes the time of call, time of attendance, work carried out, materials used, and the engineer's assessment of permanent repair requirements. This report is formatted to meet the documentation requirements of most commercial property insurers.
+**Call-out charges**
 
-We work directly with loss adjusters and claims handlers for major commercial property insurers, and our emergency documentation is structured to facilitate rapid claims authorisation for emergency board-up and temporary security measures.
+Emergency and out-of-hours work costs more than a booked visit, and we tell you the call-out charge on the phone before we set off. No surprises when the invoice arrives.
 
-**Preventive Measures Following an Emergency**
+**Where we cover**
 
-Following an emergency attendance, we will discuss with you whether any changes to the shopfront specification could reduce the risk of a recurrence. Options commonly considered include:
-
-- Upgrading to laminated or security-rated glazing (PAS 24:2022) to provide greater resistance to smash-and-grab attack
-- Installing a roller shutter on a previously unprotected frontage
-- Specifying a monitoring-grade security grille in addition to the existing shopfront
-- Upgrading the locking hardware to a higher security rating
-
-These upgrades can often be included within the permanent repair scope, and where they improve the security specification of the premises, insurers will sometimes contribute to the cost as part of the repair claim.`,
+Our emergency work is focused on the area around Coventry and Birmingham, where we can reach you quickly. Further away, call us anyway: we will tell you honestly whether we can get there in good time.`,
     benefits: [
       {
-        title: '24/7 Coverage, 365 Days a Year',
+        title: 'Open 24/7, all year',
         description:
-          'Our emergency line operates every day of the year, including bank holidays, Christmas, and New Year. A qualified engineer, not an answering service, takes your call and dispatches the appropriate resource to your premises.',
+          'A real person answers the emergency line at night, at weekends and on bank holidays.',
       },
       {
-        title: 'Rapid Site Securing',
+        title: 'Boards, glass and locks on the van',
         description:
-          'Our engineers carry boarding materials, common shutter parts, and temporary glazing on their vehicles. In most cases, we can make a damaged frontage secure within minutes of arrival, before the permanent repair assessment begins.',
+          'We arrive with the materials to secure most openings in one visit.',
       },
       {
-        title: 'Insurance-Ready Documentation',
+        title: 'Photos and a written report',
         description:
-          'We provide a full photographic and written record of the damage and the temporary works carried out, formatted to meet the requirements of commercial property insurers and loss adjusters. This reduces the administrative burden on you at a stressful time and accelerates claims settlement.',
+          'Everything your insurer will want to see is recorded as we work.',
       },
       {
-        title: 'Seamless Transition to Permanent Repair',
+        title: 'A plan for the proper repair',
         description:
-          'The engineer who attends the emergency carries out the damage assessment and hands this directly to our repairs scheduling team. There is no repetition of information, no second survey visit in most cases, and the permanent repair is programmed as quickly as materials and structural requirements allow.',
+          'We measure for the permanent fix while we are there, so the boards come down sooner.',
       },
     ],
     faqs: [
       {
-        question: 'What is your target response time for emergency callouts?',
+        question: 'How fast can you reach us?',
         answer:
-          'We aim to have an engineer on site within two hours of the initial call for premises within major urban areas, and within three to four hours for rural or remote locations. Response times can vary depending on the volume of concurrent callouts and the engineer\'s location at the time of the call. We provide a confirmed estimated arrival time when we dispatch the engineer and update you if circumstances change.',
+          'It depends on where you are and the time of day. Ring us and we will give you an honest arrival estimate before we set off. Shops near Coventry and Birmingham are the quickest for us to reach.',
       },
       {
-        question: 'Do you charge a callout fee on top of the repair costs?',
+        question: 'Is there a charge just for coming out?',
         answer:
-          'Yes. Our emergency service pricing is transparent: there is a fixed callout charge that covers the first hour of attendance and travel within standard response zones. All work carried out beyond the first hour is charged at an hourly labour rate, and materials are charged at cost plus a handling margin. We provide a full breakdown on the attendance report, which forms the basis of any insurance claim for the emergency attendance.',
+          'Yes, emergency visits carry a call-out charge, and out-of-hours rates apply at night and weekends. We tell you the figure on the phone first.',
       },
       {
-        question: 'Will my insurance cover the cost of emergency boarding?',
+        question: 'Will my insurer pay for emergency boarding?',
         answer:
-          'Most commercial property insurance policies cover the cost of emergency board-up and temporary security measures following an insured event (vandalism, vehicle impact, burglary). The emergency attendance report we provide — including timestamped photographs of the damage and an itemised record of the work carried out — is specifically structured to facilitate insurance claim submission. We recommend notifying your insurer at the same time as you call us, as some policies require prompt notification.',
+          'Most commercial policies cover making premises secure after damage, but terms vary. We supply the photos and report your insurer will need.',
       },
       {
-        question: 'Can you also board up domestic properties or is this a commercial-only service?',
+        question: 'Do you board up homes as well as shops?',
         answer:
-          'Our primary focus is commercial premises — retail, hospitality, industrial, and multi-occupancy commercial buildings. We can provide emergency boarding for mixed-use buildings (e.g. a ground-floor retail unit with residential above) and for commercial elements of residential developments. For purely domestic boarding requirements, we recommend contacting a specialist domestic glazier or a general emergency property maintenance service.',
+          'Our emergency service is for commercial premises: shops, offices, takeaways and industrial units, including flats above shops when the damage is linked.',
       },
     ],
     howItWorks: [
       {
         step: 1,
-        title: 'Emergency Call',
+        title: 'Ring the emergency line',
         description:
-          'Call our emergency line on 07597 630000. We are available 24 hours a day, 7 days a week. Let us know the nature of the damage and the property address.',
+          'Tell us what happened and where. We give you an arrival estimate and the call-out cost.',
       },
       {
         step: 2,
-        title: 'Rapid Response',
+        title: 'We get to you',
         description:
-          'We aim to have an engineer on site within 1 to 2 hours of your call, depending on your location. Our emergency vehicles carry boarding materials, temporary securing equipment, and essential tools.',
+          'An engineer is sent with boards, glass, locks and shutter parts.',
       },
       {
         step: 3,
-        title: 'Make Safe',
+        title: 'Premises made safe',
         description:
-          'We board up broken glazing, secure damaged doors, or temporarily fix shutters to ensure the premises is safe and weather-tight. Any broken glass is cleared and disposed of safely.',
+          'Openings are boarded or glazed, shutters secured and locks changed as needed. Debris is cleared.',
       },
       {
         step: 4,
-        title: 'Permanent Repair Arrangement',
+        title: 'Permanent repair booked',
         description:
-          'Once the premises is secured, we assess the permanent repair requirements and provide a quotation. For insurance claims, we document the damage with photographs and a written report.',
+          'We measure for the lasting repair and send you a price, along with the damage report.',
       },
     ],
     pricingGuide: {
-      heading: 'What Does an Emergency Callout Cost?',
+      heading: 'Emergency call-out prices',
       content:
-        'Emergency callout pricing includes a fixed attendance fee covering the first hour on site, plus materials used for temporary securing. Out-of-hours callouts between 6pm and 8am, and weekends and bank holidays, incur a surcharge.',
+        'Emergency work is priced by time and materials. These figures show what most call-outs cost.',
       ranges: [
-        { item: 'Emergency callout fee (first hour)', price: '£150 – £250' },
-        { item: 'Out-of-hours surcharge', price: '£75 – £150' },
-        { item: 'Emergency boarding (per panel)', price: '£150 – £350' },
-        { item: 'Temporary shutter securing', price: '£200 – £400' },
+        { item: 'Call-out, including the first hour', price: '£150 – £250' },
+        { item: 'Night or weekend supplement', price: '£75 – £150' },
+        { item: 'Boarding, per panel', price: '£150 – £350' },
+        { item: 'Making a failed shutter secure', price: '£200 – £400' },
       ],
-      note: 'All prices exclude VAT. Final cost confirmed after site survey.',
+      note: 'Prices are before VAT. We tell you the call-out charge before we travel.',
     },
     peopleAlsoAsk: [
       {
-        question: 'How fast can you get to my premises in an emergency?',
+        question: 'What should I do first if my shop window is smashed?',
         answer:
-          'We aim to arrive within 1 to 2 hours of your call for most locations across our service area. Response times may be slightly longer for remote locations or during periods of extreme demand. When you call, we will give you a realistic arrival estimate based on your location and our current availability.',
+          'Make sure nobody is hurt, call the police if it was a crime and get a crime number, take photos, then call us to secure the opening.',
       },
       {
-        question: 'Do you provide emergency callouts on weekends and bank holidays?',
+        question: 'Do you work bank holidays?',
         answer:
-          'Yes. Our emergency callout service operates 24 hours a day, 365 days a year, including weekends, bank holidays, and Christmas. An out-of-hours surcharge applies for callouts outside standard working hours, which we will confirm before attending.',
+          'Yes. The emergency line runs every day of the year.',
       },
       {
-        question: 'Can you help with insurance claims after emergency damage?',
+        question: 'Can you help with the insurance claim?',
         answer:
-          'Yes. We document all emergency work with dated photographs, a written description of the damage, and an itemised invoice that insurers accept. We can also provide a separate quotation for the permanent repair and liaise directly with your insurer or loss adjuster if that would be helpful.',
+          'We provide photos, a description of the damage and an itemised invoice, which covers what most insurers ask for.',
       },
       {
-        question: 'What should I do if my shopfront is smashed overnight?',
+        question: 'Will you take the broken glass away?',
         answer:
-          'Call us immediately on 07597 630000 and, if there is a security risk, also contact the police. Do not attempt to clear broken glass yourself. We will attend, make the premises safe, board up the opening, and advise on the next steps for permanent repair.',
+          'Yes. We clear broken glass from the shop and the pavement as part of making the premises safe.',
       },
     ],
     relatedServices: ['shopfront-repairs', 'roller-shutters', 'security-doors', 'aluminium-shopfronts'],
@@ -1288,167 +1234,143 @@ These upgrades can often be included within the permanent repair scope, and wher
     slug: 'shutter-repair',
     name: 'Shutter Repair',
     shortDescription:
-      'Fast, professional roller shutter repairs across the UK. Jammed shutters, broken springs, motor failure, damaged laths, and bent guide rails — diagnosed and repaired by experienced engineers.',
+      'Repairs to roller shutters of any make: snapped springs, dead motors, bent laths, jammed guides and failed key switches, usually fixed in one visit.',
     heroImage: 'preview-electric.webp',
     primaryKeyword: 'roller shutter repair',
-    metaTitle: 'Roller Shutter Repair | Fast UK-Wide Service',
+    metaTitle: 'Roller Shutter Repair, Any Make',
     metaDescription:
-      'Professional roller shutter repair service. Spring replacement, motor repair, curtain damage, jammed mechanisms. Fast response across the UK. Call now.',
-    description: `A roller shutter that will not open, close, or operate smoothly is more than an inconvenience — it is a security vulnerability. Every hour a shutter remains jammed, stuck halfway, or inoperable exposes your premises to risk: stock left unprotected, trading hours lost, and insurance cover potentially compromised if the insurer considers the shutter a condition of the policy. Fast, competent diagnosis and repair is essential.
+      'Roller shutter repairs for any make: broken springs, dead motors, bent laths, jammed guides. Most fixed in one visit. Call 07597 630000.',
+    description: `A shutter that will not go up keeps you out of your own shop. One that will not come down leaves you open all night. Either way it needs fixing today, which is why shutter repair is a large part of our work.
 
-Grewal Shopfront & Shutters operates a dedicated roller shutter repair service across the UK, covering manual and electric shutters of all makes, ages, and configurations. Our engineers carry the most commonly needed spare parts — springs, motor components, replacement laths, locking hardware, and safety edge sensors — to enable same-day repair in the majority of cases.
+**What usually goes wrong**
 
-**Common Shutter Failure Types**
+- **Broken spring.** Manual shutters rely on a coiled spring in the barrel to make lifting easy. When it snaps, the shutter becomes too heavy to lift or drops suddenly. Spring work is dangerous because the spring is under tension, so it should only be done by trained engineers.
+- **Motor failure.** Motors burn out, especially on shutters that are run up and down many times a day or forced against an obstruction. Sometimes it is only the capacitor, limit switch or key switch.
+- **Bent laths.** A van reversing into the curtain, or someone trying to force it, can bend the laths so they jam in the guides.
+- **Guides out of line.** Knocked or loose guide rails pinch the curtain and make it stick halfway.
+- **Locks and controls.** Seized bottom locks, faulty remotes and water in key switches are common in winter.
 
-Roller shutter failures fall into several distinct categories, and accurate diagnosis at the outset is critical to an efficient and cost-effective repair.
+**How we find the fault**
 
-*Spring failure* is the most common mechanical fault we attend. The torsion spring (or springs, on wider shutters) balances the weight of the curtain, storing energy as the shutter closes and releasing it to assist opening. Over thousands of operating cycles, the spring loses tension and eventually fractures. A broken spring is immediately obvious: the shutter becomes extremely heavy to lift manually, or the electric motor struggles and stalls before reaching the fully open position. Spring failure is a wear item — it is not a defect, but an expected maintenance event that occurs sooner on high-cycle installations.
+We check the shutter from the top down: power supply, controls, motor, barrel, spring, curtain, guides and bottom rail. You get an explanation of what has failed and why, and a price before we fix it.
 
-*Motor burnout* affects electric shutters and is typically caused by one of three factors: an overloaded motor (curtain weight exceeding the motor's rated capacity, often following a spring failure that went unaddressed), water ingress into the motor housing, or simple end-of-life failure after years of continuous service. Symptoms include the motor humming but not turning, tripping the circuit breaker, or producing no response at all when the key switch or remote is operated.
+**Repair or replace?**
 
-*Damaged laths* — the individual horizontal slats that make up the shutter curtain — result from vehicle impact, attempted forced entry, storm damage, or gradual corrosion in coastal environments. A single damaged lath can prevent the curtain from rolling smoothly into the housing box, causing the shutter to jam partway. If multiple laths are damaged, the curtain may not provide adequate security even when closed, as gaps and misalignment create points of weakness.
+Most shutters can be repaired. If the barrel is rusted through, the curtain is badly damaged along its length, or parts are no longer made, a new shutter can work out cheaper over a few years. We give you both figures when it is close.
 
-*Bent guide rails* are the vertical channels on either side of the opening through which the curtain travels. A vehicle impact or severe forced-entry attempt can bend or displace a guide rail, causing the curtain to bind, derail, or jam. In less severe cases, the curtain may still operate but with increased friction, noise, and accelerated wear on the lath edges.
+**Shutters we did not fit**
 
-*Jammed mechanisms* encompass a range of faults: seized drive shafts, failed limit switches (causing the motor to over-run and jam the curtain against the lintel or floor), corroded or seized locking bars, and foreign objects trapped in the guide rails. Our engineers systematically diagnose the root cause before commencing repair, avoiding the common mistake of treating symptoms rather than the underlying fault.
+We repair all common makes, manual and electric, whoever installed them. Our vans carry springs, motors, laths, switches and remote parts for the most common systems.
 
-**Diagnostic Process**
+**Out of hours**
 
-Every shutter repair begins with a structured assessment. Our engineer inspects the curtain, guide rails, housing box, spring assembly, motor (where fitted), control equipment, and locking hardware. We operate the shutter through a partial cycle (where safe to do so) to identify the point of failure, and we inspect the electrical supply and control circuit on motorised installations. This assessment typically takes 15–30 minutes and results in a clear diagnosis, a recommended scope of repair, and a cost indication before any work commences.
+If the shutter is stuck open and you cannot lock up, call our emergency line. We will make it secure that night and complete the full repair as soon as parts allow.
 
-**Spring Replacement**
+**Avoiding the next breakdown**
 
-Spring replacement is a specialist task that must not be attempted by unqualified personnel. Torsion springs store significant energy when wound, and an uncontrolled release during removal can cause serious injury. Our engineers use purpose-designed winding bars and follow the safe working procedures specified by the DHF (Door and Hardware Federation) for spring de-tensioning and replacement.
-
-We carry the most common spring sizes and wire gauges to enable same-day replacement. For non-standard or heavy-duty springs, we can typically source and fit a replacement within 24–48 hours. All replacement springs are specified to match the curtain weight and operating cycle requirement, ensuring the correct balance is restored and the expected service life is achieved.
-
-**Motor Repair vs Replacement**
-
-When a motor fails, the decision between repair and replacement depends on the nature of the fault, the age of the motor, and the cost differential. Minor faults — a failed capacitor, a worn brush set (on DC motors), or a faulty limit switch — can often be repaired on site at a fraction of the replacement cost. Where the motor winding has burned out, or where the gearbox has suffered internal damage, replacement is almost always more cost-effective and reliable than attempting a rewind or rebuild.
-
-We supply replacement motors from established manufacturers including Somfy, Simu, and Cherubini, and we match the replacement unit to the curtain weight, barrel diameter, and operating speed of the existing installation. All replacement motors are supplied with a manufacturer's warranty.
-
-**Curtain Lath Replacement**
-
-Individual damaged laths can be removed and replaced without dismantling the entire curtain assembly. The damaged section is cut out, the replacement lath is threaded into position, and the end locks or wind locks are refitted to secure the new lath within the curtain. For steel curtains, we carry the most common lath profiles in galvanised finish; for aluminium curtains, we source the matching profile from the original fabricator where possible.
-
-Where the curtain damage is extensive — multiple laths buckled, the curtain perforated, or corrosion has weakened a significant section — we may recommend a complete curtain replacement within the existing housing box and guide rails, which is typically more cost-effective than replacing individual laths across a large area.
-
-**Guide Rail Straightening and Replacement**
-
-Bent guide rails can sometimes be straightened in situ using hydraulic or mechanical straightening tools, provided the distortion is within correctable limits and the rail material has not been fatigued beyond its service tolerance. Where a guide rail is severely damaged, kinked, or has pulled away from its fixings, replacement is necessary.
-
-Replacement guide rails are cut to length on site and fixed to the masonry or steel reveal using the appropriate anchor fixings. We ensure the new rail is plumb, parallel, and correctly spaced to provide smooth curtain travel with the correct clearance specified by the shutter manufacturer.
-
-**Emergency Shutter Repair**
-
-A shutter stuck in the open position overnight represents an immediate security emergency. We provide emergency shutter repair attendance through our 24/7 callout service, with the aim of either completing the repair on site or, where the repair requires parts that are not immediately available, manually closing and securing the shutter in the down position until the permanent repair can be completed.
-
-**Preventive Maintenance**
-
-Many shutter failures are preventable with regular maintenance. The DHF recommends that all power-operated shutters are inspected and serviced at least annually by a competent person, with high-cycle installations serviced every six months. A preventive maintenance visit includes lubrication of all moving parts, tension testing of springs, safety edge and photocell testing on motorised shutters, inspection of the curtain and guide rails for wear or damage, and verification of the manual override mechanism. We offer annual and six-monthly maintenance contracts that reduce the risk of unexpected failure and extend the working life of the installation.`,
+A yearly service catches worn springs, tired motors and loose fixings before they fail. It also keeps the safety devices working, which matters if staff or customers walk under the shutter.`,
     benefits: [
       {
-        title: 'Same-Day Repair in Most Cases',
+        title: 'Fixed in one visit most times',
         description:
-          'Our engineers carry the most commonly needed spare parts — springs, motor components, laths, and locking hardware — enabling same-day repair for the majority of shutter faults. This minimises the time your premises spends without full security coverage.',
+          'Common springs, motors and laths travel with us, so most faults are sorted on the first trip.',
       },
       {
-        title: 'All Makes and Ages Covered',
+        title: 'Every brand, every age',
         description:
-          'We repair roller shutters regardless of the original manufacturer or installer. Our engineers are experienced with all common UK shutter configurations, including older and discontinued systems where sourcing compatible parts requires specialist knowledge.',
+          'Manual or motorised, new or decades old, we work on shutters from all the usual makers.',
       },
       {
-        title: 'Safe, DHF-Compliant Spring Work',
+        title: 'Springs handled safely',
         description:
-          'Spring replacement is one of the most hazardous tasks in shutter maintenance. Our engineers follow the DHF safe working procedures for spring de-tensioning and replacement, eliminating the risk of injury from uncontrolled spring release.',
+          'Spring tension is released and reset by trained engineers using the right tools, not a screwdriver and hope.',
       },
       {
-        title: 'Transparent Diagnosis Before Repair',
+        title: 'Price before we start',
         description:
-          'We provide a clear diagnosis and cost indication before commencing any repair work. You know what is wrong, what needs to be done, and what it will cost before we pick up a tool — no surprises and no unnecessary work.',
+          'You hear what is wrong and what it will cost before any repair begins.',
       },
     ],
     faqs: [
       {
-        question: 'How quickly can you attend for a shutter repair?',
+        question: 'How soon can a shutter engineer come?',
         answer:
-          'For emergency shutter repairs — where the shutter is stuck open and the premises is unsecured — we aim to attend within two to three hours through our 24/7 emergency callout service. For non-emergency repairs, we typically schedule attendance within one to two working days. Response times can vary based on location and the volume of concurrent callouts, but we provide a confirmed time window when we book the appointment.',
+          'A shutter stuck open overnight is an emergency and we treat it as one. Other repairs are normally booked within a few working days.',
       },
       {
-        question: 'Can you repair a shutter that was installed by another company?',
+        question: 'Do you repair shutters fitted by other firms?',
         answer:
-          'Yes. We repair roller shutters regardless of who supplied and installed the original unit. Our engineers carry tools and common spare parts to cover the majority of shutter makes and configurations encountered in the UK commercial market. For less common or older systems, we may need to source specific components from the original manufacturer or a compatible supplier, which can add one to two working days to the repair timeline.',
+          'Yes, all the time. Most shutter parts are standard, and we can source the rest.',
       },
       {
-        question: 'How long does a typical spring replacement take?',
+        question: 'How long does a new spring take to fit?',
         answer:
-          'A straightforward spring replacement on a standard manual shutter — one spring, standard wire gauge, no additional damage — typically takes between 45 minutes and one hour from arrival. For wider shutters with twin springs, or for motorised shutters where the motor must be disconnected and the barrel partially dismantled to access the spring, the work typically takes one to two hours. We carry the most common spring sizes, so in most cases the replacement is completed in a single visit.',
+          'Typically two to four hours on a shop shutter, depending on access and whether the barrel needs to come down.',
       },
       {
-        question: 'Is it worth repairing an old shutter or should I replace it?',
+        question: 'Should I repair an old shutter or buy a new one?',
         answer:
-          'This depends on the overall condition of the installation. If the housing box, guide rails, and barrel are structurally sound and only the spring, motor, or a section of curtain laths needs replacing, repair is almost always more cost-effective than full replacement. If the shutter has multiple faults, significant corrosion, or the curtain and guides are worn to the point where further failures are likely within a short period, replacement may be the better long-term investment. We provide an honest assessment at the diagnostic stage and, where we recommend replacement, we explain the reasoning and provide comparative costs for both options.',
+          'If the barrel and most of the curtain are sound, repair it. If several major parts are worn out at once, replacement may be the better money. We will give you both prices.',
       },
     ],
     howItWorks: [
       {
         step: 1,
-        title: 'Report the Fault',
+        title: 'Describe the fault',
         description:
-          'Contact us by phone on 07597 630000 or through our website. Describe the symptoms — stuck, noisy, won\'t open, won\'t close — so we can prepare the right parts and tools.',
+          'Tell us what the shutter is doing, or send a short video. It helps us bring the right parts.',
       },
       {
         step: 2,
-        title: 'Diagnostic Visit',
+        title: 'Engineer inspects',
         description:
-          'Our engineer visits to diagnose the fault, inspecting the motor, springs, curtain laths, guide rails, and safety devices. We identify the root cause and check for any secondary issues.',
+          'We test the power, controls, motor, spring and curtain to find the cause.',
       },
       {
         step: 3,
-        title: 'Repair Quotation',
+        title: 'Agree the price',
         description:
-          'We provide a clear quotation for the repair, detailing the parts required and labour involved. If the shutter is beyond economical repair, we advise on replacement options with comparative costs.',
+          'You approve the repair price before we start work.',
       },
       {
         step: 4,
-        title: 'Repair & Testing',
+        title: 'Repair and run',
         description:
-          'Once approved, we carry out the repair, replacing worn or damaged components with quality parts. The shutter is tested through multiple full cycles and all safety devices are checked before we leave.',
+          'The fault is fixed and the shutter is run through full cycles to make sure it opens, closes and locks.',
       },
     ],
     pricingGuide: {
-      heading: 'What Does a Shutter Repair Cost?',
+      heading: 'Shutter repair prices',
       content:
-        'Shutter repair costs depend on the type of fault and the parts required. Common repairs include spring replacement, motor replacement, and damaged lath sections. We carry many standard parts on our service vehicles to allow same-day repair where possible.',
+        'Most repairs fall into a few common jobs. Typical prices for them are below.',
       ranges: [
-        { item: 'Spring replacement', price: '£180 – £350' },
-        { item: 'Motor replacement', price: '£400 – £800' },
-        { item: 'Single lath replacement', price: '£80 – £200' },
-        { item: 'Guide rail straightening', price: '£200 – £500' },
+        { item: 'New spring fitted', price: '£180 – £350' },
+        { item: 'New motor fitted', price: '£400 – £800' },
+        { item: 'One lath replaced', price: '£80 – £200' },
+        { item: 'Guide rails straightened or reset', price: '£200 – £500' },
       ],
-      note: 'All prices exclude VAT. Final cost confirmed after site survey.',
+      note: 'Prices are before VAT. We confirm the exact figure before any work begins.',
     },
     peopleAlsoAsk: [
       {
-        question: 'Why is my roller shutter stuck halfway?',
+        question: 'Why has my shutter stopped halfway?',
         answer:
-          'A shutter stuck in a partially open position is usually caused by a broken spring, a faulty motor, or a curtain lath that has jumped out of the guide rail. Do not attempt to force the shutter open or closed, as this can cause further damage. Call us and we will diagnose and repair the fault safely.',
+          'Usually a bent lath or a knocked guide rail is catching the curtain, or the motor\'s limit setting has slipped. Do not force it, as this can bend more laths.',
       },
       {
-        question: 'How long does a shutter repair typically take?',
+        question: 'Why does my shutter motor grind?',
         answer:
-          'Most common repairs, such as spring or motor replacement, are completed within two to four hours on a single visit. If specialist parts need to be ordered, we will make the shutter safe and operational on a temporary basis where possible, then return to fit the replacement parts once they arrive.',
+          'Grinding often means worn gears or bearings, or a curtain that is binding in the guides. Stop using it and have it checked before the motor burns out.',
       },
       {
-        question: 'Can you repair any brand of roller shutter?',
+        question: 'Can I fix a shutter spring myself?',
         answer:
-          'Yes. We repair all major brands and types of roller shutter, including steel, aluminium, and fire-rated systems. Our engineers carry a wide range of universal components and have access to manufacturer-specific parts for all common systems installed in the UK.',
+          'No. The spring holds a lot of stored energy and can cause serious injury if released wrongly.',
       },
       {
-        question: 'My shutter motor is making a grinding noise — what does that mean?',
+        question: 'Why does my shutter go down on its own?',
         answer:
-          'A grinding noise from the motor usually indicates worn gears, a failing capacitor, or debris in the mechanism. Continuing to operate the shutter can cause further damage to the motor and potentially the curtain. We recommend stopping use and calling us for a diagnostic inspection before the fault escalates.',
+          'Usually a worn brake, a failing spring or a slipping limit setting. Stop using it and have it checked; a falling curtain can hurt someone.',
       },
     ],
     relatedServices: ['roller-shutters', 'shopfront-repairs', 'emergency-callout', 'security-doors'],
@@ -1458,173 +1380,143 @@ Many shutter failures are preventable with regular maintenance. The DHF recommen
     slug: 'glass-replacement',
     name: 'Glass Replacement',
     shortDescription:
-      'Commercial glass replacement for shopfronts and commercial premises. Toughened safety glass, laminated glass, double-glazed units, and security-rated glazing with fast turnaround.',
+      'Broken, cracked or misted glass replaced in shopfronts, doors, windows and screens, with the right safety glass for each position.',
     heroImage: 'service-glass-shopfront.webp',
     primaryKeyword: 'commercial glass replacement',
-    metaTitle: 'Glass Replacement UK | Shopfront Glazing',
+    metaTitle: 'Shop Glass Replacement and Glazing',
     metaDescription:
-      'Commercial glass replacement for shopfronts and premises. Toughened safety glass, laminated glass, DGUs, security glazing. Fast turnaround. UK-wide.',
-    description: `Broken, cracked, or failed glazing in a commercial shopfront is one of the most urgent repair requirements a business can face. A shattered pane leaves the premises physically open to the elements and to opportunistic theft. A misted or failed double-glazed unit, while less immediately critical, degrades the appearance of the frontage and compromises the thermal performance of the building envelope. In both cases, prompt replacement with correctly specified glass is essential.
+      'Broken shop glass replaced: toughened, laminated and double-glazed units for shopfronts, doors and windows. Temporary boarding if needed. Call 07597 630000.',
+    description: `Broken glass on a shop is a security problem, a safety problem and a sales problem all at once. We replace glass in shopfronts, entrance doors, office screens and commercial windows, and we make the opening safe while the new glass is made.
 
-Grewal Shopfront & Shutters provides a comprehensive commercial glass replacement service across the UK, covering single-pane toughened glass, laminated security glass, sealed double-glazed units (DGUs), and specialist glazing including solar-control, acoustic, and security-rated products. We handle everything from a single broken panel in a shopfront to the complete re-glazing of a multi-unit retail parade.
+**Which glass goes where**
 
-**Types of Commercial Glass**
+The rules on safety glass depend on where the pane sits. Glass in and around doors, and glass low down near the floor, must break safely. That means:
 
-Understanding the different types of glass used in commercial shopfronts is important for specifying the correct replacement.
+- **Toughened glass.** Heat-treated to be several times stronger than ordinary glass. If it does break, it shatters into small blunt pieces rather than sharp shards.
+- **Laminated glass.** Two or more sheets bonded with a plastic layer. When hit, it cracks but holds together in the frame, which makes it much harder to climb through. This is the better choice for a shop front facing the street.
+- **Double-glazed units.** Two panes with a sealed gap between them. Each pane can be toughened or laminated as needed.
 
-*Toughened safety glass* (also called tempered glass) is the standard glazing material for commercial shopfronts. Manufactured by heating float glass to approximately 620°C and then rapidly cooling it, toughened glass is four to five times stronger than annealed glass of the same thickness. When it does break, it fractures into small, relatively blunt granules rather than the large, sharp shards produced by annealed glass, significantly reducing the risk of laceration injury. Toughened glass is manufactured to BS EN 12150-1 and is permanently marked with the kite mark, the standard number, and the manufacturer's identification.
+**Misted double glazing**
 
-*Laminated glass* consists of two or more layers of glass bonded together with a polyvinyl butyral (PVB) or ethylene-vinyl acetate (EVA) interlayer. When broken, the fragments adhere to the interlayer rather than falling free, maintaining a degree of barrier integrity even after fracture. Laminated glass is manufactured to BS EN ISO 12543 and is specified where post-breakage performance is important — for example, overhead glazing, balustrades, and security applications where resistance to repeated impact or forced entry is required.
+If moisture appears between the panes, the seal has failed. The glass itself is fine but the unit needs replacing; the frame usually stays.
 
-*Double-glazed units (DGUs)* — also called insulated glass units (IGUs) — consist of two panes of glass separated by a hermetically sealed cavity, typically filled with argon or krypton gas to improve thermal insulation. The cavity is maintained by a spacer bar around the perimeter, bonded to both panes with a primary butyl seal and a secondary structural sealant. DGUs are specified where thermal performance is a requirement — which, under Building Regulations Part L for non-domestic buildings, applies to virtually all new or replacement glazing in commercial premises. Centre-pane U-values for standard argon-filled DGUs typically fall between 1.0 and 1.4 W/m²K depending on the glass combination and coating specification.
+**Measuring and ordering**
 
-*Security-rated glass* is laminated glass that has been independently tested and certified to resist attack. The principal standard for enhanced security glazing in the UK is PAS 24:2022, which tests the complete window or door assembly (not just the glass) against manual attack with common hand tools. For glazing-only performance, the relevant classification is BS EN 356, which grades glass from P1A (resistance to ball drop impact) through P8B (resistance to prolonged manual attack with an axe). Many commercial insurers now specify a minimum security glazing grade for ground-floor retail premises, and PAS 24 certification is increasingly required by landlords and local authority licensing conditions.
+Toughened glass cannot be cut once it is made, so every pane is ordered to exact sizes. We measure on site, check the thickness and type already fitted, and order the replacement. Standard units usually arrive within a few working days; large or special panes take longer.
 
-**When Glass Replacement Is Needed**
+**Keeping you secure meanwhile**
 
-The most common reasons for commercial glass replacement are:
+If the gap cannot be left open, we board it or fit a temporary pane the same day. Boards can be painted or carry a printed notice so you can keep trading.
 
-*Vandalism and impact damage* — a thrown object, a vehicle impact, or an attempted break-in can shatter or crack a shopfront pane. In the case of toughened glass, the entire pane will disintegrate; laminated glass may crack but typically remains in the frame. In both cases, replacement is required.
+**Upgrading while you are at it**
 
-*Failed sealed units (misting DGUs)* — over time, the perimeter seal of a double-glazed unit can degrade, allowing moisture to enter the cavity. This produces a persistent misting or condensation between the panes that cannot be cleaned. A failed DGU no longer provides its designed thermal insulation performance, and its appearance is unacceptable for a retail frontage. The failed unit must be replaced; it cannot be economically repaired.
+Replacement is a good time to switch to laminated glass on a vulnerable front, add a solar-control coating on a sunny elevation, or fit privacy film. We will suggest it where it makes sense, not on every job.
 
-*Accidental damage* — a forklift manoeuvre, a delivery vehicle reversing into a glazed panel, or an internal impact from equipment or stock. We document accidental damage for insurance purposes in the same manner as vandalism damage.
+**Insurance**
 
-*Regulatory upgrade* — in some cases, glass replacement is prompted not by damage but by a change in regulatory requirements or a landlord's specification. For example, upgrading from single-pane toughened glass to a DGU to meet Part L thermal requirements following a change of use, or upgrading to PAS 24 security glazing as a condition of a new insurance policy or licence.
-
-**Measurement and Specification Process**
-
-Accurate measurement and correct specification are critical to a successful glass replacement. Our process begins with a site visit where we measure the glazing aperture, record the frame rebate depth and bead detail, and identify the existing glass specification from the markings on the broken or failed unit. Where the existing specification cannot be determined from the remnants (for example, where the glass has been completely removed for safety), we consult the original shopfront installer's records or specify a replacement that meets the current regulatory requirements.
-
-For DGU replacements, we record the overall unit thickness, the individual pane thicknesses, the spacer bar width and type, the gas fill requirement, and any low-emissivity or solar-control coating specification. We then order the replacement unit from our glazing supply network, which maintains stock of the most common standard sizes and can manufacture bespoke units to order within three to five working days.
-
-**Compliance and Standards**
-
-All replacement glazing is installed in accordance with BS 6262 (Glazing for buildings), which provides the code of practice for the design, installation, and maintenance of glazing in buildings. BS 6262 addresses glass selection based on location within the building, wind loading, human impact safety, and environmental factors.
-
-For safety glazing — glass installed in critical locations where there is a risk of human impact — the relevant standard is BS EN 12600, which classifies glass by its breakage pattern and resistance to body impact. Critical locations are defined in BS 6262-4 and include glazing below 800 mm from floor level, glazing in or adjacent to doors, and glazing in areas where people might fall against the glass.
-
-Toughened safety glass is manufactured to BS EN 12150, and laminated safety glass to BS EN ISO 12543. Both standards require permanent marking of the glass, and we verify the presence and correctness of these markings on all replacement units before installation.
-
-For thermal performance, replacement DGUs must demonstrate compliance with Building Regulations Part L. We specify units with an appropriate combination of low-emissivity coatings and gas fill to achieve the required centre-pane U-value, and we provide documentary evidence of the U-value achieved for building control inspection where required.
-
-**Emergency Boarding Before Replacement**
-
-Where a glazing panel has been broken and the replacement glass is not immediately available, our first priority is to make the opening secure. We install temporary boarding — heavy-duty plywood or polycarbonate sheet secured within the existing frame — to protect the premises from weather ingress and unauthorised entry. The boarding is installed with discrete fixings that do not damage the frame, allowing clean removal when the replacement glass arrives.
-
-For retail premises where maintaining visibility and trading appearance is important, we can install clear polycarbonate temporary glazing rather than opaque boarding, subject to the security risk assessment for the premises.
-
-**Turnaround Times**
-
-Standard toughened single-pane replacements in common thicknesses (6 mm, 8 mm, 10 mm, 12 mm) are typically available within 24–48 hours from our glazing supply network. Standard argon-filled DGU replacements are available within three to five working days. Specialist glass — security-rated laminated glass, solar-control glass, acoustic glass, or non-standard sizes — may require five to ten working days depending on the specification and manufacturer availability.
-
-For emergency glazing requirements, we can often source standard toughened glass on a same-day or next-day basis, with installation scheduled immediately upon delivery.
-
-**Colour-Matched Frames**
-
-Where glass replacement requires the removal and refitting of glazing beads, cappings, or frame trim, we take care to match the existing frame colour and finish. For current-production aluminium profile systems, replacement beads and trims are available in the original colour from the system supplier. For older or discontinued profiles, we source the closest available match and, where necessary, arrange powder-coating to the original RAL or BS 4800 colour reference to ensure a seamless appearance after repair.`,
+We photograph the damage, note the glass type and sizes, and give you a written report and invoice for your claim.`,
     benefits: [
       {
-        title: 'Fast Turnaround on Standard Glass',
+        title: 'Correct safety glass every time',
         description:
-          'Standard toughened glass replacements are typically available within 24–48 hours, and standard DGU replacements within three to five working days. For emergency situations, we can often source and install standard toughened glass on a same-day or next-day basis.',
+          'Each pane is matched to the rules for its position, not just to what was there before.',
       },
       {
-        title: 'Full Range of Glass Types',
+        title: 'Made safe the same day',
         description:
-          'We supply and install the complete range of commercial glazing products: toughened safety glass, laminated security glass, sealed double-glazed units, solar-control glass, acoustic glass, and security-rated glazing to PAS 24 and BS EN 356. Whatever specification your premises requires, we can source and fit it.',
+          'Boards or temporary glass go in while the permanent pane is being made.',
       },
       {
-        title: 'Building Regulations Compliance',
+        title: 'Toughened, laminated and double-glazed',
         description:
-          'All replacement glazing is specified and installed to comply with BS 6262, BS EN 12150, BS EN ISO 12543, and Building Regulations Part L. We provide documentary evidence of glass specification and thermal performance for building control inspection where required.',
+          'We handle every common type used in shops, offices and commercial units.',
       },
       {
-        title: 'Insurance-Ready Documentation',
+        title: 'Documents for your claim',
         description:
-          'We provide a full photographic record of the damage, a detailed specification of the replacement glass, and an itemised invoice formatted to meet the requirements of commercial property insurers and loss adjusters. This supports straightforward claims settlement and reduces administrative burden.',
+          'Photos, sizes and specification go into a report your insurer can use.',
       },
     ],
     faqs: [
       {
-        question: 'How quickly can you replace broken shopfront glass?',
+        question: 'How quickly can broken shop glass be replaced?',
         answer:
-          'For standard toughened single-pane glass in common thicknesses, we can typically source the replacement within 24–48 hours and install it on the day of delivery. For double-glazed unit replacements, the lead time is three to five working days for standard specifications. In the meantime, we secure the opening with temporary boarding or clear polycarbonate to keep your premises safe and weather-tight. For emergency situations outside of normal hours, contact our 24/7 emergency callout service.',
+          'Standard panes usually arrive within a few working days of measuring. Large or special glass can take longer. We secure the opening in the meantime.',
       },
       {
-        question: 'How do I know what type of glass is in my shopfront?',
+        question: 'How can I tell what glass I have now?',
         answer:
-          'Toughened glass carries a permanent marking — typically a kite mark with the BS EN 12150 standard number and the glass manufacturer\'s name or code — etched or printed into one corner of the pane. Laminated glass is similarly marked with the BS EN ISO 12543 standard reference. For double-glazed units, the spacer bar between the panes often carries the manufacturer\'s identification. Where the glass has been completely broken and no markings survive, we can usually determine the specification from the frame rebate depth, the original shopfront installer\'s records, or by reference to the building\'s glazing schedule if available.',
+          'Toughened glass often has a small mark etched in one corner. Laminated glass shows a thin plastic layer at the edge. If in doubt, we check on site.',
       },
       {
-        question: 'Will my insurance cover the cost of glass replacement?',
+        question: 'Will insurance pay for new glass?',
         answer:
-          'Most commercial property insurance policies cover glass replacement following an insured event such as vandalism, storm damage, or attempted burglary. The policy typically covers both the emergency boarding and the permanent replacement glass. We provide a detailed damage report with timestamped photographs, a specification of the replacement glass, and an itemised invoice that is structured to facilitate insurance claim submission. We recommend notifying your insurer at the time of the incident, as some policies require prompt notification.',
+          'Many commercial policies include glass cover. We provide the report and invoice your insurer needs.',
       },
       {
-        question: 'Can you upgrade my glass to a higher security specification during replacement?',
+        question: 'Can the new glass be stronger than the old?',
         answer:
-          'Yes. A glass replacement is often a practical opportunity to upgrade the glazing specification. Common upgrades include moving from single-pane toughened glass to a laminated security glass or a security-rated DGU, or upgrading from a standard DGU to one with a low-emissivity coating for improved thermal performance. We will advise on the options available within your existing frame system — some upgrades may require a wider glazing rebate or different beading, which we can assess at the survey stage. Upgraded glazing may also qualify for a reduction in your insurance premium, so it is worth discussing with your insurer.',
+          'Yes. Swapping to laminated or thicker glass is often worthwhile, especially after a break-in.',
       },
     ],
     howItWorks: [
       {
         step: 1,
-        title: 'Report the Damage',
+        title: 'Report the breakage',
         description:
-          'Contact us with details of the broken or damaged glass. If possible, send photographs showing the affected panel and the surrounding frame so we can prepare an accurate specification.',
+          'Call or send photos. If the opening is unsafe, we treat it as an emergency.',
       },
       {
         step: 2,
-        title: 'Survey & Measurement',
+        title: 'Measure the opening',
         description:
-          'Our surveyor visits to measure the glass aperture, identify the glass type and specification, and assess the condition of the frame and glazing beads. For emergency situations, we board up the opening at the same visit.',
+          'We measure the pane exactly and note the glass type, thickness and frame details.',
       },
       {
         step: 3,
-        title: 'Glass Specification & Quote',
+        title: 'Order the glass',
         description:
-          'We specify the replacement glass to match or upgrade the original — toughened, laminated, double-glazed, or specialist security glass — and provide a fixed-price quotation.',
+          'You approve the price and spec, and the new pane is made to size.',
       },
       {
         step: 4,
-        title: 'Replacement & Fitting',
+        title: 'Glaze and seal',
         description:
-          'The replacement glass is manufactured to the surveyed dimensions and installed by our glazing team. We fit new seals and beading where required and ensure the finished installation is watertight and secure.',
+          'The broken glass is removed, the new pane fitted and sealed, and the frame cleaned.',
       },
     ],
     pricingGuide: {
-      heading: 'What Does Glass Replacement Cost?',
+      heading: 'Glass replacement prices',
       content:
-        'Glass replacement pricing depends on the glass type, size, and specification. Toughened safety glass is the standard minimum for commercial premises, with laminated and double-glazed options available for enhanced security and thermal performance.',
+        'Size, type and access set the cost. These figures cover most replacements.',
       ranges: [
-        { item: 'Single toughened pane (up to 2m²)', price: '£200 – £500' },
-        { item: 'Double-glazed unit replacement', price: '£350 – £900' },
-        { item: 'Laminated security glass', price: '£500 – £1,200' },
-        { item: 'Large format panel (3m²+)', price: '£800 – £2,000' },
+        { item: 'Toughened pane up to 2 m²', price: '£200 – £500' },
+        { item: 'Double-glazed unit swapped', price: '£350 – £900' },
+        { item: 'Laminated security pane', price: '£500 – £1,200' },
+        { item: 'Very large pane, 3 m² or more', price: '£800 – £2,000' },
       ],
-      note: 'All prices exclude VAT. Final cost confirmed after site survey.',
+      note: 'Prices are before VAT. We confirm the exact figure in writing after measuring.',
     },
     peopleAlsoAsk: [
       {
-        question: 'How long does it take to replace shop window glass?',
-        answer:
-          'Standard toughened glass can usually be manufactured and installed within two to five working days of the survey. Double-glazed sealed units and specialist glass such as laminated security or acoustic glass typically require five to ten working days. We provide emergency boarding to keep the premises secure in the meantime.',
-      },
-      {
         question: 'What is the difference between toughened and laminated glass?',
         answer:
-          'Toughened glass is heat-treated to be approximately four to five times stronger than standard glass and breaks into small, relatively harmless pieces. Laminated glass consists of two or more layers bonded with a plastic interlayer — when broken, the fragments adhere to the interlayer, maintaining a barrier. Laminated glass is preferred where security or safety retention is critical.',
+          'Toughened glass is stronger and breaks into small blunt pieces. Laminated glass cracks but holds together, so it keeps intruders out even when broken.',
       },
       {
-        question: 'Can you replace just one panel in a double-glazed unit?',
+        question: 'Can one pane of a double-glazed unit be replaced?',
         answer:
-          'No. A double-glazed unit is a sealed assembly, so if one pane is broken or the seal has failed, the entire unit must be replaced. We manufacture replacement sealed units to match the original dimensions and specification, ensuring compatibility with your existing frame.',
+          'Not usually. The whole sealed unit is replaced, but the frame normally stays.',
       },
       {
-        question: 'Do I need to upgrade my glass to meet current Building Regulations?',
+        question: 'Do I have to upgrade old glass to meet today\'s rules?',
         answer:
-          'If the replacement is like-for-like, Building Regulations do not typically require an upgrade. However, if the work is part of a larger renovation or if the existing glass does not meet current safety standards (BS EN 12150 for toughened glass), it may be advisable or required to upgrade. We will advise on the regulatory position during the survey.',
+          'When you replace glass in a critical position, the new pane should meet current safety requirements, even if the old one did not.',
+      },
+      {
+        question: 'Can you replace glass in a door as well as the window?',
+        answer:
+          'Yes. Door glass must be safety glass, and we fit the right type for that position.',
       },
     ],
     relatedServices: ['shopfront-repairs', 'aluminium-shopfronts', 'emergency-callout', 'automatic-doors'],
@@ -1634,147 +1526,140 @@ Where glass replacement requires the removal and refitting of glazing beads, cap
     slug: 'aluminium-doors',
     name: 'Aluminium Doors',
     shortDescription:
-      'Commercial aluminium entrance doors for retail, office, and industrial premises. Thermally broken profiles, PAS 24 security options, DDA-compliant thresholds, and a full RAL colour range.',
+      'Single, double and pivot aluminium entrance doors for shops, offices and communal entrances, fitted into new or existing frames.',
     heroImage: 'service-aluminium-shopfront.webp',
     primaryKeyword: 'aluminium doors commercial',
-    metaTitle: 'Aluminium Doors UK | Commercial Supply & Install',
+    metaTitle: 'Commercial Aluminium Entrance Doors',
     metaDescription:
-      'Commercial aluminium door installation across the UK. Thermally broken frames, PAS 24 security, DDA-compliant. Hinged, pivot & double leaf options.',
-    description: `Aluminium doors are the standard entrance solution for commercial buildings across the UK, from high-street retail units and office reception areas to warehouses, schools, and healthcare facilities. When correctly specified, an aluminium entrance door delivers the combination of structural strength, slim sightlines, weather resistance, and design versatility that commercial environments demand — at a price point that makes economic sense over a 25-year service life.
+      'Aluminium entrance doors for shops, offices and flats: single, double or pivot, with security locks and accessible thresholds. Call 07597 630000.',
+    description: `The entrance door takes more punishment than any other part of a building. It is pushed, pulled, kicked open with full hands and slammed by the wind hundreds of times a day. Aluminium doors stand up to that far better than timber or PVC-U.
 
-Grewal Shopfront & Shutters supplies and installs commercial aluminium doors as standalone entrance systems and as integrated elements within larger shopfront, curtain walling, and glazed screen installations. We work with hinged, pivot, and double-leaf configurations, using profile systems from leading European fabricators that are independently tested and CE-marked to BS EN 14351-1.
+We fit aluminium doors on their own, without replacing the rest of the front, for shops, offices, surgeries and the communal entrances to flats above shops.
 
-**Door Configurations**
+**Door types**
 
-Single-leaf hinged doors are the most common commercial entrance configuration, suitable for offices, individual retail units, and service entrances. Standard commercial door leaf sizes range from 900 mm to 1200 mm in width, with heights up to 2400 mm. For wider openings or premises with high footfall requiring simultaneous two-way traffic, double-leaf (French door) configurations provide a clear opening of 1600 mm to 2400 mm.
+- **Single doors** for most shop and office entrances.
+- **Double doors** where you need a wider opening for deliveries or busy periods.
+- **Pivot doors**, which turn on a pivot set in from the edge, for wide, tall feature entrances.
+- **Doors with side panels and fanlights** to fill an opening that is wider or taller than a standard door.
 
-Pivot doors — where the leaf rotates on a top-and-bottom pivot rather than side-hung hinges — are specified for large, heavy door leaves (typically over 100 kg) or for architectural effect. Pivot doors require a floor socket and overhead pivot bearing, and the door leaf must be precisely balanced to ensure smooth, effortless operation.
+**Security**
 
-**Thermal Performance**
+Commercial aluminium doors can be fitted with multi-point locks, hook bolts, anti-snap cylinders and laminated glass. If you want a door that has been tested for break-in resistance, we can supply sets certified to the recognised security standard for doors.
 
-For commercial buildings subject to Building Regulations Part L (Conservation of Fuel and Power), thermally broken aluminium door frames are required. Our thermally broken profiles incorporate a continuous polyamide insulating strip within the aluminium section, reducing heat transfer through the frame and eliminating the cold-bridging and internal condensation that non-broken frames produce.
+**Access for everyone**
 
-Complete door assembly U-values for our thermally broken systems typically range from 1.2 to 1.8 W/m²K depending on the glazing specification, comfortably meeting the elemental U-value targets set out in Approved Document L2 for non-domestic buildings.
+A level or very low threshold, a clear width that suits wheelchairs and a closer that is not too heavy to push all make the entrance easier to use. We check these at survey and can fit an automatic operator now or later.
 
-**Security Specification**
+**Keeping the heat in**
 
-Commercial entrance doors are frequently a target for forced entry. We offer door sets tested and certified to PAS 24:2022 (Enhanced Security Performance Requirements for Doorsets and Windows), the standard most commonly referenced by commercial insurers. PAS 24 door sets are tested as a complete assembly — frame, leaf, glazing, and hardware together — against a defined series of manual and mechanical attack tests.
+Doors with a thermal break and double glazing stop the entrance being a cold spot. For doors that open constantly, a closer set to shut promptly matters as much as the door itself.
 
-Multi-point locking is standard on our commercial aluminium doors, engaging the frame at a minimum of three points. Anti-drill, anti-pick, and anti-bump euro profile cylinders rated to TS 007 three-star are specified as standard, and we can accommodate master-keying and restricted keyway requirements for multi-tenanted buildings.
+**Finish**
 
-**Glazing Options**
-
-Aluminium door leaves can be fully glazed, partially glazed with a solid lower panel, or solid with a vision panel. Glazing is typically toughened safety glass to BS EN 12150-1 as a minimum, with laminated or security-rated glass specified for PAS 24 assemblies. For energy performance, double-glazed units with low-emissivity coatings are standard.
-
-**DDA Compliance**
-
-The Equality Act 2010 requires that commercial premises provide accessible entrances. Our aluminium doors are designed with low thresholds (maximum 15 mm upstand), minimum 775 mm clear opening width as standard (extendable to 900 mm or beyond), and lever handle furniture at accessible heights in accordance with BS 8300. Where automatic operation is required, our doors can be fitted with swing-door operators to provide powered opening — see our automatic doors service for details.
-
-**Powder Coating and Finish**
-
-All aluminium door sections are powder-coated to BS EN 12206-1 in any RAL Classic or RAL Design colour. Our standard guarantee covers colour retention and adhesion for 10 years under normal UK exposure conditions. Dual-colour finishes — a different colour on the internal and external faces — are available for premises where the interior colour scheme differs from the external branding.`,
+Doors are powder coated in any RAL colour to match or contrast with the existing front. Handles range from simple levers to long pull bars.`,
     benefits: [
       {
-        title: 'Slim Sightlines with Maximum Glass Area',
+        title: 'Built for constant use',
         description:
-          'Aluminium door profiles are significantly narrower than timber or PVC-U equivalents, maximising the glazed area and natural light entering the premises while maintaining full structural integrity and weather performance.',
+          'Commercial hinges, closers and frames are made for heavy daily traffic.',
       },
       {
-        title: 'PAS 24 Security Certification Available',
+        title: 'Secure locking',
         description:
-          'Our PAS 24:2022 certified door sets provide independently verified resistance to forced entry, satisfying the security requirements of commercial insurers and giving building owners documented evidence of enhanced protection.',
+          'Multi-point locks and anti-snap cylinders come as standard on our entrance doors.',
       },
       {
-        title: 'Thermally Broken for Building Regulations Compliance',
+        title: 'Easy access',
         description:
-          'Thermally broken aluminium profiles meet the U-value requirements of Building Regulations Part L for non-domestic buildings, ensuring energy compliance without compromising the structural performance or slim aesthetic of the door.',
+          'Low thresholds and properly set closers make the door easy for everyone to use.',
       },
       {
-        title: '25+ Year Service Life',
+        title: 'Lasts for decades',
         description:
-          'Aluminium does not rust, rot, or warp. A correctly installed aluminium door requires only periodic cleaning and occasional hardware maintenance to provide decades of reliable daily use in a commercial environment.',
+          'Aluminium will not warp, swell or rot, so the door keeps closing cleanly year after year.',
       },
     ],
     faqs: [
       {
-        question: 'What is the difference between an aluminium door and an aluminium shopfront?',
+        question: 'How is an aluminium door different from an aluminium shopfront?',
         answer:
-          'An aluminium door is a standalone entrance assembly — leaf, frame, threshold, and hardware — designed to fit within a structural opening. An aluminium shopfront is a complete glazed facade system incorporating fixed glass panels, transoms, mullions, and one or more entrance doors as integrated elements. We supply and install both: standalone aluminium doors for individual entrances, and full shopfront systems where the door is part of a larger glazed frontage.',
+          'A shopfront is the whole glazed screen across the building, of which the door is one part. We can replace just the door if the rest of the front is in good order.',
       },
       {
-        question: 'Can you replace a timber or PVC-U door with an aluminium one?',
+        question: 'Can you replace a wooden or PVC-U door with aluminium?',
         answer:
-          'Yes. Aluminium doors can be installed into existing structural openings previously occupied by timber or PVC-U doors. The aluminium frame is fixed directly into the masonry or concrete reveal, and the threshold detail is coordinated with the existing floor level. In most cases, the swap can be completed within one working day.',
+          'Yes. We remove the old door and frame, make good the opening and fit a complete aluminium door set.',
       },
       {
-        question: 'Do aluminium doors need regular maintenance?',
+        question: 'Do aluminium doors need maintenance?',
         answer:
-          'Aluminium doors require minimal maintenance compared to timber. We recommend cleaning the frame and leaf with a mild detergent solution every three months to remove dirt and pollutants, lubricating the hinges and locking mechanism with a dry PTFE spray every six months, and carrying out an annual function check of the closer, seals, and weather stripping. This routine will keep the door operating smoothly for its full service life.',
+          'Clean the frame, keep the threshold clear of grit and have the closer and locks checked once a year.',
       },
       {
-        question: 'How much does a commercial aluminium door cost?',
+        question: 'How much does an aluminium door cost?',
         answer:
-          'A standard single-leaf commercial aluminium door, fully glazed with toughened glass and multi-point locking, typically costs between £1,200 and £2,800 installed, depending on the frame profile, thermal break specification, and hardware. Double-leaf and PAS 24 certified configurations are priced higher. We provide fixed-price quotations after a site survey.',
+          'See the price ranges on this page. Size, glass, locks and finish make the difference.',
       },
     ],
     howItWorks: [
       {
         step: 1,
-        title: 'Enquiry & Consultation',
+        title: 'Discuss the entrance',
         description:
-          'Contact us with your requirements — single or double leaf, security rating, thermal specification, and colour preference. We advise on the most suitable configuration for your premises.',
+          'Tell us how the door is used, who uses it and what you want it to look like.',
       },
       {
         step: 2,
-        title: 'Site Survey',
+        title: 'Measure',
         description:
-          'Our surveyor measures the structural opening, checks floor levels and threshold details, and notes any DDA or fire compliance requirements that affect the door specification.',
+          'We measure the opening and check the floor, walls and how the door must swing.',
       },
       {
         step: 3,
-        title: 'Specification & Quote',
+        title: 'Spec and price',
         description:
-          'We specify the frame profile, glazing, hardware, and finish, then provide a fixed-price quotation with technical drawings for your approval.',
+          'You get a written quote covering the door type, glass, locks, closer and colour.',
       },
       {
         step: 4,
-        title: 'Fabrication & Installation',
+        title: 'Make and fit',
         description:
-          'The door is fabricated to the surveyed dimensions and installed by our team, typically within one working day. All hardware is adjusted and demonstrated on completion.',
+          'The door set is made to size and fitted, usually in a single day.',
       },
     ],
     pricingGuide: {
-      heading: 'What Does an Aluminium Door Cost?',
+      heading: 'Aluminium door prices',
       content:
-        'Aluminium door pricing depends on the leaf configuration, thermal break specification, glazing type, and security rating. Below are typical installed prices for common configurations.',
+        'Door type and security level are the main cost drivers. Typical prices are below.',
       ranges: [
-        { item: 'Single leaf hinged door', price: '£1,200 – £2,800' },
-        { item: 'Double leaf entrance', price: '£2,500 – £5,000' },
-        { item: 'PAS 24 certified door set', price: '£2,800 – £5,500' },
-        { item: 'Pivot door (architectural)', price: '£3,000 – £6,000' },
+        { item: 'Single hinged door', price: '£1,200 – £2,800' },
+        { item: 'Pair of entrance doors', price: '£2,500 – £5,000' },
+        { item: 'Security-certified door set', price: '£2,800 – £5,500' },
+        { item: 'Pivot entrance door', price: '£3,000 – £6,000' },
       ],
-      note: 'All prices exclude VAT. Final cost confirmed after site survey.',
+      note: 'Prices are before VAT. We confirm the exact figure in writing after the survey.',
     },
     peopleAlsoAsk: [
       {
-        question: 'Are aluminium doors better than PVC-U for commercial use?',
+        question: 'Is aluminium better than PVC-U for a business door?',
         answer:
-          'Yes, for most commercial applications. Aluminium offers significantly greater structural strength, allowing larger door sizes and slimmer frame profiles. It accepts high-security multi-point locking hardware, achieves higher security ratings (PAS 24), and has a longer service life. PVC-U is typically more appropriate for domestic and light commercial use.',
+          'For a busy entrance, yes. Aluminium is stiffer and stronger, so the door keeps its shape and closes properly for much longer.',
       },
       {
-        question: 'Can aluminium doors be made to match existing shopfront colours?',
+        question: 'Can a new door match the colour of my shopfront?',
         answer:
-          'Yes. We powder-coat all aluminium doors to any RAL Classic or RAL Design colour, and can match to NCS, BS 4800, or bespoke brand colour references. This ensures a seamless visual match with existing shopfront systems, signage, and branding.',
+          'Yes. Give us the RAL number or a sample and we match it.',
       },
       {
-        question: 'How long does it take to install an aluminium door?',
+        question: 'Can an aluminium door be a fire door?',
         answer:
-          'A standard single-leaf aluminium door installation is typically completed within one working day, including frame fixing, door hanging, hardware installation, and adjustment. Double-leaf and more complex installations may require a second day.',
+          'Standard aluminium doors are not fire rated. Where a fire-rated door is needed, we supply a certified fire doorset instead.',
       },
       {
-        question: 'Do aluminium doors comply with fire regulations?',
+        question: 'Can a new door be fitted into my old frame?',
         answer:
-          'Standard aluminium doors are not fire-rated. Where a fire-rated entrance is required, we specify purpose-designed fire door assemblies tested to BS EN 1634-1. See our fire doors service page for details on FD30, FD60, and FD90 rated options.',
+          'Sometimes, if the frame is sound and a standard size. Often a complete door set with a new frame gives a better, longer-lasting result.',
       },
     ],
     relatedServices: ['aluminium-shopfronts', 'automatic-doors', 'security-doors', 'glass-replacement'],
@@ -1784,153 +1669,142 @@ All aluminium door sections are powder-coated to BS EN 12206-1 in any RAL Classi
     slug: 'aluminium-windows',
     name: 'Aluminium Windows',
     shortDescription:
-      'Commercial aluminium window systems for retail, office, and industrial premises. Fixed, top-hung, and side-hung configurations with thermally broken frames and toughened safety glazing.',
+      'Aluminium windows for offices, upper floors above shops, industrial units and commercial refurbishments, fixed or opening, in any colour.',
     heroImage: 'service-aluminium-shopfront.webp',
     primaryKeyword: 'aluminium windows commercial',
-    metaTitle: 'Aluminium Windows UK | Commercial Installation',
+    metaTitle: 'Aluminium Windows for Commercial Buildings',
     metaDescription:
-      'Commercial aluminium window installation across the UK. Thermally broken frames, toughened glazing, BS 6375 weather rated. Fixed, casement &.',
-    description: `Commercial aluminium windows are a core element of modern retail, office, and industrial building envelopes. Whether installed as part of a shopfront system, within a curtain wall assembly, or as standalone window units in a commercial facade, aluminium windows deliver the combination of structural rigidity, slim profiles, large glazed areas, and long-term durability that commercial specifications demand.
+      'Aluminium windows for offices, flats above shops and industrial units. Fixed, top-hung or tilt-and-turn, double glazed, any colour. Call 07597 630000.',
+    description: `Upstairs offices, flats over shops and the side walls of industrial units often still have tired timber or early PVC-U windows that leak heat and stick shut. Slim aluminium windows let in more light, keep the weather out and need almost no upkeep.
 
-Grewal Shopfront & Shutters designs and installs commercial aluminium window systems across the UK, working with fixed-light, top-hung (awning), side-hung (casement), and tilt-and-turn configurations from leading profile fabricators. All our window systems are CE-marked to BS EN 14351-1 and independently tested for air permeability, watertightness, and wind resistance to BS 6375.
+**Window types**
 
-**Window Types for Commercial Applications**
+- **Fixed lights.** Panes that do not open, used where the view or light matters and air comes from elsewhere.
+- **Top-hung.** Hinged at the top and opening outwards at the bottom, a good choice for offices because rain runs off.
+- **Tilt-and-turn.** Tilts inwards at the top for air, or swings in fully for cleaning from inside, useful on upper floors.
+- **Sliding.** Panels slide past each other, handy where an outward-opening window would hit something.
 
-*Fixed-light windows* are the most common configuration in shopfront and curtain wall installations. The glass is permanently fixed within the aluminium frame with no opening mechanism, maximising the glazed area and providing the best thermal and acoustic performance. Fixed lights are used for display windows, high-level glazing, and any location where ventilation is provided by other means.
+**Heat and noise**
 
-*Top-hung (awning) windows* open outward from the bottom, hinged at the top. This configuration is popular for commercial buildings because it allows ventilation while providing some rain protection when partially open. Top-hung windows are frequently specified above shopfront transoms to provide natural ventilation to the trading floor.
+Frames with a thermal break and double-glazed units keep heat in and road noise out. Where the building has to meet Building Regulations for replacement windows, we choose frames and glass that comply and tell you the figures.
 
-*Side-hung (casement) windows* open outward on side hinges. They provide the maximum opening area for ventilation and are commonly used in office buildings, schools, and healthcare facilities where building regulations require a minimum opening area for purge ventilation.
+**Weather tightness**
 
-*Tilt-and-turn windows* offer dual-mode operation: tilting inward from the top for secure ventilation, or swinging inward on side hinges for full opening. This configuration is particularly suitable for upper-floor commercial premises where outward-opening windows present a risk or are restricted by planning conditions.
-
-**Thermal Performance**
-
-All our commercial aluminium windows use thermally broken profiles as standard. The polyamide thermal break within the aluminium section reduces the frame U-value to between 1.5 and 2.5 W/m²K depending on the profile depth. Combined with double-glazed units featuring low-emissivity coatings and argon gas fill, our complete window assemblies achieve overall U-values of 1.2 to 1.6 W/m²K, meeting the requirements of Building Regulations Part L for replacement and new-build commercial glazing.
-
-For projects with demanding energy performance targets — BREEAM-rated buildings, Passivhaus-influenced specifications, or buildings subject to enhanced planning conditions — we can specify triple-glazed units and enhanced thermal break profiles to achieve overall U-values below 1.0 W/m²K.
-
-**Weather Performance**
-
-Commercial windows face the full range of UK weather conditions, including driving rain, sustained wind loads, and rapid temperature changes. Our window systems are tested to BS 6375 for air permeability (Class 4 as standard), watertightness (typically Class 7A or 9A depending on exposure), and wind resistance (Class C5 for most commercial applications).
-
-For buildings in exposed coastal or elevated locations, we specify enhanced weather seals and drainage provisions to ensure the window assembly performs reliably under the higher wind-driven rain loads encountered in these environments.
-
-**Glazing Specification**
-
-All glazing installed in our commercial aluminium windows uses toughened safety glass to BS EN 12150-1 as a minimum. For windows in critical locations — below 800 mm from floor level, as defined in BS 6262 — the glass must meet the impact classification requirements of BS EN 12600.
-
-Double-glazed sealed units are standard for commercial installations, providing thermal insulation, acoustic attenuation, and condensation resistance. We specify low-emissivity coated glass as standard and can accommodate solar-control, acoustic, and privacy glass options to meet specific project requirements.
+Commercial windows are tested for how well they keep out air, water and wind. We fit them with the correct fixings and seals so they perform as tested, and pay particular attention to the joint between frame and wall, where most leaks start.
 
 **Security**
 
-Opening windows in commercial premises are potential entry points for intruders. We offer window assemblies tested to PAS 24:2022 for enhanced security, incorporating multi-point espagnolette locking, shoot-bolt engagement at top and bottom, and security glazing. Lockable restrictors can be specified to limit the opening angle while allowing controlled ventilation — a common requirement for upper-floor offices and healthcare buildings.
+Ground floor and accessible windows can have locking handles, restrictors that limit how far they open, and laminated glass. Restrictors also matter on upper floors where children or vulnerable people may be present.
 
-**Powder Coat Finish**
+**Planning**
 
-All aluminium window sections are powder-coated to BS EN 12206-1 in any RAL Classic or RAL Design colour. Marine-grade powder coat specifications are available for coastal installations where salt exposure demands enhanced corrosion protection.`,
+Replacing windows in a conservation area or on a listed building often needs consent, and councils may ask for a particular frame shape or colour. We tell you at survey.
+
+**Colour**
+
+Any RAL colour is available, and frames can be one colour outside and another inside.`,
     benefits: [
       {
-        title: 'Slim Frames, Maximum Natural Light',
+        title: 'Slim frames, more daylight',
         description:
-          'Aluminium window profiles are narrower than timber or PVC-U equivalents, allowing larger glass areas within the same structural opening. This maximises natural daylight penetration — a key requirement for retail display and office working environments.',
+          'Aluminium is strong enough for narrow frames around large panes.',
       },
       {
-        title: 'Thermally Broken for Energy Compliance',
+        title: 'Warmer, quieter rooms',
         description:
-          'All our commercial aluminium windows use thermally broken profiles as standard, meeting Building Regulations Part L U-value requirements without compromising frame strength or sightline width.',
+          'Thermally broken frames and double glazing cut heat loss and traffic noise.',
       },
       {
-        title: 'BS 6375 Weather Rated',
+        title: 'Weather tested',
         description:
-          'Every window system is independently tested for air permeability, watertightness, and wind resistance to BS 6375, providing documented assurance that the installation will perform in the UK climate.',
+          'Systems are tested for air, water and wind, and we fit them so they perform as tested.',
       },
       {
-        title: 'Maintenance-Free Aluminium Construction',
+        title: 'Almost no upkeep',
         description:
-          'Aluminium does not rot, rust, or warp, and the powder-coat finish requires only periodic cleaning to maintain its appearance. This eliminates the painting and timber treatment cycles that other frame materials demand.',
+          'No painting, no rot. Wipe down and lubricate the hinges now and then.',
       },
     ],
     faqs: [
       {
-        question: 'Can aluminium windows be installed in an existing shopfront?',
+        question: 'Can aluminium windows go into the shopfront I already have?',
         answer:
-          'Yes. Opening aluminium windows — typically top-hung or tilt-and-turn — can be integrated into an existing aluminium shopfront system by replacing a fixed glazed panel with an opening frame. This is a common upgrade for retail units that lack adequate ventilation. We assess compatibility with the existing profile system at the survey stage.',
+          'Yes. Opening windows or fanlights can often be added into an existing aluminium front, or the whole screen replaced if it is failing.',
       },
       {
         question: 'Are aluminium windows energy efficient?',
         answer:
-          'Yes. Our thermally broken aluminium windows achieve overall U-values of 1.2 to 1.6 W/m²K with standard double glazing, meeting Building Regulations Part L. With triple glazing and enhanced thermal break profiles, U-values below 1.0 W/m²K are achievable for projects with higher energy performance targets.',
+          'With a thermal break and good double glazing, yes. Without a thermal break, aluminium loses heat quickly, so we do not recommend that for heated rooms.',
       },
       {
-        question: 'What colours are available for aluminium windows?',
+        question: 'Which colours can I choose?',
         answer:
-          'We offer the full RAL Classic and RAL Design range — over 2,500 colours. Dual-colour finishes (different colours inside and outside) are available. Non-standard colours typically add five to seven working days to the lead time.',
+          'Any RAL colour, plus textured and metallic finishes. Dual colour (different inside and out) is also available.',
       },
       {
-        question: 'How long do aluminium windows last?',
+        question: 'How long will the windows last?',
         answer:
-          'Commercial aluminium windows typically provide 30 to 40 years of reliable service with minimal maintenance. The aluminium frame is inherently corrosion-resistant, and the powder-coat finish is guaranteed for 10 years against fading and peeling under normal UK conditions.',
+          'Twenty-five years or more is normal, with handles and hinges replaced as they wear.',
       },
     ],
     howItWorks: [
       {
         step: 1,
-        title: 'Requirements Discussion',
+        title: 'What needs replacing',
         description:
-          'Contact us to discuss your window requirements — fixed, opening, or a combination — along with ventilation needs, security requirements, and colour preferences.',
+          'Tell us which windows, which floors and what is wrong with the current ones.',
       },
       {
         step: 2,
-        title: 'Site Survey',
+        title: 'Survey each opening',
         description:
-          'Our surveyor measures each window opening, assesses the structural condition of the reveals, and notes exposure conditions and any planning constraints.',
+          'We measure every window, check access for fitting and note any planning issues.',
       },
       {
         step: 3,
-        title: 'Specification & Quote',
+        title: 'Window schedule',
         description:
-          'We specify the frame profile, opening type, glazing, hardware, and colour, then provide a fixed-price quotation with drawings for approval.',
+          'You receive a list of each window, its type, glass and colour, with a price.',
       },
       {
         step: 4,
-        title: 'Manufacture & Installation',
+        title: 'Make and install',
         description:
-          'Windows are fabricated to the surveyed dimensions and installed by our team. All opening mechanisms, restrictors, and locking hardware are adjusted and demonstrated on completion.',
+          'Windows are made to size and fitted one room at a time to limit disruption.',
       },
     ],
     pricingGuide: {
-      heading: 'What Do Commercial Aluminium Windows Cost?',
+      heading: 'Commercial aluminium window prices',
       content:
-        'Aluminium window pricing depends on the window size, opening type, glazing specification, and thermal performance requirements. Fixed-light windows are the most economical; opening windows with security hardware carry a premium.',
+        'Size, opening type and glass choice set the price. Here are typical figures.',
       ranges: [
-        { item: 'Fixed-light window (per m²)', price: '£250 – £500' },
-        { item: 'Top-hung opening window', price: '£400 – £900' },
+        { item: 'Fixed pane, per square metre', price: '£250 – £500' },
+        { item: 'Top-hung window', price: '£400 – £900' },
         { item: 'Tilt-and-turn window', price: '£500 – £1,100' },
-        { item: 'PAS 24 security window', price: '£700 – £1,400' },
+        { item: 'Security-certified window', price: '£700 – £1,400' },
       ],
-      note: 'All prices exclude VAT. Final cost confirmed after site survey.',
+      note: 'Prices are before VAT. We confirm the exact figure in writing after the survey.',
     },
     peopleAlsoAsk: [
       {
-        question: 'Are aluminium windows better than PVC-U for commercial buildings?',
+        question: 'Aluminium or PVC-U for a commercial building?',
         answer:
-          'For most commercial applications, yes. Aluminium provides greater structural strength, allowing larger window sizes with slimmer frame profiles. It has a longer service life, accepts higher-security hardware, and is fully recyclable. PVC-U is more appropriate for domestic and light-duty commercial use.',
+          'Aluminium allows slimmer frames and larger panes, lasts longer and copes better with heavy use. PVC-U is cheaper upfront.',
       },
       {
-        question: 'Can aluminium windows be double or triple glazed?',
+        question: 'Can aluminium windows have triple glazing?',
         answer:
-          'Yes. Double glazing is standard on all our commercial aluminium windows. Triple glazing is available for projects requiring enhanced thermal or acoustic performance. Our frame profiles accommodate sealed units from 24 mm to 44 mm in total thickness.',
+          'Yes, many systems accept triple glazing where extra heat or noise performance is needed.',
       },
       {
-        question: 'Do aluminium windows need planning permission?',
+        question: 'Do new windows need planning permission?',
         answer:
-          'Like-for-like replacement of existing windows does not normally require planning permission. However, changes to window size, position, or style in conservation areas or on listed buildings may need planning approval. We advise on the planning position at the survey stage.',
+          'Like-for-like replacements usually do not, but listed buildings and conservation areas often need consent.',
       },
       {
-        question: 'How are aluminium windows secured against break-in?',
+        question: 'Can windows above a shop be replaced from inside?',
         answer:
-          'Our commercial aluminium windows feature multi-point espagnolette locking with shoot bolts at top and bottom. For enhanced security, we offer PAS 24:2022 certified window assemblies with security glazing and reinforced frame profiles, meeting the requirements of most commercial insurers.',
+          'Often, yes. Many commercial windows can be glazed and fitted from inside, which avoids scaffolding.',
       },
     ],
     relatedServices: ['aluminium-shopfronts', 'aluminium-doors', 'glass-replacement', 'curtain-walling'],
@@ -1940,157 +1814,145 @@ All aluminium window sections are powder-coated to BS EN 12206-1 in any RAL Clas
     slug: 'curtain-walling',
     name: 'Curtain Walling',
     shortDescription:
-      'Aluminium curtain wall systems for commercial facades. Stick-built and unitised solutions with structural glazing, thermally broken mullions, and full weather testing to BS EN 13830.',
+      'Glazed aluminium facades for showrooms, offices, new-build retail and industrial frontages, from a single storey to several floors.',
     heroImage: 'service-curtain-walling.webp',
     primaryKeyword: 'curtain walling UK',
-    metaTitle: 'Curtain Walling UK | Aluminium Facade Systems',
+    metaTitle: 'Curtain Walling for Commercial Buildings',
     metaDescription:
-      'Aluminium curtain walling design and installation for commercial buildings. Stick-built & unitised systems, structural glazing, BS EN 13830 tested.',
-    description: `Curtain walling is a non-load-bearing facade system that spans between floor slabs or structural frames, creating a continuous glazed or panelled envelope around a commercial building. Unlike a traditional shopfront — which is installed within a single-storey structural opening — a curtain wall can extend across multiple storeys and is designed to resist wind loads, support its own dead weight, accommodate thermal and structural movement, and provide weather exclusion, thermal insulation, and acoustic attenuation for the entire building envelope.
+      'Aluminium curtain walling for showrooms, offices and new commercial buildings. Stick or unitised systems, opening vents and doors built in. Call 07597 630000.',
+    description: `Curtain walling is a glazed wall hung on the outside of a building's structure. It carries its own weight and the wind load back to the floors, but does not hold the building up. Car showrooms, office receptions, new retail units and the front of many industrial buildings use it to get big areas of glass.
 
-Grewal Shopfront & Shutters designs and installs aluminium curtain wall systems for a range of commercial applications: multi-storey office buildings, retail developments, mixed-use schemes, hotels, educational buildings, and healthcare facilities. We work with stick-built and unitised curtain wall systems, using profiles from established fabricators whose products are tested and certified to BS EN 13830 — the European standard for curtain walling.
+**Shopfront or curtain wall?**
 
-**Stick-Built vs Unitised Systems**
+A shopfront usually fills one storey between a floor and a beam. Curtain walling runs past floor edges and can cover several storeys, so it is designed differently, with more attention to wind, movement and fire between floors. On a single-storey front, either can work; we advise which suits your opening.
 
-*Stick-built curtain walling* is assembled on site from individual aluminium mullions (vertical members) and transoms (horizontal members), with glass or panel infills glazed into the grid after the framework is erected. Stick-built systems are versatile, cost-effective for smaller projects, and allow adjustments during installation to accommodate site tolerances. They are the most common curtain wall type for single and two-storey commercial facades.
+**Stick or unitised**
 
-*Unitised curtain walling* consists of factory-assembled panels — each containing a section of mullion, transom, glazing, and weather seals — that are craned into position and clipped together on site. Unitised systems offer faster on-site installation, higher factory quality control, and better weather sealing, but require greater upfront design investment and are typically specified for larger multi-storey projects where the speed and consistency benefits justify the premium.
+Most jobs we see use a stick system: mullions (upright bars) and transoms (cross bars) are fixed on site, then the glass is added. It suits low-rise buildings and awkward shapes. Unitised systems arrive as factory-made panels and suit larger, taller projects.
 
-**Structural Performance**
+**Design work comes first**
 
-Curtain wall mullions and transoms are structural members that resist wind loads — both positive pressure and negative suction — and transfer these loads to the primary building structure at each floor level or structural bracket point. The mullion section is sized by structural calculation to resist the design wind pressure for the building height, location, and exposure category, calculated in accordance with BS EN 1991-1-4 (Eurocode 1: Wind actions).
+Curtain walling must be designed for the wind load at that site, and fixed to a structure that can carry it. We work from the building drawings or the structural engineer's information, and the frame sizes are chosen to suit the spans and loads.
 
-Our structural calculations are prepared by a qualified engineer and submitted to the building control body as part of the Building Regulations application. Deflection limits for curtain wall mullions are typically L/200 under design wind load (where L is the span between fixings), although more stringent limits may apply for specific glazing types or for buildings with enhanced serviceability requirements.
+**Glass and panels**
 
-**Thermal Performance**
+Glass can be clear, tinted, solar-control or obscured. Solid insulated panels can fill areas such as floor edges where glass is not wanted. Doors and opening vents fit into the same grid.
 
-Curtain wall systems must comply with Building Regulations Part L for non-domestic buildings, achieving overall facade U-values that contribute to the building's target energy performance. Our curtain wall profiles incorporate polyamide thermal breaks within the aluminium mullions and transoms, reducing the frame-zone U-value to between 1.5 and 2.5 W/m²K depending on the profile depth and thermal break width.
+**Fire between floors**
 
-Combined with high-performance double-glazed units (typically 1.0 to 1.1 W/m²K centre-pane) and insulated spandrel panels, the overall curtain wall assembly achieves the facade U-values required for compliance with Part L and, where specified, BREEAM or other sustainability assessment targets.
+Where a curtain wall passes a floor slab, the gap behind it must be sealed with fire-stopping so fire and smoke cannot travel up behind the glass. We include this in the design and installation.
 
-**Weather Performance and Testing**
+**Testing and handover**
 
-Curtain wall systems are tested to BS EN 13830 for air permeability, watertightness, and wind resistance. This standard is specific to curtain walling and differs from BS 6375 (which applies to windows and doors). The test sequence includes static air permeability, watertightness under static and dynamic pressure, and wind resistance under positive and negative pressure.
-
-Our systems are also tested for resistance to water penetration under pulsating air pressure — the "hose test" — which simulates the driving rain conditions encountered on exposed UK building facades. Weather sealing is achieved through a combination of EPDM gaskets, silicone weather seals, and pressure-equalised drainage chambers within the mullion and transom profiles.
-
-**Glazing and Infill Options**
-
-Curtain wall infill panels can be glazed or opaque. Glazed infills use double-glazed sealed units with performance specifications selected to meet the project's thermal, solar, acoustic, and safety requirements. Spandrel panels — the opaque sections typically located at floor-slab and beam levels — use insulated aluminium composite, enamelled glass, or stone cladding backed by thermal insulation.
-
-Structural glazing — where the glass is bonded to the aluminium frame with structural silicone rather than retained by external pressure plates — creates a flush external appearance with no visible frame on the outside face. Structural glazing requires specific design calculations, silicone compatibility testing, and quality-controlled application, all of which we manage as part of the project.
-
-**Fire Compartmentation**
-
-Where a curtain wall passes across a fire compartment boundary — typically at each floor slab — fire stopping is required to prevent fire and smoke from spreading through the void between the curtain wall and the floor slab edge. We install tested fire-stop systems using mineral wool and intumescent sealant, certified to achieve the required fire resistance period (typically 60 or 120 minutes) at each compartment junction.`,
+On larger jobs, sections are water-tested on site. You receive drawings and product information for your building records.`,
     benefits: [
       {
-        title: 'Full-Height Glazed Facades',
+        title: 'Large glazed areas',
         description:
-          'Curtain walling spans between floor slabs, creating continuous glazed elevations that maximise natural light, provide uninterrupted views, and give the building a contemporary commercial aesthetic that traditional punched-window construction cannot achieve.',
+          'Floor-to-ceiling glass across wide spans, ideal for showrooms and receptions.',
       },
       {
-        title: 'Engineered Wind Load Resistance',
+        title: 'Designed for the site',
         description:
-          'Unlike shopfront systems designed for single-storey use, curtain wall mullions are structurally calculated to resist the full design wind load for the building height and exposure. This provides documented structural performance that satisfies Building Regulations and building control requirements.',
+          'Frames are sized for the wind load and fixings at your building, not chosen from a brochure.',
       },
       {
-        title: 'Thermal and Acoustic Performance',
+        title: 'Doors and vents built in',
         description:
-          'Thermally broken mullions and transoms, combined with high-performance glazing and insulated spandrel panels, achieve the facade U-values and acoustic ratings required for modern commercial buildings, including BREEAM-rated and Part L compliant developments.',
+          'Entrance doors and opening windows sit in the same grid for a clean finish.',
       },
       {
-        title: 'Design Flexibility',
+        title: 'Fire-stopping included',
         description:
-          'Curtain wall grids can be configured in any module width and height, with a mix of fixed glazing, opening vents, spandrel panels, and louvre sections. This flexibility allows the facade design to respond to internal layouts, ventilation strategy, and the architect\'s aesthetic intent.',
+          'Gaps at floor edges are sealed so the facade does not become a route for fire.',
       },
     ],
     faqs: [
       {
-        question: 'What is the difference between a shopfront and curtain walling?',
+        question: 'What is the difference between curtain walling and a shopfront?',
         answer:
-          'A shopfront is a ground-floor glazed facade installed within a single structural opening, typically up to one storey in height. Curtain walling is a multi-storey facade system that spans between floor slabs and is designed to resist the wind loads, thermal movements, and weather conditions associated with taller buildings. For ground-floor commercial frontages, a shopfront system is usually more cost-effective; for multi-storey facades or large glazed areas spanning above ground floor, curtain walling is the appropriate specification.',
+          'A shopfront fills one storey within the building\'s structure. Curtain walling hangs on the outside of the structure and can run across several floors.',
       },
       {
-        question: 'How long does a curtain wall installation take?',
+        question: 'How long does installation take?',
         answer:
-          'Installation timescales depend on the system type and facade area. A typical two-storey stick-built curtain wall of 50 to 100 m² can be erected and glazed within two to three weeks. Larger unitised installations proceed at a faster rate per square metre once the initial set-out is complete, but require more upfront design and manufacturing time.',
+          'A single-storey showroom front may take a week or two on site. Larger projects are programmed with the main contractor.',
       },
       {
         question: 'Does curtain walling need Building Regulations approval?',
         answer:
-          'Yes. Curtain walling installations require Building Regulations approval for structural performance, thermal performance (Part L), fire stopping at compartment boundaries, and safety glazing compliance. We manage the Building Regulations application and provide all structural calculations, thermal calculations, and fire-stopping details as part of our project service.',
+          'Usually, yes, as part of the wider building work. Energy, fire and structural rules all apply. We provide the information your building control body needs.',
       },
       {
         question: 'Can curtain walling include opening windows?',
         answer:
-          'Yes. Opening vents — typically top-hung or parallel-opening — can be integrated within the curtain wall grid to provide natural ventilation. These openings are fitted with the same weather sealing and locking hardware as standalone commercial windows, and are positioned within the grid layout to suit the building\'s ventilation strategy.',
+          'Yes. Top-hung or parallel-opening vents and doors are built into the same frame system.',
       },
     ],
     howItWorks: [
       {
         step: 1,
-        title: 'Design Brief',
+        title: 'Brief and drawings',
         description:
-          'We discuss the facade area, building height, structural frame type, and performance requirements — thermal, acoustic, solar, and fire — to establish the appropriate curtain wall system.',
+          'Send us the building drawings and tell us the look you are after.',
       },
       {
         step: 2,
-        title: 'Site Survey & Structural Review',
+        title: 'Survey and structure check',
         description:
-          'Our surveyor measures the facade, records the structural fixing points, and coordinates with the project structural engineer to confirm bracket positions and load capacities.',
+          'We check the openings and the structure the wall will be fixed to.',
       },
       {
         step: 3,
-        title: 'Detailed Design & Calculations',
+        title: 'Design and calculations',
         description:
-          'We prepare structural calculations for mullion sizing, thermal calculations for Part L compliance, and detailed fabrication drawings showing every mullion, transom, and infill panel.',
+          'Frame sizes, fixings and glass are chosen to suit the loads, and drawings are issued for approval.',
       },
       {
         step: 4,
-        title: 'Fabrication & Installation',
+        title: 'Fabrication and install',
         description:
-          'Aluminium sections are fabricated, powder-coated, and delivered to site. Our installation team erects the framework, glazes the infills, installs fire stopping, and commissions any opening vents.',
+          'Frames are made, then installed, glazed and sealed on site.',
       },
       {
         step: 5,
-        title: 'Testing & Handover',
+        title: 'Test and hand over',
         description:
-          'On completion, we carry out a hose test to verify watertightness and provide all documentation including structural calculations, fire-stopping certificates, and maintenance guidance.',
+          'Seals are checked, sections water-tested where specified, and records handed over.',
       },
     ],
     pricingGuide: {
-      heading: 'What Does Curtain Walling Cost?',
+      heading: 'Curtain walling prices',
       content:
-        'Curtain wall pricing is typically quoted per square metre of facade area and depends on the system type, glazing specification, opening vent requirements, and complexity of the facade geometry.',
+        'Curtain walling is priced by area, with extras for glass upgrades and fire-stopping. Typical ranges are below.',
       ranges: [
-        { item: 'Stick-built system (per m²)', price: '£350 – £650' },
-        { item: 'Unitised system (per m²)', price: '£500 – £900' },
-        { item: 'Structural glazing upgrade', price: '£80 – £150 per m²' },
-        { item: 'Fire stopping (per linear metre)', price: '£50 – £120' },
+        { item: 'Built on site (stick), per square metre', price: '£350 – £650' },
+        { item: 'Factory-made panels, per square metre', price: '£500 – £900' },
+        { item: 'Bonded-glass look, extra per square metre', price: '£80 – £150' },
+        { item: 'Fire-stopping, per metre run', price: '£50 – £120' },
       ],
-      note: 'All prices exclude VAT. Final cost confirmed after site survey and structural design.',
+      note: 'Prices are before VAT. Final cost depends on the survey and the structural design.',
     },
     peopleAlsoAsk: [
       {
-        question: 'What is curtain walling used for?',
+        question: 'Where is curtain walling used?',
         answer:
-          'Curtain walling creates the external envelope of commercial buildings — offices, retail centres, hotels, schools, and hospitals. It provides weather protection, thermal insulation, natural daylight, and the visual appearance of the building while transferring wind loads to the primary structure.',
+          'Showrooms, office entrances, retail parks, schools, hospitals and the front elevations of many industrial buildings.',
       },
       {
-        question: 'Is curtain walling load-bearing?',
+        question: 'Does curtain walling hold up the building?',
         answer:
-          'No. Curtain walling is a non-load-bearing cladding system. It carries its own weight and resists wind loads, but does not support the floors or roof of the building. These loads are carried by the primary structural frame (steel, concrete, or timber), and the curtain wall is fixed to the frame at each floor level.',
+          'No. It carries its own weight and the wind load, but the building\'s frame carries everything else.',
       },
       {
-        question: 'How is curtain walling maintained?',
+        question: 'Can it be added to an older building?',
         answer:
-          'Regular maintenance includes external cleaning of the glass and aluminium frames, inspection and replacement of perimeter weather seals (typically every 15 to 20 years), checking drainage channels for blockage, and inspection of fire-stopping at compartment boundaries. We provide a maintenance schedule as part of the handover documentation.',
+          'Often, yes, if the structure can take the fixings. A structural check comes first.',
       },
       {
-        question: 'Can curtain walling be retrofitted to an existing building?',
+        question: 'Can curtain walling include an entrance door?',
         answer:
-          'Yes, provided the existing structural frame can support the curtain wall brackets and the additional wind loads. Retrofit curtain walling is commonly used to modernise the appearance and thermal performance of older commercial buildings. We coordinate with a structural engineer to verify the frame capacity before design.',
+          'Yes. Single, double and automatic doors fit into the same frame grid.',
       },
     ],
     relatedServices: ['aluminium-shopfronts', 'aluminium-windows', 'aluminium-doors', 'glass-replacement'],
@@ -2100,149 +1962,139 @@ Where a curtain wall passes across a fire compartment boundary — typically at 
     slug: 'glass-shopfronts',
     name: 'Glass Shopfronts',
     shortDescription:
-      'Frameless and structural glass shopfront systems for maximum transparency and visual impact. Toughened safety glass, patch fittings, and minimal frame details for a contemporary retail entrance.',
+      'Frameless and minimal-frame glass fronts for boutiques, salons, galleries and showrooms that want as little metal on view as possible.',
     heroImage: 'service-glass-shopfront.webp',
     primaryKeyword: 'glass shopfronts',
-    metaTitle: 'Glass Shopfronts UK | Frameless & Structural',
+    metaTitle: 'Frameless Glass Shopfronts',
     metaDescription:
-      'Toughened glass shopfronts — frameless and structural glass installations across the UK. BS EN 12150 safety glass, patch fittings, minimal framing.',
-    description: `Glass shopfronts — also known as frameless shopfronts or structural glass facades — use minimal or no visible aluminium framing to create the most transparent possible retail entrance. Where a traditional aluminium shopfront uses mullions and transoms to support the glazing, a glass shopfront relies on the structural capacity of the toughened glass itself, supported by patch fittings, point fixings, or slender stainless-steel hardware that is visually unobtrusive.
+      'Frameless glass shopfronts and doors for boutiques, salons and showrooms. Thick toughened glass, patch fittings, minimal frames. Call 07597 630000.',
+    description: `A frameless glass front shows off the inside of the shop with almost nothing in the way. There are no thick frames, only large panes of thick toughened glass held in slim channels top and bottom and joined with clear silicone. It is a popular choice for salons, jewellers, opticians, galleries and fashion shops.
 
-The result is a shopfront with maximum transparency: an uninterrupted view of the retail interior from the street, maximum natural light penetration, and a contemporary, high-end aesthetic that communicates quality and openness to prospective customers.
+**How it is built**
 
-Grewal Shopfront & Shutters designs and installs glass shopfront systems for retail units, showrooms, restaurants, galleries, and any commercial premises where visual transparency is a primary design objective.
+Each fixed pane sits in a channel at the floor and ceiling. Neighbouring panes are joined edge to edge with clear silicone, and where the glass is tall, glass fins can be set behind the joints to stiffen it. The door is usually a single pane of glass on patch fittings (metal clamps at the corners) with a floor spring that closes it.
 
-**Frameless Glass Construction**
+**Doors**
 
-In a frameless glass shopfront, each glass panel is a structural element. The glass is toughened to BS EN 12150-1 — typically 10 mm or 12 mm thick for shopfront applications — and is self-supporting within the limits of the panel size and wind load. Panels are joined at their edges by patch fittings (stainless-steel clamps fixed through holes drilled in the glass), by structural silicone bonding, or by channel fixings at head and sill that allow the glass to stand vertically without intermediate mullions.
+Frameless glass doors can be single or double, with pull handles in steel, brass or black. Floor springs can be set to hold the door open in warm weather. Locks are fitted into the bottom patch so they are almost invisible.
 
-The absence of aluminium mullions means that each glass panel must be sized to resist the full wind load on its area without deflecting beyond acceptable limits. Maximum panel sizes are determined by the glass thickness, aspect ratio, and the design wind pressure for the site. Typical maximum panel sizes for 12 mm toughened glass in a shopfront application are approximately 3.0 m in height by 2.0 m in width, although this varies with wind loading and support conditions.
+**Safety**
 
-**Glass Door Options**
+All the glass is toughened safety glass, usually 10 or 12 mm thick for fronts and doors. Large clear panes must carry markings at eye level so people do not walk into them. Logos or frosted bands do the job and can double as branding.
 
-Glass shopfront entrance doors can be frameless (using patch fittings and a floor spring or overhead pivot) or framed within a minimal stainless-steel or slim aluminium frame. Frameless glass doors use 10 mm or 12 mm toughened glass with top and bottom patch fittings, a floor-spring closer recessed into the threshold, and pull handles bolted through the glass.
+**Security**
 
-For premises requiring automatic operation, we integrate automatic sliding or swing door operators within the glass shopfront design. Sliding systems use a slim overhead track with minimal visible hardware; swing systems use a concealed floor-spring or overhead operator. See our automatic doors service for full details.
+Toughened glass is strong, but if security matters at night, pair the front with an internal shutter or choose laminated toughened glass, which stays in place when broken.
 
-**Structural Glazing and Point Fixings**
+**Heat**
 
-For larger glass facades or multi-storey applications, point-fixed structural glazing uses stainless-steel spider fittings or button fixings to connect the glass panels to a supporting structure — typically stainless-steel rods, cable trusses, or structural glass fins. This approach allows floor-to-ceiling glazing with no visible framing, creating the most transparent possible facade.
+Single-glazed frameless fronts lose more heat than framed double glazing. That suits shops where the door is often open, but if you heat the shop all year, ask us about double-glazed frameless options or a framed front with very slim sightlines.
 
-Point-fixed glazing requires specialist engineering: each fixing must be designed to transfer wind loads and dead loads through the glass without inducing unacceptable stress concentrations around the fixing holes. Our systems use countersunk stainless-steel fixings with nylon bushes that distribute the load across the glass thickness, and all fixing positions are verified by finite-element stress analysis.
+**Planning**
 
-**Safety and Compliance**
-
-All glass in shopfront applications must comply with BS 6262 for glazing in buildings and must use safety glass — toughened to BS EN 12150-1 or laminated to BS EN ISO 12543 — in all critical locations as defined by the standard. For frameless glass doors, the glass must also comply with BS EN 12600 for impact classification.
-
-Where the glass shopfront incorporates a DDA-compliant entrance, manifestation markings are applied to the glass at two height bands (850–1000 mm and 1400–1600 mm above floor level) to make the glazing visible to partially sighted people, as required by BS 8300 and Approved Document M.
-
-**Thermal Considerations**
-
-Single-pane frameless glass shopfronts do not achieve the U-values required by Building Regulations Part L for new-build or major refurbishment. Where Part L compliance is required, we can specify frameless double-glazed units using structural silicone edge bonding, or specify a hybrid system with minimal aluminium framing at head and sill to support a double-glazed sealed unit. The appropriate solution depends on the building control body's interpretation of Part L requirements for the specific project.
-
-For existing shopfront replacements that do not trigger Part L requirements, single-pane toughened glass frameless systems remain a popular and visually striking option.`,
+A frameless front changes the look of the building and usually needs planning permission. In conservation areas, councils may prefer a traditional design. We advise at survey.`,
     benefits: [
       {
-        title: 'Maximum Visual Transparency',
+        title: 'Nothing blocking the view',
         description:
-          'Frameless glass shopfronts eliminate the visual barrier of aluminium mullions and transoms, creating an uninterrupted view between the street and the retail interior. This is particularly effective for premium retail, galleries, showrooms, and restaurants where visual connection with passers-by drives footfall.',
+          'Large panes and hidden fixings put your shop on full show.',
       },
       {
-        title: 'Contemporary, High-End Aesthetic',
+        title: 'A premium look',
         description:
-          'A frameless glass facade communicates quality, modernity, and openness. For businesses positioning themselves at the premium end of their market, a glass shopfront reinforces brand values more effectively than a conventional framed system.',
+          'Clean, simple glass suits boutiques, salons and high-end retail.',
       },
       {
-        title: 'Toughened Safety Glass Throughout',
+        title: 'Thick safety glass',
         description:
-          'All glass panels are toughened to BS EN 12150-1, providing four to five times the strength of standard float glass and a safe fragmentation pattern in the event of breakage. This meets all safety glazing requirements for commercial shopfront applications.',
+          'Every pane is toughened and sized for its height and position.',
       },
       {
-        title: 'Flexible Door Integration',
+        title: 'Glass doors to match',
         description:
-          'Glass shopfronts can incorporate frameless glass doors, framed glass doors, automatic sliding doors, or bi-fold panels, allowing the entrance design to be tailored precisely to the operational requirements and aesthetic goals of the business.',
+          'Patch-fitted doors with floor springs keep the look consistent across the front.',
       },
     ],
     faqs: [
       {
-        question: 'How secure is a glass shopfront?',
+        question: 'Are frameless glass fronts secure?',
         answer:
-          'Toughened glass is significantly stronger than standard glass and resists casual impact. For enhanced security, we specify laminated toughened glass — a multi-layer construction that holds together when broken, resisting smash-and-grab attacks. Glass shopfronts can also be combined with roller shutters for overnight security.',
+          'Thick toughened glass is very strong, but for night-time security we recommend an internal shutter or laminated toughened glass.',
       },
       {
-        question: 'Can a glass shopfront be energy efficient?',
+        question: 'Can a glass shopfront keep the heat in?',
         answer:
-          'Single-pane frameless systems have limited thermal performance. Where energy efficiency is a priority or Building Regulations Part L compliance is required, we specify frameless double-glazed units or hybrid systems with minimal framing. These achieve U-values comparable to conventional aluminium shopfronts while maintaining the frameless visual aesthetic.',
+          'Single glazing loses more heat than double. Double-glazed options exist, or we can suggest a slim framed front if heating costs matter most.',
       },
       {
-        question: 'How are frameless glass panels cleaned?',
+        question: 'How do I clean frameless glass?',
         answer:
-          'Frameless glass shopfronts are cleaned using the same methods as any commercial glazing — professional window cleaning with water-fed poles or squeegees. The absence of aluminium frames actually makes cleaning easier, as there are fewer ledges and channels where dirt accumulates.',
+          'Like any window: squeegee and mild detergent. Avoid abrasive pads on the silicone joints.',
       },
       {
-        question: 'What happens if a glass panel is broken?',
+        question: 'What if a pane breaks?',
         answer:
-          'We provide emergency boarding and glass replacement as part of our shopfront repair service. Toughened glass shatters into small granules on impact, which are relatively safe but leave the opening exposed. We can typically source and install a replacement toughened glass panel within 48 hours of measurement.',
+          'We make the opening safe, then measure and order a new toughened pane to the exact size.',
       },
     ],
     howItWorks: [
       {
         step: 1,
-        title: 'Design Consultation',
+        title: 'Design chat',
         description:
-          'We discuss your visual objectives, entrance requirements, and any planning constraints. Our design team advises on the most appropriate glass system — fully frameless, patch-fitted, or hybrid — for your premises.',
+          'Tell us the look you want, how the door should open and any branding for the glass.',
       },
       {
         step: 2,
-        title: 'Site Survey & Engineering',
+        title: 'Survey',
         description:
-          'Our surveyor measures the opening and assesses the structural head and sill conditions. For larger installations, we prepare wind-load calculations and glass stress analysis to determine the correct glass thickness and fixing positions.',
+          'We measure precisely and check the floor and ceiling can take the channels and door spring.',
       },
       {
         step: 3,
-        title: 'Specification & Quote',
+        title: 'Drawing and price',
         description:
-          'We specify the glass type and thickness, fixing hardware, door configuration, and any manifestation requirements. A fixed-price quotation with technical drawings is provided.',
+          'You get a drawing and fixed price for the glass, fittings and door.',
       },
       {
         step: 4,
-        title: 'Installation',
+        title: 'Install',
         description:
-          'Our glazing team installs the channel fixings, patch fittings, and glass panels. Doors are hung and adjusted, and all hardware is demonstrated. Typical installation for a single-unit shopfront is one to two days.',
+          'Channels are fixed, panes lifted in, joints sealed and the door hung and adjusted.',
       },
     ],
     pricingGuide: {
-      heading: 'What Does a Glass Shopfront Cost?',
+      heading: 'Glass shopfront prices',
       content:
-        'Glass shopfront pricing depends on the glass thickness, panel sizes, fixing type, and door configuration. Frameless systems are typically 10 to 30 per cent more expensive than equivalent aluminium-framed shopfronts due to the thicker glass and specialist hardware required.',
+        'Glass size and door type are the main cost drivers. Typical figures are below.',
       ranges: [
-        { item: 'Frameless glass shopfront (single unit)', price: '£3,500 – £7,000' },
-        { item: 'Frameless glass door (patch fittings)', price: '£1,500 – £3,000' },
-        { item: 'Point-fixed structural glazing (per m²)', price: '£400 – £800' },
-        { item: 'Manifestation markings', price: '£150 – £400' },
+        { item: 'Frameless front, one unit', price: '£3,500 – £7,000' },
+        { item: 'Glass door on patch fittings', price: '£1,500 – £3,000' },
+        { item: 'Point-fixed glass, per m²', price: '£400 – £800' },
+        { item: 'Safety markings or frosted bands', price: '£150 – £400' },
       ],
-      note: 'All prices exclude VAT. Final cost confirmed after site survey.',
+      note: 'Prices are before VAT. We confirm the exact figure in writing after the survey.',
     },
     peopleAlsoAsk: [
       {
-        question: 'What is the difference between a glass shopfront and an aluminium shopfront?',
+        question: 'Glass or aluminium shopfront: which should I choose?',
         answer:
-          'An aluminium shopfront uses aluminium mullions and transoms to support the glazing — the glass sits within the metal framework. A glass shopfront eliminates or minimises these metal frames, using the structural capacity of the toughened glass itself with patch fittings or point fixings. Glass shopfronts offer greater transparency but are typically more expensive and have more limited thermal performance.',
+          'Glass gives the cleanest look; aluminium gives better insulation, more locking options and lower cost on big openings.',
       },
       {
-        question: 'Are glass shopfronts suitable for all types of retail?',
+        question: 'Does every shop suit a frameless front?',
         answer:
-          'Glass shopfronts work best for businesses where visual transparency is a priority — premium retail, galleries, showrooms, restaurants, and professional services. For businesses requiring greater privacy, security, or thermal performance, a conventional aluminium shopfront may be more appropriate.',
+          'Not always. Very exposed sites, shops with heavy stock to protect or tight budgets may be better with a framed front.',
       },
       {
-        question: 'Do glass shopfronts need planning permission?',
+        question: 'How thick is frameless shopfront glass?',
         answer:
-          'Replacing an existing shopfront with a glass system is usually permitted development for commercial premises. In conservation areas or for listed buildings, the change in appearance may require planning approval. We advise on the planning position at the survey stage.',
+          'Usually 10 to 12 mm toughened glass, sometimes thicker for tall panes.',
       },
       {
-        question: 'How thick is the glass in a frameless shopfront?',
+        question: 'Can logos be added to the glass?',
         answer:
-          'Frameless shopfront glass is typically 10 mm or 12 mm thick toughened safety glass. The specific thickness is determined by the panel dimensions and the design wind load. Larger panels and more exposed locations require thicker glass to maintain acceptable deflection limits.',
+          'Yes. Frosted or printed vinyl can carry your branding and also act as the safety marking large panes need.',
       },
     ],
     relatedServices: ['aluminium-shopfronts', 'glass-replacement', 'automatic-doors', 'shopfront-repairs'],

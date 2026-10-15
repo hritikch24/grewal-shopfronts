@@ -1,137 +1,91 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import Breadcrumbs from '@/components/Breadcrumbs';
-import SchemaMarkup from '@/components/SchemaMarkup';
+import Article, { type ArticleProps } from '@/components/Article';
 
-const slug = 'best-shopfront-company-uk-how-to-choose';
-const pageTitle = 'How to Choose the Best Shopfront Company in the UK';
-const pageDesc = 'A practical checklist for finding a reliable, professional shopfront installation company in the UK. What to look for, red flags to avoid, and questions to ask before signing.';
-
-export const metadata: Metadata = {
-  title: pageTitle,
-  description: pageDesc,
-  alternates: { canonical: `https://www.grewalshopfrontandshutters.co.uk/blog/${slug}` },
-  openGraph: { title: pageTitle, description: pageDesc, url: `https://www.grewalshopfrontandshutters.co.uk/blog/${slug}`, type: 'article' },
+const post: ArticleProps = {
+  slug: 'best-shopfront-company-uk-how-to-choose',
+  title: 'How to Choose a Shopfront Company: 10 Questions to Ask',
+  description:
+    'Ten questions that sort reliable shopfront and shutter firms from the rest, plus the warning signs to watch for before you pay a deposit.',
+  seoTitle: 'Choosing a Shopfront Company',
+  crumb: 'Choosing a company',
+  published: '2025-04-25',
+  modified: '2026-10-15',
+  intro: [
+    'A shopfront is a big spend for a small business, and most owners only buy one or two in a lifetime. That makes it hard to tell a careful firm from a careless one until the job is half done.',
+    'These are the questions we would ask if we were in your shoes. A good firm will answer all of them without fuss.',
+  ],
+  sections: [
+    {
+      heading: 'Ten questions worth asking',
+      list: [
+        'Will you measure the opening yourselves before giving a final price?',
+        'Is the quote in writing, and does it say what is not included?',
+        'Who will actually fit it: your own team or subcontractors?',
+        'What glass are you fitting, and is it safety glass where it needs to be?',
+        'Does the frame have a thermal break, and does that matter for my shop?',
+        'Do I need planning permission or advertisement consent, and will you supply drawings?',
+        'How long will the shop be out of action on fitting day?',
+        'What happens to the old front?',
+        'What guarantee do I get, and who stands behind it: you or the manufacturer?',
+        'Can I see a front you have fitted, or speak to a recent customer?',
+      ],
+    },
+    {
+      heading: 'Warning signs',
+      list: [
+        'A firm price over the phone for a full front, without seeing it.',
+        'Pressure to sign today for a "special price".',
+        'A large deposit requested before anything is measured.',
+        'No mention of planning when your building is listed or on a protected street.',
+        'Vague answers about glass type or who does the fitting.',
+        'Reviews that all sound the same, or that appear word for word on other firms\' websites.',
+      ],
+    },
+    {
+      heading: 'Comparing quotes fairly',
+      paragraphs: [
+        'Line quotes up item by item: frame type and colour, glass type, door and lock, closer, shutter if any, removal of the old front, and VAT. A cheaper quote often leaves out laminated glass, a thermal break or the closer, and those are exactly the parts you notice later.',
+        'Ask each firm the same questions and write down the answers. It soon becomes clear who has actually thought about your building.',
+      ],
+    },
+    {
+      heading: 'Checking reviews',
+      paragraphs: [
+        'Reviews on a firm\'s own website are chosen by the firm. Reviews on Google Maps or similar sites are harder to fake and easier to compare. Look for detail about the job, the town and how problems were handled, not just five stars.',
+      ],
+    },
+  ],
+  faqs: [
+    {
+      question: 'Should I always pick the cheapest quote?',
+      answer:
+        'Only if it includes the same things as the others. Check glass, frame, locks and removal before comparing totals.',
+    },
+    {
+      question: 'Is a deposit normal for a shopfront?',
+      answer:
+        'Yes, a deposit when materials are ordered is common, because fronts are made to measure. Be wary of large deposits before a survey.',
+    },
+    {
+      question: 'How many quotes should I get?',
+      answer:
+        'Two or three is usually enough to see what a fair price looks like for your building.',
+    },
+  ],
+  related: [
+    { href: '/why-choose-us', label: 'How we work' },
+    { href: '/reviews', label: 'Check our work' },
+    { href: '/cost-guide', label: 'Typical prices' },
+  ],
 };
 
-const faqs = [
-  {
-    question: 'What should I look for in a shopfront installer?',
-    answer:
-      'Look for Companies House registration, public liability insurance (minimum £1 million), written quotations with clear terms, CSCS-carded installers, examples of completed work, and written warranties. A reputable company will be happy to provide all of these before you commit.',
-  },
-  {
-    question: 'How do I check if a shopfront company is legitimate?',
-    answer:
-      'Search for the company on the Companies House website (beta.companieshouse.gov.uk). This confirms registration status, incorporation date, registered office, and director details. Ask for copies of their public liability and employers\' liability insurance certificates and check the validity dates. Finally, ask for references from recent clients.',
-  },
-  {
-    question: 'Should I get multiple quotes for a shopfront?',
-    answer:
-      'Yes — three quotes is a reasonable number. Ensure each quotation covers the same specification so you are comparing like with like. The cheapest quote is not always the best value; consider the quality of materials specified, the warranty offered, the company\'s track record, and whether the price includes removal and disposal of the existing shopfront.',
-  },
-  {
-    question: 'What are the red flags when choosing a shopfront company?',
-    answer:
-      'Be cautious of companies that: quote without visiting the site; demand a large upfront deposit (10–20% is normal, 50% or more is a red flag); cannot provide insurance certificates; are not registered at Companies House; have no physical address; pressure you into signing immediately; or have no examples of previous work to show.',
-  },
-];
+export const metadata: Metadata = {
+  title: post.seoTitle ?? post.title,
+  description: post.description,
+  alternates: { canonical: `https://www.grewalshopfrontandshutters.co.uk/blog/${post.slug}` },
+  openGraph: { title: post.title, description: post.description, url: `https://www.grewalshopfrontandshutters.co.uk/blog/${post.slug}`, type: 'article' },
+};
 
-export default function BestShopfrontCompanyPage() {
-  return (
-    <>
-      <SchemaMarkup
-        type="FAQPage"
-        data={{
-          mainEntity: faqs.map((faq) => ({
-            '@type': 'Question',
-            name: faq.question,
-            acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-          })),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org', '@type': 'BlogPosting', headline: pageTitle, description: pageDesc,
-            url: `https://www.grewalshopfrontandshutters.co.uk/blog/${slug}`, datePublished: '2025-04-25', dateModified: '2026-06-13',
-            author: { '@type': 'Organization', name: 'Grewal Shopfront & Shutters', url: 'https://www.grewalshopfrontandshutters.co.uk' },
-            publisher: { '@type': 'Organization', name: 'Grewal Shopfront & Shutters', url: 'https://www.grewalshopfrontandshutters.co.uk', logo: { '@type': 'ImageObject', url: 'https://www.grewalshopfrontandshutters.co.uk/assets/grewal-logo.png' } },
-            mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.grewalshopfrontandshutters.co.uk/blog/${slug}` },
-          }),
-        }}
-      />
-
-      <article className="section-padding bg-obsidian-light">
-        <div className="container-max max-w-3xl">
-          <Breadcrumbs
-            items={[
-              { label: 'Home', href: '/' },
-              { label: 'Blog', href: '/blog' },
-              { label: 'How to Choose the Best Shopfront Company' },
-            ]}
-          />
-
-          <h1 className="font-heading text-3xl md:text-4xl font-bold text-white mt-4 mb-6">
-            How to Choose the Best Shopfront Company in the UK
-          </h1>
-
-          <p className="text-charcoal leading-relaxed mb-6">
-            Choosing a shopfront installer is a significant decision. Your shopfront is the face of your business — it is the first thing customers see, and it needs to look right, perform well, and last for years. Unfortunately, the shopfront industry has its share of unreliable operators who overcharge, underdeliver, or disappear after taking a deposit. This guide helps you identify a professional, trustworthy installer and avoid the common pitfalls.
-          </p>
-
-          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">The Essential Checklist</h2>
-          <p className="text-charcoal leading-relaxed mb-4">Before appointing any shopfront company, confirm the following:</p>
-          <ul className="list-disc pl-6 text-charcoal leading-relaxed mb-6 space-y-3">
-            <li><strong>Companies House registration:</strong> Every legitimate UK company is registered at Companies House. Search for the company name at beta.companieshouse.gov.uk and check that the company is active, not dissolved or in liquidation. Note the incorporation date — while newer companies can be excellent, this gives you context.</li>
-            <li><strong>Public liability insurance:</strong> A minimum of £1 million cover is standard for shopfront installation work. Ask for a copy of the certificate and check the validity dates. Do the same for employers&apos; liability insurance if they have employees.</li>
-            <li><strong>Written quotation:</strong> A professional quotation should itemise materials, labour, removal and disposal of the existing shopfront, and any structural or regulatory costs. It should state the payment terms, the warranty, and an estimated timeline. Verbal quotes are worthless.</li>
-            <li><strong>CSCS cards:</strong> The Construction Skills Certification Scheme demonstrates that installers have passed a health and safety assessment. This is increasingly required for commercial sites and is a minimum indicator of professional competence.</li>
-            <li><strong>Examples of previous work:</strong> Ask for photographs and, ideally, the addresses of recent installations so you can see the quality for yourself. Better still, ask for client references and actually call them.</li>
-            <li><strong>Written warranty:</strong> Any reputable installer will provide a written warranty covering both the materials and the installation workmanship. Be wary of companies that offer only verbal assurances.</li>
-          </ul>
-
-          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">Red Flags to Watch For</h2>
-          <ul className="list-disc pl-6 text-charcoal leading-relaxed mb-6 space-y-3">
-            <li><strong>Quoting from photographs:</strong> A company that quotes without visiting the site cannot give you an accurate price. They are either planning to add extras later or they do not understand what the job involves.</li>
-            <li><strong>Large upfront deposits:</strong> A 10–20% deposit on order confirmation is normal. Anything above 30% before work begins is a risk. Never pay the full amount before installation is complete.</li>
-            <li><strong>No physical address:</strong> A company with only a mobile phone number and no registered office address is harder to hold accountable if something goes wrong.</li>
-            <li><strong>Pressure tactics:</strong> &ldquo;This price is only valid today&rdquo; or &ldquo;We have a cancellation and can start tomorrow&rdquo; are classic high-pressure sales tactics. A legitimate installer will give you time to consider the quotation.</li>
-            <li><strong>No insurance documentation:</strong> If a company cannot or will not provide copies of their insurance certificates, do not proceed.</li>
-          </ul>
-
-          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">Questions to Ask Before Signing</h2>
-          <ol className="list-decimal pl-6 text-charcoal leading-relaxed mb-6 space-y-2">
-            <li>Are you registered at Companies House? What is your company number?</li>
-            <li>Can you provide copies of your public liability and employers&apos; liability insurance?</li>
-            <li>Do your installers hold CSCS cards?</li>
-            <li>What is your warranty, and is it in writing?</li>
-            <li>Will you handle planning permission and building control if required?</li>
-            <li>What is included in the price — removal, disposal, making good?</li>
-            <li>What are the payment terms and when is the final balance due?</li>
-            <li>Can you provide references from recent clients?</li>
-          </ol>
-
-          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">Why Businesses Choose Grewal Shopfront & Shutters</h2>
-          <p className="text-charcoal leading-relaxed mb-6">
-            At <Link href="/why-choose-us" className="text-gold font-medium hover:underline">Grewal Shopfront & Shutters</Link>, we meet every criterion on this checklist. We are Companies House registered, fully insured, and our installation teams hold CSCS cards. Every project comes with a written workmanship guarantee, and our quotations are detailed, transparent, and valid for 30 days. Our staff collectively bring over 10 years of hands-on experience in the commercial shopfront industry, and we are happy to share references, insurance certificates, and photographs of completed projects before you commit. We provide{' '}
-            <Link href="/contact" className="text-gold font-medium hover:underline">free site surveys</Link> with no obligation — call us on 07597 630000 to arrange yours.
-          </p>
-
-          <section className="border-t border-grey-200 pt-10">
-            <h2 className="font-heading text-2xl font-semibold text-white mb-6">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              {faqs.map((faq, i) => (
-                <div key={i}>
-                  <h3 className="font-heading text-lg font-medium text-white mb-2">{faq.question}</h3>
-                  <p className="text-charcoal leading-relaxed">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-        </div>
-      </article>
-    </>
-  );
+export default function Page() {
+  return <Article {...post} />;
 }

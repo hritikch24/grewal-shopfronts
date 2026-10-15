@@ -5,174 +5,159 @@ import FAQSection from '@/components/FAQSection';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions',
+  title: 'Questions We Get Asked',
   description:
-    'Answers to the most common questions about shopfront installation, costs, materials, planning permission, warranties, and more from Grewal Shopfront & Shutters.',
+    'Straight answers on shopfront prices, planning, shutters, glass, fire doors, emergencies and how far we travel, from a Coventry firm trading since 2004.',
   alternates: {
     canonical: 'https://www.grewalshopfrontandshutters.co.uk/faq',
   },
   openGraph: {
-    title: 'Shopfront Installation FAQ — Grewal Shopfront & Shutters',
-    description: 'Answers to common questions about shopfront costs, materials, planning permission, warranties, and emergency callout.',
+    title: 'Questions We Get Asked | Grewal Shopfront & Shutters',
+    description: 'Shopfront prices, planning, shutters, glass, fire doors and emergencies, answered plainly.',
     url: 'https://www.grewalshopfrontandshutters.co.uk/faq',
   },
 };
 
 const faqs = [
   {
-    question: 'What areas of the UK do you cover?',
+    question: 'Where are you based, and how far do you travel?',
     answer:
-      'We are based in the West Midlands but operate nationwide across England, Wales, and Scotland. We regularly work in Birmingham, Coventry, Leicester, Nottingham, Manchester, Leeds, London, and many areas in between. If you are unsure whether we cover your location, please get in touch and we will let you know.',
+      'Our base is in Exhall, on the north side of Coventry near junction 3 of the M6. Around Coventry and Birmingham we offer everything, including the emergency line. Across our repair area, roughly 100 miles from Birmingham, we fit and book repair visits. Further away, we take on planned installation projects in England by arrangement.',
   },
   {
-    question: 'How much does a new shopfront cost?',
+    question: 'How long have you been trading?',
     answer:
-      'The cost of a shopfront depends on several factors including the width and height of the opening, the glazing specification (toughened, laminated, or solar-control glass), the aluminium profile and finish chosen, and whether the installation requires structural alterations. As a very rough guide, a standard single-bay shopfront typically starts from around £2,000–£5,000 supply and install, but larger or more complex projects will be higher. We always provide a detailed written quotation before any work begins so there are no surprises.',
+      'We have been fitting commercial shopfronts, shutters and doors since 2004.',
   },
   {
-    question: 'How long does a shopfront installation take?',
+    question: 'Roughly what does a new shopfront cost?',
     answer:
-      'A straightforward shopfront replacement is typically completed in one to two days, depending on the size of the opening and the complexity of the glazing. Larger projects or those requiring structural work may take longer. We will give you a realistic programme during the quotation stage and work wherever possible to minimise disruption to your trading hours.',
+      'A single aluminium shop unit usually falls between £2,500 and £5,000 before VAT. Two units side by side are typically £4,500 to £8,500. Width, door type, glass and colour make the difference. We give you a written price after a free survey, before anything is ordered.',
   },
   {
-    question: 'Do you offer free site surveys?',
+    question: 'Will my shop have to close while you fit the new front?',
     answer:
-      'Yes — all site surveys are completely free of charge and carry no obligation. One of our experienced surveyors will visit your premises, take precise measurements, assess any structural considerations, and discuss your requirements. You will receive a detailed written quotation, usually within 48 hours of the survey.',
+      'Usually not, or only for a day. We make the front off site and fit it in one or two days, leaving the shop locked and secure each evening.',
   },
   {
-    question: 'What materials do you use?',
+    question: 'Is the survey really free?',
     answer:
-      'We use high-quality extruded aluminium profiles from approved European manufacturers, typically powder-coated in a range of RAL colours to suit your branding or planning requirements. Glass units are sourced from UK-certified glazing suppliers and comply with BS 6206 and BS EN 12600 safety glazing standards. We can also incorporate stainless steel or timber elements on request.',
+      'Yes. We measure the opening, check the structure and talk through the options at no cost and with no obligation. You then get a written price.',
   },
   {
-    question: 'Are you registered and insured?',
+    question: 'Do I need planning permission to change my shopfront?',
     answer:
-      'Yes. Grewal Shopfront & Shutters Ltd is registered at Companies House under company number . We carry comprehensive public liability insurance and employers\' liability insurance. Copies of our certificates are available on request. All our installation operatives hold relevant trade cards and have completed appropriate health and safety training.',
+      'Often, yes. Most councils treat a change to how a shopfront looks as needing planning permission, and new signs usually need advertisement consent. Listed buildings need listed building consent as well. True like-for-like repairs often do not need permission. We check your address during the survey and can supply drawings for the application.',
   },
   {
-    question: 'Do you handle building regulations compliance?',
+    question: 'Can I have a roller shutter on the outside of my shop?',
     answer:
-      'Yes. All our installations are designed and carried out to comply with the relevant sections of the Building Regulations for England and Wales, including Part L (Conservation of Fuel and Power), Part M (Access), and Part B (Fire Safety) where applicable. We can liaise with your local authority building control on your behalf if required.',
+      'It depends on the council and the street. Many councils resist solid external shutters on high streets and in conservation areas, and prefer perforated, open-mesh or internal shutters. We check what your council is likely to accept before you order.',
   },
   {
-    question: 'Do I need planning permission for a new shopfront?',
+    question: 'Which is better for a shop: aluminium, PVC-U or timber?',
     answer:
-      'In many cases, replacing a shopfront on a like-for-like basis is considered permitted development and does not require planning permission. However, if the property is listed, sits within a conservation area, or if you wish to significantly alter the appearance of the frontage, you may need to apply for consent. We can advise you during the survey stage and, if necessary, point you in the right direction for your local planning authority.',
+      'For most commercial fronts, aluminium. It is strong enough for slim frames and big glass, copes with a heavy door being used all day, and does not rot or need painting. Timber is often required on listed buildings. PVC-U is cheaper but less suited to busy commercial entrances.',
   },
   {
-    question: 'Do you offer emergency callout?',
+    question: 'What glass should a shopfront have?',
     answer:
-      'Yes — we offer a 24/7 emergency callout service for situations such as break-ins, storm damage, or failed shutters that leave your premises unsecured. We aim to have an operative on site within a few hours in most parts of our coverage area. Call us on 07597 630000 at any time and we will do our utmost to assist you as quickly as possible.',
+      'Glass in doors and near the floor must be safety glass by law. We fit toughened glass as a minimum, and recommend laminated glass on the street side for shops with valuable stock, because it holds together when hit.',
   },
   {
-    question: 'What warranty do you provide on your installations?',
+    question: 'Will a new front lower my heating bills?',
     answer:
-      'All our shopfront installations come with a written warranty covering both the aluminium fabrication and the installation workmanship. The exact terms depend on the product type, but typically we offer a minimum of 12 months on installation labour and up to 10 years on certain glazing sealed units. Full warranty details are included in your quotation documentation.',
+      'It can. Frames with a thermal break and double-glazed units lose far less heat than old single-glazed fronts, and stop condensation running down the frame.',
   },
   {
-    question: 'Can you repair an existing shopfront rather than replace it?',
+    question: 'How much is a roller shutter?',
     answer:
-      'Absolutely. We carry out repairs to aluminium frames, glazing, door mechanisms, locks, closers, and seals. If your existing shopfront is structurally sound but suffering from worn or damaged components, a repair is often far more cost-effective than a full replacement. Send us photos of the damage and we can advise remotely before arranging a visit.',
+      'A hand-operated shop shutter up to 3 m wide is typically £800 to £1,500 before VAT, and a motorised one £1,500 to £3,000. Fire-rated and industrial shutters cost more. We confirm the exact figure after a survey.',
   },
   {
-    question: 'What types of roller shutters do you offer?',
+    question: 'My shutter is stuck. Can you fix one you did not install?',
     answer:
-      'We install a full range of roller shutters including solid steel (galvanised or powder-coated), perforated steel (for ventilation and partial visibility), polycarbonate (for maximum light transmission), and aluminium lath. Shutters can be operated manually (spring-balanced or hand-crank), electrically (via push-button, key switch, or remote control), or with battery backup systems. We can also retrofit electric operators to existing manual shutters.',
+      'Yes. We repair all the common makes, manual and electric. Broken springs, failed motors, bent laths and jammed guides are the usual faults, and most are fixed in one visit.',
   },
   {
-    question: 'Grewal Shopfront & Shutters is a newer company — why should I trust you?',
+    question: 'What should I do if my shutter is stuck open at closing time?',
     answer:
-      'Grewal Shopfront & Shutters Limited is a newer company, but our team is not. Our installation crews, surveyors, and project managers bring over 10 years of combined experience in the commercial shopfront and security door industry. Before Grewal, our people were fitting shopfronts, roller shutters, and security systems for businesses across the UK. We are Companies House registered, fully insured, and every project comes with a written workmanship guarantee. We are happy to share references and photos of completed work before you commit.',
+      'Do not force it, as that can bend more laths. If you are near Coventry or Birmingham, ring our emergency line and we will make it secure. Further away, a local engineer will be quicker.',
   },
   {
-    question: 'How much does a roller shutter cost in the UK?',
+    question: 'Do you offer a 24-hour emergency service?',
     answer:
-      'A manual roller shutter for a standard single-bay shopfront typically costs between £800 and £1,500 installed. Electric roller shutters range from £1,200 to £2,500 depending on the opening width and motor specification. Fire-rated shutters start from around £2,000 and LPS 1175 security-rated shutters from £2,500 to £5,000. We provide a fixed written quote after a free site survey so you know exactly what to budget.',
+      'Yes, around Coventry and Birmingham and within our repair area. The line is answered day and night. We tell you an honest arrival time and the call-out charge before we set off.',
   },
   {
-    question: 'What is the best shopfront material — aluminium, timber, or UPVC?',
+    question: 'My shop window was smashed overnight. What happens first?',
     answer:
-      'For commercial premises, aluminium is the industry standard and the material we recommend. It offers the best combination of strength, durability, weather resistance, and design flexibility. Unlike timber, aluminium does not rot, warp, or require regular repainting. Unlike UPVC, aluminium supports slimline sightlines and large glass areas without structural compromise. A well-installed aluminium shopfront typically lasts 25 to 30 years with minimal maintenance. We use thermally broken aluminium profiles that comply with Building Regulations Part L for energy performance.',
+      'Make sure nobody is hurt, report it to the police for a crime number, take photos, then call us. We board or temporarily glaze the opening, clear the glass and give you photos and a report for your insurer, then order the new glass.',
   },
   {
-    question: 'Do you install shopfronts in London?',
+    question: 'How quickly can broken shop glass be replaced?',
     answer:
-      'Yes. We cover all 32 London boroughs and the City of London. We have extensive experience working in conservation areas including Shoreditch, Islington, and Camden, and we manage planning applications, out-of-hours installation, and the logistical challenges of central London sites including crane permits, footway licences, and congestion zone coordination. Our London projects range from single independent retailers to multi-unit commercial developments.',
+      'Toughened glass has to be made to size, so standard panes usually take a few working days after we measure. We secure the gap the same day so you are not left open.',
   },
   {
-    question: 'How do I find the best shopfront company near me?',
+    question: 'Will my insurance pay for emergency boarding and new glass?',
     answer:
-      'Look for a company that is Companies House registered, carries public liability insurance, provides written quotations with clear terms, and can show examples of completed work. Ask whether their installers hold CSCS cards and whether they provide written warranties. Be cautious of companies that quote without visiting the site, demand large deposits, or cannot provide insurance certificates. Grewal Shopfront & Shutters ticks all of these boxes — we are happy to share references, insurance documents, and photos of completed projects before you commit.',
+      'Most commercial policies cover making premises safe and replacing glass, but check your terms. We provide photos, sizes and an itemised invoice, which is what insurers usually ask for.',
   },
   {
-    question: 'What is the difference between a shopfront and a curtain wall?',
+    question: 'What security rating should my back door have?',
     answer:
-      'A shopfront is a ground-floor entrance and display system fitted within a structural opening, typically consisting of aluminium frames, glazed panels, and one or more entrance doors. A curtain wall is a non-structural external cladding system that spans multiple storeys and is hung from the building structure rather than sitting within a masonry opening. For most retail, hospitality, and commercial premises at ground level, a shopfront system is the appropriate specification. We specialise in shopfront systems but can advise on when a curtain wall approach may be more suitable.',
+      'Start with your insurance policy or lease, because they often name one. Without a stated rating, a steel door with multi-point locking and hinge bolts suits most shops. High-value stock may justify a tested, rated door.',
   },
   {
-    question: 'Can you install a shopfront for a restaurant or café?',
+    question: 'Can a security door still be a fire exit?',
     answer:
-      'Absolutely. Restaurants and cafés are one of our most common client types. We install aluminium shopfronts with bi-fold door sections that open the entire frontage in summer, automatic sliding doors for busy entrances, and thermally efficient glazed systems that keep heating costs down in winter. We also handle the specific requirements of food premises including ventilation provisions, grease-trap access panels, and extraction system integration where the shopfront design needs to accommodate ducting.',
+      'Yes. Panic bars or push pads let people out with one push, while the outside stays locked.',
   },
   {
-    question: 'What happens if my shopfront is damaged in a break-in?',
+    question: 'My fire risk assessment says our fire doors fail. Can you help?',
     answer:
-      'Call our 24/7 emergency line on 07597 630000 immediately. We will dispatch an engineer to board up and secure the premises, typically within two to four hours. We photograph all damage before beginning temporary works, providing insurance-ready documentation. Once the premises is secure, we assess the permanent repair or replacement required and provide a quotation. Most commercial property insurance policies cover emergency boarding and permanent repair costs. We work directly with loss adjusters to facilitate claims.',
+      'Yes. We inspect each door, repair those worth saving and replace the rest with certified doorsets, then give you a record of every door for your assessor.',
   },
   {
-    question: 'Do you offer shopfront maintenance contracts?',
+    question: 'Do shops have to have automatic doors?',
     answer:
-      'Yes. We offer annual and bi-annual maintenance contracts covering shopfronts, roller shutters, automatic doors, and fire doors. A typical maintenance visit includes inspection of all frames, seals, and hardware; lubrication of moving parts; safety testing of automatic doors to BS EN 16005; and a written report. Regular maintenance extends the life of your installation, maintains insurance compliance, and catches small problems before they become expensive repairs.',
+      'There is no blanket rule, but businesses must make reasonable adjustments for disabled customers. For many entrances, an automatic or low-energy door is the simplest way to do that.',
   },
   {
-    question: 'How long does it take from enquiry to completed installation?',
+    question: 'Can you automate the entrance door I already have?',
     answer:
-      'For a standard shopfront replacement, the typical timeline is: survey within one week of enquiry, quotation within 48 hours of survey, fabrication two to three weeks from confirmed order, and installation one to two days. The total from first contact to completion is usually four to six weeks. Projects requiring planning permission, structural work, or bespoke specifications may take longer, and we provide a detailed programme at the quotation stage.',
+      'Often, yes, if the door and frame are sound. We fit an operator and sensors to the existing door. If it is too worn or heavy, we will say so.',
   },
   {
-    question: 'Can you match my existing shopfront colour or profile?',
+    question: 'Are bi-fold doors a good idea for a café?',
     answer:
-      'In most cases, yes. We can powder-coat aluminium to any RAL, NCS, or BS 4800 colour reference. If you have an existing colour that you need to match, we can work from a physical sample or a Pantone reference. For profiles, we work with multiple European fabricators and can usually identify or closely approximate the existing profile system. Where an exact match is not available for an obsolete profile, we will advise on the closest equivalent and show you a sample before proceeding.',
+      'For cafés, bars and restaurants they work well: the whole front opens on warm days, and a built-in door works normally the rest of the time. The beam above must carry the panels, which we check at survey.',
   },
   {
-    question: 'Are your shopfronts energy efficient?',
+    question: 'Is it cheaper to repair my shopfront than replace it?',
     answer:
-      'Yes. All our standard shopfront installations use thermally broken aluminium profiles that comply with Building Regulations Part L (Conservation of Fuel and Power). The polyamide thermal break within the aluminium section prevents heat transfer through the frame, and our double-glazed units typically achieve centre-pane U-values between 1.0 and 1.4 W/m²K. For premises seeking enhanced energy performance, we can specify triple glazing, low-emissivity coatings, and argon-filled cavities.',
+      'Usually. Dropped doors, failed closers, broken locks and cracked glass are all fixed far more cheaply than a new front. If repairs would be money wasted, we say so and price both.',
   },
   {
-    question: 'What is PAS 24 and do I need it for my shopfront?',
+    question: 'Can you match the colour of my existing frames?',
     answer:
-      'PAS 24:2022 is a British security standard for doors and windows that tests resistance to physical attack. Many landlords, developers, and insurers now require PAS 24 certification for new commercial glazing. If your lease, insurance policy, or building specification requires enhanced security glazing, we can supply and install PAS 24 certified door sets and glazing systems with the appropriate certification documentation.',
+      'Yes. We powder coat in any RAL colour, and can match from a sample if you do not know the number.',
   },
   {
-    question: 'Do you install shopfronts in Birmingham and the West Midlands?',
+    question: 'Do you offer servicing for shutters and automatic doors?',
     answer:
-      'Yes — Birmingham and the West Midlands is our home region. We work across the city from the Jewellery Quarter to Digbeth, Erdington to Solihull. We have particular experience with conservation area shopfronts in the Jewellery Quarter and with managed retail centres including the Bullring. We also cover Coventry, Wolverhampton, Walsall, Dudley, and the wider Black Country.',
+      'Yes. A yearly visit, or twice a year for busy doors, keeps springs, motors and safety sensors in order and helps avoid breakdowns at awkward times.',
   },
   {
-    question: 'What is the difference between FD30 and FD60 fire doors?',
+    question: 'How long from first call to a fitted shopfront?',
     answer:
-      'FD30 fire doors provide 30 minutes of fire resistance and are the most common requirement for corridor and compartment doors in commercial buildings. FD60 doors provide 60 minutes and are required for higher-risk locations such as stairway enclosures in taller buildings, plant rooms, and storage areas containing hazardous materials. The correct rating depends on your building\'s fire strategy and risk assessment. We can advise on the appropriate specification for your premises and supply certified door sets from accredited manufacturers.',
+      'Typically four to six weeks: survey, price, about three to four weeks to make the front, then one or two days to fit. Planning consent, if needed, adds time before we can order.',
   },
   {
-    question: 'Can you install automatic doors for wheelchair access?',
+    question: 'How do I get a price?',
     answer:
-      'Yes. Automatic doors are one of the most effective ways to comply with the Equality Act 2010, which requires businesses to make reasonable adjustments for disabled customers and staff. We install automatic sliding and swing door systems that meet BS EN 16005 safety requirements and BS 8300 accessibility guidance. Every installation includes a full safety test record and handover documentation. We also offer annual maintenance contracts to ensure ongoing compliance.',
-  },
-  {
-    question: 'Do you work on listed buildings?',
-    answer:
-      'Yes. We have completed shopfront installations on Grade I and Grade II listed buildings across the UK, including in Edinburgh\'s World Heritage Site, London\'s conservation areas, and Manchester\'s Ancoats conservation area. Listed building consent is required for any works affecting the character of a listed structure, and we manage the consent application process including preparation of heritage impact assessments, liaison with conservation officers, and specification of heritage-appropriate profiles and finishes.',
-  },
-  {
-    question: 'What areas of Manchester do you cover for shopfront installation?',
-    answer:
-      'We cover the full Greater Manchester area including the city centre (Northern Quarter, Deansgate, Spinningfields), the inner suburbs (Ancoats, Chorlton, Didsbury), and the wider combined authority area (Salford, Trafford, Stockport, Tameside, Rochdale, Bury, Bolton, Wigan, Oldham). We have particular experience with listed buildings in Ancoats and the Northern Quarter, and with managed retail environments including the Trafford Centre.',
-  },
-  {
-    question: 'How do I get a quote for a new shopfront?',
-    answer:
-      'Contact us by phone on 07597 630000, by email at info@grewalshopfrontandshutters.co.uk, via WhatsApp, or through the contact form on our website. We will arrange a free site survey at a time that suits you. Our surveyor will visit your premises, take precise measurements, discuss your requirements, and assess any structural or planning considerations. You will receive a detailed written quotation — usually within 48 hours of the survey — with no obligation to proceed.',
+      'Call or WhatsApp 07597 630000, or use the contact form. A photo and rough width get you a ballpark figure; a free survey turns it into a written price.',
   },
 ];
 
@@ -198,12 +183,10 @@ export default function FAQPage() {
         <div className="container-max">
           <Breadcrumbs items={[{ label: 'FAQ' }]} />
           <h1 className="mt-6 text-4xl md:text-5xl font-heading font-bold text-white leading-tight">
-            Frequently Asked <span className="text-gradient-gold">Questions</span>
+            Questions we <span className="text-gradient-gold">get asked</span>
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-grey-300 leading-relaxed">
-            We have pulled together the questions we hear most often from clients. If you cannot find
-            the answer you are looking for, please do not hesitate to get in touch directly — we are
-            always happy to help.
+            These are the things shop owners ask us on the phone every week. If yours is not here, ring or message us.
           </p>
         </div>
       </section>
@@ -212,10 +195,7 @@ export default function FAQPage() {
       <section className="section-padding pb-0">
         <div className="container-max">
           <p className="text-grey-600 max-w-3xl leading-relaxed">
-            From pricing and planning permission through to materials, warranties, and emergency callout —
-            the answers below cover the most common queries we receive from businesses considering a new
-            shopfront or shutter installation. These are general guidelines; every project is different,
-            and our team will always provide tailored advice during your free site survey.
+            Prices below are typical ranges before VAT. Your own figure depends on the building, so treat these as a starting point and ask us for a survey.
           </p>
         </div>
       </section>
@@ -223,7 +203,7 @@ export default function FAQPage() {
       {/* FAQ Accordion */}
       <section className="section-padding">
         <div className="container-max max-w-3xl">
-          <FAQSection faqs={faqs} title="Your Questions Answered" />
+          <FAQSection faqs={faqs} title="Prices, planning, repairs and more" />
         </div>
       </section>
 
@@ -231,15 +211,14 @@ export default function FAQPage() {
       <section className="section-padding bg-gradient-dark">
         <div className="container-max text-center">
           <h2 className="text-3xl font-heading font-bold text-white mb-4">
-            Still Have Questions?
+            Something we have not covered?
           </h2>
           <p className="text-grey-300 mb-8 max-w-xl mx-auto">
-            Our team is on hand to answer any specific queries about your project. Contact us today for
-            expert advice and a free, no-obligation site survey.
+            Send a photo and a line about the problem. We usually reply the same day.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link href="/contact" className="btn-gold">
-              Contact Us Today
+              Send a message
             </Link>
             <a href="tel:+447597630000" className="btn-outline">
               Call 07597 630000

@@ -7,14 +7,13 @@ const siteUrl = 'https://www.grewalshopfrontandshutters.co.uk';
 
 export const metadata: Metadata = {
   // The root layout appends " | Grewal Shopfront & Shutters" via its title template.
-  title: 'Instant Shopfront & Shutter Price Estimate',
+  title: 'Shopfront Price Estimator',
   description:
-    'Get an indicative price for shopfronts, roller shutters, security doors and more in under a minute. Guide prices based on typical UK job costs — free site survey and written quote follow.',
+    'A guide price for a shopfront, shutter or door in about a minute, based on the jobs we quote most. A free survey and written price follow if you want one.',
   alternates: { canonical: `${siteUrl}/instant-quote` },
   openGraph: {
-    title: 'Instant Price Estimate | Grewal Shopfront & Shutters',
-    description:
-      'Answer a few questions and see an indicative price straight away. No obligation, free site survey included.',
+    title: 'Price Estimator | Grewal Shopfront & Shutters',
+    description: 'A guide price on screen in about a minute. No obligation.',
     url: `${siteUrl}/instant-quote`,
     type: 'website',
   },
@@ -31,7 +30,7 @@ export default function InstantQuotePage() {
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
-              { '@type': 'ListItem', position: 2, name: 'Instant Estimate', item: `${siteUrl}/instant-quote` },
+              { '@type': 'ListItem', position: 2, name: 'Price estimator', item: `${siteUrl}/instant-quote` },
             ],
           }),
         }}
@@ -39,14 +38,12 @@ export default function InstantQuotePage() {
 
       <section className="relative bg-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 pt-32">
-          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Instant Estimate' }]} />
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Price estimator' }]} />
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white mt-4 max-w-3xl">
-            Get an instant price estimate
+            Rough price in a minute
           </h1>
           <p className="text-grey-300 text-lg mt-3 max-w-2xl">
-            Answer a few quick questions and we will show you an indicative figure straight away —
-            no waiting, no obligation. It is a guide price, not a formal quote, and it deliberately
-            sits at the lower end of our range so you have a realistic starting point.
+            Pick the job, tell us where it is and tick anything awkward about the site. You get a guide figure on screen. It is not a quote; it leans towards the lower end of our usual range so you are not put off by a worst case.
           </p>
         </div>
       </section>
@@ -60,27 +57,24 @@ export default function InstantQuotePage() {
 
             <aside className="space-y-6">
               <div className="card-surface p-6">
-                <h2 className="text-lg font-heading font-bold mb-3">How accurate is it?</h2>
+                <h2 className="text-lg font-heading font-bold mb-3">How close will it be?</h2>
                 <p className="text-grey-500 text-sm mb-3">
-                  The estimate is calculated from the same figures published in our{' '}
-                  <Link href="/cost-guide" className="text-gold hover:underline">cost guide</Link>,
-                  adjusted for your location, quantity and site conditions.
+                  It works from the typical ranges on our{' '}
+                  <Link href="/cost-guide" className="text-gold hover:underline">prices page</Link>, then allows for where you are, how many you need and anything awkward about the site.
                 </p>
                 <p className="text-grey-500 text-sm">
-                  It cannot account for what we can only see on site — the state of the existing
-                  opening, structural work, lintel condition, or unusual dimensions. That is why the
-                  final written quote may come back <strong>higher or lower</strong>.
+                  What it cannot see is the building itself: a tired lintel, an odd-sized opening or a floor that is out of level. That is why the written price after a survey can come back <strong>higher or lower</strong>.
                 </p>
               </div>
 
               <div className="card-surface p-6">
-                <h2 className="text-lg font-heading font-bold mb-3">What happens next</h2>
+                <h2 className="text-lg font-heading font-bold mb-3">After you press the button</h2>
                 <ol className="space-y-3">
                   {[
-                    'You see your figure immediately and we email you a copy.',
-                    'We call you within one working day to talk it through.',
-                    'We arrange a free site survey at a time that suits you.',
-                    'You receive a fixed written quotation with no hidden costs.',
+                    'The figure appears on screen and a copy goes to your inbox.',
+                    'We may ring to go through it; say in the notes if you would rather we emailed.',
+                    'If you want, we book a free survey at a time that suits you.',
+                    'You get a written price listing what is and is not included.',
                   ].map((step, i) => (
                     <li key={step} className="flex gap-3 text-grey-500 text-sm">
                       <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gold text-navy font-bold text-xs flex items-center justify-center">
@@ -93,9 +87,9 @@ export default function InstantQuotePage() {
               </div>
 
               <div className="card-surface p-6">
-                <h2 className="text-lg font-heading font-bold mb-2">Prefer to talk?</h2>
+                <h2 className="text-lg font-heading font-bold mb-2">Rather speak to someone?</h2>
                 <p className="text-grey-500 text-sm mb-4">
-                  Call us and we will give you a ballpark over the phone.
+                  Describe the job on the phone and we will give you a rough figure there and then.
                 </p>
                 <a href="tel:07597630000" className="btn-gold w-full text-center">
                   Call 07597 630000

@@ -43,20 +43,21 @@ const serviceCategories = [
   },
 ];
 
+// Nearest first: the places we cover for repairs as well as installs.
 const areas = [
-  { label: 'London', href: '/areas/london' },
-  { label: 'Birmingham', href: '/areas/birmingham' },
-  { label: 'Manchester', href: '/areas/manchester' },
-  { label: 'Leeds', href: '/areas/leeds' },
-  { label: 'Liverpool', href: '/areas/liverpool' },
-  { label: 'Sheffield', href: '/areas/sheffield' },
-  { label: 'Bristol', href: '/areas/bristol' },
   { label: 'Coventry', href: '/areas/coventry' },
+  { label: 'Birmingham', href: '/areas/birmingham' },
   { label: 'Leicester', href: '/areas/leicester' },
-  { label: 'Nottingham', href: '/areas/nottingham' },
-  { label: 'Glasgow', href: '/areas/glasgow' },
   { label: 'Wolverhampton', href: '/areas/wolverhampton' },
-  { label: 'View All Areas', href: '/areas' },
+  { label: 'Northampton', href: '/areas/northampton' },
+  { label: 'Nottingham', href: '/areas/nottingham' },
+  { label: 'Derby', href: '/areas/derby' },
+  { label: 'Stoke-on-Trent', href: '/areas/stoke-on-trent' },
+  { label: 'Oxford', href: '/areas/oxford' },
+  { label: 'Milton Keynes', href: '/areas/milton-keynes' },
+  { label: 'Manchester', href: '/areas/manchester' },
+  { label: 'Sheffield', href: '/areas/sheffield' },
+  { label: 'Every town we list', href: '/areas' },
 ];
 
 /* ── Icons ────────────────────────────────────────────────────────────── */
@@ -490,7 +491,7 @@ export default function Header() {
               className="flex justify-between items-center w-full py-[14px] font-semibold border-b border-border text-left"
               onClick={() => toggleMobileAccordion('areas')}
             >
-              Areas We Cover
+              Where we work
               <ChevronDown className={`text-gold-dark transition-transform duration-300 ${mobileAccordion === 'areas' ? 'rotate-180' : ''}`} />
             </button>
             <div

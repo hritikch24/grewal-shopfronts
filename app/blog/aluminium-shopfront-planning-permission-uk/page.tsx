@@ -1,162 +1,105 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import Breadcrumbs from '@/components/Breadcrumbs';
-import SchemaMarkup from '@/components/SchemaMarkup';
+import Article, { type ArticleProps } from '@/components/Article';
 
-const slug = 'aluminium-shopfront-planning-permission-uk';
-const pageTitle = 'Do You Need Planning Permission for an Aluminium Shopfront?';
-const pageDesc = 'Find out whether your aluminium shopfront project needs planning permission in the UK, including rules for conservation areas, listed buildings, and the application process.';
-
-export const metadata: Metadata = {
-  title: pageTitle,
-  description: pageDesc,
-  alternates: { canonical: `https://www.grewalshopfrontandshutters.co.uk/blog/${slug}` },
-  openGraph: { title: pageTitle, description: pageDesc, url: `https://www.grewalshopfrontandshutters.co.uk/blog/${slug}`, type: 'article' },
+const post: ArticleProps = {
+  slug: 'aluminium-shopfront-planning-permission-uk',
+  title: 'Do You Need Planning Permission for a New Shopfront?',
+  description:
+    'When a new shopfront, shutter or sign needs planning permission, advertisement consent or listed building consent in England, and how to avoid a refusal.',
+  seoTitle: 'Planning Permission for Shopfronts',
+  crumb: 'Planning permission',
+  published: '2025-03-15',
+  modified: '2026-10-15',
+  intro: [
+    'Most shop owners are surprised to learn that changing a shopfront usually needs permission from the council. The work feels like a repair or a refresh, but planning law looks at how the street will look afterwards, not at why you are doing it.',
+    'This guide covers the three consents that come up most often in England, what tends to get refused, and how to give an application the best chance. Wales, Scotland and Northern Ireland have their own systems with similar ideas.',
+  ],
+  sections: [
+    {
+      heading: 'Planning permission for the front itself',
+      paragraphs: [
+        'Shops do not have the same permitted development rights for their frontages that houses have for many home improvements. In practice, if the new front will look noticeably different from the old one (a new door position, different materials, a bigger fascia, a recessed entrance filled in), the council will expect a planning application.',
+        'Genuine repairs, and replacements that match the old front closely in design and materials, often do not need permission. The difficulty is that "closely" is a judgement. If in doubt, ask the council for a view before ordering anything.',
+      ],
+    },
+    {
+      heading: 'Advertisement consent for the sign',
+      paragraphs: [
+        'Signs are controlled under separate advertisement rules. Some simple, unlit fascia signs below certain sizes have what is called deemed consent and need no application. Illuminated signs, projecting signs and anything large usually need advertisement consent. A new shopfront application and a sign application are often submitted together.',
+      ],
+    },
+    {
+      heading: 'Listed buildings and conservation areas',
+      paragraphs: [
+        'If the building is listed, almost any change that affects its character, inside or out, needs listed building consent as well as planning permission. Carrying out work without it is a criminal offence, not just a planning breach.',
+        'Conservation areas are not as strict as listing, but councils apply design guidance more firmly there. Expect them to care about traditional proportions, stallrisers, the depth of the fascia, the colour and material of the frame, and above all shutters.',
+      ],
+    },
+    {
+      heading: 'Shutters: the most common refusal',
+      paragraphs: [
+        'Solid external roller shutters are refused more than any other shopfront feature, because a street of closed solid shutters looks dead at night. Many councils prefer, in rough order:',
+      ],
+      list: [
+        'an internal shutter or grille behind the glass',
+        'laminated security glass instead of a shutter',
+        'an external open-mesh or perforated shutter with the box hidden behind the fascia',
+      ],
+      after: ['Check your council\'s shopfront design guide before you choose a shutter. Many publish one.'],
+    },
+    {
+      heading: 'Building Regulations are separate',
+      paragraphs: [
+        'Planning decides how the front looks. Building Regulations deal with how it performs: safety glass in the right places, access for disabled people, fire escape routes and, in many cases, energy efficiency. Your installer should design to these whether or not planning permission is needed.',
+      ],
+    },
+    {
+      heading: 'Giving your application a good chance',
+      list: [
+        'Look at the street. Fronts that suit their neighbours are approved more easily.',
+        'Keep a stallriser and a fascia in proportion with the building above.',
+        'Show the shutter, if any, on the drawings; leaving it off and adding it later causes trouble.',
+        'Include photos of the existing front and clear drawings of the new one.',
+        'Talk to the planning officer early if the building is listed or in a conservation area.',
+      ],
+    },
+  ],
+  faqs: [
+    {
+      question: 'Can I replace my shopfront like-for-like without permission?',
+      answer:
+        'Often, if it genuinely matches the old one in design and materials. Anything that changes the appearance usually needs planning permission.',
+    },
+    {
+      question: 'Does a new shop sign need permission?',
+      answer:
+        'Many do. Small unlit fascia signs may have deemed consent, but illuminated and projecting signs usually need advertisement consent.',
+    },
+    {
+      question: 'What happens if I fit a shopfront without permission?',
+      answer:
+        'The council can take enforcement action and require you to change or remove it. On a listed building, unauthorised work is a criminal offence.',
+    },
+    {
+      question: 'Do you prepare planning drawings?',
+      answer:
+        'We supply drawings of the proposed front that can go with an application, and tell you at survey what is likely to be needed.',
+    },
+  ],
+  related: [
+    { href: '/services/aluminium-shopfronts', label: 'Aluminium shopfronts' },
+    { href: '/services/roller-shutters', label: 'Roller shutters' },
+    { href: '/blog/shopfront-regulations-building-standards-uk-2026', label: 'Shopfront rules in 2026' },
+  ],
 };
 
-const faqs = [
-  {
-    question: 'Can I replace a shopfront without planning permission in the UK?',
-    answer:
-      'In most cases, yes. If you are replacing an existing shopfront on a like-for-like basis and the property is not listed or in a conservation area, the work usually falls under permitted development rights. However, if the new frontage significantly changes the external appearance of the building, planning permission may still be required.',
-  },
-  {
-    question: 'How long does a shopfront planning application take?',
-    answer:
-      'A standard planning application is typically determined within eight weeks of validation by the local planning authority. For applications involving listed building consent, the statutory period is also eight weeks, but in practice these applications can take longer due to the need for heritage officer consultation.',
-  },
-  {
-    question: 'Do I need planning permission for a roller shutter on my shopfront?',
-    answer:
-      'Fitting an external roller shutter can change the appearance of a building and may require planning permission, particularly in conservation areas or on listed buildings. Internally mounted shutters are less likely to trigger a requirement, but it is always worth checking with your local planning authority before proceeding.',
-  },
-  {
-    question: 'What happens if I install a shopfront without the required permission?',
-    answer:
-      'The local authority can issue an enforcement notice requiring you to remove the unauthorised work and restore the building to its former appearance at your own cost. In the case of listed buildings, carrying out unauthorised works is a criminal offence that can result in an unlimited fine or imprisonment.',
-  },
-];
+export const metadata: Metadata = {
+  title: post.seoTitle ?? post.title,
+  description: post.description,
+  alternates: { canonical: `https://www.grewalshopfrontandshutters.co.uk/blog/${post.slug}` },
+  openGraph: { title: post.title, description: post.description, url: `https://www.grewalshopfrontandshutters.co.uk/blog/${post.slug}`, type: 'article' },
+};
 
-export default function PlanningPermissionPage() {
-  return (
-    <>
-      <SchemaMarkup
-        type="FAQPage"
-        data={{
-          mainEntity: faqs.map((faq) => ({
-            '@type': 'Question',
-            name: faq.question,
-            acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-          })),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org', '@type': 'BlogPosting', headline: pageTitle, description: pageDesc,
-            url: `https://www.grewalshopfrontandshutters.co.uk/blog/${slug}`, datePublished: '2025-03-15', dateModified: '2026-06-13',
-            author: { '@type': 'Organization', name: 'Grewal Shopfront & Shutters', url: 'https://www.grewalshopfrontandshutters.co.uk' },
-            publisher: { '@type': 'Organization', name: 'Grewal Shopfront & Shutters', url: 'https://www.grewalshopfrontandshutters.co.uk', logo: { '@type': 'ImageObject', url: 'https://www.grewalshopfrontandshutters.co.uk/assets/grewal-logo.png' } },
-            mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.grewalshopfrontandshutters.co.uk/blog/${slug}` },
-          }),
-        }}
-      />
-
-      <article className="section-padding bg-obsidian-light">
-        <div className="container-max max-w-3xl">
-          <Breadcrumbs
-            items={[
-              { label: 'Home', href: '/' },
-              { label: 'Blog', href: '/blog' },
-              { label: 'Shopfront Planning Permission UK' },
-            ]}
-          />
-
-          <h1 className="font-heading text-3xl md:text-4xl font-bold text-white mt-4 mb-6">
-            Do You Need Planning Permission for an Aluminium Shopfront?
-          </h1>
-
-          <p className="text-charcoal leading-relaxed mb-6">
-            If you are planning to install or replace an aluminium shopfront in the UK, one of the first questions to answer is whether you need planning permission. Get it wrong and you risk enforcement action, costly removal work, or delays that push back your opening date. The good news is that many shopfront projects fall under permitted development and do not require a formal application — but the rules have important exceptions that every business owner should understand.
-          </p>
-
-          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">
-            Permitted Development: The General Rule
-          </h2>
-          <p className="text-charcoal leading-relaxed mb-6">
-            Under the Town and Country Planning (General Permitted Development) (England) Order 2015 (as amended), certain works to commercial premises are classified as permitted development — meaning they do not need an explicit grant of planning permission. For shopfronts, this generally covers like-for-like replacements where the new frontage does not materially change the external appearance of the building. Swapping an old timber shopfront for a modern aluminium system in a similar colour and configuration will, in many high-street settings, fall within permitted development.
-          </p>
-          <p className="text-charcoal leading-relaxed mb-6">
-            However, permitted development is not a blanket entitlement. Your local planning authority may have removed or restricted permitted development rights through an Article 4 Direction — a tool commonly used in town centres, conservation areas, and areas of special character. If an Article 4 Direction is in force, you will need to apply for planning permission even for works that would otherwise be permitted.
-          </p>
-
-          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">
-            Conservation Areas
-          </h2>
-          <p className="text-charcoal leading-relaxed mb-6">
-            If your premises sit within a designated conservation area, the planning authority has a statutory duty to preserve or enhance the character and appearance of that area. In practice, this means shopfront designs are scrutinised far more closely. Most conservation areas are covered by an Article 4 Direction that removes permitted development rights for changes to frontages, meaning you will almost certainly need planning permission. The authority may also have published a shopfront design guide setting out acceptable materials, colours, signage styles, and proportions. Following this guidance from the outset will significantly improve your chances of approval.
-          </p>
-
-          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">
-            Listed Buildings
-          </h2>
-          <p className="text-charcoal leading-relaxed mb-6">
-            Works to a listed building that affect its character as a building of special architectural or historic interest require listed building consent under the Planning (Listed Buildings and Conservation Areas) Act 1990. This applies to both external and internal alterations. Replacing a shopfront on a listed building will therefore require listed building consent in addition to any planning permission that may be needed. The application must demonstrate that the proposed works preserve the significance of the building or, where harm is unavoidable, that the harm is justified by public benefits. Engaging a heritage consultant at an early stage is strongly recommended for listed building projects.
-          </p>
-
-          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">
-            The Planning Application Process
-          </h2>
-          <p className="text-charcoal leading-relaxed mb-4">
-            If you do need planning permission, the process is relatively straightforward:
-          </p>
-          <ol className="list-decimal pl-6 text-charcoal leading-relaxed mb-6 space-y-2">
-            <li><strong>Pre-application enquiry</strong> — Most councils offer a pre-application advice service, either free or for a modest fee. This lets you test your proposals informally before committing to a full application.</li>
-            <li><strong>Prepare drawings</strong> — You will need existing and proposed elevation drawings, typically at 1:50 or 1:100 scale, along with a site location plan at 1:1250 and a block plan at 1:500. Your shopfront supplier may be able to provide fabrication drawings that can be adapted for planning purposes.</li>
-            <li><strong>Submit the application</strong> — Applications are submitted online via the Planning Portal. The fee for a commercial alteration application in England is currently set by statutory instrument and is modest compared to the cost of the shopfront itself.</li>
-            <li><strong>Determination</strong> — The authority has eight weeks to determine a standard application. During this time, neighbours and relevant bodies (such as the conservation officer) will be consulted. If the application is refused, you have the right to appeal to the Planning Inspectorate.</li>
-          </ol>
-
-          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">
-            Building Regulations: A Separate Requirement
-          </h2>
-          <p className="text-charcoal leading-relaxed mb-6">
-            Planning permission and Building Regulations approval are two distinct processes. Even if your project does not need planning permission, the installation must comply with the Building Regulations for England and Wales — in particular Part L (conservation of fuel and power), Part M (access to and use of buildings), and Part K (protection from falling, collision, and impact). Your installer should be able to demonstrate compliance as part of the quotation process. At Grewal Shopfront & Shutters, every{' '}
-            <Link href="/services/aluminium-shopfronts" className="text-gold font-medium hover:underline">
-              aluminium shopfront installation
-            </Link>{' '}
-            is designed to meet the current Building Regulations requirements.
-          </p>
-
-          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">
-            Practical Tips
-          </h2>
-          <ul className="list-disc pl-6 text-charcoal leading-relaxed mb-10 space-y-2">
-            <li>Check the local authority planning portal for any Article 4 Directions covering your street before assuming permitted development applies.</li>
-            <li>If your building is in a conservation area, download the council&apos;s shopfront design guide (if one exists) and share it with your installer at the quotation stage.</li>
-            <li>Never assume that because neighbouring shops have modern frontages, permission is not required — they may have been installed before the Article 4 Direction was made, or they may themselves be unlawful.</li>
-            <li>Keep copies of all planning approvals and Building Regulations certificates. Future buyers, landlords, and insurers may ask to see them.</li>
-          </ul>
-
-          {/* Visual FAQ section */}
-          <section className="border-t border-grey-200 pt-10">
-            <h2 className="font-heading text-2xl font-semibold text-white mb-6">
-              Frequently Asked Questions
-            </h2>
-            <div className="space-y-6">
-              {faqs.map((faq, i) => (
-                <div key={i}>
-                  <h3 className="font-heading text-lg font-medium text-white mb-2">
-                    {faq.question}
-                  </h3>
-                  <p className="text-charcoal leading-relaxed">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-        </div>
-      </article>
-    </>
-  );
+export default function Page() {
+  return <Article {...post} />;
 }

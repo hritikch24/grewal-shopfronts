@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import GalleryContent from './GalleryContent';
 
 export const metadata: Metadata = {
-  title: 'Our Portfolio',
-  description: 'Browse our portfolio of shopfront installations, roller shutters, security doors, and more across the UK. See real projects completed by Grewal Shopfront & Shutters.',
+  title: 'Photos of Our Work',
+  description: 'Photos and short videos of shopfronts, shutters and doors fitted by Grewal Shopfront & Shutters, filtered by type of work.',
   alternates: {
     canonical: '/gallery',
   },

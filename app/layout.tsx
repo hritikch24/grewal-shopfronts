@@ -37,10 +37,10 @@ export const metadata: Metadata = {
     // part of every title off the end. The full registered name is still used
     // in schema, the footer and on documents.
     template: '%s | Grewal Shopfronts',
-    default: 'Grewal Shopfront & Shutters | UK\'s Premier Shopfront & Shutter Specialists',
+    default: 'Grewal Shopfront & Shutters | Coventry Shopfront Fitters',
   },
   description:
-    'Affordable shopfront installation & shutter specialists across the UK. Aluminium shopfronts, roller shutters, security doors, automatic doors & emergency repairs. Competitive prices, free site surveys, 500+ projects completed. Call for a free quote today.',
+    'Shopfronts, roller shutters and commercial doors made, fitted and repaired from Exhall, Coventry, since 2004. Free surveys and written prices.',
   keywords: [
     'shopfront installation UK',
     'shopfront installers near me',

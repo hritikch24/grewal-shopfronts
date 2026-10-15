@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import FAQSection from '@/components/FAQSection';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import ContactForm from '@/components/ContactForm';
-import TestimonialCarousel from '@/components/TestimonialCarousel';
+import { offerList, postcodeLine } from '@/lib/local-copy';
 
 const allServices = [
   { name: 'Aluminium Shopfronts', slug: 'aluminium-shopfronts', image: 'aluminium-shopfront-1.jpeg' },
@@ -98,10 +98,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   // the "Commercial" lead is dropped where it would not fit. The length of the
   // suffix the layout template appends is counted rather than written out, so
   // this never looks like a title that carries the brand twice.
-  const BRAND_SUFFIX_LENGTH = 20;
-  const areaBase = `Doors & Shutters in ${city.name}`;
-  const areaLead = `Commercial ${areaBase}`;
-  const enhancedTitle = areaLead.length + BRAND_SUFFIX_LENGTH <= 60 ? areaLead : areaBase;
+  // The heading on this page is "Shopfront Installation in <city>", so the
+  // title says the same thing rather than promising something else.
+  const enhancedTitle = `Shopfront Installation in ${city.name}`;
   const socialTitle = `${enhancedTitle} | Grewal Shopfront & Shutters`;
   // Trimmed to fit the ~155 characters Google shows, and written in this
   // site's own vocabulary: the real demand here is commercial and industrial
@@ -109,7 +108,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   // wolverhampton", "commercial fire door installation birmingham",
   // "automatic door installation birmingham"), not the generic line all three
   // sites used to share word for word.
-  const enhancedDescription = `Industrial roller shutters, fire doors and automatic doors installed and serviced across ${city.name}. Free site survey. Call 07597 630000.`;
+  const enhancedDescription =
+    city.reach === 'project'
+      ? `Shopfront, shutter and door installations in ${city.name} as planned projects from our Coventry base. Survey and drawings included. Call 07597 630000.`
+      : `Shopfronts, roller shutters, doors and repairs in ${city.name} from our Coventry base. Free survey and written price. Call 07597 630000.`;
 
   return {
     title: enhancedTitle,
@@ -145,22 +147,25 @@ export default async function CityPage({ params }: PageProps) {
     '@type': 'LocalBusiness',
     '@id': `${siteUrl}/areas/${citySlug}/#localbusiness`,
     name: 'Grewal Shopfront & Shutters',
-    description: `Professional shopfront installation, roller shutters, and security doors in ${city.name}`,
+    description: `Shopfronts, shutters and commercial doors for premises in ${city.name}, from our base in Exhall, Coventry.`,
     url: `${siteUrl}/areas/${citySlug}`,
     telephone: '+447597630000',
     email: 'info@grewalshopfrontandshutters.co.uk',
     image: 'https://www.grewalshopfrontandshutters.co.uk/assets/shopfront-2.jpeg',
+    // The business has one address. Declaring a different street address in
+    // every city would misdescribe it; the city goes in areaServed instead.
     address: {
       '@type': 'PostalAddress',
-      addressLocality: geo.addressLocality,
-      addressRegion: geo.addressRegion,
-      postalCode: geo.postalCode,
+      streetAddress: '31 Trelawney Road',
+      addressLocality: 'Exhall, Coventry',
+      postalCode: 'CV7 9FB',
+      addressRegion: 'West Midlands',
       addressCountry: 'GB',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: geo.latitude,
-      longitude: geo.longitude,
+      latitude: 52.4686,
+      longitude: -1.4791,
     },
     areaServed: {
       '@type': 'City',
@@ -176,10 +181,9 @@ export default async function CityPage({ params }: PageProps) {
       'https://www.instagram.com/grewalshopfrontsuk/',
       'https://www.yell.com/biz/grewal-shopfront-and-shutters-london/',
     ],
-    hasMap: `https://www.google.com/maps/search/shopfront+installation+${encodeURIComponent(city.name)}`,
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: `Shopfront Services in ${city.name}`,
+      name: `What we fit and repair for ${city.name} premises`,
       itemListElement: allServices.map(s => ({
         '@type': 'Offer',
         itemOffered: {
@@ -227,7 +231,7 @@ export default async function CityPage({ params }: PageProps) {
       <section className="relative min-h-[45vh] flex items-end bg-navy">
         <Image
           src="/assets/shopfront-4.jpeg"
-          alt={`Shopfront installation in ${city.name} by Grewal Shopfront & Shutters`}
+          alt="Aluminium shopfront fitted by Grewal Shopfront & Shutters"
           fill
           className="object-cover opacity-30"
           priority
@@ -238,19 +242,20 @@ export default async function CityPage({ params }: PageProps) {
             <Breadcrumbs
               items={[
                 { label: 'Home', href: '/' },
-                { label: 'Areas', href: '/areas' },
-                { label: city.name },
+                { label: 'Where we work', href: '/areas' },
               ]}
             />
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white mt-4">
               Shopfront Installation in {city.name}
             </h1>
             <p className="text-grey-300 text-lg mt-3 max-w-2xl">
-              Professional shopfronts, roller shutters, and security doors across {city.name} and {city.region}.
+              {city.reach === 'project'
+                ? `New shopfronts, shutters and doors for ${city.name}, booked as planned projects from our Midlands base.`
+                : `New shopfronts, shutters and doors for ${city.name}, plus repairs from a team based nearby in Exhall.`}
             </p>
             <div className="flex flex-wrap gap-3 mt-6">
               <Link href="/contact" className="btn-gold">
-                Get a Free Quote
+                Ask for a price
               </Link>
               <a href="tel:07597630000" className="btn-outline">
                 Call 07597 630000
@@ -290,7 +295,7 @@ export default async function CityPage({ params }: PageProps) {
 
               <div className="mt-8 p-6 bg-grey-50 rounded-xl">
                 <h3 className="font-heading font-bold text-navy text-lg mb-3">
-                  Areas We Cover in {city.name}
+                  Parts of {city.name} on our list
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {city.areas.map((area) => (
@@ -304,7 +309,7 @@ export default async function CityPage({ params }: PageProps) {
                 </div>
                 {city.postcodeAreas.length > 0 && (
                   <p className="text-grey-500 text-sm mt-3">
-                    Postcode areas: {city.postcodeAreas.join(', ')}
+                    Postcode districts: {postcodeLine(city)}
                   </p>
                 )}
               </div>
@@ -314,13 +319,13 @@ export default async function CityPage({ params }: PageProps) {
               <div className="sticky top-24 space-y-6">
                 <div className="card-surface p-6 bg-navy text-white">
                   <h3 className="font-heading font-bold text-gold text-lg mb-2">
-                    {city.name} Enquiry
+                    Ask about {city.name}
                   </h3>
-                  <p className="text-grey-300 text-sm mb-4">
-                    Get a free site survey in {city.name} — usually within 48 hours.
+                  <p className="text-grey-600 text-sm mb-4">
+                    Send a photo and rough size and we will reply with a ballpark price.
                   </p>
                   <Link href="/contact" className="btn-gold w-full text-center block mb-3">
-                    Request a Quote
+                    Send your details
                   </Link>
                   <a
                     href="tel:07597630000"
@@ -332,16 +337,10 @@ export default async function CityPage({ params }: PageProps) {
 
                 <div className="card-surface p-6">
                   <h3 className="font-heading font-bold text-navy text-lg mb-2">
-                    Why Grewal in {city.name}?
+                    What we offer in {city.name}
                   </h3>
                   <ul className="space-y-3">
-                    {[
-                      'Local teams with national backing',
-                      'Free no-obligation site surveys',
-                      'Fast lead times on all projects',
-                      'Companies House registered',
-                      '24/7 emergency callout available',
-                    ].map((item) => (
+                    {offerList(city).map((item) => (
                       <li key={item} className="flex items-start gap-2 text-sm text-charcoal">
                         <svg className="flex-shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                           <path d="M20 6L9 17l-5-5" stroke="#d4a843" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -360,10 +359,10 @@ export default async function CityPage({ params }: PageProps) {
       <section className="section-padding bg-grey-50">
         <div className="container-max">
           <h2 className="text-3xl font-heading font-bold text-navy text-center mb-3">
-            Our {city.name} Services
+            What we fit and fix
           </h2>
           <p className="text-grey-600 text-center max-w-2xl mx-auto mb-10">
-            We provide the full range of commercial shopfront and security solutions across {city.name} and the surrounding {city.region} area.
+            Each card opens the full page for that service, with prices and common questions.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {allServices.map((service) => (
@@ -386,7 +385,7 @@ export default async function CityPage({ params }: PageProps) {
                     {service.name}
                   </h3>
                   <span className="text-gold text-xs font-medium mt-1 inline-flex items-center gap-1">
-                    Learn more
+                    Details
                     <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                       <path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
@@ -398,23 +397,12 @@ export default async function CityPage({ params }: PageProps) {
         </div>
       </section>
 
-      {city.testimonials.length > 0 && (
-        <section className="section-padding">
-          <div className="container-max max-w-3xl">
-            <h2 className="text-3xl font-heading font-bold text-navy text-center mb-8">
-              What Our {city.name} Clients Say
-            </h2>
-            <TestimonialCarousel testimonials={city.testimonials} />
-          </div>
-        </section>
-      )}
-
       {city.faqs.length > 0 && (
         <section className="section-padding bg-grey-50">
           <div className="container-max max-w-3xl">
             <FAQSection
               faqs={city.faqs}
-              title={`Shopfront Installation in ${city.name} — FAQ`}
+              title={`${city.name}: questions we get asked`}
             />
           </div>
         </section>
@@ -423,20 +411,20 @@ export default async function CityPage({ params }: PageProps) {
       <section className="section-padding">
         <div className="container-max">
           <h2 className="text-2xl font-heading font-bold mb-3">
-            Our Services in {city.name}
+            Service pages for {city.name}
           </h2>
           <p className="text-grey-500 mb-8 max-w-2xl">
-            Every service we offer is available across {city.name} and the surrounding area.
-            Follow a link below for details, pricing and local coverage.
+            Each page explains what we can do for that service in {city.name}, including where it is a
+            planned project only.
           </p>
           <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-3">
-            {services.map((service) => (
+            {[...services].sort((a, b) => a.name.localeCompare(b.name)).map((service) => (
               <li key={service.slug}>
                 <Link
                   href={`/services/${service.slug}/${city.slug}`}
                   className="text-charcoal hover:text-gold transition-colors text-sm"
                 >
-                  {service.name} in {city.name}
+                  {service.name}
                 </Link>
               </li>
             ))}
@@ -449,19 +437,14 @@ export default async function CityPage({ params }: PageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="text-3xl font-heading font-bold text-white mb-4">
-                Get Your Free Quote in {city.name}
+                Start with a price for {city.name}
               </h2>
               <p className="text-grey-300 text-lg mb-6">
-                Whether you need a new shopfront, roller shutters, or emergency repairs in {city.name},
-                our team is ready to help. Fill in the form and we will arrange a free site survey.
+                Tell us the address, what you need and roughly how wide the front is. We will come back with
+                a ballpark figure and, if it suits you, a survey date.
               </p>
               <ul className="space-y-3 mb-8">
-                {[
-                  `Serving all ${city.name} postcodes`,
-                  'Free site survey within 48 hours',
-                  'Competitive written quotations',
-                  '24/7 emergency callout available',
-                ].map((item) => (
+                {offerList(city).map((item) => (
                   <li key={item} className="flex items-center gap-3 text-grey-200">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                       <path d="M20 6L9 17l-5-5" stroke="#d4a843" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -480,7 +463,7 @@ export default async function CityPage({ params }: PageProps) {
                   rel="noopener noreferrer"
                   className="btn-outline"
                 >
-                  WhatsApp Us
+                  Message on WhatsApp
                 </a>
               </div>
             </div>

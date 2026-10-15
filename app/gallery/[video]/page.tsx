@@ -9,16 +9,16 @@ const videos = [
     slug: 'shopfront-installation',
       duration: 'PT55S',
     src: '/assets/project-video-1.mp4',
-    title: 'Shopfront Installation in Progress',
-    description: 'Watch our team installing an aluminium shopfront for a commercial premises in the UK. This video shows the full process from frame fitting to glass installation and finishing.',
+    title: 'Fitting an Aluminium Shopfront',
+    description: 'Under a minute of a fitting day: the frame going into the opening, glass going in, and the front being sealed and finished.',
     uploadDate: '2025-01-15',
   },
   {
     slug: 'completed-project',
       duration: 'PT36S',
     src: '/assets/project-video-3.mp4',
-    title: 'Completed Project Walkthrough',
-    description: 'A walkthrough of a recently completed shopfront installation by Grewal Shopfront & Shutters. See the quality of finish and attention to detail in our aluminium shopfront work.',
+    title: 'A Finished Front, Close Up',
+    description: 'A short walk past a shopfront we have finished, so you can see the frame joints, glazing and door hardware up close.',
     uploadDate: '2025-01-15',
   },
 ];
@@ -123,15 +123,15 @@ export default async function VideoPage({ params }: PageProps) {
             poster="/assets/shopfront-2.jpeg"
           >
             <source src={video.src} type="video/mp4" />
-            Your browser does not support the video tag.
+            This browser cannot play the video.
           </video>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/gallery" className="text-blue-600 hover:text-blue-800 font-medium">
-              &larr; Back to Gallery
+              &larr; All photos and videos
             </Link>
             <Link href="/contact" className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 text-center">
-              Get a Free Quote
+              Ask for a price
             </Link>
           </div>
 

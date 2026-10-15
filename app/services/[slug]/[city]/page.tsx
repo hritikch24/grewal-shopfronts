@@ -8,6 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import FAQSection from '@/components/FAQSection';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import ContactForm from '@/components/ContactForm';
+import { heroLine, offerList, offersService, postcodeLine, serviceIntro } from '@/lib/local-copy';
 
 interface PageProps {
   params: Promise<{ slug: string; city: string }>;
@@ -65,221 +66,22 @@ function simpleHash(str: string): number {
   return Math.abs(hash);
 }
 
-type RegionGroup = 'scotland' | 'wales' | 'north' | 'midlands' | 'south' | 'london';
-
-function getRegionGroup(region: string): RegionGroup {
-  const r = region.toLowerCase();
-  if (r.includes('scotland')) return 'scotland';
-  if (r.includes('wales')) return 'wales';
-  if (r.includes('london') || r.includes('greater london')) return 'london';
-  if (r.includes('north') || r.includes('yorkshire') || r.includes('lancashire') || r.includes('tyne') || r.includes('cumbria') || r.includes('humber')) return 'north';
-  if (r.includes('midland') || r.includes('derby') || r.includes('nottingham') || r.includes('leicester') || r.includes('stafford') || r.includes('warwick') || r.includes('shropshire')) return 'midlands';
-  return 'south';
-}
-
-const regionTraits: Record<RegionGroup, { climate: string; commercial: string; planning: string }> = {
-  scotland: {
-    climate: 'Scottish weather — with driving rain, coastal winds, and freezing temperatures — demands materials and finishes that can withstand sustained harsh exposure without degradation',
-    commercial: 'Scotland\'s mix of historic high streets, modern retail parks, and regeneration zones means every installation must respect both the built heritage and the commercial ambitions of the area',
-    planning: 'Scottish planning regulations and listed building requirements often differ from English frameworks, and our teams are experienced in navigating these specific approval processes',
-  },
-  wales: {
-    climate: 'The Welsh climate, with its higher-than-average rainfall and exposure to Atlantic weather systems, requires shopfront systems with exceptional water management and corrosion resistance',
-    commercial: 'Welsh town centres are experiencing a resurgence of independent retail alongside investment in mixed-use developments, creating demand for both heritage-sensitive and contemporary shopfront solutions',
-    planning: 'Welsh planning policy, including the unique requirements of Cadw-listed buildings and Welsh language signage regulations, adds considerations that we are well-versed in handling',
-  },
-  north: {
-    climate: 'Northern England\'s variable weather — from Pennine wind exposure to coastal salt air — requires shopfront systems specified with enhanced weatherproofing and durable powder-coat finishes',
-    commercial: 'The Northern Powerhouse investment programme has driven significant regeneration across the region, with new retail and commercial developments alongside the revitalisation of traditional high streets',
-    planning: 'Many northern cities have active conservation area policies and specific shopfront design guides that govern materials, proportions, and signage — our teams work within these frameworks regularly',
-  },
-  midlands: {
-    climate: 'The Midlands\' central location means installations face a full range of British weather conditions, and we specify systems that perform reliably through seasonal temperature extremes and sustained rain',
-    commercial: 'The Midlands has one of the UK\'s most dynamic commercial property markets, with substantial investment flowing into both established city centres and emerging out-of-town retail and logistics hubs',
-    planning: 'Midlands councils often have detailed shopfront design supplementary planning documents, and our surveying process accounts for these local requirements before any work begins',
-  },
-  south: {
-    climate: 'Southern England\'s milder but variable climate, including increasing summer heat and storm events, requires careful material specification to ensure longevity and year-round performance',
-    commercial: 'The south of England\'s strong consumer economy supports a diverse retail landscape — from coastal tourism-driven high streets to affluent commuter-town centres — each with distinct frontage requirements',
-    planning: 'Many southern towns and cities have conservation areas and heritage high streets where shopfront design must satisfy both planning requirements and the commercial expectations of premium trading locations',
-  },
-  london: {
-    climate: 'London\'s urban heat island effect, combined with exposure to pollution and construction dust, means shopfront finishes must be selected for cleanability and long-term appearance retention',
-    commercial: 'London\'s commercial property market is the most competitive in the UK, where first impressions at street level directly affect footfall, rental values, and lease negotiations',
-    planning: 'London borough planning requirements vary significantly — from Westminster\'s strict heritage controls to Stratford\'s modern design codes — and we adapt our approach to each council\'s specific framework',
-  },
-};
-
 /**
- * The city's own local paragraphs, rotated by service so that the fourteen
- * service pages within a city do not repeat one another. Falls back to the
- * generated copy when a city's description is too short to slice.
+ * The city's own paragraphs, rotated by service so that the fourteen service
+ * pages within a city do not all repeat the same ones. The first paragraph is
+ * skipped because the /areas page leads with it.
  */
-function getLocalProse(
-  cityDescription: string,
-  serviceSlug: string,
-  take = 2,
-): string[] | null {
+function getLocalProse(cityDescription: string, serviceSlug: string, take = 2): string[] | null {
   const paras = cityDescription
     .split(/\n\s*\n/)
     .map((p) => p.trim())
     .filter((p) => p.length > 80);
   if (paras.length < 3) return null;
-
-  // Skip the opening paragraph: the /areas page leads with it, and repeating
-  // it here would reintroduce duplication between those two pages.
   const pool = paras.slice(1);
   const start = simpleHash(serviceSlug) % pool.length;
   const out: string[] = [];
-  for (let i = 0; i < Math.min(take, pool.length); i++) {
-    out.push(pool[(start + i) % pool.length]);
-  }
+  for (let i = 0; i < Math.min(take, pool.length); i++) out.push(pool[(start + i) % pool.length]);
   return out;
-}
-
-function getCityLocalContent(cityName: string, region: string, serviceName: string, areas: string[], postcodeAreas: string[]): { heading: string; paragraphs: string[] } {
-  const rg = getRegionGroup(region);
-  const traits = regionTraits[rg];
-  const areaCount = areas.length;
-  const postcodeList = postcodeAreas.slice(0, 4).join(', ');
-  const hash = simpleHash(cityName);
-
-  const headingVariants = [
-    `Why ${cityName} Businesses Choose Grewal Shopfront & Shutters`,
-    `Local ${serviceName} Expertise in ${cityName}`,
-    `Trusted ${serviceName} Provider in ${cityName}`,
-    `${serviceName} Specialists Serving ${cityName}`,
-  ];
-  const heading = headingVariants[hash % headingVariants.length];
-
-  const p1Variants = [
-    `${traits.climate}. When we install ${serviceName.toLowerCase()} systems in ${cityName}, every component is selected to handle the specific environmental conditions that ${region} properties face, from frame profiles and glazing specifications to sealants and fixings.`,
-    `Working across ${cityName} and the wider ${region} area, we understand that ${traits.commercial.charAt(0).toLowerCase()}${traits.commercial.slice(1)}. Our ${serviceName.toLowerCase()} installations are designed to meet both the practical demands of the location and the aesthetic standards that ${cityName} businesses expect.`,
-    `${cityName} sits within one of the UK\'s most active commercial regions. ${traits.commercial}. Whether your premises is on a busy high street or within a managed retail development, our ${serviceName.toLowerCase()} systems are specified to suit the particular character of your ${cityName} location.`,
-  ];
-
-  const p2Variants = [
-    `${traits.planning}. For ${serviceName.toLowerCase()} projects in ${cityName}, we handle the full process — from initial survey and specification through to planning liaison where required, installation, and final commissioning. With ${areaCount} areas covered across ${cityName}${postcodeList ? ` (postcodes including ${postcodeList})` : ''}, we maintain short response times for both new installations and aftercare.`,
-    `Our experience across ${region} means we know the practical realities of working in ${cityName}: access constraints, parking restrictions, out-of-hours installation requirements, and the coordination needed when working on occupied commercial premises. ${traits.planning}. We bring this local knowledge to every ${serviceName.toLowerCase()} project.`,
-    `${traits.planning}. From initial consultation to project handover, every ${serviceName.toLowerCase()} installation in ${cityName} follows our standard quality process — measured survey, detailed specification, written quotation, scheduled installation by our own directly-employed teams, and a post-installation inspection to confirm everything meets the agreed standard.`,
-  ];
-
-  return {
-    heading,
-    paragraphs: [
-      p1Variants[hash % p1Variants.length],
-      p2Variants[(hash + 1) % p2Variants.length],
-    ],
-  };
-}
-
-function getBenefitsSubtitle(cityName: string, serviceName: string): string {
-  const hash = simpleHash(cityName);
-  const variants = [
-    `Every ${serviceName.toLowerCase()} project we deliver in ${cityName} is backed by quality materials, experienced installation teams, and reliable aftercare.`,
-    `${cityName} businesses choose us for our combination of competitive pricing, professional installation, and responsive ongoing support for all ${serviceName.toLowerCase()} systems.`,
-    `From specification to installation and maintenance, our ${serviceName.toLowerCase()} service in ${cityName} is built on quality workmanship and transparent, fixed-price quotations.`,
-    `We deliver ${serviceName.toLowerCase()} projects across ${cityName} with a focus on durability, compliance, and minimal disruption to your trading hours.`,
-  ];
-  return variants[hash % variants.length];
-}
-
-function getAreasSubtitle(cityName: string, serviceName: string, region: string): string {
-  const hash = simpleHash(cityName);
-  const variants = [
-    `Our ${serviceName.toLowerCase()} service is available across ${cityName} and all surrounding areas in ${region}.`,
-    `We cover the whole of ${cityName} and neighbouring areas throughout ${region} for ${serviceName.toLowerCase()} supply, installation, and repairs.`,
-    `From central ${cityName} to the surrounding ${region} suburbs, our ${serviceName.toLowerCase()} teams are available for free site surveys and installations.`,
-    `Whether your premises is in the heart of ${cityName} or on the outskirts of ${region}, our ${serviceName.toLowerCase()} service covers your area.`,
-  ];
-  return variants[hash % variants.length];
-}
-
-function getServiceIntro(serviceSlug: string, serviceName: string, cityName: string, region: string, areas: string[]): string[] {
-  const areaList = areas.slice(0, 5).join(', ');
-  const remainingCount = areas.length - 5;
-  const areaPhrase = remainingCount > 0
-    ? `${areaList}, and ${remainingCount} more areas`
-    : areaList;
-
-  switch (serviceSlug) {
-    case 'aluminium-shopfronts':
-      return [
-        `${cityName}'s retail landscape is built on variety — from independent boutiques to national chains, each with a frontage that needs to communicate quality before a customer even steps inside. Our aluminium shopfront systems are designed and installed to meet the specific conditions of ${cityName} and the wider ${region} area, with thermally broken frames, toughened glazing, and powder-coat finishes that hold up under years of exposure to British weather.`,
-        `We work across ${cityName} including ${areaPhrase}, handling everything from single-unit replacements on traditional high streets to multi-panel installations on new-build commercial developments. Every project begins with a measured survey of your premises, and our installation teams are CSCS-carded and experienced in managing the access, noise, and waste-removal considerations that come with working on busy trading streets.`,
-        `Whether you are refitting an existing unit or specifying frontages for a new development in ${cityName}, we will work with your design requirements, planning constraints, and budget to deliver an aluminium shopfront system that performs for decades.`,
-      ];
-
-    case 'roller-shutters':
-      return [
-        `Commercial premises in ${cityName} face the same reality as businesses across the UK: the overnight security of your property is only as strong as the physical barriers you put in place. Roller shutters remain the most effective and widely specified form of shopfront security, and our installations across ${region} are built to withstand forced entry, vandalism, and the sustained wear of daily operation.`,
-        `From retail units in ${areaPhrase} to industrial premises on the outskirts of ${cityName}, we supply and install both manual and electrically operated roller shutters in solid, perforated, and punched-lath configurations. Perforated and punched shutters allow window displays to remain visible after hours — a practical advantage for retailers who want to maintain street presence and deter break-ins simultaneously.`,
-        `All our shutter installations in ${cityName} include a commissioning check, operator training where electric systems are fitted, and a parts-and-labour warranty. We also offer scheduled maintenance contracts for businesses that need their shutters inspected and serviced on a regular cycle.`,
-      ];
-
-    case 'security-doors':
-      return [
-        `Securing commercial premises in ${cityName} requires more than a standard entrance door. Whether your property is a late-night retail unit, a pharmacy with controlled substances, or a warehouse holding high-value stock, a purpose-built security door provides the physical resistance that insurance underwriters and crime prevention officers look for.`,
-        `We install steel security doors and LPS 1175-rated entrance systems across ${cityName}, covering areas including ${areaPhrase}. Our range includes doors rated from SR1 through to SR4, with the appropriate certification documentation to satisfy your insurer's requirements. For premises in ${cityName} where break-in risk is elevated, we can combine security doors with CCTV-ready conduit runs, access control preparation, and anti-vandal hardware.`,
-        `Every installation is surveyed individually — frame dimensions, structural fixing conditions, and escape route compliance under the Regulatory Reform (Fire Safety) Order are all assessed before we specify the door and ironmongery package for your ${cityName} property.`,
-      ];
-
-    case 'automatic-doors':
-      return [
-        `Automatic entrance systems are now a baseline expectation for retail, hospitality, and public-facing commercial premises in ${cityName}. From sliding doors at supermarket entrances to swing-door operators on restaurant frontages, an automatic door system manages footfall, improves accessibility under the Equality Act 2010, and helps control heat loss through high-traffic openings.`,
-        `We supply and install automatic door systems across ${cityName} and the surrounding ${region} area, including ${areaPhrase}. Our range covers sliding, swing, folding, and revolving operators from leading manufacturers, and all installations comply with BS EN 16005, the safety standard for power-operated pedestrian doorsets.`,
-        `For businesses in ${cityName} with high visitor throughput or specific accessibility requirements, we configure activation sensors, safety beams, and hold-open times to match your operational needs. Ongoing maintenance contracts are available to keep your automatic doors compliant and reliable.`,
-      ];
-
-    case 'bi-fold-doors':
-      return [
-        `Bi-fold doors have become one of the most requested commercial frontage solutions in ${cityName}, particularly for cafes, restaurants, and ground-floor retail units that benefit from an open-plan connection to the street. When fully folded, the panels stack neatly to one side, creating an unobstructed opening that blurs the boundary between interior and pavement — a real trading advantage during warmer months.`,
-        `Our commercial bi-fold installations in ${cityName} cover premises across ${areaPhrase}, and we work with both aluminium and steel-framed systems depending on the structural opening width, wind-load requirements, and thermal performance targets for the building. All systems include toughened safety glazing, multi-point locking as standard, and powder-coat finishes from the full RAL palette.`,
-        `We understand that bi-fold doors on a commercial premises see far heavier use than a residential installation, so we specify commercial-grade tracks, rollers, and hinge hardware designed for tens of thousands of operating cycles. Every installation in ${cityName} includes a full commissioning check and operational handover.`,
-      ];
-
-    case 'fire-doors':
-      return [
-        `Fire doors are a legal requirement in virtually all commercial premises in ${cityName}, and the consequences of non-compliance are serious — both in terms of the risk to life and the enforcement action available to the fire authority under the Regulatory Reform (Fire Safety) Order 2005. Whether you need FD30, FD60, or FD120-rated doorsets, correct specification, installation, and ongoing maintenance are essential.`,
-        `We supply and install certified fire door systems across ${cityName} including ${areaPhrase}, working with timber, steel, and composite doorsets from third-party accredited manufacturers. Every fire door we install is fitted with the correct intumescent strips, cold smoke seals, and ironmongery to maintain the certified fire resistance period — there is no room for improvisation with fire doors.`,
-        `For ${cityName} landlords managing multi-tenanted buildings, and for businesses undergoing fire risk assessment remediation, we provide complete fire door survey, replacement, and certification services. Our installation records include photographic evidence and gap-check measurements that your fire risk assessor can verify.`,
-      ];
-
-    case 'shopfront-repairs':
-      return [
-        `Not every shopfront issue in ${cityName} requires a full replacement. Damaged frames, failed glazing seals, sticking doors, broken locks, and cosmetic damage can all be repaired cost-effectively if the underlying structure is sound. Our repair service covers the full range of shopfront systems — aluminium, timber, steel, and UPVC — across ${cityName} and the wider ${region} area.`,
-        `We attend premises across ${areaPhrase}, carrying out both planned repairs and responsive call-outs for damage discovered by business owners arriving to open up. Common repair work includes replacing cracked or shattered toughened glass panels, re-hanging misaligned entrance doors, replacing failed door closers and pivot mechanisms, and repairing or replacing damaged threshold plates.`,
-        `If we assess the damage and conclude that repair is not the most cost-effective option, we will tell you honestly and provide a quotation for replacement alongside the repair estimate. Our aim is always to get your ${cityName} premises secure and presentable again as quickly as possible.`,
-      ];
-
-    case 'emergency-callout':
-      return [
-        `When a shopfront is smashed overnight, a security shutter jams half-open, or a break-in leaves your ${cityName} premises exposed and insecure, you need a response measured in hours, not days. Our emergency callout service operates across ${cityName} and the surrounding ${region} area, with the aim of making your property secure on the same day you call.`,
-        `We cover emergencies across ${areaPhrase}, attending to forced-entry damage, storm damage, vehicle impact, and failed security systems. Our emergency vehicles carry boarding materials, temporary glazing panels, replacement locks, and shutter motor components so that we can resolve the majority of call-outs in a single visit.`,
-        `For ${cityName} businesses, speed matters — an insecure premises is an invitation for further crime and a potential insurance compliance issue. We provide a written report of the emergency work carried out, which you can pass directly to your insurer, and we follow up with a permanent repair quotation within 48 hours where further work is needed.`,
-      ];
-
-    case 'shutter-repair':
-      return [
-        `A roller shutter that will not open leaves your ${cityName} business locked out. One that will not close leaves it exposed overnight. Either way, shutter failure is an urgent operational problem, and our repair service across ${cityName} is designed to get your shutters working again with minimal disruption to your trading hours.`,
-        `We repair all types of roller shutters across ${areaPhrase} — manual, spring-assisted, and electrically operated systems from all major UK and European manufacturers. Common faults we attend to in ${cityName} include motor failures, damaged slats, bent guide rails, broken spring assemblies, faulty limit switches, and keyswitch or remote-control issues.`,
-        `Our engineers carry a comprehensive stock of replacement parts, and in most cases a ${cityName} shutter repair is completed in a single visit. Where a component needs to be ordered, we will make the shutter safe and secure in the interim and return to complete the repair as soon as the part arrives.`,
-      ];
-
-    case 'glass-replacement':
-      return [
-        `Broken or damaged glazing on a commercial premises in ${cityName} is both a security risk and a poor impression for customers and passers-by. Whether a single pane has cracked, a sealed unit has misted between the panes, or an entire shopfront panel has been shattered by impact, our glass replacement service restores your frontage to its original standard.`,
-        `We replace glass in all types of shopfront systems across ${cityName}, including ${areaPhrase}. Our work covers toughened safety glass, laminated security glass, double-glazed sealed units, and specialist specifications including solar-control coatings and acoustic interlayers. All replacement glass meets BS EN 12150-1 for toughened products and BS EN 14449 for laminated assemblies.`,
-        `For ${cityName} businesses that need glazing replaced after a break-in or accidental damage, we work with your insurer and provide the documentation — including glass specification, safety certification, and photographic records — that a successful claim requires. We can also arrange temporary boarding if the replacement glass is not available for immediate installation.`,
-      ];
-
-    default:
-      return [
-        `Grewal Shopfront & Shutters provides professional ${serviceName.toLowerCase()} services across ${cityName} and the wider ${region} area. Our experienced teams work with commercial and retail clients in areas including ${areaPhrase}, delivering installations and services that meet current British Standards and Building Regulations.`,
-        `Every project in ${cityName} begins with a free site survey, during which we assess the specific requirements of your premises, discuss your priorities, and identify any planning or structural considerations that could affect the work. We then provide a detailed, fixed-price quotation with no hidden costs.`,
-        `Whether you are an independent retailer, a landlord managing a commercial portfolio, or a developer fitting out new units in ${cityName}, we have the experience and technical capability to deliver your ${serviceName.toLowerCase()} project on time and to specification.`,
-      ];
-  }
 }
 
 /**
@@ -365,19 +167,19 @@ export default async function ServiceCityPage({ params }: PageProps) {
   const siteUrl = 'https://www.grewalshopfrontandshutters.co.uk';
   const geo = cityGeo[citySlug] || { latitude: 51.5074, longitude: -0.1278 };
 
-  const introParagraphs = getServiceIntro(service.slug, service.name, city.name, city.region, city.areas);
-  const generatedLocal = getCityLocalContent(city.name, city.region, service.name, city.areas, city.postcodeAreas);
-  const realProse = getLocalProse(city.description, service.slug);
-  // Real local writing wins where it exists; the generated copy is the
-  // fallback, not the default.
-  const localContent = realProse
-    ? { heading: `${service.name} in ${city.name}: Local Considerations`, paragraphs: realProse }
-    : generatedLocal;
-  const benefitsSubtitle = getBenefitsSubtitle(city.name, service.name);
-  const areasSubtitle = getAreasSubtitle(city.name, service.name, city.region);
+  const offered = offersService(city, service.slug);
+  const introParagraphs = serviceIntro(city, service.slug, service.name);
+  // Two of the city's own paragraphs, rotated by service so the city's
+  // fourteen service pages do not all repeat the same ones.
+  const localParagraphs = getLocalProse(city.description, service.slug) ?? [city.description.split(/\n\s*\n/)[0]];
 
   const otherServices = services.filter((s) => s.slug !== slug);
-  const otherCities = cities.filter((c) => c.slug !== citySlug).slice(0, 12);
+  // Nearest first: places we serve the same way as this one, then the rest.
+  const reachRank = { local: 0, regional: 1, project: 2 } as const;
+  const otherCities = cities
+    .filter((c) => c.slug !== citySlug)
+    .sort((a, b) => Math.abs(reachRank[a.reach] - reachRank[city.reach]) - Math.abs(reachRank[b.reach] - reachRank[city.reach]))
+    .slice(0, 12);
 
   // --- Schema markup ---
 
@@ -403,8 +205,8 @@ export default async function ServiceCityPage({ params }: PageProps) {
       },
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: 52.4897,
-        longitude: -1.9718,
+        latitude: 52.4686,
+        longitude: -1.4791,
       },
     },
     areaServed: {
@@ -479,7 +281,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
       <section className="relative min-h-[50vh] flex items-end bg-navy">
         <Image
           src={`/assets/${service.heroImage}`}
-          alt={`${service.name} installation in ${city.name} by Grewal Shopfront & Shutters`}
+          alt={`${service.name} fitted by Grewal Shopfront & Shutters`}
           fill
           className="object-cover opacity-40"
           priority
@@ -490,20 +292,19 @@ export default async function ServiceCityPage({ params }: PageProps) {
             <Breadcrumbs
               items={[
                 { label: 'Home', href: '/' },
-                { label: 'Services', href: '/services' },
+                { label: 'What we do', href: '/services' },
                 { label: service.name, href: `/services/${slug}` },
-                { label: city.name },
               ]}
             />
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white mt-4">
               {service.name} in {city.name}
             </h1>
             <p className="text-grey-300 text-lg mt-3 max-w-2xl">
-              Professional {service.name.toLowerCase()} supply, installation, and maintenance across {city.name} and {city.region}.
+              {heroLine(city, service.name, service.slug)}
             </p>
             <div className="flex flex-wrap gap-3 mt-6">
               <Link href="/contact" className="btn-gold">
-                Get a Free Quote
+                Ask for a price
               </Link>
               <a href="tel:07597630000" className="btn-outline">
                 Call 07597 630000
@@ -518,7 +319,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
         <div className="container-max">
           <div className="prose prose-lg max-w-none text-charcoal leading-relaxed">
             <h2 className="text-2xl sm:text-3xl font-heading font-bold text-charcoal mb-6">
-              {service.name} Across {city.name}
+              {offered ? `What we do in ${city.name}` : `${service.name} in ${city.name}: not a service we offer here`}
             </h2>
             {introParagraphs.map((paragraph, i) => (
               <p key={i} className="mb-4">{paragraph}</p>
@@ -532,9 +333,9 @@ export default async function ServiceCityPage({ params }: PageProps) {
         <div className="container-max">
           <div className="prose prose-lg max-w-none text-charcoal leading-relaxed">
             <h2 className="text-2xl sm:text-3xl font-heading font-bold text-charcoal mb-6">
-              {localContent.heading}
+              Shopping streets and planning in {city.name}
             </h2>
-            {localContent.paragraphs.map((paragraph, i) => (
+            {localParagraphs.map((paragraph, i) => (
               <p key={i} className="mb-4">{paragraph}</p>
             ))}
           </div>
@@ -542,14 +343,14 @@ export default async function ServiceCityPage({ params }: PageProps) {
       </section>
 
       {/* Benefits grid */}
-      {service.benefits.length > 0 && (
+      {offered && service.benefits.length > 0 && (
         <section className="section-padding bg-obsidian-light">
           <div className="container-max">
             <h2 className="text-3xl font-heading font-bold text-white text-center mb-3">
-              Why Choose Our {service.name} in {city.name}
+              What you get from us
             </h2>
             <p className="text-grey-300 text-center max-w-2xl mx-auto mb-10">
-              {benefitsSubtitle}
+              The same standard on every {service.name.toLowerCase()} job, whichever town it is in.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {service.benefits.map((benefit, i) => (
@@ -572,10 +373,10 @@ export default async function ServiceCityPage({ params }: PageProps) {
       <section className="section-padding bg-obsidian-light">
         <div className="container-max">
           <h2 className="text-3xl font-heading font-bold text-white text-center mb-3">
-            Areas We Cover in {city.name}
+            Parts of {city.name} on our list
           </h2>
           <p className="text-grey-300 text-center max-w-2xl mx-auto mb-10">
-            {areasSubtitle}
+            Districts and streets people in {city.name} most often ask us about.
           </p>
           <div className="max-w-3xl mx-auto">
             <div className="flex flex-wrap gap-2 justify-center mb-6">
@@ -590,7 +391,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
             </div>
             {city.postcodeAreas.length > 0 && (
               <p className="text-grey-300 text-sm text-center">
-                Postcode areas covered: {city.postcodeAreas.join(', ')}
+                Postcode districts: {postcodeLine(city)}
               </p>
             )}
           </div>
@@ -598,14 +399,14 @@ export default async function ServiceCityPage({ params }: PageProps) {
       </section>
 
       {/* How It Works */}
-      {service.howItWorks && service.howItWorks.length > 0 && (
+      {offered && service.howItWorks && service.howItWorks.length > 0 && (
         <section className="section-padding bg-grey-50">
           <div className="container-max max-w-4xl">
             <h2 className="text-3xl font-heading font-bold text-navy text-center mb-3">
-              How It Works
+              From first call to finished job
             </h2>
             <p className="text-grey-600 text-center mb-10 max-w-2xl mx-auto">
-              From initial enquiry to completed installation in {city.name} — here is what to expect when you choose Grewal Shopfront & Shutters for your {service.name.toLowerCase()} project.
+              The steps for a {service.name.toLowerCase()} job, in the order they happen.
             </p>
             <div className="relative">
               <div className="hidden md:block absolute left-8 top-8 bottom-8 w-0.5 bg-gold/20" aria-hidden="true" />
@@ -628,7 +429,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
       )}
 
       {/* Pricing Guide */}
-      {service.pricingGuide && (
+      {offered && service.pricingGuide && (
         <section className="section-padding bg-obsidian-light">
           <div className="container-max max-w-4xl">
             <h2 className="text-3xl font-heading font-bold text-white text-center mb-3">
@@ -648,7 +449,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
             <p className="text-grey-300 text-sm text-center mt-6">{service.pricingGuide.note}</p>
             <div className="text-center mt-6">
               <Link href="/contact" className="btn-gold">
-                Get Your Free Quote
+                Ask for a price
               </Link>
             </div>
           </div>
@@ -661,7 +462,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
           <div className="container-max max-w-3xl">
             <FAQSection
               faqs={service.faqs}
-              title={`${service.name} in ${city.name} — Frequently Asked Questions`}
+              title={`Questions people ask about ${service.name.toLowerCase()}`}
             />
           </div>
         </section>
@@ -671,10 +472,10 @@ export default async function ServiceCityPage({ params }: PageProps) {
       <section className="section-padding bg-obsidian-light">
         <div className="container-max">
           <h2 className="text-3xl font-heading font-bold text-white text-center mb-3">
-            Other Services in {city.name}
+            More of our work in {city.name}
           </h2>
           <p className="text-grey-300 text-center max-w-2xl mx-auto mb-10">
-            We provide the full range of commercial shopfront and security solutions across {city.name}.
+            Each link opens the page for that service in {city.name}.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {otherServices.map((s) => (
@@ -692,7 +493,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
                   <p className="font-heading font-bold text-charcoal text-sm group-hover:text-gold transition-colors">
                     {s.name}
                   </p>
-                  <p className="text-grey-600 text-xs mt-0.5">{s.name} in {city.name}</p>
+                  <p className="text-grey-600 text-xs mt-0.5">{city.name} page</p>
                 </div>
               </Link>
             ))}
@@ -704,10 +505,10 @@ export default async function ServiceCityPage({ params }: PageProps) {
       <section className="section-padding bg-grey-50">
         <div className="container-max">
           <h2 className="text-3xl font-heading font-bold text-navy text-center mb-3">
-            {service.name} in Other Cities
+            {service.name} elsewhere
           </h2>
           <p className="text-grey-600 text-center max-w-2xl mx-auto mb-10">
-            We install {service.name.toLowerCase()} across the UK. Find your nearest location below.
+            Other towns and cities with their own page for this service.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
             {otherCities.map((c) => (
@@ -719,14 +520,14 @@ export default async function ServiceCityPage({ params }: PageProps) {
                 <p className="font-heading font-bold text-charcoal text-sm group-hover:text-gold transition-colors">
                   {c.name}
                 </p>
-                <p className="text-grey-500 text-xs mt-0.5">{c.region}</p>
+                <p className="text-grey-500 text-xs mt-0.5">{c.reach === 'project' ? 'Planned installs' : 'Installs and repairs'}</p>
               </Link>
             ))}
           </div>
           {cities.filter((c) => c.slug !== citySlug).length > 12 && (
             <div className="text-center mt-6">
               <Link href="/areas" className="text-gold hover:text-gold-dark font-medium text-sm inline-flex items-center gap-1 transition-colors">
-                View all locations
+                Every town we list
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                   <path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -742,19 +543,15 @@ export default async function ServiceCityPage({ params }: PageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="text-3xl font-heading font-bold text-white mb-4">
-                Get Your Free {service.name} Quote in {city.name}
+                {offered ? `Ask for a ${service.name.toLowerCase()} price in ${city.name}` : `Planning other work in ${city.name}?`}
               </h2>
               <p className="text-grey-300 text-lg mb-6">
-                Tell us about your {service.name.toLowerCase()} project in {city.name} and we will arrange a free
-                site survey at a time that suits you.
+                {offered
+                  ? 'Send a few details and a photo if you have one. We will come back to you with a ballpark figure and a survey date.'
+                  : 'If you are replacing a front, shutter or door as a planned job, send us the details and we will quote.'}
               </p>
               <ul className="space-y-3 mb-8">
-                {[
-                  'Free no-obligation site survey',
-                  'Written quotation within 48 hours',
-                  `Covering all ${city.name} postcodes`,
-                  '24/7 emergency callout available',
-                ].map((item) => (
+                {offerList(city).map((item) => (
                   <li key={item} className="flex items-center gap-3 text-grey-200">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                       <path d="M20 6L9 17l-5-5" stroke="#d4a843" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -773,7 +570,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
                   rel="noopener noreferrer"
                   className="btn-outline"
                 >
-                  WhatsApp Us
+                  Message on WhatsApp
                 </a>
               </div>
             </div>

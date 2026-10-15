@@ -3,15 +3,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Shopfront Installation Guides & Articles',
+  title: 'Guides for Shop Owners',
   description:
-    'Expert guides on shopfront maintenance, planning permission, fire doors, security ratings, and emergency boarding from Grewal Shopfront & Shutters.',
+    'Plain-English guides for shop owners: prices, planning, shutters, fire doors, security ratings and what to do after a break-in.',
   alternates: {
     canonical: 'https://www.grewalshopfrontandshutters.co.uk/blog',
   },
   openGraph: {
     title: 'Shopfront Guides & Articles — Grewal Shopfront & Shutters',
-    description: 'Expert guides on shopfront maintenance, planning permission, fire doors, security ratings, and emergency boarding.',
+    description: 'Plain-English guides on prices, planning, shutters, fire doors and break-ins.',
     url: 'https://www.grewalshopfrontandshutters.co.uk/blog',
     siteName: 'Grewal Shopfront & Shutters',
     locale: 'en_GB',
@@ -20,91 +20,21 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Shopfront Guides & Articles — Grewal Shopfront & Shutters',
-    description: 'Expert guides on shopfront maintenance, planning permission, fire doors, security ratings, and emergency boarding.',
+    description: 'Plain-English guides on prices, planning, shutters, fire doors and break-ins.',
   },
 };
 
 const posts = [
-  {
-    slug: 'shopfront-design-trends-uk-2026',
-    img: 'blog-1.webp',
-    category: 'Security',
-    date: '2 Jul 2026',
-    title: '5 Signs Your Roller Shutter Needs Repair',
-    excerpt: 'An in-depth breakdown of the critical warning signs of roller shutter failure, structural risks, and cost-effective maintenance for UK businesses.',
-  },
-  {
-    slug: 'commercial-security-shutters-guide-uk',
-    img: 'blog-2.webp',
-    category: 'Design',
-    date: '10 Jul 2026',
-    title: 'How Modern Aluminium Shopfronts Boost High Street Foot Traffic',
-    excerpt: 'A comprehensive deep dive into how upgrading your retail facade to a premium glass and aluminium shopfront transforms brand identity and drives customer volume.',
-  },
-  {
-    slug: 'shopfront-regulations-building-standards-uk-2026',
-    img: 'blog-3.webp',
-    category: 'Maintenance',
-    date: '12 Jul 2026',
-    title: 'Electric Roller Shutter Troubleshooting: DIY Checks vs When to Call an Engineer',
-    excerpt: 'A practical guide for UK business owners on diagnosing electric roller shutter faults, identifying easy DIY fixes, and understanding when to call a certified engineer.',
-  },
-  {
-    slug: 'how-to-maintain-commercial-roller-shutters',
-    img: 'blog-4.webp',
-    category: 'Security',
-    date: '13 Jul 2026',
-    title: 'Steel vs. Aluminium Roller Shutters: Choosing the Right Security Shield',
-    excerpt: 'A detailed structural comparison of steel and aluminium roller shutters to help UK retailers, warehouse managers, and industrial operators select the perfect balance of strength and aesthetics.',
-  },
-  {
-    slug: 'aluminium-shopfront-planning-permission-uk',
-    img: 'blog-5.webp',
-    category: 'Design',
-    date: '14 Jul 2026',
-    title: 'Understanding Shopfront Glass: Laminated, Toughened, or Double Glazing',
-    excerpt: 'A guide to commercial glass standards for UK retail storefronts, detailing the structural differences between toughened glass, laminated safety glass, and energy-efficient double glazing.',
-  },
-  {
-    slug: 'fd30-vs-fd60-fire-door-commercial-premises',
-    title: 'FD30 vs FD60 Fire Doors: Which Does Your Business Need?',
-    img: 'blog-1.webp',
-    category: 'Safety',
-    date: '15 Jul 2026',
-    excerpt: 'A clear comparison of FD30 and FD60 fire resistance ratings, Building Regulations requirements, and how to choose the right door for your premises.',
-  },
-  {
-    slug: 'what-is-lps-1175-security-rating',
-    title: 'What Is the LPS 1175 Security Rating? A Business Owner\'s Guide',
-    img: 'blog-2.webp',
-    category: 'Security',
-    date: '16 Jul 2026',
-    excerpt: 'Demystifying the LPS 1175 standard — what the security rating levels mean, how they affect insurance, and which level your business should target.',
-  },
-  {
-    slug: 'shopfront-installation-cost-uk-2026',
-    title: 'Shopfront Installation Costs in the UK (2026): What to Expect',
-    img: 'blog-3.webp',
-    category: 'Guides',
-    date: '17 Jul 2026',
-    excerpt: 'A detailed breakdown of shopfront installation costs across the UK in 2026, covering aluminium shopfronts, roller shutters, security doors, and what factors affect pricing.',
-  },
-  {
-    slug: 'best-shopfront-company-uk-how-to-choose',
-    title: 'How to Choose the Best Shopfront Company in the UK',
-    img: 'blog-4.webp',
-    category: 'Guides',
-    date: '18 Jul 2026',
-    excerpt: 'A practical checklist for finding a reliable, professional shopfront installation company. What to look for, red flags to avoid, and questions to ask before signing.',
-  },
-  {
-    slug: 'emergency-shopfront-boarding-what-to-do',
-    title: 'Emergency Shopfront Boarding: What to Do When Your Shop Is Broken Into',
-    img: 'blog-5.webp',
-    category: 'Emergency',
-    date: '19 Jul 2026',
-    excerpt: 'Step-by-step advice on securing your premises after a break-in, dealing with insurers, and arranging permanent repairs quickly.',
-  },
+  { slug: 'shopfront-installation-cost-uk-2026', img: 'blog-3.webp', category: 'Prices', date: '13 Jun 2026', title: 'What a New Shopfront Costs in 2026', excerpt: 'Typical figures for fronts, shutters and doors, the extras that catch people out, and how to compare quotes fairly.' },
+  { slug: 'shopfront-design-trends-uk-2026', img: 'blog-1.webp', category: 'Design', date: '13 Jun 2026', title: 'Shopfront Design in 2026: What Owners Are Choosing', excerpt: 'Dark frames, bigger glass, hidden shutters and fronts that fold open, and when each one makes sense.' },
+  { slug: 'shopfront-regulations-building-standards-uk-2026', img: 'blog-2.webp', category: 'Rules', date: '13 Jun 2026', title: 'Shopfront Rules in 2026: Glass, Access, Fire and Energy', excerpt: 'The building rules behind a new front, from safety glass to step-free entrances, in plain terms.' },
+  { slug: 'commercial-security-shutters-guide-uk', img: 'blog-4.webp', category: 'Security', date: '13 Jun 2026', title: 'Security Shutters for Shops: A Buyer\'s Guide', excerpt: 'Solid, perforated or internal; hand or motor. How to pick a shutter your insurer and council will accept.' },
+  { slug: 'best-shopfront-company-uk-how-to-choose', img: 'blog-5.webp', category: 'Advice', date: '25 Apr 2025', title: 'How to Choose a Shopfront Company: 10 Questions to Ask', excerpt: 'The questions that sort careful firms from careless ones, and the warning signs before you pay a deposit.' },
+  { slug: 'emergency-shopfront-boarding-what-to-do', img: 'blog-1.webp', category: 'Emergencies', date: '20 Apr 2025', title: 'Shop Broken Into? What to Do in the First Few Hours', excerpt: 'Safety, police, photos, boarding up and insurers: a calm order of things for a bad morning.' },
+  { slug: 'what-is-lps-1175-security-rating', img: 'blog-2.webp', category: 'Security', date: '10 Apr 2025', title: 'LPS 1175 Explained for Shop Owners', excerpt: 'What the rating on a door or shutter means, how to read it, and how to check a certificate is real.' },
+  { slug: 'fd30-vs-fd60-fire-door-commercial-premises', img: 'blog-3.webp', category: 'Fire safety', date: '1 Apr 2025', title: 'FD30 or FD60: Which Fire Door Does Your Building Need?', excerpt: 'What the numbers and the S mean, who decides the rating, and why fitting matters as much as the door.' },
+  { slug: 'aluminium-shopfront-planning-permission-uk', img: 'blog-4.webp', category: 'Planning', date: '15 Mar 2025', title: 'Do You Need Planning Permission for a New Shopfront?', excerpt: 'Planning permission, advertisement consent and listed building consent, and why shutters get refused.' },
+  { slug: 'how-to-maintain-commercial-roller-shutters', img: 'blog-5.webp', category: 'Maintenance', date: '10 Mar 2025', title: 'Looking After a Roller Shutter: Checks That Prevent Breakdowns', excerpt: 'Weekly, monthly and yearly checks, the warning noises, and the one job you should never try yourself.' },
 ];
 
 export default function BlogIndex() {
@@ -117,19 +47,19 @@ export default function BlogIndex() {
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.75)] to-[rgba(10,10,10,0.85)]" />
         <Image
           src="/assets/blog-1.webp"
-          alt="Blog"
+          alt=""
           fill
           className="object-cover -z-10"
           priority
         />
         <div className="relative z-10 max-w-[1380px] mx-auto px-6">
           <h1 className="text-[clamp(32px,5vw,54px)] font-heading font-bold text-white mb-4">
-            Blog
+            Guides for shop owners
           </h1>
           <div className="flex justify-center gap-2 text-sm text-white/70">
             <Link href="/" className="text-[#F0D080] hover:underline">Home</Link>
             <span>/</span>
-            <span>Blog</span>
+            <span>Guides</span>
           </div>
         </div>
       </section>
@@ -167,7 +97,7 @@ export default function BlogIndex() {
                   </h3>
                   <p className="text-[#4A4A4A] text-sm mb-4 line-clamp-3">{post.excerpt}</p>
                   <span className="text-[#A8832A] font-semibold text-sm inline-flex items-center gap-1.5">
-                    Read More
+                    Read the guide
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                       <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
@@ -181,9 +111,9 @@ export default function BlogIndex() {
           <aside>
             {/* Categories */}
             <div className="bg-[#F2EDE4] rounded-xl p-6 mb-[30px]">
-              <h4 className="text-[#1A1A1A] font-heading font-bold text-lg mb-4">Categories</h4>
+              <h4 className="text-[#1A1A1A] font-heading font-bold text-lg mb-4">Topics</h4>
               <ul className="space-y-2.5">
-                {['All', 'Security', 'Design', 'Maintenance', 'Safety', 'Guides', 'Emergency'].map((cat) => (
+                {['Prices', 'Design', 'Rules', 'Security', 'Advice', 'Emergencies', 'Fire safety', 'Planning', 'Maintenance'].map((cat) => (
                   <li key={cat}>
                     <Link
                       href="/blog"
@@ -201,7 +131,7 @@ export default function BlogIndex() {
               href="/contact"
               className="block w-full text-center bg-[#C9A84C] text-charcoal font-semibold text-[15px] px-8 py-[15px] rounded-md hover:bg-[#A8832A] transition-colors"
             >
-              Get a Free Quote
+              Ask for a price
             </Link>
           </aside>
         </div>

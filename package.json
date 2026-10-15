@@ -13,7 +13,8 @@
     "test:sanity": "node tests/sanity.test.mjs",
     "test:smoke": "node tests/smoke.test.mjs",
     "test:parse": "node --no-warnings tests/document-parse.test.mjs",
-    "test": "npm run test:contamination && npm run test:sanity && npm run test:parse"
+    "test": "npm run test:contamination && npm run test:sanity && npm run test:parse",
+    "gate": "node scripts/originality-gate.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.134.0",

@@ -6,24 +6,24 @@ import { useState } from 'react';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 const galleryItems = [
-  { img: 'portfolio-1.webp', cat: 'roller-shutters', title: 'Security Shutter, Birmingham' },
-  { img: 'portfolio-2.webp', cat: 'shopfronts', title: 'Aluminium Shopfront, London' },
-  { img: 'portfolio-3.webp', cat: 'doors', title: 'Sliding Doors, Manchester' },
-  { img: 'portfolio-4.webp', cat: 'roller-shutters', title: 'Industrial Shutter, Leeds' },
-  { img: 'portfolio-5.webp', cat: 'shopfronts', title: 'Glass Shopfront, Sheffield' },
-  { img: 'portfolio-6.webp', cat: 'doors', title: 'Fire Door, Liverpool' },
-  { img: 'service-steel-door.jpeg', cat: 'doors', title: 'Steel Security Door, Bristol' },
-  { img: 'service-scissor-gate.webp', cat: 'other', title: 'Scissor Gate, Coventry' },
-  { img: 'preview-electric.webp', cat: 'roller-shutters', title: 'Electric Shutter, Leicester' },
-  { img: 'warehouse-doors.webp', cat: 'doors', title: 'Sectional Doors, Wolverhampton' },
-  { img: 'service-aluminium-shopfront.webp', cat: 'shopfronts', title: 'Aluminium Shopfront, Coventry' },
-  { img: 'service-industrial-shutter.webp', cat: 'roller-shutters', title: 'Industrial Roller Shutter' },
-  { img: 'service-glass-shopfront.webp', cat: 'shopfronts', title: 'Glass Shopfront Installation' },
-  { img: 'service-auto-sliding-doors.webp', cat: 'doors', title: 'Automatic Sliding Doors' },
-  { img: 'service-bifold-door.webp', cat: 'doors', title: 'Bi-Fold Door System' },
-  { img: 'roler.webp', cat: 'roller-shutters', title: 'Roller Shutter Detail' },
-  { img: 'workers-installing.webp', cat: 'shopfronts', title: 'Installation in Progress' },
-  { img: 'service-security-shutter.webp', cat: 'roller-shutters', title: 'Security Roller Shutter' },
+  { img: 'portfolio-1.webp', cat: 'roller-shutters', title: 'Security shutter, closed' },
+  { img: 'portfolio-2.webp', cat: 'shopfronts', title: 'Aluminium shopfront with glazed door' },
+  { img: 'portfolio-3.webp', cat: 'doors', title: 'Sliding entrance doors' },
+  { img: 'portfolio-4.webp', cat: 'roller-shutters', title: 'Industrial shutter on a unit' },
+  { img: 'portfolio-5.webp', cat: 'shopfronts', title: 'Glass shopfront, street view' },
+  { img: 'portfolio-6.webp', cat: 'doors', title: 'Fire door set' },
+  { img: 'service-steel-door.jpeg', cat: 'doors', title: 'Steel back door' },
+  { img: 'service-scissor-gate.webp', cat: 'other', title: 'Scissor gate behind glass' },
+  { img: 'preview-electric.webp', cat: 'roller-shutters', title: 'Motorised shutter' },
+  { img: 'warehouse-doors.webp', cat: 'doors', title: 'Sectional loading doors' },
+  { img: 'service-aluminium-shopfront.webp', cat: 'shopfronts', title: 'Dark-framed aluminium front' },
+  { img: 'service-industrial-shutter.webp', cat: 'roller-shutters', title: 'Heavy roller door' },
+  { img: 'service-glass-shopfront.webp', cat: 'shopfronts', title: 'Glazed front being fitted' },
+  { img: 'service-auto-sliding-doors.webp', cat: 'doors', title: 'Automatic sliding entrance' },
+  { img: 'service-bifold-door.webp', cat: 'doors', title: 'Folding glazed front' },
+  { img: 'roler.webp', cat: 'roller-shutters', title: 'Shutter laths, close up' },
+  { img: 'workers-installing.webp', cat: 'shopfronts', title: 'Fitters at work' },
+  { img: 'service-security-shutter.webp', cat: 'roller-shutters', title: 'Shop shutter, lowered' },
 ];
 
 const filters = [
@@ -146,7 +146,7 @@ export default function GalleryContent() {
         </div>
       </section>
 
-      {/* Project Videos */}
+      {/* Short videos */}
       <section className="bg-[#F2EDE4]" style={{ padding: '100px 0' }}>
         <div className="max-w-[1380px] mx-auto px-6">
           <div className="text-center max-w-[720px] mx-auto mb-[60px]">
@@ -154,15 +154,15 @@ export default function GalleryContent() {
               See Our Work
             </span>
             <h2 className="text-[clamp(28px,4vw,42px)] font-heading font-bold text-[#1A1A1A] mb-[18px]">
-              Project Videos
+              Short videos
             </h2>
             <div className="w-[70px] h-[3px] bg-[#C9A84C] mx-auto mb-[22px]" />
-            <p className="text-[#4A4A4A] text-[17px]">See our team in action — from site surveys to completed installations.</p>
+            <p className="text-[#4A4A4A] text-[17px]">Under a minute each: one fitting day, one finished front.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px]">
             {[
-              { src: '/assets/project-video-1.mp4', title: 'Shopfront installation in progress' },
-              { src: '/assets/project-video-3.mp4', title: 'Completed project walkthrough' },
+              { src: '/assets/project-video-1.mp4', title: 'Fitting an aluminium shopfront' },
+              { src: '/assets/project-video-3.mp4', title: 'A finished front, close up' },
             ].map((v) => (
               <div key={v.src} className="rounded-xl overflow-hidden bg-white border border-[#E5DDD0] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition-all duration-300">
                 <video controls preload="metadata" className="w-full aspect-video object-cover" playsInline>
